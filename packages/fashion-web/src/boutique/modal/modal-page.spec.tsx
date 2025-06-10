@@ -1,7 +1,9 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZButtonComponentModel } from "@zthun/fashion-boutique";
-import { ZFashionName, ZFashionPriority } from "@zthun/fashion-theme";
+import type { ZFashionName } from "@zthun/fashion-theme";
+import { ZFashionPriority } from "@zthun/fashion-theme";
 import { required } from "@zthun/helpful-fn";
 import { lowerCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";

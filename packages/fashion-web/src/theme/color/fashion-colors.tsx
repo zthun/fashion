@@ -1,4 +1,5 @@
-import { IZComponentFashion, ZBox, ZH4, ZStack } from "@zthun/fashion-boutique";
+import type { IZComponentFashion } from "@zthun/fashion-boutique";
+import { ZBox, ZH4, ZStack } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { ZOrientation, cssJoinDefined } from "@zthun/helpful-fn";

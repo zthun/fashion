@@ -1,4 +1,5 @@
-import { IZFashion, ZFashionBuilder } from "../fashion/fashion.mjs";
+import type { IZFashion } from "../fashion/fashion.mjs";
+import { ZFashionBuilder } from "../fashion/fashion.mjs";
 
 /**
  * Priority fashions.

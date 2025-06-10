@@ -8,15 +8,16 @@ import {
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useRef } from "react";
-import { IZComponentHeight } from "../component/component-height.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import {
   useFashionDevice,
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
 import { useCss, useKeyframes } from "../theme/styled";
-import { IZDialog, useDialog } from "./use-dialog";
+import type { IZDialog } from "./use-dialog";
+import { useDialog } from "./use-dialog";
 
 export interface IZModal
   extends IZDialog,

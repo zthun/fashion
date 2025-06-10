@@ -1,12 +1,10 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
 import { ZBox } from "../box/box";
-import {
-  IZBreadcrumbsLocation,
-  ZBreadcrumbsLocation,
-} from "../breadcrumbs/breadcrumbs-location";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZBreadcrumbsLocation } from "../breadcrumbs/breadcrumbs-location";
+import { ZBreadcrumbsLocation } from "../breadcrumbs/breadcrumbs-location";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { ZOutlet } from "../router/router-dom.mjs";
 
 /**

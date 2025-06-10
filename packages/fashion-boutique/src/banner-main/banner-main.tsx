@@ -1,8 +1,9 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZBanner } from "../banner/banner";
 import { ZBox } from "../box/box";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZContentTitle, ZContentTitle } from "../content-title/content-title";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZContentTitle } from "../content-title/content-title";
+import { ZContentTitle } from "../content-title/content-title";
 import { useFashionTheme } from "../theme/fashion.mjs";
 import { ZStyled } from "../theme/styled";
 

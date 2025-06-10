@@ -1,9 +1,12 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZDivider } from "../divider/divider";
-import { IZList, ZList } from "./list";
-import { IZListItem, ZListItem } from "./list-item";
+import type { IZList } from "./list";
+import { ZList } from "./list";
+import type { IZListItem } from "./list-item";
+import { ZListItem } from "./list-item";
 import { ZListComponentModel } from "./list.cm.mjs";
 
 describe("ZList", () => {

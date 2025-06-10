@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { ZColor } from "../color/color.mjs";
+import type { ZColor } from "../color/color.mjs";
 import { ZColorPicker } from "./color-picker.mjs";
-import { IZFashionState } from "./fashion-state.mjs";
-import { IZFashion, ZFashionBuilder } from "./fashion.mjs";
+import type { IZFashionState } from "./fashion-state.mjs";
+import type { IZFashion } from "./fashion.mjs";
+import { ZFashionBuilder } from "./fashion.mjs";
 
 describe("FashionColorPicker", () => {
   const box = new ZFashionBuilder().spectrum(0x888888).build();

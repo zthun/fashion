@@ -6,11 +6,12 @@ import {
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, firstDefined } from "@zthun/helpful-fn";
-import { KeyboardEvent, MouseEvent, ReactNode, useEffect } from "react";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
+import { useEffect } from "react";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import { useFashionDevice, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

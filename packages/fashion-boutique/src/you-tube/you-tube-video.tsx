@@ -1,7 +1,7 @@
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { ZUrlBuilder, ZYouTubeApi } from "@zthun/webigail-url";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useCss } from "../theme/styled";
 
 export interface IZYouTubeVideo extends IZComponentName, IZComponentStyle {

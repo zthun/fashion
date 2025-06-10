@@ -1,6 +1,7 @@
 import { cssJoinDefined } from "@zthun/helpful-fn";
 import { useKeyboardActivate } from "@zthun/helpful-react";
-import { IZIcon, useIconProvider, useIconStyles } from "./icon";
+import type { IZIcon } from "./icon";
+import { useIconProvider, useIconStyles } from "./icon";
 
 export const ZIconFontAwesomeProvider =
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";

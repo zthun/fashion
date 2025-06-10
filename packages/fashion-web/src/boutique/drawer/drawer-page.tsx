@@ -11,11 +11,8 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import {
-  ZHorizontalAnchor,
-  ZSideAnchor,
-  ZVerticalAnchor,
-} from "@zthun/helpful-fn";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
+import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { identity, startCase } from "lodash-es";
 import { useState } from "react";
 import { ZFashionRouteDrawer } from "../../routes.mjs";

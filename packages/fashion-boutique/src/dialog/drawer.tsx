@@ -1,17 +1,18 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { black, ZColorPicker } from "@zthun/fashion-theme";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
 import {
   css,
   cssJoinDefined,
   firstDefined,
   ZHorizontalAnchor,
-  ZSideAnchor,
   ZVerticalAnchor,
 } from "@zthun/helpful-fn";
 import { useRef } from "react";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss, useKeyframes } from "../theme/styled";
-import { IZDialog, useDialog } from "./use-dialog";
+import type { IZDialog } from "./use-dialog";
+import { useDialog } from "./use-dialog";
 
 export interface IZDrawer extends IZDialog {
   anchor?: ZSideAnchor;

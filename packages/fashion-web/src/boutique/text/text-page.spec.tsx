@@ -1,6 +1,7 @@
-import { IZCircusKey, ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import type { IZCircusKey } from "@zthun/cirque";
+import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import {
+import type {
   ZBooleanComponentModel,
   ZTextComponentModel,
 } from "@zthun/fashion-boutique";

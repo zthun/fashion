@@ -1,10 +1,10 @@
-import { ZDeviceValue, ZSizeFixed } from "@zthun/fashion-tailor";
+import type { ZDeviceValue, ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome";
 import { useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZSuspense } from "./suspense.mjs";
+import type { IZSuspense } from "./suspense.mjs";
 
 export interface IZSuspenseRotate extends IZSuspense {
   width?: ZDeviceValue<ZSizeFixed>;

@@ -1,8 +1,9 @@
-import { ZDeviceValue, ZDeviceValues, ZSizeFixed } from "@zthun/fashion-tailor";
+import type { ZDeviceValue } from "@zthun/fashion-tailor";
+import { ZDeviceValues, ZSizeFixed } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { Property } from "csstype";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { Property } from "csstype";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionDevice } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

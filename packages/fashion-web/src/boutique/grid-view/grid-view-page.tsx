@@ -10,7 +10,8 @@ import {
   useFashionTheme,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { IZBrand, ZBrands } from "@zthun/helpful-brands";
+import type { IZBrand } from "@zthun/helpful-brands";
+import { ZBrands } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import {
   ZDataSearchFields,

@@ -3,7 +3,8 @@ import { createSizeChartFixedArithmetic } from "./size-chart-fixed-arithmetic.mj
 import { createSizeChartFixedCss } from "./size-chart-fixed-css.mjs";
 import { createSizeChartFixedFibonacci } from "./size-chart-fixed-fibonacci.mjs";
 import { createSizeChartFixedGeometric } from "./size-chart-fixed-geometric.mjs";
-import { ZSizeChartFixed, ZSizeFixed } from "./size-fixed.mjs";
+import type { ZSizeChartFixed } from "./size-fixed.mjs";
+import { ZSizeFixed } from "./size-fixed.mjs";
 
 describe("Size Chart Fixed", () => {
   describe("Arithmetic", () => {

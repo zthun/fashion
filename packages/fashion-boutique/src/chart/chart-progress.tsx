@@ -7,7 +7,7 @@ import {
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useMemo } from "react";
-import { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentHeight } from "../component/component-height.mjs";
 import { ZGrid } from "../grid/grid";
 import { ZLabeled } from "../label/labeled";
 import {
@@ -16,8 +16,8 @@ import {
   useFashionTheme,
 } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZChart } from "./chart.mjs";
-import { IZDataPoint } from "./data-point.mjs";
+import type { IZChart } from "./chart.mjs";
+import type { IZDataPoint } from "./data-point.mjs";
 
 const HeightChart = {
   ...createSizeChartFixedCss(createSizeChartFixedArithmetic(1, 1), "rem"),

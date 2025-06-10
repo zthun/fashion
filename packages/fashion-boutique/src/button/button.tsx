@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import { IZFashion, ZColorPicker } from "@zthun/fashion-theme";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZColorPicker } from "@zthun/fashion-theme";
 
 import {
   createSizeChartVariedCss,
@@ -14,15 +15,15 @@ import {
   firstDefined,
   ZOrientation,
 } from "@zthun/helpful-fn";
-import { IZComponentAvatar } from "../component/component-avatar.mjs";
-import { IZComponentCompact } from "../component/component-compact.mjs";
-import { IZComponentDisabled } from "../component/component-disabled.mjs";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentLabel } from "../component/component-label.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { IZComponentAvatar } from "../component/component-avatar.mjs";
+import type { IZComponentCompact } from "../component/component-compact.mjs";
+import type { IZComponentDisabled } from "../component/component-disabled.mjs";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentLabel } from "../component/component-label.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import { ZStack } from "../stack/stack";
 import {
   useFashionDevice,

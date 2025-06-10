@@ -1,11 +1,12 @@
-import { ZSizeFixed, ZSizeVoid } from "@zthun/fashion-tailor";
+import type { ZSizeFixed } from "@zthun/fashion-tailor";
+import { ZSizeVoid } from "@zthun/fashion-tailor";
 import { cssJoinDefined, firstDefined, ZOrientation } from "@zthun/helpful-fn";
-import { Property } from "csstype";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentOrientation } from "../component/component-orientation.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { Property } from "csstype";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentOrientation } from "../component/component-orientation.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
 
 export interface IZStack

@@ -6,7 +6,8 @@ import {
   ZUrlBuilder,
 } from "@zthun/webigail-url";
 import { describe, expect, it } from "vitest";
-import { IZImageSource, ZImageSource } from "./image-source";
+import type { IZImageSource } from "./image-source";
+import { ZImageSource } from "./image-source";
 import { ZImageSourceComponentModel } from "./image-source.cm.mjs";
 
 describe("ZImageSource", () => {

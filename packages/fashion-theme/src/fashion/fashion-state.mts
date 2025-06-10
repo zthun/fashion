@@ -1,4 +1,4 @@
-import { ZColor } from "../color/color.mjs";
+import type { ZColor } from "../color/color.mjs";
 import { transparent } from "../color/rgb.mjs";
 
 /**

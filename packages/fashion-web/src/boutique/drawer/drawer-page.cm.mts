@@ -4,7 +4,7 @@ import {
   ZChoiceComponentModel,
   ZDialogComponentModel,
 } from "@zthun/fashion-boutique";
-import { ZSideAnchor } from "@zthun/helpful-fn";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
 
 /**
  * Represents the component model for the drawer page.

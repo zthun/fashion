@@ -5,12 +5,13 @@ import {
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
-import { TextareaHTMLAttributes } from "react";
-import { IZComponentHeight } from "../component/component-height.mjs";
+import type { TextareaHTMLAttributes } from "react";
+import type { IZComponentHeight } from "../component/component-height.mjs";
 import { ZLabeled } from "../label/labeled";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZText, useText } from "./text";
+import type { IZText } from "./text";
+import { useText } from "./text";
 
 export interface IZTextArea
   extends IZText,

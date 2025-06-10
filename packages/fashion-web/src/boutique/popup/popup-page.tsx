@@ -8,7 +8,8 @@ import {
   useFashionTheme,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
-import { MouseEvent, useState } from "react";
+import type { MouseEvent } from "react";
+import { useState } from "react";
 import { ZFashionRoutePopup } from "../../routes.mjs";
 
 export function ZPopupPage() {

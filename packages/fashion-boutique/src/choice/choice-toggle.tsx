@@ -4,7 +4,8 @@ import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { ZLabeled } from "../label/labeled";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZChoice, IZChoiceOption, useChoice } from "./choice";
+import type { IZChoice, IZChoiceOption } from "./choice";
+import { useChoice } from "./choice";
 
 export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
   const {

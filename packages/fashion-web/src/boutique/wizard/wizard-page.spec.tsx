@@ -1,7 +1,9 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZTestRouter } from "@zthun/fashion-boutique";
-import { MemoryHistory, createMemoryHistory } from "history";
+import type { MemoryHistory } from "history";
+import { createMemoryHistory } from "history";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZFashionRouteBoutique } from "../../routes.mjs";
 import { ZWizardPage } from "./wizard-page";

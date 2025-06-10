@@ -1,6 +1,7 @@
 import { useFashion } from "@zthun/fashion-boutique";
-import { IZFashion, ZFashionName } from "@zthun/fashion-theme";
-import { Dispatch, SetStateAction, useState } from "react";
+import type { IZFashion, ZFashionName } from "@zthun/fashion-theme";
+import type { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 
 export type FashionState = [
   IZFashion | undefined,

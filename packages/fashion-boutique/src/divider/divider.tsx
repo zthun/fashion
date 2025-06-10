@@ -1,6 +1,6 @@
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { IZComponentCompact } from "../component/component-compact.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentCompact } from "../component/component-compact.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

@@ -1,6 +1,7 @@
-import { firstDefined, RequiredDeep } from "@zthun/helpful-fn";
-import { IZFashionState } from "./fashion-state.mjs";
-import { IZFashion } from "./fashion.mjs";
+import type { RequiredDeep } from "@zthun/helpful-fn";
+import { firstDefined } from "@zthun/helpful-fn";
+import type { IZFashionState } from "./fashion-state.mjs";
+import type { IZFashion } from "./fashion.mjs";
 
 /**
  * Represents a helper fashion that retrieves rules based on a set of requirements.

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createSizeChartVariedCss } from "./size-chart-varied-css.mjs";
-import { ZSizeChartVaried, ZSizeVaried } from "./size-varied.mjs";
+import type { ZSizeChartVaried } from "./size-varied.mjs";
+import { ZSizeVaried } from "./size-varied.mjs";
 
 describe("Size Chart Varied", () => {
   it("should set the sizes", () => {

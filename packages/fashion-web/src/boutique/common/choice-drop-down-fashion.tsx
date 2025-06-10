@@ -1,12 +1,12 @@
-import {
+import type {
   IZComponentName,
   IZComponentValue,
-  ZChoiceSelect,
 } from "@zthun/fashion-boutique";
+import { ZChoiceSelect } from "@zthun/fashion-boutique";
+import type { ZFashionName } from "@zthun/fashion-theme";
 import {
   ZFashionArea,
   ZFashionContrast,
-  ZFashionName,
   ZFashionPriority,
   ZFashionSeverity,
 } from "@zthun/fashion-theme";

@@ -1,3 +1,9 @@
+import type {
+  ZSizeGap,
+  ZSizeMargin,
+  ZSizeRounding,
+  ZSizeThickness,
+} from "@zthun/fashion-tailor";
 import {
   createSizeChartFixedCss,
   createSizeChartFixedGeometric,
@@ -5,30 +11,28 @@ import {
   createSizeChartVoidCss,
   ZDeviceValues,
   ZSizeFixed,
-  ZSizeGap,
-  ZSizeMargin,
-  ZSizeRounding,
-  ZSizeThickness,
   ZSizeVaried,
   ZSizeVoid,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
+import type {
+  ZHorizontalAnchor,
+  ZQuadrilateralCornersLike,
+  ZQuadrilateralLike,
+} from "@zthun/helpful-fn";
 import {
   css,
   cssJoinDefined,
   firstDefined,
-  ZHorizontalAnchor,
   ZQuadrilateralBuilder,
   ZQuadrilateralCornersBuilder,
-  ZQuadrilateralCornersLike,
-  ZQuadrilateralLike,
 } from "@zthun/helpful-fn";
-import { Property } from "csstype";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { Property } from "csstype";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import {
   useFashionDevice,
   useFashionTailor,

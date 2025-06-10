@@ -1,8 +1,9 @@
-import { RequiredPick } from "@zthun/helpful-fn";
+import type { RequiredPick } from "@zthun/helpful-fn";
 import { brighten, contrast } from "../color/color.mjs";
 import { hex } from "../color/hex.mjs";
 import { black, white } from "../color/rgb.mjs";
-import { IZFashionState, ZFashionStateBuilder } from "./fashion-state.mjs";
+import type { IZFashionState } from "./fashion-state.mjs";
+import { ZFashionStateBuilder } from "./fashion-state.mjs";
 
 /**
  * Represents a set of colors that create a coordinated fashion grouping.

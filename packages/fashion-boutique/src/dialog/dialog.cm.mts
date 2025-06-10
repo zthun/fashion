@@ -1,10 +1,11 @@
+import type { IZCircusDriver } from "@zthun/cirque";
 import {
-  IZCircusDriver,
   ZCircusActBuilder,
   ZCircusComponentModel,
   ZCircusKeyboardQwerty,
 } from "@zthun/cirque";
-import { firstDefined, ZSideAnchor } from "@zthun/helpful-fn";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
+import { firstDefined } from "@zthun/helpful-fn";
 
 export class ZDialogComponentModel extends ZCircusComponentModel {
   public static readonly Selector = ".ZDialog-root";

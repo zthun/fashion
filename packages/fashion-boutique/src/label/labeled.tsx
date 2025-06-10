@@ -1,13 +1,15 @@
-import { ZSizeFixed, ZSizeVoid } from "@zthun/fashion-tailor";
+import type { ZSizeVoid } from "@zthun/fashion-tailor";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation, cssJoinDefined } from "@zthun/helpful-fn";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentLabel } from "../component/component-label.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentOrientation } from "../component/component-orientation.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentLabel } from "../component/component-label.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentOrientation } from "../component/component-orientation.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { ZStack } from "../stack/stack";
-import { IZLabel, ZLabel } from "./label";
+import type { IZLabel } from "./label";
+import { ZLabel } from "./label";
 
 export interface IZLabeled
   extends IZComponentName,

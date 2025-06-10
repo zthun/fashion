@@ -2,12 +2,12 @@ import { ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
-import { KeyboardEvent } from "react";
+import type { KeyboardEvent } from "react";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome";
 import { ZLabeled } from "../label/labeled";
 import { ZTextInput } from "../text/text-input";
 import { useCss } from "../theme/styled";
-import { IZNumber } from "./number";
+import type { IZNumber } from "./number";
 
 /**
  * Represents an input that takes a number value.

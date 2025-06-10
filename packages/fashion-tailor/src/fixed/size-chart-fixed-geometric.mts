@@ -1,4 +1,5 @@
-import { ZSizeChartFixed, ZSizeFixed } from "./size-fixed.mjs";
+import type { ZSizeChartFixed } from "./size-fixed.mjs";
+import { ZSizeFixed } from "./size-fixed.mjs";
 
 /**
  * Creates a size chart that conforms to a geometric sequence.

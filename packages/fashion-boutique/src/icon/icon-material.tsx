@@ -1,6 +1,7 @@
 import { cssJoinDefined } from "@zthun/helpful-fn";
 import { useKeyboardActivate } from "@zthun/helpful-react";
-import { IZIcon, useIconProvider, useIconStyles } from "./icon";
+import type { IZIcon } from "./icon";
+import { useIconProvider, useIconStyles } from "./icon";
 
 export const ZIconMaterialProvider =
   "https://fonts.googleapis.com/icon?family=Material+Icons";

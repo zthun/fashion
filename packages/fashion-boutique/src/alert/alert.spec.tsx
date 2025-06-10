@@ -1,7 +1,9 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { IZFashion, ZFashionBuilder } from "@zthun/fashion-theme";
-import { ReactNode } from "react";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZFashionBuilder } from "@zthun/fashion-theme";
+import type { ReactNode } from "react";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZAlert } from "./alert";
 import { ZAlertComponentModel } from "./alert.cm.mjs";

@@ -1,6 +1,7 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { createMemoryHistory, MemoryHistory } from "history";
+import type { MemoryHistory } from "history";
+import { createMemoryHistory } from "history";
 import { beforeEach, describe, expect, it } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
 import { ZNotFound } from "./not-found";

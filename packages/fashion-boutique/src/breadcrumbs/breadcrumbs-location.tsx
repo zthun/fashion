@@ -6,7 +6,7 @@ import { useLocation } from "../router/router-dom.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 import { ZParagraph } from "../typography/typography";
-import { IZBreadcrumbs } from "./breadcrumbs.mjs";
+import type { IZBreadcrumbs } from "./breadcrumbs.mjs";
 
 /**
  * Represents the properties for the BreadcrumbsLocation component.

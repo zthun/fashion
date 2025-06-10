@@ -1,5 +1,6 @@
 import { ZCircusActBuilder, ZCircusComponentModel } from "@zthun/cirque";
-import { ZSizeFixed, ZSizeVoid } from "@zthun/fashion-tailor";
+import type { ZSizeFixed } from "@zthun/fashion-tailor";
+import { ZSizeVoid } from "@zthun/fashion-tailor";
 
 export class ZBubbleComponentModel extends ZCircusComponentModel {
   public static readonly Selector = ".ZBubble-root";

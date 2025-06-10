@@ -1,7 +1,9 @@
-import { IZCircusKey, ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import type { IZCircusKey } from "@zthun/cirque";
+import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { ReactNode } from "react";
-import { Mock, beforeEach, describe, expect, it, vi } from "vitest";
+import type { ReactNode } from "react";
+import type { Mock } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZTextArea } from "./text-area";
 import { ZTextInput, ZTextType } from "./text-input";
 import { ZTextComponentModel } from "./text.cm.mjs";

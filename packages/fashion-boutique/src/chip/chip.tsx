@@ -7,10 +7,10 @@ import {
   pickDataAttributes,
   ZOrientation,
 } from "@zthun/helpful-fn";
-import { IZComponentAdornment } from "../component/component-adornment.mjs";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentAdornment } from "../component/component-adornment.mjs";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { ZFlex } from "../stack/flex";
 import { ZStack } from "../stack/stack";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";

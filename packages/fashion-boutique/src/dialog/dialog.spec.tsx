@@ -1,6 +1,5 @@
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import {
-  IZCircusDriver,
-  IZCircusSetup,
   ZCircusActBuilder,
   ZCircusBy,
   ZCircusKeyboardQwerty,
@@ -8,14 +7,10 @@ import {
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeVaried } from "@zthun/fashion-tailor";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
-import {
-  sleep,
-  ZHorizontalAnchor,
-  ZSideAnchor,
-  ZVerticalAnchor,
-} from "@zthun/helpful-fn";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
+import { sleep, ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZButton } from "../button/button";
 import { ZButtonComponentModel } from "../button/button.cm.mjs";
@@ -23,7 +18,7 @@ import { ZDialogComponentModel } from "./dialog.cm.mjs";
 import { ZDrawer } from "./drawer";
 import { ZModal } from "./modal";
 import { ZPopup } from "./popup";
-import { IZDialog } from "./use-dialog";
+import type { IZDialog } from "./use-dialog";
 
 interface IZDialogTestComponent<T> {
   Dialog: FunctionComponent<T>;

@@ -1,7 +1,8 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { describe, expect, it } from "vitest";
-import { IZLink, ZLink } from "./link";
+import type { IZLink } from "./link";
+import { ZLink } from "./link";
 import { ZLinkComponentModel } from "./link.cm.mjs";
 
 describe("ZLink", () => {

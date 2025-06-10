@@ -1,8 +1,10 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
-import { IZChip, ZChip } from "./chip";
+import type { IZChip } from "./chip";
+import { ZChip } from "./chip";
 import { ZChipComponentModel } from "./chip.cm.mjs";
 
 describe("ZChip", () => {

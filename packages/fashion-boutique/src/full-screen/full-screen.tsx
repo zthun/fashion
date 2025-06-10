@@ -1,5 +1,5 @@
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

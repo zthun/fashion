@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { ZDeviceValue, ZDeviceValues } from "./device-value.mjs";
+import type { ZDeviceValue } from "./device-value.mjs";
+import { ZDeviceValues } from "./device-value.mjs";
 
 describe("Device Value", () => {
   const fallback = "fallback";

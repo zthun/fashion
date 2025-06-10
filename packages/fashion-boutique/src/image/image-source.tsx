@@ -9,11 +9,11 @@ import {
 } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { ZDataUrlBuilder } from "@zthun/webigail-url";
-import { IZComponentHeight } from "../component/component-height.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentSource } from "../component/component-source.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentSource } from "../component/component-source.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import { useFashionDevice } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

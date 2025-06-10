@@ -18,14 +18,15 @@ import {
 } from "@zthun/helpful-fn";
 import { useWindowService } from "@zthun/helpful-react";
 import { useCallback, useEffect, useRef } from "react";
-import { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentHeight } from "../component/component-height.mjs";
 import {
   useFashionDevice,
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZDialog, useDialog } from "./use-dialog";
+import type { IZDialog } from "./use-dialog";
+import { useDialog } from "./use-dialog";
 
 export interface IZPopup
   extends IZDialog,

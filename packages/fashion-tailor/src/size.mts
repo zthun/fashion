@@ -1,6 +1,6 @@
-import { ZSizeFixed } from "./fixed/size-fixed.mjs";
-import { ZSizeVaried } from "./varied/size-varied.mjs";
-import { ZSizeVoid } from "./void/size-void.mjs";
+import type { ZSizeFixed } from "./fixed/size-fixed.mjs";
+import type { ZSizeVaried } from "./varied/size-varied.mjs";
+import type { ZSizeVoid } from "./void/size-void.mjs";
 
 /**
  * A sizing object that can be a fixed size or none.

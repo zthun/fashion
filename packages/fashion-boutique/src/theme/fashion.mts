@@ -1,14 +1,7 @@
-import {
-  IZFashionDevice,
-  IZFashionTailor,
-  ZFashionDevice,
-  ZFashionTailor,
-} from "@zthun/fashion-tailor";
-import {
-  IZFashionTheme,
-  ZFashionName,
-  ZFashionThemeBuilder,
-} from "@zthun/fashion-theme";
+import type { IZFashionDevice, IZFashionTailor } from "@zthun/fashion-tailor";
+import { ZFashionDevice, ZFashionTailor } from "@zthun/fashion-tailor";
+import type { IZFashionTheme, ZFashionName } from "@zthun/fashion-theme";
+import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { createContext, useContext } from "react";
 
 export const ZFashionThemeContext = createContext(

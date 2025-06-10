@@ -1,5 +1,5 @@
+import type { IZCircusDriver } from "@zthun/cirque";
 import {
-  IZCircusDriver,
   ZCircusActBuilder,
   ZCircusBy,
   ZCircusComponentModel,

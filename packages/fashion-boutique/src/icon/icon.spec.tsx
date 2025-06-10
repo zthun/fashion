@@ -1,6 +1,8 @@
-import { IZCircusDriver, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { Mock, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type { Mock } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   ZIconFontAwesome,
   ZIconFontAwesomeProvider,

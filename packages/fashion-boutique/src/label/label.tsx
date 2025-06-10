@@ -1,9 +1,9 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentRequired } from "../component/component-required.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentRequired } from "../component/component-required.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 import { useTypographyCss } from "../typography/typography";

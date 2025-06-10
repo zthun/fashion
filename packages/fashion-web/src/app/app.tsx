@@ -1,5 +1,5 @@
+import type { IZBreadcrumbsLocation } from "@zthun/fashion-boutique";
 import {
-  IZBreadcrumbsLocation,
   ZBannerMain,
   ZBreadcrumbsOutlet,
   ZButton,

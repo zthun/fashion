@@ -1,9 +1,10 @@
-import { IZFashion, ZColorPicker } from "@zthun/fashion-theme";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
-import { IZComponentDomEvents } from "../component/component-dom-events.mjs";
-import { IZComponentLabel } from "../component/component-label.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
+import type { IZComponentLabel } from "../component/component-label.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 import { ZParagraph } from "../typography/typography";

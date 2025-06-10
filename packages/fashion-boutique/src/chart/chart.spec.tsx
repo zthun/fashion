@@ -4,7 +4,8 @@ import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { beforeEach, describe, expect, it } from "vitest";
 import { ZChartProgress } from "./chart-progress";
 import { ZChartComponentModel } from "./chart.cm.mjs";
-import { IZDataPoint, ZDataPointBuilder } from "./data-point.mjs";
+import type { IZDataPoint } from "./data-point.mjs";
+import { ZDataPointBuilder } from "./data-point.mjs";
 
 describe("ZChart", () => {
   let points: IZDataPoint[];

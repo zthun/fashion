@@ -1,9 +1,11 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZFlex } from "./flex";
-import { IZStack, ZStack } from "./stack";
+import type { IZStack } from "./stack";
+import { ZStack } from "./stack";
 import { ZStackComponentModel } from "./stack.cm.mjs";
 
 describe("ZStack", () => {

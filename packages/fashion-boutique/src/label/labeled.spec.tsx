@@ -1,9 +1,11 @@
-import { IZCircusDriver, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZLabelComponentModel } from "./label.cm.mjs";
-import { IZLabeled, ZLabeled } from "./labeled";
+import type { IZLabeled } from "./labeled";
+import { ZLabeled } from "./labeled";
 
 describe("ZLabeled", () => {
   describe("With", () => {

@@ -1,15 +1,16 @@
 import { ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { get, noop } from "lodash-es";
-import { FormEvent, KeyboardEvent, useEffect, useId, useState } from "react";
-import { IZComponentAdornment } from "../component/component-adornment.mjs";
-import { IZComponentDisabled } from "../component/component-disabled.mjs";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentLabel } from "../component/component-label.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentOrientation } from "../component/component-orientation.mjs";
-import { IZComponentRequired } from "../component/component-required.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentValue } from "../component/component-value.mjs";
+import type { FormEvent, KeyboardEvent } from "react";
+import { useEffect, useId, useState } from "react";
+import type { IZComponentAdornment } from "../component/component-adornment.mjs";
+import type { IZComponentDisabled } from "../component/component-disabled.mjs";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentLabel } from "../component/component-label.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentOrientation } from "../component/component-orientation.mjs";
+import type { IZComponentRequired } from "../component/component-required.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentValue } from "../component/component-value.mjs";
 
 /**
  * Represents an input for free form text

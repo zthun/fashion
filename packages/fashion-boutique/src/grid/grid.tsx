@@ -1,18 +1,17 @@
+import type { ZDeviceValue, ZSizeGap } from "@zthun/fashion-tailor";
 import {
   createSizeChartVariedCss,
-  ZDeviceValue,
   ZDeviceValues,
   ZSizeFixed,
-  ZSizeGap,
   ZSizeVaried,
   ZSizeVoid,
 } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { Property } from "csstype";
-import { IZComponentHeight } from "../component/component-height.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
+import type { Property } from "csstype";
+import type { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
 import { useFashionDevice, useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 

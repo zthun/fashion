@@ -1,9 +1,10 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { identity, noop, range } from "lodash-es";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { IZChoice, IZChoiceOption } from "./choice";
+import type { IZChoice, IZChoiceOption } from "./choice";
 import { ZChoiceSelect } from "./choice-select";
 import { ZChoiceToggle } from "./choice-toggle";
 import { ZChoiceComponentModel } from "./choice.cm.mjs";

@@ -1,11 +1,13 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
-import { ForwardedRef, forwardRef, InputHTMLAttributes } from "react";
+import type { ForwardedRef, InputHTMLAttributes } from "react";
+import { forwardRef } from "react";
 import { ZLabeled } from "../label/labeled";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZText, useText, withEnterCommit } from "./text";
+import type { IZText } from "./text";
+import { useText, withEnterCommit } from "./text";
 
 /**
  * Represents the type of text.

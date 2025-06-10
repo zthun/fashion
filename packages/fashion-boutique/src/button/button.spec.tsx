@@ -1,8 +1,10 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { IZButton, ZButton } from "./button";
+import type { IZButton } from "./button";
+import { ZButton } from "./button";
 import { ZButtonComponentModel } from "./button.cm.mjs";
 
 describe("ZButton", () => {

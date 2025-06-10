@@ -1,4 +1,5 @@
-import { ZColor, toRgb } from "./color.mjs";
+import type { ZColor } from "./color.mjs";
+import { toRgb } from "./color.mjs";
 import { rgb } from "./rgb.mjs";
 
 /**

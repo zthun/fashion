@@ -1,10 +1,8 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import {
-  ZHorizontalAnchor,
-  ZSideAnchor,
-  ZVerticalAnchor,
-} from "@zthun/helpful-fn";
+import type { ZSideAnchor } from "@zthun/helpful-fn";
+import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { describe, expect, it } from "vitest";
 import { ZDrawerPage } from "./drawer-page";
 import { ZDrawerPageComponentModel } from "./drawer-page.cm.mjs";

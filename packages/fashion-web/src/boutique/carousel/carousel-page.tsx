@@ -15,7 +15,8 @@ import { ZBrands } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { useStateAsArray } from "@zthun/helpful-react";
 import { identity, startCase } from "lodash-es";
-import { ReactNode, useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { useMemo, useState } from "react";
 import { ZFashionRouteCarousel } from "../../routes.mjs";
 
 /**

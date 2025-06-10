@@ -1,6 +1,7 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { Mock, beforeEach, describe, expect, it, vi } from "vitest";
+import type { Mock } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome";
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
 import { ZBubble } from "./bubble";

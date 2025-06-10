@@ -1,4 +1,5 @@
-import { ZSizeChartFixed, ZSizeFixed } from "./size-fixed.mjs";
+import type { ZSizeChartFixed } from "./size-fixed.mjs";
+import { ZSizeFixed } from "./size-fixed.mjs";
 
 /**
  * Constructs a static chart that increments each t-shirt size by a fibonacci number.

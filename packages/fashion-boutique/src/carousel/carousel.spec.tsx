@@ -1,13 +1,15 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { IZBrand, ZBrandBuilder } from "@zthun/helpful-brands";
-import { ReactNode } from "react";
+import type { IZBrand } from "@zthun/helpful-brands";
+import { ZBrandBuilder } from "@zthun/helpful-brands";
+import type { ReactNode } from "react";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome";
 import { ZCarousel } from "./carousel";
 
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
-import { Mock, beforeEach, describe, expect, it, vi } from "vitest";
+import type { Mock } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
 import { ZCarouselComponentModel } from "./carousel.cm.mjs";
 

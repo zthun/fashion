@@ -1,7 +1,9 @@
-import { IZCircusDriver, IZCircusSetup, ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
-import { IZCard, ZCard } from "./card";
+import type { IZCard } from "./card";
+import { ZCard } from "./card";
 import { ZCardComponentModel } from "./card.cm.mjs";
 
 describe("ZCard", () => {

@@ -21,10 +21,10 @@
     "check": "tsc",
     "test": "vitest run --coverage",
     "e2e": "cucumber-js",
-    "lint": "lint-janitor",
+    "lint": "janitor-lint",
     "build": "lerna run build",
     "make": "yarn clean && yarn check && yarn lint && yarn test && yarn build",
-    "prepare": "husky"
+    "postinstall": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -35,8 +35,10 @@
     "@types/react": "^19.1.7",
     "@types/stylis": "^4.2.7",
     "@vitest/coverage-istanbul": "^3.2.3",
-    "@zthun/lint-janitor": "^18.1.0",
-    "@zthun/lint-janitor-config": "^18.1.0",
+    "@zthun/janitor-build-config": "^19.1.5",
+    "@zthun/janitor-lint": "^19.1.5",
+    "@zthun/janitor-lint-config": "^19.1.5",
+    "@zthun/janitor-options": "^19.1.5",
     "happy-dom": "^17.6.3",
     "husky": "^9.1.7",
     "lerna": "^8.2.2",

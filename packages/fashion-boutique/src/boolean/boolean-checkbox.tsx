@@ -7,12 +7,13 @@ import {
   ZOrientation,
 } from "@zthun/helpful-fn";
 import { useAmbassadorState, useKeyboardActivate } from "@zthun/helpful-react";
-import { ChangeEvent, useId, useMemo, useRef } from "react";
+import type { ChangeEvent } from "react";
+import { useId, useMemo, useRef } from "react";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome";
 import { ZLabeled } from "../label/labeled";
 import { useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
-import { IZBoolean } from "./boolean";
+import type { IZBoolean } from "./boolean";
 
 /**
  * A boolean component that can be checked, unchecked, or indeterminate

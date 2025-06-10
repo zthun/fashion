@@ -1,9 +1,5 @@
-import {
-  IZCircusDriver,
-  IZCircusSetup,
-  ZCircusBy,
-  ZCircusKeyboardQwerty,
-} from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import {
   ZDataRequestBuilder,
@@ -12,7 +8,8 @@ import {
 } from "@zthun/helpful-query";
 import { range } from "lodash-es";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { IZGridView, ZGridView } from "./grid-view";
+import type { IZGridView } from "./grid-view";
+import { ZGridView } from "./grid-view";
 import { ZGridViewComponentModel } from "./grid-view.cm.mjs";
 
 describe("ZGridView", () => {

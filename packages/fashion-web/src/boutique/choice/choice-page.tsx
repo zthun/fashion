@@ -11,7 +11,8 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { IZBrand, ZBrands } from "@zthun/helpful-brands";
+import type { IZBrand } from "@zthun/helpful-brands";
+import { ZBrands } from "@zthun/helpful-brands";
 import { castArray } from "lodash-es";
 import { useMemo, useState } from "react";
 import { ZFashionRouteChoice } from "../../routes.mjs";

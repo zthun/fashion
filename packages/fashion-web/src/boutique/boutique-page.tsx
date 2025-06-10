@@ -10,7 +10,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
-import { IZRoute } from "../route/route.mjs";
+import type { IZRoute } from "../route/route.mjs";
 import {
   ZFashionRouteAllComponents,
   ZFashionRouteBoutique,

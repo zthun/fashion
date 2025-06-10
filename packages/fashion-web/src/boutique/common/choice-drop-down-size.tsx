@@ -1,16 +1,12 @@
-import {
+import type {
   IZComponentName,
   IZComponentValue,
-  ZChoiceSelect,
 } from "@zthun/fashion-boutique";
-import {
-  ZSize,
-  ZSizeFixed,
-  ZSizeVaried,
-  ZSizeVoid,
-} from "@zthun/fashion-tailor";
+import { ZChoiceSelect } from "@zthun/fashion-boutique";
+import type { ZSize } from "@zthun/fashion-tailor";
+import { ZSizeFixed, ZSizeVaried, ZSizeVoid } from "@zthun/fashion-tailor";
 import { identity, startCase } from "lodash-es";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export const ZFixedSizes = Object.values(ZSizeFixed);
 export const ZVariedSizes = Object.values(ZSizeVaried);

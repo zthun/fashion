@@ -1,8 +1,8 @@
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { describe, expect, it } from "vitest";
+import type { IZTypographyNamed } from "./typography";
 import {
-  IZTypographyNamed,
   Typography,
   ZButtonText,
   ZCaption,

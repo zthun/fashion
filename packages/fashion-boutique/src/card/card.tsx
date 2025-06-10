@@ -15,14 +15,15 @@ import {
   firstDefined,
   pickDataAttributes,
 } from "@zthun/helpful-fn";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentFooter } from "../component/component-footer.mjs";
-import { IZComponentHeight } from "../component/component-height.mjs";
-import { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
-import { IZComponentWidth } from "../component/component-width.mjs";
-import { IZContentTitle, ZContentTitle } from "../content-title/content-title";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentFooter } from "../component/component-footer.mjs";
+import type { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
+import type { IZContentTitle } from "../content-title/content-title";
+import { ZContentTitle } from "../content-title/content-title";
 import { ZStack } from "../stack/stack";
 import {
   useFashionDevice,

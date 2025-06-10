@@ -1,10 +1,11 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import {
+import type {
   ZBooleanComponentModel,
   ZButtonComponentModel,
 } from "@zthun/fashion-boutique";
-import { IZFashion, ZFashionThemeBuilder } from "@zthun/fashion-theme";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
 import { ZBooleanPage } from "./boolean-page";
 import { ZBooleanPageComponentModel } from "./boolean-page.cm.mjs";

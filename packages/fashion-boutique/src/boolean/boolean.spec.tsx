@@ -1,8 +1,10 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { IZFashion, ZFashionBuilder } from "@zthun/fashion-theme";
-import { ReactElement } from "react";
-import { Mock, beforeEach, describe, expect, it, vi } from "vitest";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZFashionBuilder } from "@zthun/fashion-theme";
+import type { ReactElement } from "react";
+import type { Mock } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZBooleanCheckbox } from "./boolean-checkbox";
 import { ZBooleanSwitch } from "./boolean-switch";
 import { ZBooleanComponentModel } from "./boolean.cm.mjs";

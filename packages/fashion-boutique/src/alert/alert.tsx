@@ -1,12 +1,12 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { ReactNode } from "react";
-import { IZComponentAvatar } from "../component/component-avatar.mjs";
-import { IZComponentFashion } from "../component/component-fashion.mjs";
-import { IZComponentHeading } from "../component/component-heading.mjs";
-import { IZComponentName } from "../component/component-name.mjs";
-import { IZComponentStyle } from "../component/component-style.mjs";
+import type { ReactNode } from "react";
+import type { IZComponentAvatar } from "../component/component-avatar.mjs";
+import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import type { IZComponentHeading } from "../component/component-heading.mjs";
+import type { IZComponentName } from "../component/component-name.mjs";
+import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled";
 
