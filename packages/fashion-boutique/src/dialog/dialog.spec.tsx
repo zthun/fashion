@@ -12,13 +12,13 @@ import { sleep, ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
 import type { FunctionComponent } from "react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZButton } from "../button/button";
 import { ZButtonComponentModel } from "../button/button.cm.mjs";
+import { ZButton } from "../button/button.js";
 import { ZDialogComponentModel } from "./dialog.cm.mjs";
-import { ZDrawer } from "./drawer";
-import { ZModal } from "./modal";
-import { ZPopup } from "./popup";
-import type { IZDialog } from "./use-dialog";
+import { ZDrawer } from "./drawer.js";
+import { ZModal } from "./modal.js";
+import { ZPopup } from "./popup.js";
+import type { IZDialog } from "./use-dialog.js";
 
 interface IZDialogTestComponent<T> {
   Dialog: FunctionComponent<T>;

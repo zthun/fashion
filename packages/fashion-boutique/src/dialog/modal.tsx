@@ -15,9 +15,9 @@ import {
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss, useKeyframes } from "../theme/styled";
-import type { IZDialog } from "./use-dialog";
-import { useDialog } from "./use-dialog";
+import { useCss, useKeyframes } from "../theme/styled.js";
+import type { IZDialog } from "./use-dialog.js";
+import { useDialog } from "./use-dialog.js";
 
 export interface IZModal
   extends IZDialog,
