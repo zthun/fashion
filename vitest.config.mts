@@ -1,10 +1,8 @@
-import { defineConfig } from "vitest/config";
+import {
+  ZViteConfigBuilder,
+  ZViteTestBuilder,
+} from "@zthun/janitor-build-config/vite";
+import { defineConfig } from "vite";
 
-export default defineConfig({
-  test: {
-    coverage: {
-      all: false,
-      provider: "istanbul",
-    },
-  },
-});
+const test = new ZViteTestBuilder().browser().istanbul().monorepo().build();
+export default defineConfig(new ZViteConfigBuilder().test(test).build());
