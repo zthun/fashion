@@ -4,8 +4,8 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZLabelComponentModel } from "./label.cm.mjs";
-import type { IZLabeled } from "./labeled";
-import { ZLabeled } from "./labeled";
+import type { IZLabeled } from "./labeled.js";
+import { ZLabeled } from "./labeled.js";
 
 describe("ZLabeled", () => {
   describe("With", () => {

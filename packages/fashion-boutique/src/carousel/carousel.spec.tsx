@@ -2,8 +2,8 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
 import { ZBrandBuilder } from "@zthun/helpful-brands";
 import type { ReactNode } from "react";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZCarousel } from "./carousel";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZCarousel } from "./carousel.js";
 
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";

@@ -9,11 +9,11 @@ import {
 import { useAmbassadorState, useKeyboardActivate } from "@zthun/helpful-react";
 import type { ChangeEvent } from "react";
 import { useId, useMemo, useRef } from "react";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZLabeled } from "../label/labeled";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZLabeled } from "../label/labeled.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import type { IZBoolean } from "./boolean";
+import { useCss } from "../theme/styled.js";
+import type { IZBoolean } from "./boolean.js";
 
 /**
  * A boolean component that can be checked, unchecked, or indeterminate

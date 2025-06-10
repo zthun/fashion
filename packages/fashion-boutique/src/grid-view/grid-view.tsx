@@ -9,25 +9,25 @@ import {
   useMoreViewState,
 } from "@zthun/helpful-react";
 import type { ReactNode } from "react";
-import { ZAlert } from "../alert/alert";
-import type { IZButton } from "../button/button";
-import { ZButton } from "../button/button";
+import { ZAlert } from "../alert/alert.js";
+import type { IZButton } from "../button/button.js";
+import { ZButton } from "../button/button.js";
 import type { IZComponentDataSource } from "../component/component-data-source.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentLoading } from "../component/component-loading.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValue } from "../component/component-value.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
-import type { IZGrid } from "../grid/grid";
-import { ZGrid } from "../grid/grid";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZStack } from "../stack/stack";
-import { ZSuspenseProgress } from "../suspense/suspense-progress";
+import type { IZGrid } from "../grid/grid.js";
+import { ZGrid } from "../grid/grid.js";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZStack } from "../stack/stack.js";
+import { ZSuspenseProgress } from "../suspense/suspense-progress.js";
 import type { IZSuspense } from "../suspense/suspense.mjs";
-import type { IZText } from "../text/text";
-import { ZTextInput } from "../text/text-input";
+import { ZTextInput } from "../text/text-input.js";
+import type { IZText } from "../text/text.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { ZH5 } from "../typography/typography";
+import { ZH5 } from "../typography/typography.js";
 
 export interface IZGridView<T = any>
   extends IZComponentStyle,

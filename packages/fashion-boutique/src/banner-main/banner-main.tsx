@@ -1,11 +1,11 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZBanner } from "../banner/banner";
-import { ZBox } from "../box/box";
+import { ZBanner } from "../banner/banner.js";
+import { ZBox } from "../box/box.js";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
-import type { IZContentTitle } from "../content-title/content-title";
-import { ZContentTitle } from "../content-title/content-title";
+import type { IZContentTitle } from "../content-title/content-title.js";
+import { ZContentTitle } from "../content-title/content-title.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { ZStyled } from "../theme/styled";
+import { ZStyled } from "../theme/styled.js";
 
 export interface IZBannerMain extends IZComponentHierarchy {
   TitleProps?: IZContentTitle;

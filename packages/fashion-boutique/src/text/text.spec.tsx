@@ -4,8 +4,8 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { ZTextArea } from "./text-area";
-import { ZTextInput, ZTextType } from "./text-input";
+import { ZTextArea } from "./text-area.js";
+import { ZTextInput, ZTextType } from "./text-input.js";
 import { ZTextComponentModel } from "./text.cm.mjs";
 
 // cspell: disable-next-line

@@ -38,7 +38,7 @@ import {
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 interface IZBorderProps {
   width?: ZQuadrilateralLike<ZSizeThickness>;

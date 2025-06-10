@@ -4,14 +4,14 @@ import {
   getHttpCodeDescription,
   getHttpCodeName,
 } from "@zthun/webigail-http";
-import { ZButton } from "../button/button";
-import { ZCard } from "../card/card";
-import { ZFullScreen } from "../full-screen/full-screen";
-import { ZGrid } from "../grid/grid";
+import { ZButton } from "../button/button.js";
+import { ZCard } from "../card/card.js";
+import { ZFullScreen } from "../full-screen/full-screen.js";
+import { ZGrid } from "../grid/grid.js";
 import { useNavigate } from "../router/router-dom.mjs";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { ZParagraph } from "../typography/typography";
-import { ZSadFace } from "./sad-face";
+import { ZParagraph } from "../typography/typography.js";
+import { ZSadFace } from "./sad-face.js";
 
 export interface IZNotFound {
   home?: string;

@@ -7,9 +7,9 @@ import type { IZComponentLabel } from "../component/component-label.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentOrientation } from "../component/component-orientation.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
-import { ZStack } from "../stack/stack";
-import type { IZLabel } from "./label";
-import { ZLabel } from "./label";
+import { ZStack } from "../stack/stack.js";
+import type { IZLabel } from "./label.js";
+import { ZLabel } from "./label.js";
 
 export interface IZLabeled
   extends IZComponentName,

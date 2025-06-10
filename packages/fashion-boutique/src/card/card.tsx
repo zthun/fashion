@@ -22,15 +22,15 @@ import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs"
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
-import type { IZContentTitle } from "../content-title/content-title";
-import { ZContentTitle } from "../content-title/content-title";
-import { ZStack } from "../stack/stack";
+import type { IZContentTitle } from "../content-title/content-title.js";
+import { ZContentTitle } from "../content-title/content-title.js";
+import { ZStack } from "../stack/stack.js";
 import {
   useFashionDevice,
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZCard
   extends IZComponentHierarchy,

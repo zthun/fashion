@@ -3,18 +3,18 @@ import { ZOrientation, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
 import { castArray } from "lodash-es";
 import type { ReactElement, ReactNode } from "react";
-import type { IZButton } from "../button/button";
-import { ZButton } from "../button/button";
-import type { IZCard } from "../card/card";
-import { ZCard } from "../card/card";
+import type { IZButton } from "../button/button.js";
+import { ZButton } from "../button/button.js";
+import type { IZCard } from "../card/card.js";
+import { ZCard } from "../card/card.js";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValue } from "../component/component-value.mjs";
-import { ZGrid } from "../grid/grid";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZStack } from "../stack/stack";
+import { ZGrid } from "../grid/grid.js";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZStack } from "../stack/stack.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { ZH4 } from "../typography/typography";
+import { ZH4 } from "../typography/typography.js";
 
 export interface IZWizardPage {
   name?: string;

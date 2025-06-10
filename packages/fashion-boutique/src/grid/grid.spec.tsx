@@ -3,8 +3,8 @@ import type { ZSizeVoid } from "@zthun/fashion-tailor";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import type { Property } from "csstype";
 import { beforeEach, describe, expect, it } from "vitest";
-import { ZGrid } from "./grid";
-import { ZGridSpan } from "./grid-span";
+import { ZGridSpan } from "./grid-span.js";
+import { ZGrid } from "./grid.js";
 
 describe("ZGrid", () => {
   let gap: ZSizeFixed | ZSizeVoid | undefined;

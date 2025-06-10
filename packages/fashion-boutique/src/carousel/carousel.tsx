@@ -2,16 +2,16 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation, css, cssJoinDefined } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
 import type { ReactNode } from "react";
-import type { IZButton } from "../button/button";
-import { ZButton } from "../button/button";
+import type { IZButton } from "../button/button.js";
+import { ZButton } from "../button/button.js";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentOrientation } from "../component/component-orientation.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValue } from "../component/component-value.mjs";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZStack } from "../stack/stack";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZStack } from "../stack/stack.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZCarousel
   extends IZComponentStyle,

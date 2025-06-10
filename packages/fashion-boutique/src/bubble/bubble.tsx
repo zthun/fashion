@@ -19,7 +19,7 @@ import {
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZBubble
   extends IZComponentStyle,

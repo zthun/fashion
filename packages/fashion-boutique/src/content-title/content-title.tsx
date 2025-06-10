@@ -6,9 +6,9 @@ import type { IZComponentAdornment } from "../component/component-adornment.mjs"
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentHeading } from "../component/component-heading.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
-import { ZFlex } from "../stack/flex";
-import { ZStack } from "../stack/stack";
-import { ZH2, ZSubtitle } from "../typography/typography";
+import { ZFlex } from "../stack/flex.js";
+import { ZStack } from "../stack/stack.js";
+import { ZH2, ZSubtitle } from "../typography/typography.js";
 
 export interface IZContentTitle
   extends IZComponentHeading,

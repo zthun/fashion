@@ -24,14 +24,14 @@ import type { IZComponentLabel } from "../component/component-label.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
-import { ZStack } from "../stack/stack";
+import { ZStack } from "../stack/stack.js";
 import {
   useFashionDevice,
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import { ZButtonText } from "../typography/typography";
+import { useCss } from "../theme/styled.js";
+import { ZButtonText } from "../typography/typography.js";
 
 export interface IZButton
   extends IZComponentAvatar,

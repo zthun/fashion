@@ -1,9 +1,9 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { describe, expect, it } from "vitest";
-import type { IZLink } from "./link";
-import { ZLink } from "./link";
 import { ZLinkComponentModel } from "./link.cm.mjs";
+import type { IZLink } from "./link.js";
+import { ZLink } from "./link.js";
 
 describe("ZLink", () => {
   async function createTestTarget(props?: Partial<IZLink>) {

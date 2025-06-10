@@ -4,8 +4,8 @@ import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
-import type { IZBreadcrumbsLocation } from "./breadcrumbs-location";
-import { ZBreadcrumbsLocation } from "./breadcrumbs-location";
+import type { IZBreadcrumbsLocation } from "./breadcrumbs-location.js";
+import { ZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsComponentModel } from "./breadcrumbs.cm.mjs";
 
 describe("ZBreadcrumbs", () => {

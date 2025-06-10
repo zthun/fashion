@@ -6,9 +6,9 @@ import {
   ZUrlBuilder,
 } from "@zthun/webigail-url";
 import { describe, expect, it } from "vitest";
-import type { IZImageSource } from "./image-source";
-import { ZImageSource } from "./image-source";
 import { ZImageSourceComponentModel } from "./image-source.cm.mjs";
+import type { IZImageSource } from "./image-source.js";
+import { ZImageSource } from "./image-source.js";
 
 describe("ZImageSource", () => {
   const svg =

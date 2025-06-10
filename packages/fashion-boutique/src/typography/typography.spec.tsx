@@ -1,7 +1,7 @@
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactElement } from "react";
 import { describe, expect, it } from "vitest";
-import type { IZTypographyNamed } from "./typography";
+import type { IZTypographyNamed } from "./typography.js";
 import {
   Typography,
   ZButtonText,
@@ -14,7 +14,7 @@ import {
   ZH6,
   ZParagraph,
   ZSubtitle,
-} from "./typography";
+} from "./typography.js";
 
 describe("Typography", () => {
   async function createTestTarget(

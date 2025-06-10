@@ -5,7 +5,7 @@ import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZBanner
   extends IZComponentHierarchy,

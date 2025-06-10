@@ -1,7 +1,7 @@
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export function ZFullScreen(props: IZComponentHierarchy) {
   const tailor = useFashionTailor();

@@ -8,7 +8,7 @@ import {
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useFashionDevice, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss, useKeyframes } from "../theme/styled";
+import { useCss, useKeyframes } from "../theme/styled.js";
 import type { IZSuspense } from "./suspense.mjs";
 
 export interface IZSuspenseProgress extends IZSuspense {

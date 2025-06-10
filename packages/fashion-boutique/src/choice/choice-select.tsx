@@ -6,18 +6,18 @@ import {
 } from "@zthun/helpful-react";
 import type { MouseEvent, ReactNode } from "react";
 import { useRef, useState } from "react";
-import { ZChip } from "../chip/chip";
-import { ZPopup } from "../dialog/popup";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZLabeled } from "../label/labeled";
-import { ZList } from "../list/list";
-import { ZListItem } from "../list/list-item";
-import { ZFlex } from "../stack/flex";
-import { ZStack } from "../stack/stack";
+import { ZChip } from "../chip/chip.js";
+import { ZPopup } from "../dialog/popup.js";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZLabeled } from "../label/labeled.js";
+import { ZListItem } from "../list/list-item.js";
+import { ZList } from "../list/list.js";
+import { ZFlex } from "../stack/flex.js";
+import { ZStack } from "../stack/stack.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import type { IZChoice } from "./choice";
-import { useChoice } from "./choice";
+import { useCss } from "../theme/styled.js";
+import type { IZChoice } from "./choice.js";
+import { useChoice } from "./choice.js";
 
 export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
   const { component, primary, transparent, error } = useFashionTheme();

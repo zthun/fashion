@@ -1,5 +1,5 @@
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export function ZSadFace() {
   const _className = useCss(css`

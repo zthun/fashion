@@ -8,14 +8,14 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useMemo } from "react";
 import type { IZComponentHeight } from "../component/component-height.mjs";
-import { ZGrid } from "../grid/grid";
-import { ZLabeled } from "../label/labeled";
+import { ZGrid } from "../grid/grid.js";
+import { ZLabeled } from "../label/labeled.js";
 import {
   useFashionDevice,
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 import type { IZChart } from "./chart.mjs";
 import type { IZDataPoint } from "./data-point.mjs";
 

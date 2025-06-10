@@ -15,7 +15,7 @@ import type { IZComponentSource } from "../component/component-source.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
 import { useFashionDevice } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZImageSource
   extends IZComponentSource,

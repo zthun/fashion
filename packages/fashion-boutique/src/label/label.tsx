@@ -5,8 +5,8 @@ import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs"
 import type { IZComponentRequired } from "../component/component-required.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import { useTypographyCss } from "../typography/typography";
+import { useCss } from "../theme/styled.js";
+import { useTypographyCss } from "../typography/typography.js";
 
 export interface IZLabel
   extends IZComponentHierarchy,

@@ -1,7 +1,7 @@
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { beforeEach, describe, expect, it } from "vitest";
-import type { ZNewspaperRange } from "./newspaper";
-import { ZNewspaper } from "./newspaper";
+import type { ZNewspaperRange } from "./newspaper.js";
+import { ZNewspaper } from "./newspaper.js";
 
 describe("ZNewspaper", () => {
   let xl: ZNewspaperRange;

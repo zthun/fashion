@@ -7,12 +7,12 @@ import {
   ZIconFontAwesome,
   ZIconFontAwesomeProvider,
   ZIconFontAwesomeVendor,
-} from "./icon-font-awesome";
+} from "./icon-font-awesome.js";
 import {
   ZIconMaterial,
   ZIconMaterialProvider,
   ZIconMaterialVendor,
-} from "./icon-material";
+} from "./icon-material.js";
 import { ZIconComponentModel } from "./icon.cm.mjs";
 
 describe("ZIcon", () => {

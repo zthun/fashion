@@ -3,9 +3,9 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
-import type { IZChip } from "./chip";
-import { ZChip } from "./chip";
 import { ZChipComponentModel } from "./chip.cm.mjs";
+import type { IZChip } from "./chip.js";
+import { ZChip } from "./chip.js";
 
 describe("ZChip", () => {
   let _renderer: IZCircusSetup;

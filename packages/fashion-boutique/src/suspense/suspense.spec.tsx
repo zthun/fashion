@@ -1,12 +1,12 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
-import { ZSuspenseRotate } from "./suspense-rotate";
+import { ZSuspenseRotate } from "./suspense-rotate.js";
 import { ZSuspenseComponentModel } from "./suspense.cm.mjs";
 
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { FunctionComponent } from "react";
 import { describe, expect, it } from "vitest";
-import { ZSuspenseProgress } from "./suspense-progress";
+import { ZSuspenseProgress } from "./suspense-progress.js";
 import type { IZSuspense } from "./suspense.mjs";
 
 describe("ZSuspense", () => {

@@ -2,9 +2,9 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { describe, expect, it, vi } from "vitest";
-import type { IZBox } from "./box";
-import { ZBox } from "./box";
 import { ZBoxComponentModel } from "./box.cm.mjs";
+import type { IZBox } from "./box.js";
+import { ZBox } from "./box.js";
 
 describe("ZBox", () => {
   async function createTestTarget(props?: Partial<IZBox>) {

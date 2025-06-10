@@ -4,8 +4,8 @@ import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
 import { beforeEach, describe, expect, it } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
-import { ZNotFound } from "./not-found";
 import { ZNotFoundComponentModel } from "./not-found.cm.mjs";
+import { ZNotFound } from "./not-found.js";
 
 describe("ZNotFound", () => {
   let home: string | undefined;

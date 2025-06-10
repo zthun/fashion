@@ -6,8 +6,8 @@ import type { IZComponentLabel } from "../component/component-label.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import { ZParagraph } from "../typography/typography";
+import { useCss } from "../theme/styled.js";
+import { ZParagraph } from "../typography/typography.js";
 
 export interface IZLink
   extends IZComponentStyle,

@@ -2,7 +2,7 @@ import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZDivider extends IZComponentStyle, IZComponentCompact {}
 

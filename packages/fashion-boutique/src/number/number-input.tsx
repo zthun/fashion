@@ -3,11 +3,11 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
 import type { KeyboardEvent } from "react";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome";
-import { ZLabeled } from "../label/labeled";
-import { ZTextInput } from "../text/text-input";
-import { useCss } from "../theme/styled";
-import type { IZNumber } from "./number";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+import { ZLabeled } from "../label/labeled.js";
+import { ZTextInput } from "../text/text-input.js";
+import { useCss } from "../theme/styled.js";
+import type { IZNumber } from "./number.js";
 
 /**
  * Represents an input that takes a number value.

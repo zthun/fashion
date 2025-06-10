@@ -2,10 +2,10 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { describe, expect, it } from "vitest";
-import { ZH3 } from "../typography/typography";
-import type { IZContentTitle } from "./content-title";
-import { ZContentTitle } from "./content-title";
-import { ZContentTitleComponentModel } from "./content-title.cm";
+import { ZH3 } from "../typography/typography.js";
+import { ZContentTitleComponentModel } from "./content-title.cm.mjs";
+import type { IZContentTitle } from "./content-title.js";
+import { ZContentTitle } from "./content-title.js";
 
 describe("ZContentTitle", () => {
   const node = "Rendered";

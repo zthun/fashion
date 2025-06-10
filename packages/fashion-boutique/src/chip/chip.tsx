@@ -11,10 +11,10 @@ import type { IZComponentAdornment } from "../component/component-adornment.mjs"
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
-import { ZFlex } from "../stack/flex";
-import { ZStack } from "../stack/stack";
+import { ZFlex } from "../stack/flex.js";
+import { ZStack } from "../stack/stack.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZChip
   extends IZComponentFashion,

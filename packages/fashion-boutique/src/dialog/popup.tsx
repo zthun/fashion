@@ -24,9 +24,9 @@ import {
   useFashionTailor,
   useFashionTheme,
 } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import type { IZDialog } from "./use-dialog";
-import { useDialog } from "./use-dialog";
+import { useCss } from "../theme/styled.js";
+import type { IZDialog } from "./use-dialog.js";
+import { useDialog } from "./use-dialog.js";
 
 export interface IZPopup
   extends IZDialog,

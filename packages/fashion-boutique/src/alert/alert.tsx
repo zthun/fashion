@@ -8,7 +8,7 @@ import type { IZComponentHeading } from "../component/component-heading.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZAlert
   extends Omit<IZComponentHeading, "subHeading">,

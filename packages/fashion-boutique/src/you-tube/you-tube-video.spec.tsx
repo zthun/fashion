@@ -2,8 +2,8 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZYouTubeVideo } from "./you-tube-video";
 import { ZYouTubeVideoComponentModel } from "./you-tube-video.cm.mjs";
+import { ZYouTubeVideo } from "./you-tube-video.js";
 
 describe("YouTubeVideo", () => {
   const Video = "Vr2OkMB2Wr0";

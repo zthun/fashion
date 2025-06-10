@@ -7,11 +7,11 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { TextareaHTMLAttributes } from "react";
 import type { IZComponentHeight } from "../component/component-height.mjs";
-import { ZLabeled } from "../label/labeled";
+import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
-import type { IZText } from "./text";
-import { useText } from "./text";
+import { useCss } from "../theme/styled.js";
+import type { IZText } from "./text.js";
+import { useText } from "./text.js";
 
 export interface IZTextArea
   extends IZText,

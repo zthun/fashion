@@ -5,7 +5,7 @@ import type { Property } from "csstype";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionDevice } from "../theme/fashion.mjs";
-import { useCss } from "../theme/styled";
+import { useCss } from "../theme/styled.js";
 
 export interface IZGridSpan extends IZComponentHierarchy, IZComponentStyle {
   columnStart?: ZDeviceValue<Property.GridColumnStart>;
