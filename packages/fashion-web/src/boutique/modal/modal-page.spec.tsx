@@ -7,8 +7,8 @@ import { ZFashionPriority } from "@zthun/fashion-theme";
 import { required } from "@zthun/helpful-fn";
 import { lowerCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZModalPage } from "./modal-page";
 import { ZModalPageComponentModel } from "./modal-page.cm.mjs";
+import { ZModalPage } from "./modal-page.js";
 
 describe("ZModalPage", () => {
   let _setup: IZCircusSetup;

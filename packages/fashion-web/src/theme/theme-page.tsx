@@ -9,7 +9,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZFashionRouteTheme } from "../routes.mjs";
-import { ZFashionColors } from "./color/fashion-colors";
+import { ZFashionColors } from "./color/fashion-colors.js";
 
 /**
  * Represents the theme page.

@@ -15,28 +15,28 @@ import {
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import { createDarkTheme, createLightTheme } from "@zthun/fashion-theme";
 import { useMemo, useState } from "react";
-import { ZAlertPage } from "../boutique/alert/alert-page";
-import { ZBooleanPage } from "../boutique/boolean/boolean-page";
-import { ZBoutiquePage } from "../boutique/boutique-page";
-import { ZBubblePage } from "../boutique/bubble/bubble-page";
-import { ZButtonPage } from "../boutique/button/button-page";
-import { ZCardPage } from "../boutique/card/card-page";
-import { ZCarouselPage } from "../boutique/carousel/carousel-page";
-import { ZChartPage } from "../boutique/chart/chart-page";
-import { ZChoicePage } from "../boutique/choice/choice-page";
-import { ZDrawerPage } from "../boutique/drawer/drawer-page";
-import { ZGridViewPage } from "../boutique/grid-view/grid-view-page";
-import { ZImagePage } from "../boutique/image/image-page";
-import { ZListPage } from "../boutique/list/list-page";
-import { ZModalPage } from "../boutique/modal/modal-page";
-import { ZNumberPage } from "../boutique/number/number-page";
-import { ZPopupPage } from "../boutique/popup/popup-page";
-import { ZSuspensePage } from "../boutique/suspense/suspense-page";
-import { ZTextPage } from "../boutique/text/text-page";
-import { ZTypographyPage } from "../boutique/typography/typography-page";
-import { ZWizardPage } from "../boutique/wizard/wizard-page";
-import { ZYouTubePage } from "../boutique/you-tube/you-tube-page";
-import { ZHomePage } from "../home/home-page";
+import { ZAlertPage } from "../boutique/alert/alert-page.js";
+import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
+import { ZBoutiquePage } from "../boutique/boutique-page.js";
+import { ZBubblePage } from "../boutique/bubble/bubble-page.js";
+import { ZButtonPage } from "../boutique/button/button-page.js";
+import { ZCardPage } from "../boutique/card/card-page.js";
+import { ZCarouselPage } from "../boutique/carousel/carousel-page.js";
+import { ZChartPage } from "../boutique/chart/chart-page.js";
+import { ZChoicePage } from "../boutique/choice/choice-page.js";
+import { ZDrawerPage } from "../boutique/drawer/drawer-page.js";
+import { ZGridViewPage } from "../boutique/grid-view/grid-view-page.js";
+import { ZImagePage } from "../boutique/image/image-page.js";
+import { ZListPage } from "../boutique/list/list-page.js";
+import { ZModalPage } from "../boutique/modal/modal-page.js";
+import { ZNumberPage } from "../boutique/number/number-page.js";
+import { ZPopupPage } from "../boutique/popup/popup-page.js";
+import { ZSuspensePage } from "../boutique/suspense/suspense-page.js";
+import { ZTextPage } from "../boutique/text/text-page.js";
+import { ZTypographyPage } from "../boutique/typography/typography-page.js";
+import { ZWizardPage } from "../boutique/wizard/wizard-page.js";
+import { ZYouTubePage } from "../boutique/you-tube/you-tube-page.js";
+import { ZHomePage } from "../home/home-page.js";
 import {
   ZFashionRouteAlert,
   ZFashionRouteBoolean,
@@ -62,7 +62,7 @@ import {
   ZFashionRouteWizard,
   ZFashionRouteYouTube,
 } from "../routes.mjs";
-import { ZThemePage } from "../theme/theme-page";
+import { ZThemePage } from "../theme/theme-page.js";
 
 const lightTheme = createLightTheme();
 const darkTheme = createDarkTheme();

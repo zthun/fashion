@@ -11,7 +11,7 @@ import {
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import { ZFashionArea } from "@zthun/fashion-theme";
 import { ZFashionRouteCard } from "../../routes.mjs";
-import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion";
+import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
 // cspell: disable

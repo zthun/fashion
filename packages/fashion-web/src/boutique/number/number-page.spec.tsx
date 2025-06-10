@@ -2,8 +2,8 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZNumberComponentModel } from "@zthun/fashion-boutique";
 import { describe, expect, it } from "vitest";
-import { ZNumberPage } from "./number-page";
 import { ZNumberPageComponentModel } from "./number-page.cm.mjs";
+import { ZNumberPage } from "./number-page.js";
 
 type NumberInputFactory = (
   t: ZNumberPageComponentModel,

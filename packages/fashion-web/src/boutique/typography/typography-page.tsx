@@ -16,7 +16,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZFashionRouteTypography } from "../../routes.mjs";
-import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion";
+import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
 /**

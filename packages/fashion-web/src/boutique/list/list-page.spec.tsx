@@ -1,8 +1,8 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { describe, expect, it } from "vitest";
-import { ZListPage } from "./list-page";
 import { ZListPageComponentModel } from "./list-page.cm.mjs";
+import { ZListPage } from "./list-page.js";
 
 describe("ZListPage", () => {
   async function createTestTarget() {

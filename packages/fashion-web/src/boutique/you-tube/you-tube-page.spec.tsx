@@ -2,8 +2,8 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZYouTubePage } from "./you-tube-page";
 import { ZYouTubePageComponentModel } from "./you-tube-page.cm.mjs";
+import { ZYouTubePage } from "./you-tube-page.js";
 
 describe("ZYouTubePage", () => {
   let _renderer: IZCircusSetup<IZCircusDriver>;

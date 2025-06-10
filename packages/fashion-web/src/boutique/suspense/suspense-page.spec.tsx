@@ -2,8 +2,8 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
-import { ZSuspensePage } from "./suspense-page";
 import { ZSuspensePageComponentModel } from "./suspense-page.cm.mjs";
+import { ZSuspensePage } from "./suspense-page.js";
 
 describe("ZSuspensePage", () => {
   const theme = new ZFashionThemeBuilder().build();

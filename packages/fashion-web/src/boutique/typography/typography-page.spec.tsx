@@ -2,8 +2,8 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
-import { ZTypographyPage } from "./typography-page";
 import { ZTypographyPageComponentModel } from "./typography-page.cm.mjs";
+import { ZTypographyPage } from "./typography-page.js";
 
 describe("ZTypographyPage", () => {
   const theme = new ZFashionThemeBuilder().build();

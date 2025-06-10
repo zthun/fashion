@@ -8,7 +8,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZFashionRouteChart } from "../../routes.mjs";
-import { ZChartPageProgress } from "./chart-page-progress";
+import { ZChartPageProgress } from "./chart-page-progress.js";
 
 /**
  * Represents a demo for drawers.

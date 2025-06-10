@@ -6,8 +6,8 @@ import type {
   ZTextComponentModel,
 } from "@zthun/fashion-boutique";
 import { describe, expect, it } from "vitest";
-import { ZTextPage } from "./text-page";
 import { ZTextPageComponentModel } from "./text-page.cm.mjs";
+import { ZTextPage } from "./text-page.js";
 
 // cspell: disable-next-line
 const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";

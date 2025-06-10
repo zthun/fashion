@@ -7,8 +7,8 @@ import type {
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { describe, expect, it } from "vitest";
-import { ZBooleanPage } from "./boolean-page";
 import { ZBooleanPageComponentModel } from "./boolean-page.cm.mjs";
+import { ZBooleanPage } from "./boolean-page.js";
 
 describe("ZBooleanPage", () => {
   const theme = new ZFashionThemeBuilder().build();

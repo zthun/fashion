@@ -2,8 +2,8 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZPopupPage } from "./popup-page";
 import { ZPopupPageComponentModel } from "./popup-page.cm.mjs";
+import { ZPopupPage } from "./popup-page.js";
 
 describe("ZPopupPage", () => {
   let _setup: IZCircusSetup;

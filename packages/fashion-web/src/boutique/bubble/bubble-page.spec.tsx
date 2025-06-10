@@ -5,8 +5,8 @@ import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority } from "@zthun/fashion-theme";
 import { startCase } from "lodash-es";
 import { describe, expect, it } from "vitest";
-import { ZBubblePage } from "./bubble-page";
 import { ZBubblePageComponentModel } from "./bubble-page.cm.mjs";
+import { ZBubblePage } from "./bubble-page.js";
 
 describe("ZBubblePage", () => {
   const createTestTarget = async () => {

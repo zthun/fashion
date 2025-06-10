@@ -4,8 +4,8 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZSideAnchor } from "@zthun/helpful-fn";
 import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { describe, expect, it } from "vitest";
-import { ZDrawerPage } from "./drawer-page";
 import { ZDrawerPageComponentModel } from "./drawer-page.cm.mjs";
+import { ZDrawerPage } from "./drawer-page.js";
 
 describe("ZDrawerPage", () => {
   let _setup: IZCircusSetup;

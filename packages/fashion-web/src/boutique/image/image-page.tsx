@@ -11,7 +11,7 @@ import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import { ZUrlBuilder } from "@zthun/webigail-url";
 import { useState } from "react";
 import { ZFashionRouteImage } from "../../routes.mjs";
-import { ZChoiceDropDownSize } from "../common/choice-drop-down-size";
+import { ZChoiceDropDownSize } from "../common/choice-drop-down-size.js";
 
 const Png = new ZUrlBuilder().gravatar().build();
 

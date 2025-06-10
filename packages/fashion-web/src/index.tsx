@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ZFashionApp } from "./app/app";
+import { ZFashionApp } from "./app/app.js";
 
 const container = createRoot(document.getElementById("zthunworks-fashion")!);
 
