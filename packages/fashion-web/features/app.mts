@@ -1,6 +1,6 @@
 import { After, Then } from "@cucumber/cucumber";
 import assert from "assert";
-import { ZFashionWorld } from "./fashion-world.mjs";
+import type { ZFashionWorld } from "./fashion-world.mjs";
 
 Then("the page loads successfully", async function (this: ZFashionWorld) {
   assert.ok(true);

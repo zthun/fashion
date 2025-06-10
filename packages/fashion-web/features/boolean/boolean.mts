@@ -5,7 +5,7 @@ import {
   ZFashionRouteBoolean,
   ZFashionRouteBoutique,
 } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 Given(
   "I have navigated to the boolean demo page",

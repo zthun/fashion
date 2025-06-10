@@ -6,6 +6,7 @@ import {
 const lint = new ZJanitorOptionsLintBuilder()
   .esFile("*.{js,cjs,mjs,ts,mts,tsx,jsx}")
   .esFile("packages/**/src/**/*.{js,cjs,mjs,ts,mts,tsx,jsx}")
+  .esFile("packages/**/features/**/*.{js,cjs,mjs,ts,mts,tsx,jsx}")
   .esFile(".config/*.{js,cjs,mjs,ts,mts,tsx,jsx}")
   .markdownFile("*.md")
   .markdownFile("packages/**/*.md")

@@ -3,17 +3,17 @@ import {
   setWorldConstructor,
   World,
 } from "@cucumber/cucumber";
-import {
+import type {
   IZCircusDriver,
   IZCircusSetup,
-  ZCircusBy,
   ZCircusComponentConstructor,
   ZCircusComponentModel,
 } from "@zthun/cirque";
+import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupChrome } from "@zthun/cirque-du-selenium";
 import { sleep } from "@zthun/helpful-fn";
 import { ZUrlBuilder } from "@zthun/webigail-url";
-import { IZRoute } from "../src/route/route.mjs";
+import type { IZRoute } from "../src/route/route.mjs";
 
 /**
  * Represents a modifiable set of parameters.

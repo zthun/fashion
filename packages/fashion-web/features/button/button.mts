@@ -5,7 +5,7 @@ import {
   ZFashionRouteBoutique,
   ZFashionRouteButton,
 } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 Given(
   "I navigate to the button demo page",

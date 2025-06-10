@@ -5,7 +5,7 @@ import {
   ZFashionRouteBoutique,
   ZFashionRouteTypography,
 } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 When(
   "I navigate to the typography demo page",

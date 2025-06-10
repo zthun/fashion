@@ -2,7 +2,7 @@ import { Given, Then, When } from "@cucumber/cucumber";
 import assert from "assert";
 import { ZCardPageComponentModel } from "../../src/boutique/card/card-page.cm.mjs";
 import { ZFashionRouteBoutique, ZFashionRouteCard } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 Given(
   "I have navigated to the card demo page",

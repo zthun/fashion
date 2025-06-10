@@ -5,7 +5,7 @@ import {
   ZFashionRouteBoutique,
   ZFashionRouteNumber,
 } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 type NumberDemoTarget = "spinner";
 type Direction = "increment" | "decrement";

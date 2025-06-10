@@ -5,7 +5,7 @@ import {
   ZFashionRouteBoutique,
   ZFashionRouteChoice,
 } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 type ChoiceDemo = "dropdown" | "toggle";
 type OptionCheckbox = "multiple" | "disabled" | "indelible" | "required";

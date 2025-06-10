@@ -2,7 +2,7 @@ import { Given, Then, When } from "@cucumber/cucumber";
 import assert from "assert";
 import { ZTextPageComponentModel } from "../../src/boutique/text/text-page.cm.mjs";
 import { ZFashionRouteBoutique, ZFashionRouteText } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 type FieldName = "text" | "password" | "area";
 type OptionName = "disabled" | "readOnly" | "required" | "adornments";

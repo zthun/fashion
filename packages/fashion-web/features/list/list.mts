@@ -2,7 +2,7 @@ import { Then, When } from "@cucumber/cucumber";
 import assert from "assert";
 import { ZListPageComponentModel } from "../../src/boutique/list/list-page.cm.mjs";
 import { ZFashionRouteBoutique, ZFashionRouteList } from "../../src/routes.mjs";
-import { ZFashionWorld } from "../fashion-world.mjs";
+import type { ZFashionWorld } from "../fashion-world.mjs";
 
 When(
   "I navigate to the list demo page",
