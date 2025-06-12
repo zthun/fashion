@@ -1,6 +1,6 @@
 {
   "stream": true,
-  "version": "9.1.2",
+  "version": "10.0.0",
   "nx": true,
   "command": {
     "publish": {

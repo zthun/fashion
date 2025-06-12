@@ -1,6 +1,6 @@
 {
   "name": "@zthun/fashion-boutique",
-  "version": "9.1.2",
+  "version": "10.0.0",
   "description": "A UI library for react components that are very fashionable.",
   "type": "module",
   "types": "dist/index.d.mts",
@@ -32,8 +32,8 @@
     "@emotion/serialize": "^1.3.3",
     "@emotion/sheet": "^1.4.0",
     "@zthun/cirque": "^7.1.3",
-    "@zthun/fashion-tailor": "^9.1.2",
-    "@zthun/fashion-theme": "^9.1.2",
+    "@zthun/fashion-tailor": "^10.0.0",
+    "@zthun/fashion-theme": "^10.0.0",
     "@zthun/helpful-fn": "^8.0.0",
     "@zthun/helpful-query": "^8.0.0",
     "@zthun/helpful-react": "^8.0.0",

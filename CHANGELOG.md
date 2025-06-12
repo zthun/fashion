@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.0](https://github.com/zthun/fashion/compare/v9.1.2...v10.0.0) (2025-06-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* module resolution is now node next
+* module resolution is now node next
+
+### Code Refactoring
+
+* module resolution is now node next ([7e951df](https://github.com/zthun/fashion/commit/7e951df128742acd28d75b53bbbb31b5b25cb9ae))
+* module resolution is now node next ([1700da7](https://github.com/zthun/fashion/commit/1700da7fec397672e807eeb8ac1fd09a355cdd57))
+
+
+
 ## [9.1.2](https://github.com/zthun/fashion/compare/v9.1.1...v9.1.2) (2025-05-27)
 
 **Note:** Version bump only for package @zthun/fashion
