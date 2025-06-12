@@ -3801,9 +3801,9 @@ __metadata:
     "@types/stylis": "npm:^4.2.7"
     "@vitest/coverage-istanbul": "npm:^3.2.3"
     "@zthun/janitor-build-config": "npm:^19.2.0"
-    "@zthun/janitor-lint": "npm:^19.2.0"
-    "@zthun/janitor-lint-config": "npm:^19.2.0"
-    "@zthun/janitor-options": "npm:^19.2.0"
+    "@zthun/janitor-lint": "npm:^19.2.1"
+    "@zthun/janitor-lint-config": "npm:^19.2.1"
+    "@zthun/janitor-options": "npm:^19.2.1"
     happy-dom: "npm:^18.0.1"
     husky: "npm:^9.1.7"
     lerna: "npm:^8.2.2"
@@ -3956,9 +3956,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-lint-config@npm:^19.2.0":
-  version: 19.2.0
-  resolution: "@zthun/janitor-lint-config@npm:19.2.0"
+"@zthun/janitor-lint-config@npm:^19.2.1":
+  version: 19.2.1
+  resolution: "@zthun/janitor-lint-config@npm:19.2.1"
   dependencies:
     "@zthun/janitor-eslint-config": "npm:^19.2.0"
     "@zthun/janitor-htmlhint-config": "npm:^19.2.0"
@@ -3979,15 +3979,15 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/b6f43ed86bc06e9a7277a13eb180efa3b9b0b2c0033e678d9c42fc46c0b42c1d4fcb77d42b6f344c21a36c33f1727bb6d4799ec90947772c4265adc5d04aa487
+  checksum: 10c0/1cdd08dabb85a0a8b3862df6a21f1e6e99b9193549353d1b402b6c2f3b6c7f8f1c712d4073bc45bd6600438ef8f50e37f41b21f952343276d5ffa2a950981b71
   languageName: node
   linkType: hard
 
-"@zthun/janitor-lint@npm:^19.2.0":
-  version: 19.2.0
-  resolution: "@zthun/janitor-lint@npm:19.2.0"
+"@zthun/janitor-lint@npm:^19.2.1":
+  version: 19.2.1
+  resolution: "@zthun/janitor-lint@npm:19.2.1"
   dependencies:
-    "@zthun/janitor-options": "npm:^19.2.0"
+    "@zthun/janitor-options": "npm:^19.2.1"
     chalk: "npm:^5.4.1"
     cosmiconfig: "npm:^9.0.0"
     cspell: "npm:^9.0.2"
@@ -4002,7 +4002,7 @@ __metadata:
     yargs: "npm:^18.0.0"
   bin:
     janitor-lint: dist/cli.js
-  checksum: 10c0/33db1e0f552599008395ebb1c3f707e3d3ebe42bed9849448845cfc63a722e5c258255c104f8c274a49af0473a27825c7b0b36085c404381a13a644f8de5c4d7
+  checksum: 10c0/233e238440efaadee7c3182fdddfdd78777a2186614cb3b27de271f228d9a1835e74e4cb089d38e4a8f3703baecc36b48512acef10fcfeaa31bfaa5f794d54b8
   languageName: node
   linkType: hard
 
@@ -4015,10 +4015,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-options@npm:^19.2.0":
-  version: 19.2.0
-  resolution: "@zthun/janitor-options@npm:19.2.0"
-  checksum: 10c0/05cd6a4d1c108fb7c60ea5b4df46500b5bbfd21719ab8af40d30040e11e4b486a6ce8f8a0d8c75288b37b6d1063ca7ea0bf11485c32dd3a690a46bee002fc07e
+"@zthun/janitor-options@npm:^19.2.1":
+  version: 19.2.1
+  resolution: "@zthun/janitor-options@npm:19.2.1"
+  checksum: 10c0/396761933d111a5bdb9028d0edfaca2a2ca43cda41f4b3b1bbd54fc230dff2deefe12b3ee3cf169ed9a2c4c6abe5a8bf66df12b31ea9b6e380abc86fe6bf3929
   languageName: node
   linkType: hard
 
