@@ -4,7 +4,7 @@ import type { IZIcon } from "./icon.mjs";
 import { useIconProvider, useIconStyles } from "./icon.mjs";
 
 export const ZIconFontAwesomeProvider =
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 export const ZIconFontAwesomeVendor = "font-awesome";
 
 export interface IZIconFontAwesome extends IZIcon {
