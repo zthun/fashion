@@ -58,6 +58,8 @@ export * from "./dialog/drawer.js";
 export * from "./dialog/modal.js";
 export * from "./dialog/popup.js";
 export * from "./divider/divider.js";
+export * from "./form-auto/form-auto.cm.mjs";
+export * from "./form-auto/form-auto.js";
 export * from "./full-screen/full-screen.js";
 export * from "./grid-view/grid-view.cm.mjs";
 export * from "./grid-view/grid-view.js";
