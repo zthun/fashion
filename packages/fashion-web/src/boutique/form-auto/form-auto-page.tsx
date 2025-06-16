@@ -1,6 +1,7 @@
 import {
   ZBox,
   ZCard,
+  ZFormAuto,
   ZH3,
   ZIconFontAwesome,
   ZParagraph,
