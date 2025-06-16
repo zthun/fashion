@@ -84,6 +84,13 @@ export const ZFashionRouteDrawer = new ZRouteBuilder()
   .avatar("inbox")
   .build();
 
+export const ZFashionRouteFormAuto = new ZRouteBuilder()
+  .name("Form Auto")
+  .path("form-auto")
+  .description("Generate Forms Automatically Using Metadata")
+  .avatar("computer-mouse")
+  .build();
+
 export const ZFashionRouteGridView = new ZRouteBuilder()
   .name("Grid View")
   .path("grid-view")
@@ -172,6 +179,7 @@ export const ZFashionRouteAllComponents = [
   ZFashionRouteChart,
   ZFashionRouteChoice,
   ZFashionRouteDrawer,
+  ZFashionRouteFormAuto,
   ZFashionRouteGridView,
   ZFashionRouteImage,
   ZFashionRouteList,
