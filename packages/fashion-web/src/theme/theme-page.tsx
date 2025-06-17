@@ -28,6 +28,7 @@ export function ZThemePage() {
     dark,
     body,
     surface,
+    component,
   } = useFashionTheme();
 
   return (
@@ -67,6 +68,7 @@ export function ZThemePage() {
             <ZFashionColors fashion={dark} />
             <ZFashionColors fashion={body} />
             <ZFashionColors fashion={surface} />
+            <ZFashionColors fashion={component} />
           </ZGrid>
         </ZBox>
       </ZBox>
