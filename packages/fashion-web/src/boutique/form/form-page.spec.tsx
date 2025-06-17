@@ -1,14 +1,14 @@
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { describe, expect, it } from "vitest";
-import { ZImagePageComponentModel } from "./form-auto-page.cm.mjs";
-import { ZFormAutoPage } from "./form-auto-page.js";
+import { ZFormPageComponentModel } from "./form-page.cm.mjs";
+import { ZFormPage } from "./form-page.js";
 
 describe("ZFormAutoPage", () => {
   async function createTestTarget() {
-    const element = <ZFormAutoPage />;
+    const element = <ZFormPage />;
     const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZImagePageComponentModel);
+    return ZCircusBy.first(driver, ZFormPageComponentModel);
   }
 
   it("should render the page", async () => {

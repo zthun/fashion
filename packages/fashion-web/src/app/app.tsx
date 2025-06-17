@@ -25,6 +25,7 @@ import { ZCarouselPage } from "../boutique/carousel/carousel-page.js";
 import { ZChartPage } from "../boutique/chart/chart-page.js";
 import { ZChoicePage } from "../boutique/choice/choice-page.js";
 import { ZDrawerPage } from "../boutique/drawer/drawer-page.js";
+import { ZFormPage } from "../boutique/form/form-page.js";
 import { ZGridViewPage } from "../boutique/grid-view/grid-view-page.js";
 import { ZImagePage } from "../boutique/image/image-page.js";
 import { ZListPage } from "../boutique/list/list-page.js";
@@ -48,6 +49,7 @@ import {
   ZFashionRouteChart,
   ZFashionRouteChoice,
   ZFashionRouteDrawer,
+  ZFashionRouteForm,
   ZFashionRouteGridView,
   ZFashionRouteHome,
   ZFashionRouteImage,
@@ -148,6 +150,7 @@ export function ZFashionApp() {
                 path={ZFashionRouteDrawer.path}
                 element={<ZDrawerPage />}
               />
+              <ZRoute path={ZFashionRouteForm.path} element={<ZFormPage />} />
               <ZRoute
                 path={ZFashionRouteGridView.path}
                 element={<ZGridViewPage />}

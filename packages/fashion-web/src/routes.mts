@@ -84,10 +84,10 @@ export const ZFashionRouteDrawer = new ZRouteBuilder()
   .avatar("inbox")
   .build();
 
-export const ZFashionRouteFormAuto = new ZRouteBuilder()
-  .name("Form Auto")
-  .path("form-auto")
-  .description("Generate Forms Automatically Using Metadata")
+export const ZFashionRouteForm = new ZRouteBuilder()
+  .name("Form")
+  .path("form")
+  .description("Generate and Submit Forms")
   .avatar("computer-mouse")
   .build();
 
@@ -179,7 +179,7 @@ export const ZFashionRouteAllComponents = [
   ZFashionRouteChart,
   ZFashionRouteChoice,
   ZFashionRouteDrawer,
-  ZFashionRouteFormAuto,
+  ZFashionRouteForm,
   ZFashionRouteGridView,
   ZFashionRouteImage,
   ZFashionRouteList,
