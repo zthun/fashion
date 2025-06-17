@@ -11,7 +11,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
-import { ZBrands } from "@zthun/helpful-brands";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import {
   ZDataSearchFields,
@@ -26,7 +26,7 @@ const ZBrandDataSourceOptions = new ZDataSourceStaticOptionsBuilder()
   .delay(1000)
   .build();
 const ZBrandDataSource = new ZDataSourceStatic(
-  ZBrands.slice(),
+  ZBrandKnown.all(),
   ZBrandDataSourceOptions,
 );
 const ZErrorDataSource = new ZDataSourceStatic(

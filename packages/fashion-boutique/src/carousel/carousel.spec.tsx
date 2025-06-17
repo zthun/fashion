@@ -1,6 +1,6 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
-import { ZBrandBuilder } from "@zthun/helpful-brands";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import type { ReactNode } from "react";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZCarousel } from "./carousel.js";
@@ -40,11 +40,7 @@ describe("ZCarousel", () => {
   };
 
   beforeEach(() => {
-    brands = [
-      new ZBrandBuilder().usps().build(),
-      new ZBrandBuilder().apple().build(),
-      new ZBrandBuilder().discord().build(),
-    ];
+    brands = [ZBrandKnown.usps(), ZBrandKnown.apple(), ZBrandKnown.discord()];
 
     orientation = undefined;
     value = undefined;
@@ -175,7 +171,7 @@ describe("ZCarousel", () => {
     describe("Reverse", () => {
       it("should be disabled if the count is 1", async () => {
         // Arrange.
-        brands = [new ZBrandBuilder().airbnb().build()];
+        brands = [ZBrandKnown.airbnb()];
         const target = await createTestTarget();
         // Act.
         const reverse = await target.reverse();
@@ -214,7 +210,7 @@ describe("ZCarousel", () => {
     describe("Forward", () => {
       it("should be disabled if the count is 1", async () => {
         // Arrange.
-        brands = [new ZBrandBuilder().airbnb().build()];
+        brands = [ZBrandKnown.airbnb()];
         const target = await createTestTarget();
         // Act.
         const forward = await target.forward();

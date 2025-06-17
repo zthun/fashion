@@ -11,7 +11,7 @@ import {
   ZStack,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZBrands } from "@zthun/helpful-brands";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { useStateAsArray } from "@zthun/helpful-react";
 import { identity, startCase } from "lodash-es";
@@ -25,13 +25,14 @@ import { ZFashionRouteCarousel } from "../../routes.mjs";
  * @returns The JSX to render the alerts demo page.
  */
 export function ZCarouselPage() {
+  const allBrands = useMemo(() => ZBrandKnown.all(), []);
   const [index, setIndex] = useState(0);
   const [orientation, setOrientation] = useState(ZOrientation.Horizontal);
   const orientations = useMemo(() => Object.values(ZOrientation), []);
-  const [count, setCount] = useStateAsArray(ZBrands.length);
+  const [count, setCount] = useStateAsArray(allBrands.length);
   const [_count] = count;
-  const counts = [0, 1, ZBrands.length];
-  const brands = useMemo(() => ZBrands.slice(0, _count), [_count]);
+  const counts = [0, 1, allBrands.length];
+  const brands = useMemo(() => allBrands.slice(0, _count), [_count]);
 
   const renderBubble = (children: ReactNode) => (
     <ZBubble width={ZSizeFixed.Large} padding={ZSizeFixed.Medium}>

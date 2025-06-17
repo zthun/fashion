@@ -11,8 +11,7 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import type { IZBrand } from "@zthun/helpful-brands";
-import { ZBrands } from "@zthun/helpful-brands";
+import { ZBrandKnown, type IZBrand } from "@zthun/helpful-brands";
 import { castArray } from "lodash-es";
 import { useMemo, useState } from "react";
 import { ZFashionRouteChoice } from "../../routes.mjs";
@@ -23,8 +22,8 @@ import { ZFashionRouteChoice } from "../../routes.mjs";
  * @returns The JSX to render the alerts demo page.
  */
 export function ZChoicePage() {
-  const allBrands = useMemo(() => ZBrands.slice(), []);
-  const someBrands = useMemo(() => ZBrands.slice(0, 4), []);
+  const allBrands = useMemo(() => ZBrandKnown.all(), []);
+  const someBrands = useMemo(() => allBrands.slice(0, 4), []);
   const [values, setValues] = useState<string[] | string | null>([
     allBrands[2].id,
   ]);
