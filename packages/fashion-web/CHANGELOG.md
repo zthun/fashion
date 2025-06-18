@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.0](https://github.com/zthun/fashion/compare/v10.0.0...v10.1.0) (2025-06-18)
+
+
+### Features
+
+* form auto page demos the form auto component ([571acdc](https://github.com/zthun/fashion/commit/571acdc0f27f6bfff1fd1dd682539e5cab973c8a))
+* reset form ([e882d3b](https://github.com/zthun/fashion/commit/e882d3b52d17c6219df72a7dc24d29e63b85650d))
+* submit form ([3795306](https://github.com/zthun/fashion/commit/3795306b4ee495bf0cb751ef0f5ef21543ca1e15))
+
+
+### Bug Fixes
+
+* add component to the theme page (missing previously) ([922465b](https://github.com/zthun/fashion/commit/922465be573ccf99158593f570797c77e483373f))
+
+
+
 ## [10.0.0](https://github.com/zthun/fashion/compare/v9.1.2...v10.0.0) (2025-06-12)
 
 
