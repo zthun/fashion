@@ -4,6 +4,7 @@ import {
   ZCaption,
   ZCard,
   ZForm,
+  ZFormButtonSubmit,
   ZFormField,
   ZH3,
   ZH4,
@@ -63,6 +64,7 @@ export function ZFormPage() {
             <ZFormField meta={metadataOwner} />
             <ZFormField meta={metadataLaunched} />
             <ZFormField meta={metadataActive} />
+            <ZFormButtonSubmit ButtonProps={{ label: "Save" }} />
           </ZStack>
         </ZForm>
       </ZBox>

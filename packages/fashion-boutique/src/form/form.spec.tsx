@@ -8,9 +8,10 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZBrandMetadata } from "@zthun/helpful-brands";
 import type { IZMetadata } from "@zthun/helpful-query";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZBooleanComponentModel } from "../boolean/boolean.cm.mjs";
 import { ZTextComponentModel } from "../text/text.cm.mjs";
+import { ZFormButtonSubmit } from "./form-button-submit.js";
 import { ZFormField } from "./form-field.js";
 import { ZFormComponentModel } from "./form.cm.mjs";
 import type { IZForm } from "./form.js";
@@ -26,6 +27,7 @@ describe("ZForm", () => {
         <ZFormField meta={ZBrandMetadata.$name()} />
         <ZFormField meta={ZBrandMetadata.active()} />
         <ZFormField meta={ZBrandMetadata.launched()} />
+        <ZFormButtonSubmit />
       </ZForm>
     );
     _renderer = new ZCircusSetupRenderer(element);
@@ -71,6 +73,61 @@ describe("ZForm", () => {
           ZBooleanComponentModel,
         );
       });
+    });
+  });
+
+  describe("Submit", () => {
+    const fillOutForm = async (target: ZFormComponentModel) => {
+      const name = await target.field(ZBrandMetadata.$name().id);
+      const active = await target.field(ZBrandMetadata.active().id);
+
+      const _name = await name.text();
+      const _active = await active.boolean();
+
+      await _name?.keyboard("Salesforce");
+      await _active?.toggle();
+    };
+
+    it("should submit the form", async () => {
+      // Arrange.
+      const onValueChange = vi.fn();
+      const target = await createTestTarget({ onValueChange });
+      await fillOutForm(target);
+      const formButton = await target.button("submit");
+      const submit = await formButton.underlying();
+
+      // Act.
+      await submit.click();
+
+      // Assert.
+      expect(onValueChange).toHaveBeenCalledTimes(1);
+    });
+
+    it("should be disabled if the form is clean", async () => {
+      // Arrange.
+      const target = await createTestTarget();
+      const formButton = await target.button("submit");
+      const button = await formButton.underlying();
+
+      // Act.
+      const actual = await button.disabled();
+
+      // Assert.
+      expect(actual).toBeTruthy();
+    });
+
+    it("should be enabled if the form is dirty", async () => {
+      // Arrange.
+      const target = await createTestTarget();
+      await fillOutForm(target);
+      const formButton = await target.button("submit");
+      const button = await formButton.underlying();
+
+      // Act.
+      const actual = await button.disabled();
+
+      // Assert.
+      expect(actual).toBeFalsy();
     });
   });
 });

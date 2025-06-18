@@ -46,6 +46,7 @@ export interface IZButton
   borderless?: boolean;
   outline?: boolean;
   tooltip?: ReactNode;
+  type?: "button" | "submit" | "reset";
 }
 
 const WidthChart = createSizeChartVariedCss();
@@ -69,6 +70,7 @@ export function ZButton(props: IZButton) {
     label,
     name,
     outline,
+    type = "button",
     width,
     ...dom
   } = props;
@@ -151,6 +153,7 @@ export function ZButton(props: IZButton) {
       className={cssJoinDefined("ZButton-root", className, _className)}
       disabled={disabled}
       name={name}
+      type={type}
       data-borderless={borderless}
       data-compact={compact}
       data-fashion={fashion?.name}
