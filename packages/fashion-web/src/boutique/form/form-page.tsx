@@ -4,7 +4,7 @@ import {
   ZCaption,
   ZCard,
   ZForm,
-  ZFormButtonSubmit,
+  ZFormButton,
   ZFormField,
   ZH3,
   ZH4,
@@ -15,6 +15,7 @@ import {
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
 import { ZBrandKnown, ZBrandMetadata } from "@zthun/helpful-brands";
+import { ZOrientation } from "@zthun/helpful-fn";
 import { useMemo, useState } from "react";
 import { ZFashionRouteForm } from "../../routes.mjs";
 
@@ -64,7 +65,13 @@ export function ZFormPage() {
             <ZFormField meta={metadataOwner} />
             <ZFormField meta={metadataLaunched} />
             <ZFormField meta={metadataActive} />
-            <ZFormButtonSubmit ButtonProps={{ label: "Save" }} />
+            <ZStack
+              orientation={ZOrientation.Horizontal}
+              gap={ZSizeFixed.ExtraSmall}
+            >
+              <ZFormButton type="reset" />
+              <ZFormButton type="submit" ButtonProps={{ label: "Save" }} />
+            </ZStack>
           </ZStack>
         </ZForm>
       </ZBox>

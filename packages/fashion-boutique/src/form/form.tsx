@@ -40,9 +40,18 @@ export function ZForm(props: IZForm) {
     setOriginal(current);
   };
 
+  const handleReset = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setCurrent(original);
+  };
+
   return (
     <ZFormStateContext value={state}>
-      <form className="ZForm-root" onSubmit={handleSubmit}>
+      <form
+        className="ZForm-root"
+        onSubmit={handleSubmit}
+        onReset={handleReset}
+      >
         {children}
       </form>
     </ZFormStateContext>

@@ -1,29 +1,33 @@
+import { startCase } from "lodash-es";
 import { useMemo } from "react";
 import { ZButton, type IZButton } from "../button/button.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
-import type { IZFormButton } from "./form-button.mjs";
 import { useFormState } from "./form-state.mjs";
 
-export interface IZFormButtonSubmit extends IZFormButton {
+export interface IZFormButtonSubmit {
+  type?: "reset" | "submit";
   ButtonProps?: Omit<IZButton, "type" | "onClick" | "disabled">;
 }
 
-export function ZFormButtonSubmit(props: IZFormButtonSubmit) {
-  const { primary } = useFashionTheme();
+export function ZFormButton(props: IZFormButtonSubmit) {
+  const { ButtonProps, type = "submit" } = props;
+
+  const { primary, secondary } = useFashionTheme();
   const { current, original } = useFormState();
-  const { ButtonProps } = props;
+  const fashion = type === "reset" ? secondary : primary;
+  const label = startCase(type);
   const dirty = useMemo(
     () => JSON.stringify(current) !== JSON.stringify(original),
     [current, original],
   );
 
   return (
-    <div className="ZFormButton-root ZFormButton-submit" data-name="submit">
+    <div className="ZFormButton-root" data-name={type}>
       <ZButton
-        label="Submit"
-        fashion={primary}
+        label={label}
+        fashion={fashion}
         {...ButtonProps}
-        type="submit"
+        type={type}
         disabled={!dirty}
       />
     </div>
