@@ -1,45 +1,29 @@
 import {
+  useFashionTheme,
   ZBox,
+  ZCaption,
   ZCard,
   ZForm,
   ZFormField,
   ZH3,
+  ZH4,
   ZIconFontAwesome,
   ZParagraph,
+  ZStack,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
-import { ZBrandBuilder } from "@zthun/helpful-brands";
-import { ZMetadataBuilder } from "@zthun/helpful-query";
-import { useState } from "react";
+import { ZBrandKnown, ZBrandMetadata } from "@zthun/helpful-brands";
+import { useMemo, useState } from "react";
 import { ZFashionRouteForm } from "../../routes.mjs";
 
-const metaName = new ZMetadataBuilder()
-  .id("name")
-  .path("name")
-  .name("Name")
-  .text()
-  .editable()
-  .build();
-
-const metaOwner = new ZMetadataBuilder()
-  .id("owner")
-  .path("owner")
-  .name("Owner")
-  .text()
-  .editable()
-  .build();
-
-const metaFounded = new ZMetadataBuilder()
-  .id("founded")
-  .path("founded")
-  .name("Year Founded")
-  .number()
-  .editable()
-  .build();
-
 export function ZFormPage() {
-  const [value, setValue] = useState<IZBrand>(new ZBrandBuilder().build());
+  const { primary } = useFashionTheme();
+  const [value, setValue] = useState<IZBrand>(ZBrandKnown.apple());
+  const metadataName = useMemo(() => ZBrandMetadata.$name(), []);
+  const metadataOwner = useMemo(() => ZBrandMetadata.owner(), []);
+  const metadataActive = useMemo(() => ZBrandMetadata.active(), []);
+  const metadataLaunched = useMemo(() => ZBrandMetadata.launched(), []);
 
   return (
     <ZCard
@@ -74,13 +58,27 @@ export function ZFormPage() {
         </ZParagraph>
 
         <ZForm value={value} onValueChange={setValue}>
-          <ZFormField meta={metaName} />
-          <ZFormField meta={metaOwner} />
-          <ZFormField meta={metaFounded} />
+          <ZStack gap={ZSizeFixed.Small}>
+            <ZFormField meta={metadataName} />
+            <ZFormField meta={metadataOwner} />
+            <ZFormField meta={metadataLaunched} />
+            <ZFormField meta={metadataActive} />
+          </ZStack>
         </ZForm>
       </ZBox>
 
-      <ZH3>Options</ZH3>
+      <ZBox margin={{ bottom: ZSizeFixed.Large }}>
+        <ZH4>Value</ZH4>
+        <ZBox
+          fashion={primary}
+          border={{ width: ZSizeFixed.Medium, style: "solid" }}
+          padding={ZSizeFixed.Small}
+        >
+          <pre>
+            <ZCaption>{JSON.stringify(value, undefined, 2)}</ZCaption>
+          </pre>
+        </ZBox>
+      </ZBox>
     </ZCard>
   );
 }
