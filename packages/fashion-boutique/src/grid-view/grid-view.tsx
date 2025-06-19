@@ -157,13 +157,7 @@ export function ZGridView<T = any>(props: IZGridView<T>) {
       className={cssJoinDefined("ZGridView-root", className)}
       gap={ZSizeFixed.Medium}
     >
-      <ZGrid
-        columns="1fr auto"
-        align={{ items: "end" }}
-        gap={ZSizeFixed.ExtraSmall}
-      >
-        {renderSearch()}
-      </ZGrid>
+      {renderSearch()}
       {renderView()}
       {renderError()}
       {renderMore()}
