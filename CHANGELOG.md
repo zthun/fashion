@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.1](https://github.com/zthun/fashion/compare/v10.1.0...v10.1.1) (2025-06-19)
+
+
+### Bug Fixes
+
+* search props are now respected in grid view ([a1ff4f2](https://github.com/zthun/fashion/commit/a1ff4f2148a044d857a3a807441836a237f9a48c))
+
+
+
 ## [10.1.0](https://github.com/zthun/fashion/compare/v10.0.0...v10.1.0) (2025-06-18)
 
 
