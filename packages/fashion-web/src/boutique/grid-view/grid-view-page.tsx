@@ -41,6 +41,7 @@ const ZErrorDataSource = new ZDataSourceStatic(
  */
 export function ZGridViewPage() {
   const [dataSource, setDataSource] = useState(ZBrandDataSource);
+  const [search, setSearch] = useState<false | undefined>();
   const { component } = useFashionTheme();
 
   const renderItem = (item: IZBrand) => (
@@ -69,6 +70,10 @@ export function ZGridViewPage() {
     setDataSource((d) =>
       d === ZBrandDataSource ? ZErrorDataSource : ZBrandDataSource,
     );
+  };
+
+  const toggleSearch = () => {
+    setSearch((s) => (s === false ? undefined : false));
   };
 
   return (
@@ -108,6 +113,7 @@ export function ZGridViewPage() {
             xs: "1fr",
           },
         }}
+        SearchProps={search}
         renderItem={renderItem}
         dataSource={dataSource}
       />
@@ -119,6 +125,12 @@ export function ZGridViewPage() {
           label="Error"
           value={dataSource === ZErrorDataSource}
           onValueChange={toggleDataSource}
+        />
+
+        <ZBooleanSwitch
+          label="Hide Search"
+          value={search === false}
+          onValueChange={toggleSearch}
         />
       </ZBox>
     </ZCard>

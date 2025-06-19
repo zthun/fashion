@@ -122,10 +122,22 @@ describe("ZGridView", () => {
       const text = await target.search();
 
       // Act.
-      await text.keyboard(search, ZCircusKeyboardQwerty.enter);
+      await text?.keyboard(search, ZCircusKeyboardQwerty.enter);
 
       // Assert.
       expect(onValueChange).toHaveBeenCalledWith(expected);
+    });
+
+    it("should be hidden if the SearchProps are false", async () => {
+      // Arrange.
+      const target = await createTestTarget({ SearchProps: false });
+      await target.load();
+
+      // Act.
+      const actual = await target.search();
+
+      // Assert.
+      expect(actual).toBeFalsy();
     });
   });
 

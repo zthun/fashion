@@ -38,7 +38,9 @@ export interface IZGridView<T = any>
     IZSuspense,
     keyof IZComponentLoading | keyof IZComponentWidth | keyof IZComponentHeight
   >;
-  SearchProps?: Omit<IZText, "value" | "onValueChange">;
+  SearchProps?:
+    | Omit<IZText, "value" | "onValueChange" | "className" | "name">
+    | false;
   MoreProps?: Omit<IZButton, "onClick" | "name">;
 
   renderItem: (item: T, index: number) => ReactNode;
@@ -55,6 +57,7 @@ const DefaultRequest = new ZDataRequestBuilder()
 export function ZGridView<T = any>(props: IZGridView<T>) {
   const {
     GridProps,
+    SearchProps,
     SuspenseProps,
     MoreProps,
     renderItem,
@@ -71,9 +74,26 @@ export function ZGridView<T = any>(props: IZGridView<T>) {
   const { view, last, complete, more } = useMoreViewState(dataSource, request);
   const theme = useFashionTheme();
 
-  const handleSearch = (search: string) => {
-    setRequest((r) =>
-      new ZDataRequestBuilder().copy(r).search(search).page(1).build(),
+  const renderSearch = () => {
+    if (SearchProps === false) {
+      return null;
+    }
+
+    const handleSearch = (search: string) => {
+      setRequest((r) =>
+        new ZDataRequestBuilder().copy(r).search(search).page(1).build(),
+      );
+    };
+
+    return (
+      <ZTextInput
+        label="Search"
+        {...SearchProps}
+        className="ZGridView-search"
+        value={request.search}
+        onValueChange={handleSearch}
+        name="search"
+      />
     );
   };
 
@@ -142,13 +162,7 @@ export function ZGridView<T = any>(props: IZGridView<T>) {
         align={{ items: "end" }}
         gap={ZSizeFixed.ExtraSmall}
       >
-        <ZTextInput
-          className="ZGridView-search"
-          label="Search"
-          value={request.search}
-          onValueChange={handleSearch}
-          name="search"
-        />
+        {renderSearch()}
       </ZGrid>
       {renderView()}
       {renderError()}

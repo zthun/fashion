@@ -10,8 +10,8 @@ import { ZTextComponentModel } from "../text/text.cm.mjs";
 export class ZGridViewComponentModel extends ZCircusComponentModel {
   public static readonly Selector = ".ZGridView-root";
 
-  public search(): Promise<ZTextComponentModel> {
-    return ZCircusBy.first(this.driver, ZTextComponentModel, "search");
+  public search(): Promise<ZTextComponentModel | null> {
+    return ZCircusBy.optional(this.driver, ZTextComponentModel, "search");
   }
 
   public more(): Promise<ZButtonComponentModel | null> {
