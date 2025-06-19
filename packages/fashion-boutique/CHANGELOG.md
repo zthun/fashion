@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.2](https://github.com/zthun/fashion/compare/v10.1.1...v10.1.2) (2025-06-19)
+
+
+### Bug Fixes
+
+* the empty dead spacing in the grid view has been removed when search is turned off ([6056ebd](https://github.com/zthun/fashion/commit/6056ebdf11ce3b9c0f30129cdae8c2ea1a164be3))
+
+
+
 ## [10.1.1](https://github.com/zthun/fashion/compare/v10.1.0...v10.1.1) (2025-06-19)
 
 
