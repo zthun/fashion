@@ -11,7 +11,7 @@ import { ZFashionRouteChart } from "../../routes.mjs";
 import { ZChartPageProgress } from "./chart-page-progress.js";
 
 /**
- * Represents a demo for drawers.
+ * Represents a demo for charts.
  *
  * @returns The JSX to render the page.
  */
