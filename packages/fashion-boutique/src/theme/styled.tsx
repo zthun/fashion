@@ -70,10 +70,10 @@ export function useGlobalCss(css: string) {
   }, [css]);
 
   useEffect(() => {
-    flush.current?.call(null);
+    flush.current.call(null);
     flush.current = injectGlobal();
 
-    return () => flush.current?.call(null);
+    return () => flush.current.call(null);
   }, [injectGlobal]);
 }
 
