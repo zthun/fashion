@@ -79,7 +79,7 @@ describe("ZNumber", () => {
     max = 10;
     const target = await createTestTarget();
     // Act.
-    await target.increment(max);
+    await target.increment(max, ZCircusKeyboardQwerty.space);
     await target.increment();
     const actual = await target.value();
     // Assert.

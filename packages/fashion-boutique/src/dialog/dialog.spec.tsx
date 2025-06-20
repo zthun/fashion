@@ -135,6 +135,22 @@ describe("ZDialog", () => {
     expect(actual).toBeFalsy();
   };
 
+  const shouldOpenTheDialog = async <T extends IZDialog>(
+    Dialog: FunctionComponent<T>,
+    props?: Partial<T>,
+  ) => {
+    // Arrange.
+    const [button, target] = await createTestTarget(Dialog, props);
+
+    // Act.
+    await button.click();
+    await target.waitForOpen();
+    const actual = await target.opened();
+
+    // Assert.
+    expect(actual).toBeTruthy();
+  };
+
   const shouldCloseTheDialog = async (Dialog: FunctionComponent<IZDialog>) => {
     // Arrange.
     const [button, target] = await createTestTarget(Dialog);
@@ -207,6 +223,12 @@ describe("ZDialog", () => {
   describe("Modal", () => {
     const Dialog = ZModal;
 
+    describe("Open", () => {
+      it("should open the dialog", async () => {
+        await shouldOpenTheDialog(Dialog);
+      });
+    });
+
     describe("Header", () => {
       it("should render if set", async () => {
         await shouldRenderHeader(Dialog);
@@ -268,6 +290,12 @@ describe("ZDialog", () => {
 
   describe("Drawer", () => {
     const Dialog = ZDrawer;
+
+    describe("Open", () => {
+      it("should open the dialog", async () => {
+        await shouldOpenTheDialog(Dialog);
+      });
+    });
 
     describe("Header", () => {
       it("should render if set", async () => {
@@ -344,6 +372,16 @@ describe("ZDialog", () => {
 
   describe("Popup", () => {
     const Dialog = ZPopup;
+
+    describe("Open", () => {
+      it("should open the dialog", async () => {
+        await shouldOpenTheDialog(Dialog, {
+          attachOrigin: [ZVerticalAnchor.Middle, ZHorizontalAnchor.Center],
+          popupOrigin: [ZVerticalAnchor.Middle, ZHorizontalAnchor.Center],
+          scrollContainer: document.body,
+        });
+      });
+    });
 
     describe("Header", () => {
       it("should render if set", async () => {

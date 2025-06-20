@@ -1,6 +1,7 @@
 import type { IZCircusDriver } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZLabelComponentModel } from "./label.cm.mjs";
@@ -35,9 +36,11 @@ describe("ZLabeled", () => {
       const shouldBeRequired = async (expected: boolean | undefined) => {
         // Arrange.
         const orientation = ZOrientation.Horizontal;
+        const gap = ZSizeFixed.Small;
         const required = expected;
         const target = await createTestTarget({
           orientation,
+          gap,
           LabelProps: { required },
         });
         // Act.

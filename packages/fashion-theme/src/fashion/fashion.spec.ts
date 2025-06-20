@@ -28,7 +28,7 @@ describe("ZFashion", () => {
 
     it("should set the contrast to black when it has a higher contrast ratio", () => {
       expect(
-        createTestTarget().spectrum(0xffffff).build().idle.contrast,
+        createTestTarget().spectrum(0xffffff, 77).build().idle.contrast,
       ).toEqual(black());
     });
 
