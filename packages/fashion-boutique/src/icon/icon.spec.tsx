@@ -3,6 +3,7 @@ import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { Mock } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type { IZIconFontAwesome } from "./icon-font-awesome.js";
 import {
   ZIconFontAwesome,
   ZIconFontAwesomeProvider,
@@ -108,12 +109,36 @@ describe("ZIcon", () => {
   });
 
   describe("Font Awesome", () => {
-    async function createTestTarget(name: string) {
-      const element = <ZIconFontAwesome name={name} onClick={onClick} />;
+    async function createTestTarget(name: string, props?: IZIconFontAwesome) {
+      const element = (
+        <ZIconFontAwesome {...props} name={name} onClick={onClick} />
+      );
       const driver = await new ZCircusSetupRenderer(element).setup();
       _drivers.push(driver);
       return ZCircusBy.first(driver, ZIconComponentModel, name);
     }
+
+    it("should render the icon with the correct family", async () => {
+      // Arrange.
+      const target = await createTestTarget("facebook", { family: "brands" });
+
+      // Act.
+      const actual = await target.driver.attribute("data-family");
+
+      // Assert.
+      expect(actual).toEqual("brands");
+    });
+
+    it("should render the icon with the correct style", async () => {
+      // Arrange.
+      const target = await createTestTarget("save", { style: "regular" });
+
+      // Act.
+      const actual = await target.driver.attribute("data-style");
+
+      // Assert.
+      expect(actual).toEqual("regular");
+    });
 
     it("should register the provider.", async () => {
       await shouldRegisterTheProvider(
