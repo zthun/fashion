@@ -23,7 +23,15 @@ import { ZFashionRouteChoice } from "../../routes.mjs";
  */
 export function ZChoicePage() {
   const allBrands = useMemo(() => ZBrandKnown.all(), []);
-  const someBrands = useMemo(() => allBrands.slice(0, 4), []);
+  const someBrands = useMemo(
+    () => [
+      ZBrandKnown.facebook(),
+      ZBrandKnown.x(),
+      ZBrandKnown.tiktok(),
+      ZBrandKnown.apple(),
+    ],
+    [],
+  );
   const [values, setValues] = useState<string[] | string | null>([
     allBrands[2].id,
   ]);
