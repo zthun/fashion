@@ -67,7 +67,7 @@ export function ZPopup(props: IZPopup) {
   const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
 
   const _getAttach = useCallback(
-    () => firstDefined(document.body, attach, popup.current?.parentElement),
+    () => firstDefined(document.body, attach, popup.current.parentElement),
     [attach],
   );
 
