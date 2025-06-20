@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.3](https://github.com/zthun/fashion/compare/v10.1.2...v10.1.3) (2025-06-19)
+
+
+### Bug Fixes
+
+* export additional form objects ([4404e6f](https://github.com/zthun/fashion/commit/4404e6f6f71687f6c960af65ee26c7717b388d2f))
+
+
+
 ## [10.1.2](https://github.com/zthun/fashion/compare/v10.1.1...v10.1.2) (2025-06-19)
 
 
