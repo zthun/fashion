@@ -39,7 +39,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
   const { component } = useFashionTheme();
   const _fashion = useMemo(() => new ZColorPicker(fashion), [fashion]);
   const id = useId();
-  const input = useRef<HTMLDivElement>(null);
+  const input = useRef<HTMLDivElement>(document.createElement("div"));
 
   const [_value, _setValue] = useAmbassadorState(value, onValueChange, false);
   const checked = _value === null ? true : _value;
@@ -119,7 +119,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
     handleChecked(e.currentTarget.checked);
 
-  const focusInput = async () => input.current?.focus();
+  const focusInput = async () => input.current.focus();
 
   return (
     <ZLabeled

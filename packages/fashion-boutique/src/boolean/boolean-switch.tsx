@@ -31,7 +31,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
     required,
   } = props;
   const tailor = useFashionTailor();
-  const input = useRef<HTMLSpanElement>(null);
+  const input = useRef<HTMLSpanElement>(document.createElement("span"));
   const [_value, _setValue] = useAmbassadorState(value, onValueChange, false);
   const _fashion = useMemo(() => new ZColorPicker(fashion), [fashion]);
   const checked = !!_value;
@@ -107,7 +107,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
 
   const { tabIndex, onKey } = useKeyboardActivate(handleToggle);
 
-  const focusInput = async () => input.current?.focus();
+  const focusInput = async () => input.current.focus();
 
   return (
     <ZLabeled
