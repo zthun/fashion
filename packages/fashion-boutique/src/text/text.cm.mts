@@ -34,8 +34,9 @@ export class ZTextComponentModel extends ZCircusComponentModel {
    * @returns
    *        The string value of the component.
    */
-  public async value(): Promise<string | null> {
-    return (await this._input()).value();
+  public async value(): Promise<string> {
+    const input = await this._input();
+    return firstDefined("", await input.value());
   }
 
   /**
@@ -132,8 +133,8 @@ export class ZTextComponentModel extends ZCircusComponentModel {
     const value = await this.value();
     const act = new ZCircusActBuilder()
       .click()
-      .press(ZCircusKeyboardQwerty.delete, value?.length)
-      .press(ZCircusKeyboardQwerty.backspace, value?.length)
+      .press(ZCircusKeyboardQwerty.delete, value.length)
+      .press(ZCircusKeyboardQwerty.backspace, value.length)
       .press(commit)
       .build();
     const input = await this._input();
