@@ -1,5 +1,5 @@
 import type { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZSizeVoid } from "@zthun/fashion-tailor";
+import { ZDeviceValues, ZSizeVaried, ZSizeVoid } from "@zthun/fashion-tailor";
 import { cssJoinDefined, firstDefined, ZOrientation } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
@@ -7,6 +7,8 @@ import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs"
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentOrientation } from "../component/component-orientation.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentWidth } from "../component/component-width.mjs";
+import type { IZComponentHeight } from "../index.mjs";
 import { useFashionTailor } from "../theme/fashion.mjs";
 
 export interface IZStack
@@ -14,7 +16,9 @@ export interface IZStack
     IZComponentStyle,
     IZComponentName,
     IZComponentDomEvents<HTMLDivElement>,
-    IZComponentOrientation {
+    IZComponentOrientation,
+    IZComponentWidth<ZSizeVaried, ZSizeVaried>,
+    IZComponentHeight<ZSizeVaried, ZSizeVaried> {
   align?: { items?: Property.AlignItems; content?: Property.AlignContent };
   gap?: ZSizeFixed | ZSizeVoid;
   justify?: {
@@ -31,14 +35,18 @@ export function ZStack(props: IZStack) {
     align,
     justify,
     gap,
+    height,
     name,
     orientation,
     children,
     inline,
+    width,
     wrap,
     ...dom
   } = props;
   const tailor = useFashionTailor();
+  const $width = new ZDeviceValues(width, ZSizeVaried.Full);
+  const $height = new ZDeviceValues(height, ZSizeVaried.Fit);
 
   return (
     <div
@@ -53,6 +61,8 @@ export function ZStack(props: IZStack) {
         justifyContent: justify?.content,
         justifyItems: justify?.items,
         flexWrap: wrap,
+        width: $width.xl === ZSizeVaried.Full ? "100%" : "fit-content",
+        height: $height.xl === ZSizeVaried.Full ? "100%" : "fit-content",
       }}
       {...dom}
       data-orientation={orientation}
