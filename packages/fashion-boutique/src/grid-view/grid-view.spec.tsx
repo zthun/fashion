@@ -87,7 +87,10 @@ describe("ZGridView", () => {
       const expected = expect.objectContaining({ page: 2 });
       const dataSource = new ZDataSourceStatic(range(0, 100));
       vi.spyOn(dataSource, "retrieve");
-      const target = await createTestTarget({ dataSource });
+      const target = await createTestTarget({
+        dataSource,
+        MoreProps: { outline: true, label: "Show More..." },
+      });
 
       // Act.
       const more = await target.more();
