@@ -29,29 +29,29 @@ export interface IUseDialogOptions {
 }
 
 export function useDialog(
-  current: HTMLDialogElement | null,
+  current: HTMLDialogElement,
   props: IZDialog,
-  options?: IUseDialogOptions,
+  options: IUseDialogOptions = {},
 ) {
   const { open, onClose, persistent } = props;
 
   const show = async () => {
-    await options?.onBeforeOpen?.call(null);
-    current?.showModal?.call(current);
-    await options?.onAfterOpen?.call(null);
-    current?.focus?.call(current);
+    await options.onBeforeOpen?.call(null);
+    current.showModal();
+    await options.onAfterOpen?.call(null);
+    current.focus();
   };
 
   const hide = async () => {
-    if (!current?.open) {
+    if (!current.open) {
       // Already closed
       return;
     }
 
-    current?.classList.add("closing");
+    current.classList.add("closing");
     await sleep(150);
-    current?.close?.call(current);
-    current?.classList.remove("closing");
+    current.close();
+    current.classList.remove("closing");
     onClose?.call(null);
   };
 
