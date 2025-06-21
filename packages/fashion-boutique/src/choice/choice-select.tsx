@@ -175,7 +175,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
           onKeyDown={onKey}
         >
           <ZFlex grow={1}>{renderSelection()}</ZFlex>
-          {!indelible && !!value?.length && (
+          {!indelible && !!value.length && (
             <ZIconFontAwesome
               className="ZChoice-clear"
               name="xmark"

@@ -86,7 +86,7 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
   `);
 
   const renderClear = () => {
-    if (indelible || !value?.length) {
+    if (indelible || !value.length) {
       return null;
     }
 
