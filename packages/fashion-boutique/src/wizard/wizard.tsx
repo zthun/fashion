@@ -28,7 +28,7 @@ export interface IZWizard
   extends IZComponentStyle,
     IZComponentName,
     IZComponentValue<number> {
-  children: ReactElement<IZWizardPage> | ReactElement<IZWizardPage>[];
+  children?: ReactElement<IZWizardPage> | ReactElement<IZWizardPage>[];
 
   CardProps?: Omit<IZCard, "name" | "children" | "footer">;
   NextButtonProps?: Omit<IZButton, "name">;
@@ -99,7 +99,7 @@ export function ZWizard(props: IZWizard) {
         <ZButton
           {...PrevButtonProps}
           label={firstDefined<ReactNode>(defaultLabel, PrevButtonProps?.label)}
-          disabled={_page === 0 || PrevButtonProps?.disabled}
+          disabled={_page <= 0 || PrevButtonProps?.disabled}
           onClick={PrevButtonProps?.onClick || handlePrevious}
           name="previous"
           fashion={secondary}
@@ -119,8 +119,8 @@ export function ZWizard(props: IZWizard) {
           <ZH4 compact>
             {firstDefined(
               undefined,
-              _next?.props["name"],
-              _next?.props["data-name"],
+              _next.props["name"],
+              _next.props["data-name"],
             )}
           </ZH4>
           <ZIconFontAwesome name="right-long" />
@@ -161,6 +161,10 @@ export function ZWizard(props: IZWizard) {
     };
 
     const renderNextOrFinish = () => {
+      if (!_children.length) {
+        return null;
+      }
+
       const lastPage = _page === _children.length - 1;
       return lastPage ? renderFinish() : renderNext();
     };
