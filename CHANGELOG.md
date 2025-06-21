@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.5](https://github.com/zthun/fashion/compare/v10.1.4...v10.1.5) (2025-06-21)
+
+
+### Bug Fixes
+
+* rename meta to metadata in form field ([8db5bcb](https://github.com/zthun/fashion/commit/8db5bcbcf05ce1f2d5f7e312a15372cb739af845))
+
+
+
 ## [10.1.4](https://github.com/zthun/fashion/compare/v10.1.3...v10.1.4) (2025-06-20)
 
 **Note:** Version bump only for package @zthun/fashion
