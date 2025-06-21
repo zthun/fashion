@@ -50,7 +50,7 @@ export function ZModal(props: IZModal) {
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
   const tailor = useFashionTailor();
-  const modal = useRef<HTMLDialogElement>(null);
+  const modal = useRef<HTMLDialogElement>(document.createElement("dialog"));
   const _width = new ZDeviceValues(width, ZSizeVaried.Fit);
   const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
@@ -195,7 +195,7 @@ export function ZModal(props: IZModal) {
     >
       {renderHeader && (
         <div className="ZDialog-header" aria-description="Modal Header">
-          {renderHeader?.call(null)}
+          {renderHeader.call(null)}
         </div>
       )}
       <div className="ZDialog-content" aria-description="Modal Body">
@@ -203,7 +203,7 @@ export function ZModal(props: IZModal) {
       </div>
       {renderFooter && (
         <div className="ZDialog-footer" aria-description="Modal Footer">
-          {renderFooter?.call(null)}
+          {renderFooter.call(null)}
         </div>
       )}
     </dialog>
