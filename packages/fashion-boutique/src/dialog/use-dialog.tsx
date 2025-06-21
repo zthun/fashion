@@ -24,7 +24,6 @@ export interface IZDialog
 }
 
 export interface IUseDialogOptions {
-  onBeforeOpen?: () => Promise<void>;
   onAfterOpen?: () => Promise<void>;
 }
 
@@ -36,7 +35,6 @@ export function useDialog(
   const { open, onClose, persistent } = props;
 
   const show = async () => {
-    await options.onBeforeOpen?.call(null);
     current.showModal();
     await options.onAfterOpen?.call(null);
     current.focus();
