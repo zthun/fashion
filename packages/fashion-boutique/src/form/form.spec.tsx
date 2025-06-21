@@ -24,9 +24,9 @@ describe("ZForm", () => {
   const createTestTarget = async (props?: IZForm) => {
     const element = (
       <ZForm {...props}>
-        <ZFormField meta={ZBrandMetadata.$name()} />
-        <ZFormField meta={ZBrandMetadata.active()} />
-        <ZFormField meta={ZBrandMetadata.launched()} />
+        <ZFormField metadata={ZBrandMetadata.$name()} />
+        <ZFormField metadata={ZBrandMetadata.active()} />
+        <ZFormField metadata={ZBrandMetadata.launched()} />
         <ZFormButton type="reset" />
         <ZFormButton />
       </ZForm>

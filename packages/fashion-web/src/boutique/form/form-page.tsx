@@ -61,10 +61,10 @@ export function ZFormPage() {
 
         <ZForm value={value} onValueChange={setValue}>
           <ZStack gap={ZSizeFixed.Small}>
-            <ZFormField meta={metadataName} />
-            <ZFormField meta={metadataOwner} />
-            <ZFormField meta={metadataLaunched} />
-            <ZFormField meta={metadataActive} />
+            <ZFormField metadata={metadataName} />
+            <ZFormField metadata={metadataOwner} />
+            <ZFormField metadata={metadataLaunched} />
+            <ZFormField metadata={metadataActive} />
             <ZStack
               orientation={ZOrientation.Horizontal}
               gap={ZSizeFixed.ExtraSmall}

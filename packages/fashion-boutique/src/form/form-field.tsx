@@ -7,11 +7,12 @@ import { ZFormFieldRenderText } from "./form-field-render-text.js";
 import { useFormState } from "./form-state.mjs";
 
 export interface IZFormField {
-  meta: IZMetadata;
+  metadata: IZMetadata;
 }
 
-export function ZFormField({ meta }: IZFormField) {
-  const { id } = meta;
+export function ZFormField(props: IZFormField) {
+  const { metadata } = props;
+  const { id } = metadata;
   const state = useFormState();
   const nothing = useMemo(() => new ZFormFieldRenderNothing(), []);
   const factory = useMemo(
@@ -22,13 +23,13 @@ export function ZFormField({ meta }: IZFormField) {
     [],
   );
   const renderer = useMemo(
-    () => firstDefined(nothing, factory[meta.type]),
-    [meta.type, nothing, factory],
+    () => firstDefined(nothing, factory[metadata.type]),
+    [metadata.type, nothing, factory],
   );
 
   return (
     <div className="ZFormField-root" data-name={id}>
-      {renderer.render(state, meta)}
+      {renderer.render(state, metadata)}
     </div>
   );
 }
