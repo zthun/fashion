@@ -18,6 +18,7 @@ export function ZFormField(props: IZFormField) {
   const factory = useMemo(
     () => ({
       [ZMetadataType.Text]: new ZFormFieldRenderText(),
+      [ZMetadataType.File]: new ZFormFieldRenderText(),
       [ZMetadataType.Boolean]: new ZFormFieldRenderBoolean(),
     }),
     [],

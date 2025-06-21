@@ -7,7 +7,7 @@ import type {
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZBrandMetadata } from "@zthun/helpful-brands";
-import type { IZMetadata } from "@zthun/helpful-query";
+import { type IZMetadata } from "@zthun/helpful-query";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZBooleanComponentModel } from "../boolean/boolean.cm.mjs";
 import { ZTextComponentModel } from "../text/text.cm.mjs";
