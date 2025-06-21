@@ -27,6 +27,16 @@ export class ZIconComponentModel extends ZCircusComponentModel {
   }
 
   /**
+   * The icon fashion.
+   *
+   * @returns
+   *        The icon fashion.
+   */
+  public fashion(): Promise<string | null> {
+    return this.driver.attribute<string>("data-fashion");
+  }
+
+  /**
    * Clicks the icon.
    */
   public async click(): Promise<void> {
