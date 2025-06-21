@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.2.0](https://github.com/zthun/fashion/compare/v10.1.6...v10.2.0) (2025-06-21)
+
+
+### Features
+
+* stack can now specify full width and height ([058f92f](https://github.com/zthun/fashion/commit/058f92ff06834dd41dbe0fafffcab70320655ef8))
+
+
+
 ## [10.1.6](https://github.com/zthun/fashion/compare/v10.1.5...v10.1.6) (2025-06-21)
 
 
