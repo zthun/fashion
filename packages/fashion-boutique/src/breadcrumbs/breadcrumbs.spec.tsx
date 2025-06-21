@@ -64,7 +64,7 @@ describe("ZBreadcrumbs", () => {
       expect(actual).toBeNull();
     });
 
-    it("should raise the onClick event with the breadcrumb clicked href", async () => {
+    it("should raise the onPathSelected event with the breadcrumb clicked href", async () => {
       // Arrange.
       const onPathSelected = vi.fn();
       const target = await createTestTarget({ onPathSelected });
@@ -76,6 +76,18 @@ describe("ZBreadcrumbs", () => {
 
       // Assert.
       expect(onPathSelected).toHaveBeenCalledWith(expected);
+    });
+
+    it("should not crash when onPathSelected is not set", async () => {
+      // Arrange.
+      const target = await createTestTarget();
+
+      // Act.
+      const link = await target.item("/path/to");
+      await link?.click();
+
+      // Assert.
+      expect(link).toBeTruthy();
     });
 
     describe("Home", () => {
