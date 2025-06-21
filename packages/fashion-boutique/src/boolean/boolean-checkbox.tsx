@@ -136,7 +136,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
       LabelProps={{ required, htmlFor: id }}
       name={name}
       data-disabled={disabled}
-      data-fashion={fashion?.name}
+      data-fashion={fashion.name}
       onClick={focusInput}
       aria-disabled={disabled}
     >
