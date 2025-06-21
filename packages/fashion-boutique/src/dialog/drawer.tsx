@@ -145,7 +145,7 @@ export function ZDrawer(props: IZDrawer) {
     >
       {renderHeader && (
         <div className="ZDialog-header" aria-description="Drawer Header">
-          {renderHeader?.call(null)}
+          {renderHeader.call(null)}
         </div>
       )}
       <div className="ZDialog-content" aria-description="Drawer Body">
@@ -153,7 +153,7 @@ export function ZDrawer(props: IZDrawer) {
       </div>
       {renderFooter && (
         <div className="ZDialog-footer" aria-description="Drawer Footer">
-          {renderFooter?.call(null)}
+          {renderFooter.call(null)}
         </div>
       )}
     </dialog>
