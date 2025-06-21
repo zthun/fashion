@@ -7,7 +7,7 @@ import { useId, useMemo, useRef } from "react";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
-import type { IZBoolean } from "./boolean.js";
+import type { IZBoolean } from "./boolean.mjs";
 
 /**
  * A boolean component that can be checked, unchecked, or indeterminate
