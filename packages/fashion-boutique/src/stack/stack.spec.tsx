@@ -1,7 +1,6 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { ZSizeVaried } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZFlex } from "./flex.js";
@@ -35,7 +34,7 @@ describe("ZStack", () => {
   describe("Orientation", () => {
     it("should orient vertically by default", async () => {
       // Arrange.
-      const target = await createTestTarget({ height: ZSizeVaried.Full });
+      const target = await createTestTarget();
       // Act.
       const actual = await target.orientation();
       // Assert.
@@ -45,10 +44,7 @@ describe("ZStack", () => {
     it("should orient horizontally", async () => {
       // Arrange.
       const orientation = ZOrientation.Horizontal;
-      const target = await createTestTarget({
-        orientation,
-        width: ZSizeVaried.Fit,
-      });
+      const target = await createTestTarget({ orientation });
       // Act.
       const actual = await target.orientation();
       // Assert.
