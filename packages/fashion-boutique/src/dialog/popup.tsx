@@ -125,8 +125,6 @@ export function ZPopup(props: IZPopup) {
     return Promise.resolve();
   }, [scrollContainer]);
 
-  const onBeforeOpen = () => Promise.resolve();
-
   const onAfterOpen = useCallback(async () => {
     await _resize();
     await _reposition();
@@ -136,7 +134,7 @@ export function ZPopup(props: IZPopup) {
   const { closeOnBackdropClick, closeOnEscapeKey } = useDialog(
     popup.current,
     props,
-    { onAfterOpen, onBeforeOpen },
+    { onAfterOpen },
   );
 
   const _className = useCss(css`
