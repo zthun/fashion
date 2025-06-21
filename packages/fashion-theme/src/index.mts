@@ -1,5 +1,3 @@
-/* istanbul ignore file */
-
 export * from "./color/color.mjs";
 export * from "./color/hex.mjs";
 export * from "./color/hsl.mjs";
