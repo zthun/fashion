@@ -117,7 +117,7 @@ export function ZBox(props: IZBox) {
       border-bottom-width: ${tailor.thickness(edge.bottom)};
       border-left-width: ${tailor.thickness(edge.left)};
       border-right-width: ${tailor.thickness(edge.right)};
-      border-top-width: ${tailor.thickness(edge?.top)};
+      border-top-width: ${tailor.thickness(edge.top)};
 
       border-bottom-left-radius: ${tailor.rounding(radius.bottomLeft)};
       border-bottom-right-radius: ${tailor.rounding(radius.bottomRight)};
