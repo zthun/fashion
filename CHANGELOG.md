@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.1.6](https://github.com/zthun/fashion/compare/v10.1.5...v10.1.6) (2025-06-21)
+
+
+### Bug Fixes
+
+* file type metadata now renders as a string ([da946d7](https://github.com/zthun/fashion/commit/da946d7c52ced676fe8a5c4c50e022236b8c4f50))
+
+
+
 ## [10.1.5](https://github.com/zthun/fashion/compare/v10.1.4...v10.1.5) (2025-06-21)
 
 
