@@ -57,7 +57,6 @@ export function useDialog(
 
   // This next bit is nearly impossible to test without modification
   // to circus to click on an offset of the body.  Can be done, but needs to come later.
-  /* istanbul ignore next --@preserve */
   const closeOnBackdropClick = (e: MouseEvent) => {
     const r = e.currentTarget.getBoundingClientRect();
 
