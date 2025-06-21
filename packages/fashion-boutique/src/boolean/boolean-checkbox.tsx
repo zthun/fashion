@@ -13,7 +13,7 @@ import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
-import type { IZBoolean } from "./boolean.js";
+import type { IZBoolean } from "./boolean.mjs";
 
 /**
  * A boolean component that can be checked, unchecked, or indeterminate
