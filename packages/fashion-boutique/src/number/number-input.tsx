@@ -69,7 +69,7 @@ export function ZNumberInput(props: IZNumber<number | null>) {
   `);
 
   const handleCommit = (update: string) => {
-    _setValue(update?.trim() === "" ? null : +update);
+    _setValue(update.trim() === "" ? null : +update);
   };
 
   const handleSpin = (direction: 1 | -1) => {
@@ -81,10 +81,7 @@ export function ZNumberInput(props: IZNumber<number | null>) {
     _setValue(next);
   };
 
-  const handleSpinOnEnter = (
-    direction: 1 | -1,
-    e: KeyboardEvent<HTMLButtonElement>,
-  ) => {
+  const handleSpinOnEnter = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.code === ZCircusKeyboardQwerty.enter.code) {
       e.stopPropagation();
     }
@@ -95,7 +92,7 @@ export function ZNumberInput(props: IZNumber<number | null>) {
       <button
         className={cssJoinDefined("ZNumber-spinner-increment")}
         onClick={handleSpin.bind(null, 1)}
-        onKeyDown={handleSpinOnEnter.bind(null, 1)}
+        onKeyDown={handleSpinOnEnter}
       >
         <ZIconFontAwesome
           className="ZNumber-spinner-chevron"
@@ -106,7 +103,7 @@ export function ZNumberInput(props: IZNumber<number | null>) {
       <button
         className={cssJoinDefined("ZNumber-spinner-decrement")}
         onClick={handleSpin.bind(null, -1)}
-        onKeyDown={handleSpinOnEnter.bind(null, -1)}
+        onKeyDown={handleSpinOnEnter}
       >
         <ZIconFontAwesome
           className="ZNumber-spinner-chevron"
