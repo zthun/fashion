@@ -6,7 +6,7 @@ export * from "./banner/banner.js";
 export * from "./boolean/boolean-checkbox.js";
 export * from "./boolean/boolean-switch.js";
 export * from "./boolean/boolean.cm.mjs";
-export * from "./boolean/boolean.js";
+export * from "./boolean/boolean.mjs";
 export * from "./box/box.cm.mjs";
 export * from "./box/box.js";
 export * from "./breadcrumbs-outlet/breadcrumbs-outlet.cm.mjs";
