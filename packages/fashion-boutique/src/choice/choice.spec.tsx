@@ -247,6 +247,28 @@ describe("ZChoice", () => {
     const one = "One";
     const two = "Two";
     const options = [one, two, "Three"];
+    const element = createElement({ multiple: true, options });
+    const target = await createTestTarget(element);
+    await target.select(one);
+    await target.select(two);
+    await target.close();
+
+    // Act.
+    const selected = await target.selected();
+    await Promise.all(selected.map((select) => select.remove()));
+    const actual = await target.selected();
+
+    // Assert.
+    expect(actual).toEqual([]);
+  }
+
+  async function shouldInvokeOnValueChangeForEveryRemoval(
+    createElement: (props: Partial<IZChoice<any, any>>) => ReactElement,
+  ) {
+    // Arrange.
+    const one = "One";
+    const two = "Two";
+    const options = [one, two, "Three"];
     const onValueChange = vi.fn();
     const element = createElement({ multiple: true, options, onValueChange });
     const target = await createTestTarget(element);
@@ -258,10 +280,8 @@ describe("ZChoice", () => {
     // Act.
     const selected = await target.selected();
     await Promise.all(selected.map((select) => select.remove()));
-    const actual = await target.selected();
 
     // Assert.
-    expect(actual).toEqual([]);
     expect(onValueChange).toHaveBeenCalledWith([two]);
     expect(onValueChange).toHaveBeenCalledWith(null);
   }
@@ -370,6 +390,10 @@ describe("ZChoice", () => {
       it("should remove a value", async () => {
         await shouldRemoveSelection(createElement);
       });
+
+      it("should invoke onValueChange", async () => {
+        await shouldInvokeOnValueChangeForEveryRemoval(createElement);
+      });
     });
 
     describe("Disabled", () => {
@@ -436,6 +460,10 @@ describe("ZChoice", () => {
     describe("Remove", () => {
       it("should remove a value", async () => {
         await shouldRemoveSelection(createElement);
+      });
+
+      it("should invoke onValueChange", async () => {
+        await shouldInvokeOnValueChangeForEveryRemoval(createElement);
       });
 
       it("should not remove if not selected", async () => {
