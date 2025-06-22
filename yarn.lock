@@ -3552,48 +3552,48 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/cirque-du-dom@npm:^7.1.4":
-  version: 7.1.4
-  resolution: "@zthun/cirque-du-dom@npm:7.1.4"
+"@zthun/cirque-du-dom@npm:^7.1.5":
+  version: 7.1.5
+  resolution: "@zthun/cirque-du-dom@npm:7.1.5"
   dependencies:
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/user-event": "npm:^14.6.1"
-    "@zthun/cirque": "npm:^7.1.4"
+    "@zthun/cirque": "npm:^7.1.5"
     lodash-es: "npm:^4.17.21"
-  checksum: 10c0/fbb0b0f11fe03cc1b69515d99d124f3dfff223e81e557526278675e3e19f2ace348db809b1018d4722fe9d30eae9b886a78aebf4047061b97782e13417d484ef
+  checksum: 10c0/3fb540a98459f1370e4004d03b8e5bcc139dc8cae1c92b2c6b4474b9e672cf44115717ab68fa9aa3d1d218eed71caed3a9292449756c34092548a1a711cf3006
   languageName: node
   linkType: hard
 
-"@zthun/cirque-du-react@npm:^7.1.4":
-  version: 7.1.4
-  resolution: "@zthun/cirque-du-react@npm:7.1.4"
+"@zthun/cirque-du-react@npm:^7.1.5":
+  version: 7.1.5
+  resolution: "@zthun/cirque-du-react@npm:7.1.5"
   dependencies:
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.3.0"
-    "@zthun/cirque": "npm:^7.1.4"
-    "@zthun/cirque-du-dom": "npm:^7.1.4"
+    "@zthun/cirque": "npm:^7.1.5"
+    "@zthun/cirque-du-dom": "npm:^7.1.5"
   peerDependencies:
     react: ">=18.2.0 <20.0.0"
     react-dom: ">=18.2.0 <20.0.0"
-  checksum: 10c0/689b4dae20bec2b9cf1eb3ecca8fc1310af2dd64791db2efce08dee2187b6f774af96c9406d6c65c77fad45d714974cb5e8b256e5a75e7230f327caef6f2e312
+  checksum: 10c0/9b1e0bdbcbcafc570c8b6e5dfe109a8b3e41f2a81e1187ee513355ec81270fe3179c6fa59d90cd4d6384fee8126ca2226ed658b7cdd5239ebc8c40b1b247463b
   languageName: node
   linkType: hard
 
-"@zthun/cirque-du-selenium@npm:^7.1.4":
-  version: 7.1.4
-  resolution: "@zthun/cirque-du-selenium@npm:7.1.4"
+"@zthun/cirque-du-selenium@npm:^7.1.5":
+  version: 7.1.5
+  resolution: "@zthun/cirque-du-selenium@npm:7.1.5"
   dependencies:
-    "@zthun/cirque": "npm:^7.1.4"
+    "@zthun/cirque": "npm:^7.1.5"
     lodash-es: "npm:^4.17.21"
     selenium-webdriver: "npm:^4.33.0"
-  checksum: 10c0/0f20302070e0ea4f27113c7e5c8b4c14798ebcb3af629f852e75769dc33e4f23ab94c16ab28414380811efabe8017ac6b675074595f7c8395dc35de00f2e4b5d
+  checksum: 10c0/5dee67b8ac3b13cb314b5d11d87b5b86a1e07a3b8a0b3ee88db5da92a8be6fcfd150355b062924ddf34fcfd6c86046dd5b92336518505f3587696c421bd62aa6
   languageName: node
   linkType: hard
 
-"@zthun/cirque@npm:^7.1.4":
-  version: 7.1.4
-  resolution: "@zthun/cirque@npm:7.1.4"
-  checksum: 10c0/a422c90fef2130940eb155d19601ea06129c322787d9924ae5cfb045da42b99e0e147fc039b865878ea7131adc08c741a954eae6a1b9c70dbc17fc5d1f238c6e
+"@zthun/cirque@npm:^7.1.5":
+  version: 7.1.5
+  resolution: "@zthun/cirque@npm:7.1.5"
+  checksum: 10c0/69f298a6bbc7dcb50c3f705d2cc47c6ab3432cc74818421066c5c18084968945d7a54603a06ca62774f3287445aba8d2622d54698c986ae4ff95e7cdbf92a306
   languageName: node
   linkType: hard
 
@@ -3604,17 +3604,17 @@ __metadata:
     "@emotion/css": "npm:^11.13.5"
     "@emotion/serialize": "npm:^1.3.3"
     "@emotion/sheet": "npm:^1.4.0"
-    "@zthun/cirque": "npm:^7.1.4"
-    "@zthun/cirque-du-react": "npm:^7.1.4"
+    "@zthun/cirque": "npm:^7.1.5"
+    "@zthun/cirque-du-react": "npm:^7.1.5"
     "@zthun/fashion-tailor": "npm:^10.2.1"
     "@zthun/fashion-theme": "npm:^10.2.1"
     "@zthun/helpful-brands": "npm:^9.4.0"
     "@zthun/helpful-fn": "npm:^9.4.0"
     "@zthun/helpful-query": "npm:^9.4.0"
-    "@zthun/helpful-react": "npm:^9.4.0"
+    "@zthun/helpful-react": "npm:^9.4.1"
     "@zthun/janitor-build-config": "npm:^19.2.4"
-    "@zthun/webigail-http": "npm:^4.0.3"
-    "@zthun/webigail-url": "npm:^4.0.3"
+    "@zthun/webigail-http": "npm:^4.0.4"
+    "@zthun/webigail-url": "npm:^4.0.4"
     csstype: "npm:^3.1.3"
     history: "npm:^5.3.0"
     lodash-es: "npm:^4.17.21"
@@ -3660,18 +3660,18 @@ __metadata:
   resolution: "@zthun/fashion-web@workspace:packages/fashion-web"
   dependencies:
     "@cucumber/cucumber": "npm:^11.3.0"
-    "@zthun/cirque": "npm:^7.1.4"
-    "@zthun/cirque-du-react": "npm:^7.1.4"
-    "@zthun/cirque-du-selenium": "npm:^7.1.4"
+    "@zthun/cirque": "npm:^7.1.5"
+    "@zthun/cirque-du-react": "npm:^7.1.5"
+    "@zthun/cirque-du-selenium": "npm:^7.1.5"
     "@zthun/fashion-boutique": "npm:^10.2.1"
     "@zthun/fashion-tailor": "npm:^10.2.1"
     "@zthun/fashion-theme": "npm:^10.2.1"
     "@zthun/helpful-brands": "npm:^9.4.0"
     "@zthun/helpful-fn": "npm:^9.4.0"
     "@zthun/helpful-query": "npm:^9.4.0"
-    "@zthun/helpful-react": "npm:^9.4.0"
+    "@zthun/helpful-react": "npm:^9.4.1"
     "@zthun/janitor-build-config": "npm:^19.2.4"
-    "@zthun/webigail-url": "npm:^4.0.3"
+    "@zthun/webigail-url": "npm:^4.0.4"
     history: "npm:^5.3.0"
     lodash-es: "npm:^4.17.21"
     react: "npm:^19.1.0"
@@ -3698,7 +3698,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:^3.2.4"
     "@zthun/janitor-build-config": "npm:^19.2.4"
     "@zthun/janitor-lint": "npm:^19.2.4"
-    "@zthun/janitor-lint-config": "npm:^19.2.4"
+    "@zthun/janitor-lint-config": "npm:^19.2.5"
     "@zthun/janitor-options": "npm:^19.2.4"
     happy-dom: "npm:^18.0.1"
     husky: "npm:^9.1.7"
@@ -3744,9 +3744,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/helpful-react@npm:^9.4.0":
-  version: 9.4.0
-  resolution: "@zthun/helpful-react@npm:9.4.0"
+"@zthun/helpful-react@npm:^9.4.1":
+  version: 9.4.1
+  resolution: "@zthun/helpful-react@npm:9.4.1"
   dependencies:
     "@zthun/helpful-fn": "npm:^9.4.0"
     "@zthun/helpful-query": "npm:^9.4.0"
@@ -3759,7 +3759,7 @@ __metadata:
   peerDependenciesMeta:
     rxjs:
       optional: true
-  checksum: 10c0/708a0a64c89e4fb0837d47bfb80f98204af0c62a1f92c16fbbfedb6575e689f0fc914d73c21d8f3b08a94adadd35e1f5193dd6680cdb450d920c8171aee7e862
+  checksum: 10c0/c34374b1e506996db0975cb405de9bf7c7638f49ce73eadc5cdebe56a5184745fa43622f398cb1e892dc1f3328dcc0c885fedddff763d78f987d0253860958e1
   languageName: node
   linkType: hard
 
@@ -3773,7 +3773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-build-config@npm:^19.2.2, @zthun/janitor-build-config@npm:^19.2.4":
+"@zthun/janitor-build-config@npm:^19.2.4":
   version: 19.2.4
   resolution: "@zthun/janitor-build-config@npm:19.2.4"
   dependencies:
@@ -3835,17 +3835,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-lint-config@npm:^19.2.4":
-  version: 19.2.4
-  resolution: "@zthun/janitor-lint-config@npm:19.2.4"
+"@zthun/janitor-lint-config@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-lint-config@npm:19.2.5"
   dependencies:
     "@zthun/janitor-eslint-config": "npm:^19.2.4"
     "@zthun/janitor-htmlhint-config": "npm:^19.2.4"
     "@zthun/janitor-markdownlint-config": "npm:^19.2.4"
     "@zthun/janitor-prettier-config": "npm:^19.2.4"
-    "@zthun/janitor-stylelint-config": "npm:^19.2.4"
-    "@zthun/janitor-stylelint-config-less": "npm:^19.2.4"
-    "@zthun/janitor-stylelint-config-sass": "npm:^19.2.4"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
+    "@zthun/janitor-stylelint-config-less": "npm:^19.2.5"
+    "@zthun/janitor-stylelint-config-sass": "npm:^19.2.5"
     eslint: "npm:^9.29.0"
     htmlhint: "npm:^1.6.3"
     markdownlint: "npm:~0.38.0"
@@ -3858,7 +3858,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/3fc8a2e03ee23203d342b8de3e385930971eb3da254079c3e5583b22ed8b10117002f0cb77de14a9909b096fb24108f826969e47128ca590e3d94743b4535620
+  checksum: 10c0/4ac0b7c267985cbd7923feb8daf807486f3dd59353c8de378e8dd70160c022ceadaec6ebd970ebf641ff9f11ac8d416a809c7272744699689b50f0f4181a52d8
   languageName: node
   linkType: hard
 
@@ -3910,63 +3910,63 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config-less@npm:^19.2.4":
-  version: 19.2.4
-  resolution: "@zthun/janitor-stylelint-config-less@npm:19.2.4"
+"@zthun/janitor-stylelint-config-less@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config-less@npm:19.2.5"
   dependencies:
-    "@zthun/janitor-stylelint-config": "npm:^19.2.4"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
     stylelint-config-standard-less: "npm:^3.0.1"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10c0/85fddcbd838c9d71607cd2de90dd5c36a819938169aabb2a9f4b3e981843ca2d5e1f4c400d1b2f1aef45dd6d0d9c53323b27503dd93e01e6d0535f47a19d2450
+  checksum: 10c0/d82db5691166b32ac48ec70370a006dfe70f8ff9b63a63b32d262b9923aa1aeab421d3d0e4bedddbd899e3af442de303e9c33c1ace3809090eb3f45bb026d87e
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config-sass@npm:^19.2.4":
-  version: 19.2.4
-  resolution: "@zthun/janitor-stylelint-config-sass@npm:19.2.4"
+"@zthun/janitor-stylelint-config-sass@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config-sass@npm:19.2.5"
   dependencies:
-    "@zthun/janitor-stylelint-config": "npm:^19.2.4"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
     stylelint-config-standard-scss: "npm:^15.0.1"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10c0/462193852817ba8725fb2179aa48dc0b86133c2f819b82595fde9f5ce71b67fe550eae7062bab45f9baf371a28eeb94313c9b2008c0f042705adb00a3a7f49fe
+  checksum: 10c0/fe14202667dbb06f90ea9b0ae0c9e1ea974f077db859ad4a38666d950a107eaebdc9203a495b4286753de8756de11b75ed346a956bb310580176a20b75f59f5a
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config@npm:^19.2.4":
-  version: 19.2.4
-  resolution: "@zthun/janitor-stylelint-config@npm:19.2.4"
+"@zthun/janitor-stylelint-config@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config@npm:19.2.5"
   dependencies:
     stylelint-config-standard: "npm:^38.0.0"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10c0/384c201f531a1c38375445e1f63c25ec9d2767c86cf043c90115c12c48bb8f7a301eb9a7976c149a794496bd27d90a2c82ee1d5ad62e54bd65d92e317e40cd09
+  checksum: 10c0/545c3ed61caa0037df1f8a921234464b0e900ac76e6edfffba5bad632b441aa6f18b46b2501816bb951d165836b841ca5b1f3b3132277082cc67a3b4d489b98d
   languageName: node
   linkType: hard
 
-"@zthun/webigail-http@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "@zthun/webigail-http@npm:4.0.3"
+"@zthun/webigail-http@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "@zthun/webigail-http@npm:4.0.4"
   dependencies:
-    "@zthun/webigail-url": "npm:^4.0.3"
+    "@zthun/webigail-url": "npm:^4.0.4"
     cross-fetch: "npm:^4.1.0"
     lodash-es: "npm:^4.17.21"
-  checksum: 10c0/d4f727ad778201a3bba63c4da608b935a072732d1a6ab7b9a599271c93f8520b19cb1fc2be5930563b73ed55cc9c354041e2e375eca11eb70933b83d628f9f80
+  checksum: 10c0/c49cc050abe83024cd1b3d9545fdf8d67b0a6070c58f47cb0086351cff8a45a62670b303dd40efd5b7384f0f23194c4ead0c928b475387e074d92090f3e03539
   languageName: node
   linkType: hard
 
-"@zthun/webigail-url@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "@zthun/webigail-url@npm:4.0.3"
+"@zthun/webigail-url@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "@zthun/webigail-url@npm:4.0.4"
   dependencies:
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     lodash-es: "npm:^4.17.21"
     url-parse: "npm:^1.5.10"
-  checksum: 10c0/e289309009a3040efaf96008eae0fe9449c2f7c15602dd46084b154623983c47ee83ab079aaa9d72ce63b36f3d8b3be2fafdb67fb857cd8a29f0c1e5ae18db5a
+  checksum: 10c0/5988f44f4730dec11c880e91f9d7d294275b46641c30429fff31748f4696f0441c8d17ddba191f113e88b242ba02555a2489ab7fe75fcabc5200db3c33ee4899
   languageName: node
   linkType: hard
 

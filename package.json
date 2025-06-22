@@ -37,7 +37,7 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@zthun/janitor-build-config": "^19.2.4",
     "@zthun/janitor-lint": "^19.2.4",
-    "@zthun/janitor-lint-config": "^19.2.4",
+    "@zthun/janitor-lint-config": "^19.2.5",
     "@zthun/janitor-options": "^19.2.4",
     "happy-dom": "^18.0.1",
     "husky": "^9.1.7",
@@ -55,5 +55,5 @@
   "resolutions": {
     "vite": "^6.0.0"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.9.2"
 }
