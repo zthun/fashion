@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.2.5](https://github.com/zthun/fashion/compare/v10.2.4...v10.2.5) (2025-09-06)
+
+**Note:** Version bump only for package @zthun/fashion-tailor
+
+
+
+
+
 ## [10.2.4](https://github.com/zthun/fashion/compare/v10.2.3...v10.2.4) (2025-07-18)
 
 **Note:** Version bump only for package @zthun/fashion-tailor
