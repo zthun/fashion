@@ -88,7 +88,7 @@ export function ZBooleanPage() {
       <ZBox margin={{ bottom: ZSizeFixed.Medium }}>
         <ZH3>Options</ZH3>
 
-        <ZGrid>
+        <ZGrid gap={ZSizeFixed.Small}>
           <ZBooleanSwitch
             value={disabled}
             onValueChange={setDisabled}

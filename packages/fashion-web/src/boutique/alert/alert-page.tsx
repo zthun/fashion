@@ -73,7 +73,7 @@ export function ZAlertPage() {
       <ZBox margin={{ bottom: ZSizeFixed.Medium }}>
         <ZH3>Options</ZH3>
 
-        <ZGrid>
+        <ZGrid gap={ZSizeFixed.ExtraSmall}>
           <ZBooleanSwitch
             value={heading}
             onValueChange={setHeading}
