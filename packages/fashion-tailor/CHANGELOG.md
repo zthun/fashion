@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/zthun/fashion/compare/v10.2.7...v11.0.0) (2025-10-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* margin sizes no longer support fit
+* size chart varied now maps fit to full-content
+
+### Features
+
+* varied sizes now support default ([ed87b44](https://github.com/zthun/fashion/commit/ed87b443e3a8dfd047edfb6263cfbdd7b1130cf7))
+
+
+### Code Refactoring
+
+* margin sizes no longer support fit ([3117cb9](https://github.com/zthun/fashion/commit/3117cb94cc64934198f34ca85864a1954cdbe6d1))
+* size chart varied now maps fit to full-content ([be0b3ca](https://github.com/zthun/fashion/commit/be0b3ca738a25d9d930f4c18b0e7c75da8a0b710))
+
+
+
 ## [10.2.7](https://github.com/zthun/fashion/compare/v10.2.6...v10.2.7) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/fashion-tailor

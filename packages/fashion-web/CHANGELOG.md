@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/zthun/fashion/compare/v10.2.7...v11.0.0) (2025-10-14)
+
+
+### Bug Fixes
+
+* added gaps between options for alert, boolean, grid-view, and modal pages ([772e66c](https://github.com/zthun/fashion/commit/772e66cb22ac3c3fb519478575dd8e6d047687f5))
+
+
+
 ## [10.2.7](https://github.com/zthun/fashion/compare/v10.2.6...v10.2.7) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/fashion-web
