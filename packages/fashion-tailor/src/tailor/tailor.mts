@@ -60,6 +60,7 @@ export class ZFashionTailor {
   private _gaps = {
     ...createSizeChartFixedCss(createSizeChartFixedFibonacci(0.5, 1), "rem"),
     ...createSizeChartVoidCss(),
+    [ZSizeVaried.Default]: "auto",
     [ZSizeVaried.Fit]: "auto",
   };
 
