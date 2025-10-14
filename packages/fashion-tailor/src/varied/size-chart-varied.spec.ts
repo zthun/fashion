@@ -7,7 +7,8 @@ describe("Size Chart Varied", () => {
   it("should set the sizes", () => {
     // Arrange.
     const expected: ZSizeChartVaried<string> = {
-      [ZSizeVaried.Fit]: "auto",
+      [ZSizeVaried.Default]: "auto",
+      [ZSizeVaried.Fit]: "fit-content",
       [ZSizeVaried.Full]: "100%",
     };
     // Act.

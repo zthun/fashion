@@ -10,7 +10,8 @@ import { ZSizeVaried } from "./size-varied.mjs";
  */
 export function createSizeChartVariedCss(): ZSizeChartVaried<string> {
   return {
-    [ZSizeVaried.Fit]: "auto",
+    [ZSizeVaried.Default]: "auto",
+    [ZSizeVaried.Fit]: "fit-content",
     [ZSizeVaried.Full]: "100%",
   };
 }
