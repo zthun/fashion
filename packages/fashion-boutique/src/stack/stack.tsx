@@ -77,11 +77,8 @@ export function ZStack(props: IZStack) {
       flex-direction: ${_direction};
       flex-wrap: ${_wrap};
       gap: ${_gap};
-      justify-content: ${_justifyContent};
-    }
-
-    ${device.break(ZSizeFixed.ExtraLarge)} {
       height: ${DimensionChart[_height.xl]};
+      justify-content: ${_justifyContent};
       width: ${DimensionChart[_width.xl]};
     }
 
