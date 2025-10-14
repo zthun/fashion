@@ -78,7 +78,7 @@ export function ZButton(props: IZButton) {
   const { component } = useFashionTheme();
   const tailor = useFashionTailor();
   const picker = new ZColorPicker(firstDefined(component, fashion));
-  const _width = new ZDeviceValues(width, ZSizeVaried.Fit);
+  const _width = new ZDeviceValues(width, ZSizeVaried.Default);
 
   const _className = useCss(css`
     & {

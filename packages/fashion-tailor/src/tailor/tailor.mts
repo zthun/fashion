@@ -60,7 +60,7 @@ export class ZFashionTailor {
   private _gaps = {
     ...createSizeChartFixedCss(createSizeChartFixedFibonacci(0.5, 1), "rem"),
     ...createSizeChartVoidCss(),
-    [ZSizeVaried.Fit]: "auto",
+    [ZSizeVaried.Default]: "auto",
   };
 
   private _thickness = {

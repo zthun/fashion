@@ -12,7 +12,7 @@ export type ZSizeGap = ZSizeFixed | ZSizeVoid;
  *
  * Mostly used for margins.
  */
-export type ZSizeMargin = ZSizeGap | ZSizeVaried.Fit;
+export type ZSizeMargin = ZSizeGap | ZSizeVaried.Default;
 
 /**
  * Same as {@link ZSizeGap} but aliased for semantics.

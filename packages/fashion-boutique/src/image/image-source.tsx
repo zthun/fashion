@@ -43,8 +43,8 @@ const ImageSizeChart = {
 export function ZImageSource(props: IZImageSource) {
   const device = useFashionDevice();
   const { className, src, height, width, name } = props;
-  const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
-  const _width = new ZDeviceValues(width, ZSizeVaried.Fit);
+  const _height = new ZDeviceValues(height, ZSizeVaried.Default);
+  const _width = new ZDeviceValues(width, ZSizeVaried.Default);
 
   const _className = useCss(css`
     &,

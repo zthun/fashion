@@ -2,6 +2,7 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZCard,
+  ZGrid,
   ZGridView,
   ZH3,
   ZIconFontAwesome,
@@ -121,17 +122,19 @@ export function ZGridViewPage() {
       <ZBox margin={{ top: ZSizeFixed.Large }}>
         <ZH3>Options</ZH3>
 
-        <ZBooleanSwitch
-          label="Error"
-          value={dataSource === ZErrorDataSource}
-          onValueChange={toggleDataSource}
-        />
+        <ZGrid gap={ZSizeFixed.Small}>
+          <ZBooleanSwitch
+            label="Error"
+            value={dataSource === ZErrorDataSource}
+            onValueChange={toggleDataSource}
+          />
 
-        <ZBooleanSwitch
-          label="Hide Search"
-          value={search === false}
-          onValueChange={toggleSearch}
-        />
+          <ZBooleanSwitch
+            label="Hide Search"
+            value={search === false}
+            onValueChange={toggleSearch}
+          />
+        </ZGrid>
       </ZBox>
     </ZCard>
   );

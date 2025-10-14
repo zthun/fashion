@@ -1,6 +1,7 @@
 import {
   createSizeChartFixedArithmetic,
   createSizeChartFixedCss,
+  createSizeChartVariedCss,
   ZDeviceValues,
   ZSizeFixed,
   ZSizeVaried,
@@ -26,14 +27,12 @@ export interface IZModal
 
 const WidthChart = Object.freeze({
   ...createSizeChartFixedCss(createSizeChartFixedArithmetic(10, 20), "rem"),
-  [ZSizeVaried.Full]: "100%",
-  [ZSizeVaried.Fit]: undefined,
+  ...createSizeChartVariedCss(),
 });
 
 const HeightChart = Object.freeze({
   ...createSizeChartFixedCss(createSizeChartFixedArithmetic(3, 20), "rem"),
-  [ZSizeVaried.Full]: "100%",
-  [ZSizeVaried.Fit]: undefined,
+  ...createSizeChartVariedCss(),
 });
 
 export function ZModal(props: IZModal) {
@@ -51,8 +50,8 @@ export function ZModal(props: IZModal) {
   const device = useFashionDevice();
   const tailor = useFashionTailor();
   const modal = useRef<HTMLDialogElement>(document.createElement("dialog"));
-  const _width = new ZDeviceValues(width, ZSizeVaried.Fit);
-  const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
+  const _width = new ZDeviceValues(width, ZSizeVaried.Default);
+  const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
 
   const marginFor = (x: ZSizeFixed | ZSizeVaried) =>

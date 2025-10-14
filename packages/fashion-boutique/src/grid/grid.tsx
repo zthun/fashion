@@ -56,8 +56,8 @@ export function ZGrid(props: IZGrid) {
     height,
   } = props;
 
-  const _width = new ZDeviceValues(width, ZSizeVaried.Fit);
-  const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
+  const _width = new ZDeviceValues(width, ZSizeVaried.Default);
+  const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const _columns = new ZDeviceValues(columns, undefined);
   const _gap = new ZDeviceValues(gap, ZSizeVoid.None);
 

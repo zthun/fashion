@@ -127,7 +127,7 @@ export function ZModalPage() {
       <ZH3>Options</ZH3>
 
       <ZBox margin={{ bottom: ZSizeFixed.Small }}>
-        <ZGrid columns="1fr">
+        <ZGrid gap={ZSizeFixed.Small}>
           <ZBooleanSwitch
             value={header}
             onValueChange={setHeader}
