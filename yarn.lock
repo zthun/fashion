@@ -4072,7 +4072,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/fashion-boutique@npm:^10.2.7, @zthun/fashion-boutique@workspace:packages/fashion-boutique":
+"@zthun/fashion-boutique@npm:^11.0.0, @zthun/fashion-boutique@workspace:packages/fashion-boutique":
   version: 0.0.0-use.local
   resolution: "@zthun/fashion-boutique@workspace:packages/fashion-boutique"
   dependencies:
@@ -4081,8 +4081,8 @@ __metadata:
     "@emotion/sheet": "npm:^1.4.0"
     "@zthun/cirque": "npm:^7.1.10"
     "@zthun/cirque-du-react": "npm:^7.1.10"
-    "@zthun/fashion-tailor": "npm:^10.2.7"
-    "@zthun/fashion-theme": "npm:^10.2.7"
+    "@zthun/fashion-tailor": "npm:^11.0.0"
+    "@zthun/fashion-theme": "npm:^11.0.0"
     "@zthun/helpful-brands": "npm:^9.5.1"
     "@zthun/helpful-fn": "npm:^9.4.5"
     "@zthun/helpful-query": "npm:^9.5.1"
@@ -4105,7 +4105,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/fashion-tailor@npm:^10.2.7, @zthun/fashion-tailor@workspace:packages/fashion-tailor":
+"@zthun/fashion-tailor@npm:^11.0.0, @zthun/fashion-tailor@workspace:packages/fashion-tailor":
   version: 0.0.0-use.local
   resolution: "@zthun/fashion-tailor@workspace:packages/fashion-tailor"
   dependencies:
@@ -4117,7 +4117,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/fashion-theme@npm:^10.2.7, @zthun/fashion-theme@workspace:packages/fashion-theme":
+"@zthun/fashion-theme@npm:^11.0.0, @zthun/fashion-theme@workspace:packages/fashion-theme":
   version: 0.0.0-use.local
   resolution: "@zthun/fashion-theme@workspace:packages/fashion-theme"
   dependencies:
@@ -4138,9 +4138,9 @@ __metadata:
     "@zthun/cirque": "npm:^7.1.10"
     "@zthun/cirque-du-react": "npm:^7.1.10"
     "@zthun/cirque-du-selenium": "npm:^7.1.10"
-    "@zthun/fashion-boutique": "npm:^10.2.7"
-    "@zthun/fashion-tailor": "npm:^10.2.7"
-    "@zthun/fashion-theme": "npm:^10.2.7"
+    "@zthun/fashion-boutique": "npm:^11.0.0"
+    "@zthun/fashion-tailor": "npm:^11.0.0"
+    "@zthun/fashion-theme": "npm:^11.0.0"
     "@zthun/helpful-brands": "npm:^9.5.1"
     "@zthun/helpful-fn": "npm:^9.4.5"
     "@zthun/helpful-query": "npm:^9.5.1"
