@@ -61,7 +61,6 @@ export class ZFashionTailor {
     ...createSizeChartFixedCss(createSizeChartFixedFibonacci(0.5, 1), "rem"),
     ...createSizeChartVoidCss(),
     [ZSizeVaried.Default]: "auto",
-    [ZSizeVaried.Fit]: "auto",
   };
 
   private _thickness = {
