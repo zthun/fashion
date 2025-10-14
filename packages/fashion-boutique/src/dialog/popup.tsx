@@ -40,7 +40,6 @@ export interface IZPopup
 const HeightChart = {
   ...createSizeChartFixedCss(createSizeChartFixedArithmetic(5, 10), "rem"),
   ...createSizeChartVariedCss(),
-  [ZSizeVaried.Fit]: "fit-content",
 };
 
 export function ZPopup(props: IZPopup) {
@@ -64,7 +63,7 @@ export function ZPopup(props: IZPopup) {
   const popup = useRef<HTMLDialogElement>(document.createElement("dialog"));
   const picker = new ZColorPicker(firstDefined(component, fashion));
   const _window = useWindowService();
-  const _height = new ZDeviceValues(height, ZSizeVaried.Fit);
+  const _height = new ZDeviceValues(height, ZSizeVaried.Default);
 
   const _getAttach = useCallback(
     () => firstDefined(document.body, attach, popup.current.parentElement),
