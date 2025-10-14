@@ -3,6 +3,10 @@
  */
 export enum ZSizeVaried {
   /**
+   * Fall back to the default behavior of the component.
+   */
+  Default = "default",
+  /**
    * Fit to whatever is inside the box.
    */
   Fit = "fit",
