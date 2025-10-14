@@ -139,7 +139,7 @@ describe("ZBoolean", () => {
     }
 
     it("can be enabled.", async () => {
-      assertDisabled(createTestTarget, false);
+      await assertDisabled(createTestTarget, false);
     });
 
     it("can be disabled.", async () => {
@@ -147,7 +147,7 @@ describe("ZBoolean", () => {
     });
 
     it("can be optional.", async () => {
-      assertRequired(createTestTarget, false);
+      await assertRequired(createTestTarget, false);
     });
 
     it("can be required.", async () => {
@@ -217,7 +217,7 @@ describe("ZBoolean", () => {
     }
 
     it("can be enabled.", async () => {
-      assertDisabled(createTestTarget, false);
+      await assertDisabled(createTestTarget, false);
     });
 
     it("can be disabled.", async () => {
@@ -225,7 +225,7 @@ describe("ZBoolean", () => {
     });
 
     it("can be optional.", async () => {
-      assertRequired(createTestTarget, false);
+      await assertRequired(createTestTarget, false);
     });
 
     it("can be required.", async () => {
