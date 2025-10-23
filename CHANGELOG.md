@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.0](https://github.com/zthun/fashion/compare/v11.0.1...v12.0.0) (2025-10-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* output format is now es2020
+
+### Build System
+
+* output format is now es2020 ([4b5d1ef](https://github.com/zthun/fashion/commit/4b5d1efb86e76143573e2d9f97f6004a2a83c013))
+
+
+
 ## [11.0.1](https://github.com/zthun/fashion/compare/v11.0.0...v11.0.1) (2025-10-19)
 
 **Note:** Version bump only for package @zthun/fashion
