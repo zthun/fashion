@@ -5,4 +5,6 @@ import {
 import { defineConfig } from "vite";
 
 const test = new ZViteTestBuilder().browser().monorepo().build();
-export default defineConfig(new ZViteConfigBuilder().test(test).build());
+const config = new ZViteConfigBuilder().test(test).build();
+
+export default defineConfig(config);
