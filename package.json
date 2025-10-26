@@ -34,7 +34,7 @@
     "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "@types/stylis": "^4.2.7",
-    "@vitest/coverage-v8": "^4.0.1",
+    "@vitest/coverage-v8": "^4.0.3",
     "@zthun/janitor-build-config": "^19.4.1",
     "@zthun/janitor-lint": "^19.4.1",
     "@zthun/janitor-lint-config": "^19.4.1",
@@ -49,8 +49,8 @@
     "rollup-plugin-visualizer": "^6.0.5",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "vite": "^7.1.11",
-    "vitest": "^4.0.1"
+    "vite": "^7.1.12",
+    "vitest": "^4.0.3"
   },
   "packageManager": "yarn@4.10.3"
 }

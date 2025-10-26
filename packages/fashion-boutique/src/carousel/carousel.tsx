@@ -50,10 +50,14 @@ export function ZCarousel(props: IZCarousel) {
     orientation === ZOrientation.Horizontal ? "chevron-left" : "chevron-up";
 
   const _className = useCss(css`
+    & {
+      width: fit-content;
+    }
+
     .ZCarousel-navigation-forward,
     .ZCarousel-navigation-reverse {
       visibility: ${count <= 1 ? "hidden" : undefined};
-      opacity: 0.5;
+      opacity: 0.75;
       transition: "opacity .5s";
     }
 
