@@ -50,6 +50,7 @@ export function ZTile(props: IZTile) {
   return (
     <ZBox
       className={cssJoinDefined("ZTile-root", className)}
+      border={{ width: ZSizeFixed.ExtraSmall, radius: ZSizeFixed.ExtraSmall }}
       fashion={fashion}
       interactive
       cursor="pointer"
