@@ -108,6 +108,8 @@ export * from "./text/text.cm.mjs";
 export * from "./text/text.js";
 export * from "./theme/fashion.mjs";
 export * from "./theme/styled.js";
+export * from "./tile/tile.cm.mjs";
+export * from "./tile/tile.js";
 export * from "./typography/typography.cm.mjs";
 export * from "./typography/typography.js";
 export * from "./wizard/wizard.cm.mjs";
