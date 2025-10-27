@@ -1,14 +1,15 @@
 import {
   useFashionTheme,
   useNavigate,
-  ZBox,
   ZCaption,
   ZCard,
+  ZContentTitle,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
+  ZTile,
 } from "@zthun/fashion-boutique";
-import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
 import type { IZRoute } from "../route/route.mjs";
 import {
@@ -27,33 +28,24 @@ export function ZBoutiquePage() {
   const navigate = useNavigate();
 
   const renderComponent = (route: IZRoute) => (
-    <ZBox
+    <ZTile
       className={cssJoinDefined("ZBoutiquePage-component")}
-      border={{ width: ZSizeFixed.ExtraSmall, radius: ZSizeFixed.ExtraSmall }}
-      cursor="pointer"
       fashion={body}
-      interactive
       key={route.path}
-      onClick={() => navigate(route.path)}
-      padding={ZSizeFixed.Medium}
-      width={ZSizeVaried.Full}
+      onActivate={() => navigate(route.path)}
     >
-      <ZGrid
-        columns="auto 1fr"
-        align={{ items: "center" }}
-        gap={ZSizeFixed.Small}
-      >
-        <ZIconFontAwesome
-          name={route.avatar}
-          family={route.family}
-          width={ZSizeFixed.Small}
-        />
-        <div>
-          <ZH3 compact>{route.name}</ZH3>
-          <ZCaption compact>{route.description}</ZCaption>
-        </div>
-      </ZGrid>
-    </ZBox>
+      <ZContentTitle
+        avatar={
+          <ZIconFontAwesome
+            name={route.avatar}
+            family={route.family}
+            width={ZSizeFixed.Small}
+          />
+        }
+        heading={<ZH3 compact>{route.name}</ZH3>}
+        subHeading={<ZCaption compact>{route.description}</ZCaption>}
+      />
+    </ZTile>
   );
 
   return (
