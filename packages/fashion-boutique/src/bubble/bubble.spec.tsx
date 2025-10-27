@@ -28,8 +28,10 @@ describe("ZBubble", () => {
   it("should render the content", async () => {
     // Arrange.
     const target = await createTestTarget();
+
     // Act.
-    const actual = ZCircusBy.first(target.driver, ZIconComponentModel);
+    const actual = await ZCircusBy.first(target.driver, ZIconComponentModel);
+
     // Assert.
     expect(actual).toBeTruthy();
   });
@@ -39,8 +41,10 @@ describe("ZBubble", () => {
       // Arrange.
       onClick = vi.fn();
       const target = await createTestTarget();
+
       // Act.
       await target.click();
+
       // Assert.
       expect(onClick).toHaveBeenCalled();
     });

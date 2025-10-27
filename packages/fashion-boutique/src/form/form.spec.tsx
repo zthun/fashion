@@ -36,9 +36,9 @@ describe("ZForm", () => {
     return ZCircusBy.first(_driver, ZFormComponentModel);
   };
 
-  afterEach(() => {
-    _driver?.destroy?.call(_driver);
-    _renderer?.destroy?.call(_renderer);
+  afterEach(async () => {
+    await _driver?.destroy?.call(_driver);
+    await _renderer?.destroy?.call(_renderer);
   });
 
   describe("Render", () => {
@@ -52,7 +52,7 @@ describe("ZForm", () => {
       const field = await target.field(id);
 
       // Act.
-      const actual = ZCircusBy.first(field!.driver, ctor);
+      const actual = await ZCircusBy.first(field!.driver, ctor);
 
       // Assert.
       expect(actual).toBeTruthy();
