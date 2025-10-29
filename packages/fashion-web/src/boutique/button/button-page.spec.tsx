@@ -1,18 +1,25 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZButtonComponentModel } from "@zthun/fashion-boutique";
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZButtonPageComponentModel } from "./button-page.cm.mjs";
 import { ZButtonPage } from "./button-page.js";
 
 describe("ZButtonPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   async function createTestTarget() {
     const element = <ZButtonPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZButtonPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZButtonPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   const theme = new ZFashionThemeBuilder().build();
   type ButtonPageFactory = (

@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { MemoryHistory } from "history";
@@ -29,10 +29,7 @@ describe("ZWizardPage", () => {
     history = createMemoryHistory();
   });
 
-  afterEach(async () => {
-    await _renderer?.destroy?.call(_renderer);
-    await _driver?.destroy?.call(_driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should disable the finish button while the user has not checked the understand switch", async () => {
     // Arrange.

@@ -2,6 +2,7 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import {
   ZCircusActBuilder,
   ZCircusBy,
+  ZCircusDestroy,
   ZCircusKeyboardQwerty,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
@@ -66,10 +67,7 @@ describe("ZDialog", () => {
     ];
   }
 
-  afterEach(async () => {
-    await _driver?.destroy?.call(_driver);
-    await _setup?.destroy?.call(_setup);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _setup));
 
   const shouldRenderHeader = async (Dialog: FunctionComponent<IZDialog>) => {
     // Arrange.

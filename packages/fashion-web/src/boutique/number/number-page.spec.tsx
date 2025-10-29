@@ -1,7 +1,8 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZNumberComponentModel } from "@zthun/fashion-boutique";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZNumberPageComponentModel } from "./number-page.cm.mjs";
 import { ZNumberPage } from "./number-page.js";
 
@@ -10,11 +11,17 @@ type NumberInputFactory = (
 ) => Promise<ZNumberComponentModel>;
 
 describe("ZNumberPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   async function createTestTarget() {
     const element = <ZNumberPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZNumberPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZNumberPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function shouldUpdateTheValue(factory: NumberInputFactory) {
     // Arrange

@@ -4,7 +4,7 @@ import type {
   ZCircusComponentConstructor,
   ZCircusComponentModel,
 } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZBrandMetadata } from "@zthun/helpful-brands";
 import { type IZMetadata } from "@zthun/helpful-query";
@@ -36,10 +36,7 @@ describe("ZForm", () => {
     return ZCircusBy.first(_driver, ZFormComponentModel);
   };
 
-  afterEach(async () => {
-    await _driver?.destroy?.call(_driver);
-    await _renderer?.destroy?.call(_renderer);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Render", () => {
     const shouldRenderComponent = async <T extends ZCircusComponentModel>(

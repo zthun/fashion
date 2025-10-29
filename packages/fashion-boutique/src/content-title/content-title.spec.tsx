@@ -1,7 +1,7 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZH3 } from "../typography/typography.js";
 import { ZContentTitleComponentModel } from "./content-title.cm.mjs";
 import type { IZContentTitle } from "./content-title.js";
@@ -19,6 +19,8 @@ describe("ZContentTitle", () => {
 
     return ZCircusBy.first(_driver, ZContentTitleComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Avatar", () => {
     it("should render if set", async () => {

@@ -1,12 +1,13 @@
 import {
   ZCircusActBuilder,
   ZCircusBy,
+  ZCircusDestroy,
   ZCircusKeyboardQwerty,
   type IZCircusDriver,
   type IZCircusSetup,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZTileComponentModel } from "./tile.cm.mjs";
 import type { IZTile } from "./tile.js";
 import { ZTile } from "./tile.js";
@@ -23,6 +24,8 @@ describe("ZTile", () => {
 
     return ZCircusBy.first(_driver, ZTileComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should raise the onActivate event when the tile is clicked", async () => {
     // Arrange.

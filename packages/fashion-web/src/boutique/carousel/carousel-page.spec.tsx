@@ -1,16 +1,23 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZCarouselPageComponentModel } from "./carousel-page.cm.mjs";
 import { ZCarouselPage } from "./carousel-page.js";
 
 describe("ZCarouselPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   const createTestTarget = async () => {
     const element = <ZCarouselPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZCarouselPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZCarouselPageComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should update the orientation of the carousel", async () => {
     // Arrange.

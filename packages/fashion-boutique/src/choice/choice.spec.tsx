@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { identity, noop, range } from "lodash-es";
 import type { ReactElement } from "react";
@@ -13,10 +13,7 @@ describe("ZChoice", () => {
   let _renderer: IZCircusSetup<IZCircusDriver>;
   let _driver: IZCircusDriver;
 
-  afterEach(async () => {
-    await _renderer?.destroy?.call(_renderer);
-    await _driver?.destroy?.call(_driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function createTestTarget(element: ReactElement) {
     _renderer = new ZCircusSetupRenderer(element);

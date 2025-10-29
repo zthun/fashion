@@ -1,8 +1,9 @@
-import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ZNumberInput } from "./number-input.js";
 import { ZNumberComponentModel } from "./number.cm.mjs";
 
@@ -14,6 +15,8 @@ describe("ZNumber", () => {
   let label: ReactNode | undefined;
   let required: boolean | undefined;
   let onValueChange: Mock | undefined;
+  let _renderers: IZCircusSetup[];
+  let _drivers: IZCircusDriver[];
 
   beforeEach(() => {
     min = undefined;
@@ -23,7 +26,11 @@ describe("ZNumber", () => {
     label = undefined;
     required = undefined;
     onValueChange = undefined;
+    _renderers = [];
+    _drivers = [];
   });
+
+  afterEach(() => ZCircusDestroy.sequential(..._drivers, ..._renderers));
 
   async function shouldRenderLabelIfSet(
     createTestTarget: () => Promise<ZNumberComponentModel>,
@@ -185,7 +192,10 @@ describe("ZNumber", () => {
         />
       );
 
-      const driver = await new ZCircusSetupRenderer(element).setup();
+      const renderer = new ZCircusSetupRenderer(element);
+      const driver = await renderer.setup();
+      _renderers.push(renderer);
+      _drivers.push(driver);
       return ZCircusBy.first(driver, ZNumberComponentModel);
     }
 

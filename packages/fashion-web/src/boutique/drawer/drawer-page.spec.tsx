@@ -1,9 +1,9 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZSideAnchor } from "@zthun/helpful-fn";
 import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZDrawerPageComponentModel } from "./drawer-page.cm.mjs";
 import { ZDrawerPage } from "./drawer-page.js";
 
@@ -16,6 +16,8 @@ describe("ZDrawerPage", () => {
     _driver = await _setup.setup();
     return ZCircusBy.first(_driver, ZDrawerPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _setup));
 
   async function shouldPositionDrawer(expected: ZSideAnchor) {
     // Arrange.

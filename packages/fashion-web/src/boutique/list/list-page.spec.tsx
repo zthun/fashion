@@ -1,15 +1,22 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZListPageComponentModel } from "./list-page.cm.mjs";
 import { ZListPage } from "./list-page.js";
 
 describe("ZListPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   async function createTestTarget() {
     const element = <ZListPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZListPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZListPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function shouldIncrementCount(name: string) {
     // Arrange.

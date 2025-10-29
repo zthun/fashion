@@ -1,19 +1,26 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority, ZFashionSeverity } from "@zthun/fashion-theme";
 import { lowerCase } from "lodash-es";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZAlertPageComponentModel } from "./alert-page.cm.mjs";
 import { ZAlertPage } from "./alert-page.js";
 
 describe("ZAlertPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   async function createTestTarget() {
     const element = <ZAlertPage />;
 
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZAlertPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZAlertPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Message", () => {
     it("should render the message.", async () => {

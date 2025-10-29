@@ -1,8 +1,9 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
 import { ZNotFoundComponentModel } from "./not-found.cm.mjs";
 import { ZNotFound } from "./not-found.js";
@@ -10,6 +11,8 @@ import { ZNotFound } from "./not-found.js";
 describe("ZNotFound", () => {
   let home: string | undefined;
   let history: MemoryHistory;
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
 
   async function createTestTarget() {
     const element = (
@@ -18,14 +21,17 @@ describe("ZNotFound", () => {
       </ZTestRouter>
     );
 
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZNotFoundComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZNotFoundComponentModel);
   }
 
   beforeEach(() => {
     history = createMemoryHistory();
     home = undefined;
   });
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should route to the root path", async () => {
     // Arrange.

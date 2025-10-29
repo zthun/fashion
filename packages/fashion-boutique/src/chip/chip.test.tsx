@@ -1,8 +1,8 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZChipComponentModel } from "./chip.cm.mjs";
 import type { IZChip } from "./chip.js";
 import { ZChip } from "./chip.js";
@@ -19,6 +19,8 @@ describe("ZChip", () => {
 
     return ZCircusBy.first(_driver, ZChipComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Prefix", () => {
     it("should render if set", async () => {

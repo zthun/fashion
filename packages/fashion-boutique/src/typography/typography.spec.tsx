@@ -1,6 +1,8 @@
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactElement } from "react";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { IZTypographyNamed } from "./typography.js";
 import {
   Typography,
@@ -17,11 +19,24 @@ import {
 } from "./typography.js";
 
 describe("Typography", () => {
+  let _renderers: IZCircusSetup[];
+  let _drivers: IZCircusDriver[];
+
+  afterEach(() => ZCircusDestroy.sequential(..._drivers, ..._renderers));
+
+  beforeEach(() => {
+    _renderers = [];
+    _drivers = [];
+  });
+
   async function createTestTarget(
     Typography: (props: IZTypographyNamed) => ReactElement,
   ) {
     const element = <Typography className="ZTypography-test"></Typography>;
-    const driver = await new ZCircusSetupRenderer(element).setup();
+    const renderer = new ZCircusSetupRenderer(element);
+    const driver = await renderer.setup();
+    _renderers.push(renderer);
+    _drivers.push(driver);
     return driver.select(".ZTypography-test");
   }
 

@@ -1,9 +1,9 @@
-import type { IZCircusKey } from "@zthun/cirque";
-import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusKey, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ZTextArea } from "./text-area.js";
 import { ZTextInput, ZTextType } from "./text-input.js";
 import { ZTextComponentModel } from "./text.cm.mjs";
@@ -20,6 +20,8 @@ describe("ZText", () => {
   let value: string | undefined;
   let label: ReactNode | undefined;
   let onValueChange: Mock | undefined;
+  let _renderers: IZCircusSetup[];
+  let _drivers: IZCircusDriver[];
 
   beforeEach(() => {
     value = undefined;
@@ -33,7 +35,12 @@ describe("ZText", () => {
     suffix = undefined;
 
     label = undefined;
+
+    _renderers = [];
+    _drivers = [];
   });
+
+  afterEach(() => ZCircusDestroy.sequential(..._drivers, ..._renderers));
 
   const shouldRenderTextValue = async (
     createTestTarget: () => Promise<ZTextComponentModel>,
@@ -206,7 +213,10 @@ describe("ZText", () => {
           onValueChange={onValueChange}
         />
       );
-      const driver = await new ZCircusSetupRenderer(element).setup();
+      const renderer = new ZCircusSetupRenderer(element);
+      const driver = await renderer.setup();
+      _renderers.push(renderer);
+      _drivers.push(driver);
       return ZCircusBy.first(driver, ZTextComponentModel);
     }
 
@@ -288,7 +298,10 @@ describe("ZText", () => {
         />
       );
 
-      const driver = await new ZCircusSetupRenderer(element).setup();
+      const renderer = new ZCircusSetupRenderer(element);
+      const driver = await renderer.setup();
+      _renderers.push(renderer);
+      _drivers.push(driver);
       return ZCircusBy.first(driver, ZTextComponentModel);
     }
 

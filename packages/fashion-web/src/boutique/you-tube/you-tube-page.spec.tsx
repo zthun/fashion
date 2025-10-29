@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZYouTubePageComponentModel } from "./you-tube-page.cm.mjs";
@@ -16,10 +16,7 @@ describe("ZYouTubePage", () => {
     return ZCircusBy.first(_driver, ZYouTubePageComponentModel);
   }
 
-  afterEach(async () => {
-    await _renderer?.destroy?.call(_renderer);
-    await _driver?.destroy?.call(_driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should render the page", async () => {
     // Arrange.

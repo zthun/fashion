@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { firstDefined } from "@zthun/helpful-fn";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
@@ -39,10 +39,7 @@ describe("ZWizard", () => {
     lastPageDisabled = undefined;
   });
 
-  afterEach(async () => {
-    await _renderer?.destroy?.call(_renderer);
-    await _driver?.destroy?.call(_driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Navigation", () => {
     describe("Next", () => {

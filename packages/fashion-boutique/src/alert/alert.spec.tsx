@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
@@ -37,10 +37,7 @@ describe("ZAlert", () => {
     heading = undefined;
   });
 
-  afterEach(async () => {
-    await _renderer?.destroy?.call(_renderer);
-    await _driver?.destroy?.call(_driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Message", () => {
     it("should render the message", async () => {

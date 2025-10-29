@@ -1,4 +1,5 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZChoiceComponentModel } from "@zthun/fashion-boutique";
 import { afterEach, describe, expect, it } from "vitest";
@@ -7,17 +8,18 @@ import { ZChoicePage } from "./choice-page.js";
 
 describe("ZChoicePage", () => {
   let _target: ZChoicePageComponentModel;
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
 
   async function createTestTarget() {
     const element = <ZChoicePage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    _target = await ZCircusBy.first(driver, ZChoicePageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    _target = await ZCircusBy.first(_driver, ZChoicePageComponentModel);
     return _target;
   }
 
-  afterEach(async () => {
-    await _target.driver.destroy?.call(_target.driver);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   type ChoicePageFactory = (
     t: ZChoicePageComponentModel,

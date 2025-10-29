@@ -1,19 +1,26 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority } from "@zthun/fashion-theme";
 import { startCase } from "lodash-es";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZBubblePageComponentModel } from "./bubble-page.cm.mjs";
 import { ZBubblePage } from "./bubble-page.js";
 
 describe("ZBubblePage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   const createTestTarget = async () => {
     const element = <ZBubblePage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZBubblePageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZBubblePageComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Click", () => {
     it("should turn off the click state", async () => {

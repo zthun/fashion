@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZDivider } from "../divider/divider.js";
@@ -39,10 +39,7 @@ describe("ZList", () => {
     return ZCircusBy.first(_driver, ZListComponentModel);
   }
 
-  afterEach(async () => {
-    await _driver?.destroy?.call(_driver);
-    await _renderer?.destroy?.call(_renderer);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("List", () => {
     it("should render all items", async () => {

@@ -1,18 +1,24 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZTypographyPageComponentModel } from "./typography-page.cm.mjs";
 import { ZTypographyPage } from "./typography-page.js";
 
 describe("ZTypographyPage", () => {
   const theme = new ZFashionThemeBuilder().build();
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
 
   async function createTestTarget() {
     const element = <ZTypographyPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZTypographyPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZTypographyPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function shouldSetFashion(expected: string) {
     // Arrange.

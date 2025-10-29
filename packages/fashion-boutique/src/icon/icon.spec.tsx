@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -26,10 +26,7 @@ describe("ZIcon", () => {
     _drivers = [];
   });
 
-  afterEach(async () => {
-    await Promise.all(_drivers.map((d) => d.destroy?.call(d)));
-    await Promise.all(_renderers.map((r) => r.destroy?.call(r)));
-  });
+  afterEach(() => ZCircusDestroy.sequential(..._drivers, ..._renderers));
 
   type CreateTestTarget = <T extends IZIcon>(
     props?: T,

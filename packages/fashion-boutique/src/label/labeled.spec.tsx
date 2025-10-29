@@ -1,5 +1,5 @@
-import type { IZCircusDriver } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
@@ -11,16 +11,16 @@ import { ZLabeled } from "./labeled.js";
 describe("ZLabeled", () => {
   describe("With", () => {
     let _driver: IZCircusDriver;
+    let _renderer: IZCircusSetup;
 
     const createTestTarget = async (props?: IZLabeled) => {
       const element = <ZLabeled label="My Label" {...props} />;
-      _driver = await new ZCircusSetupRenderer(element).setup();
+      _renderer = new ZCircusSetupRenderer(element);
+      _driver = await _renderer.setup();
       return ZCircusBy.first(_driver, ZLabelComponentModel);
     };
 
-    afterEach(async () => {
-      await _driver.destroy?.call(_driver);
-    });
+    afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
     it("should set the text of the label.", async () => {
       // Arrange.
@@ -61,11 +61,13 @@ describe("ZLabeled", () => {
     it("should not render a label", async () => {
       // Arrange.
       const element = <ZLabeled />;
-      const driver = await new ZCircusSetupRenderer(element).setup();
+      const renderer = new ZCircusSetupRenderer(element);
+      const driver = await renderer.setup();
       // Act.
       const actual = await ZCircusBy.optional(driver, ZLabelComponentModel);
       // Assert.
       expect(actual).toBeFalsy();
+      await ZCircusDestroy.sequential(driver, renderer);
     });
   });
 });

@@ -1,11 +1,11 @@
-import type { IZCircusKey } from "@zthun/cirque";
-import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusKey, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type {
   ZBooleanComponentModel,
   ZTextComponentModel,
 } from "@zthun/fashion-boutique";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZTextPageComponentModel } from "./text-page.cm.mjs";
 import { ZTextPage } from "./text-page.js";
 
@@ -21,11 +21,17 @@ type SwitchFactory = (
 type ValueFactory = (t: ZTextComponentModel) => Promise<boolean>;
 
 describe("ZTextPage", () => {
+  let _renderer: IZCircusSetup<IZCircusDriver>;
+  let _driver: IZCircusDriver;
+
   async function createTestTarget() {
     const element = <ZTextPage />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZTextPageComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZTextPageComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function shouldSetTheValue(
     expected: string,

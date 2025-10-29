@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy, ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import {
   ZDataRequestBuilder,
@@ -34,8 +34,7 @@ describe("ZGridView", () => {
 
   afterEach(async () => {
     await _target?.load();
-    await _driver?.destroy?.call(_driver);
-    await _renderer?.destroy?.call(_renderer);
+    await ZCircusDestroy.sequential(_driver, _renderer);
   });
 
   describe("Page Size", () => {

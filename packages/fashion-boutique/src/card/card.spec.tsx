@@ -1,5 +1,5 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZCardComponentModel } from "./card.cm.mjs";
@@ -16,10 +16,7 @@ describe("ZCard", () => {
     return ZCircusBy.first(_driver, ZCardComponentModel);
   }
 
-  afterEach(async () => {
-    await _driver?.destroy?.call(_driver);
-    await _renderer?.destroy?.call(_renderer);
-  });
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("Header", () => {
     it("should render the title", async () => {
