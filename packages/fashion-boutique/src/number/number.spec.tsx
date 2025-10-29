@@ -1,5 +1,9 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import { ZCircusBy, ZCircusDestroy, ZCircusKeyboardQwerty } from "@zthun/cirque";
+import {
+  ZCircusBy,
+  ZCircusDestroy,
+  ZCircusKeyboardQwerty,
+} from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
