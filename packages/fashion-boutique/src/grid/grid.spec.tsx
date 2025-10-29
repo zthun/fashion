@@ -1,12 +1,20 @@
+import {
+  ZCircusDestroy,
+  type IZCircusDriver,
+  type IZCircusSetup,
+} from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZSizeVoid } from "@zthun/fashion-tailor";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import type { Property } from "csstype";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZGridSpan } from "./grid-span.js";
 import { ZGrid } from "./grid.js";
 
 describe("ZGrid", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   let gap: ZSizeFixed | ZSizeVoid | undefined;
   let height: ZSizeVaried | undefined;
   let xs: Property.GridTemplateColumns | undefined;
@@ -26,6 +34,8 @@ describe("ZGrid", () => {
     xl = "1fr";
   });
 
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
+
   async function createTestTarget() {
     const element = (
       <ZGrid
@@ -37,8 +47,11 @@ describe("ZGrid", () => {
         <ZGridSpan />
       </ZGrid>
     );
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return driver;
+
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return _driver;
   }
 
   it("should render with a gap", async () => {

@@ -1,14 +1,24 @@
+import {
+  ZCircusDestroy,
+  type IZCircusDriver,
+  type IZCircusSetup,
+} from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { ZNewspaperRange } from "./newspaper.js";
 import { ZNewspaper } from "./newspaper.js";
 
 describe("ZNewspaper", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   let xl: ZNewspaperRange;
 
   beforeEach(() => {
     xl = [1, 12];
   });
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function createTestTarget() {
     const element = (
@@ -16,8 +26,11 @@ describe("ZNewspaper", () => {
         12 Column Content
       </ZNewspaper>
     );
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return driver;
+
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return _driver;
   }
 
   it("should render will full ranges", async () => {

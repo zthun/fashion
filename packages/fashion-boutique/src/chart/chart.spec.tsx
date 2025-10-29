@@ -1,13 +1,17 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZChartProgress } from "./chart-progress.js";
 import { ZChartComponentModel } from "./chart.cm.mjs";
 import type { IZDataPoint } from "./data-point.mjs";
 import { ZDataPointBuilder } from "./data-point.mjs";
 
 describe("ZChart", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   let points: IZDataPoint[];
 
   beforeEach(() => {
@@ -20,6 +24,8 @@ describe("ZChart", () => {
       new ZDataPointBuilder(12, 100).build(),
     ];
   });
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   const shouldRenderCorrectPointDimensions = async (
     expected: number[],
@@ -44,8 +50,11 @@ describe("ZChart", () => {
 
     const createTestTarget = async () => {
       const element = <ZChartProgress points={point} />;
-      const driver = await new ZCircusSetupRenderer(element).setup();
-      return ZCircusBy.first(driver, ZChartComponentModel);
+
+      _renderer = new ZCircusSetupRenderer(element);
+      _driver = await _renderer.setup();
+
+      return ZCircusBy.first(_driver, ZChartComponentModel);
     };
 
     it("should render the correct x point value", async () => {

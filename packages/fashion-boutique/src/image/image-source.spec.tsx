@@ -1,24 +1,33 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import {
   ZDataUrlBuilder,
   ZMimeTypeImage,
   ZUrlBuilder,
 } from "@zthun/webigail-url";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZImageSourceComponentModel } from "./image-source.cm.mjs";
 import type { IZImageSource } from "./image-source.js";
 import { ZImageSource } from "./image-source.js";
 
 describe("ZImageSource", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   const svg =
     '<svg focusable="false" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>';
 
   async function createTestTarget(props?: Partial<IZImageSource>) {
     const element = <ZImageSource {...props} />;
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZImageSourceComponentModel);
+
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return ZCircusBy.first(_driver, ZImageSourceComponentModel);
   }
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function shouldRenderNameAttribute() {
     // Arrange

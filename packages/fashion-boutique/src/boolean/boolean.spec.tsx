@@ -1,10 +1,11 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import type { ReactElement } from "react";
 import type { Mock } from "vitest";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ZBooleanCheckbox } from "./boolean-checkbox.js";
 import { ZBooleanSwitch } from "./boolean-switch.js";
 import { ZBooleanComponentModel } from "./boolean.cm.mjs";
@@ -14,10 +15,13 @@ describe("ZBoolean", () => {
   let required: boolean | undefined;
   let fashion: IZFashion | undefined;
   let onCheckChanged: Mock | undefined;
+  let _renderer: IZCircusSetup;
+  let _driver: IZCircusDriver;
 
   async function createComponentModel(element: ReactElement) {
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZBooleanComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+    return ZCircusBy.first(_driver, ZBooleanComponentModel);
   }
 
   beforeEach(() => {
@@ -26,6 +30,8 @@ describe("ZBoolean", () => {
     fashion = undefined;
     onCheckChanged = undefined;
   });
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   async function assertValue<T>(
     createTestTarget: () => Promise<ZBooleanComponentModel>,

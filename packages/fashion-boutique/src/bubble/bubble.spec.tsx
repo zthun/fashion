@@ -1,13 +1,16 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { Mock } from "vitest";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
 import { ZBubbleComponentModel } from "./bubble.cm.mjs";
 import { ZBubble } from "./bubble.js";
 
 describe("ZBubble", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
   let onClick: Mock | undefined;
 
   const createTestTarget = async () => {
@@ -17,13 +20,17 @@ describe("ZBubble", () => {
       </ZBubble>
     );
 
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZBubbleComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return ZCircusBy.first(_driver, ZBubbleComponentModel);
   };
 
   beforeEach(() => {
     onClick = undefined;
   });
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   it("should render the content", async () => {
     // Arrange.

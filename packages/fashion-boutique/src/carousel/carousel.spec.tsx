@@ -2,15 +2,19 @@ import { ZBrandKnown } from "@zthun/helpful-brands";
 import type { IZCarousel } from "./carousel.js";
 import { ZCarousel } from "./carousel.js";
 
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZOrientation } from "@zthun/helpful-fn";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
 import { ZCarouselComponentModel } from "./carousel.cm.mjs";
 
 describe("ZCarousel", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   const brands = ZBrandKnown.all();
 
   const createTestTarget = async (props?: Partial<IZCarousel>) => {
@@ -22,9 +26,13 @@ describe("ZCarousel", () => {
       />
     );
 
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZCarouselComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return ZCircusBy.first(_driver, ZCarouselComponentModel);
   };
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   describe("State", () => {
     it("should initialize on the controlled value", async () => {

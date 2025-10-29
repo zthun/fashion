@@ -1,12 +1,18 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { createMemoryHistory } from "history";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
 import { ZBreadcrumbsOutletComponentModel } from "./breadcrumbs-outlet.cm.mjs";
 import { ZBreadcrumbsOutlet } from "./breadcrumbs-outlet.js";
 
 describe("ZBreadcrumbsOutlet", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
+
   async function createTestTarget() {
     const history = createMemoryHistory();
     const element = (
@@ -15,8 +21,10 @@ describe("ZBreadcrumbsOutlet", () => {
       </ZTestRouter>
     );
 
-    const driver = await new ZCircusSetupRenderer(element).setup();
-    return ZCircusBy.first(driver, ZBreadcrumbsOutletComponentModel);
+    _renderer = new ZCircusSetupRenderer(element);
+    _driver = await _renderer.setup();
+
+    return ZCircusBy.first(_driver, ZBreadcrumbsOutletComponentModel);
   }
 
   it("should render the breadcrumbs", async () => {

@@ -1,14 +1,18 @@
-import { ZCircusBy } from "@zthun/cirque";
+import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ZTestRouter } from "../router/router-dom.mjs";
 import type { IZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsComponentModel } from "./breadcrumbs.cm.mjs";
 
 describe("ZBreadcrumbs", () => {
+  let _renderer: IZCircusSetup | undefined;
+  let _driver: IZCircusDriver | undefined;
+
   describe("Location", () => {
     const path = "/path/to/resource";
     let history: MemoryHistory;
@@ -20,13 +24,16 @@ describe("ZBreadcrumbs", () => {
         </ZTestRouter>
       );
 
-      const driver = await new ZCircusSetupRenderer(element).setup();
-      return ZCircusBy.first(driver, ZBreadcrumbsComponentModel);
+      _renderer = new ZCircusSetupRenderer(element);
+      _driver = await _renderer.setup();
+      return ZCircusBy.first(_driver, ZBreadcrumbsComponentModel);
     }
 
     beforeEach(() => {
       history = createMemoryHistory({ initialEntries: [path] });
     });
+
+    afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
     it("should render each path separated by slash", async () => {
       // Arrange.
