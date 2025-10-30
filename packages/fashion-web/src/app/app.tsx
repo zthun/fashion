@@ -6,13 +6,13 @@ import {
   ZFashionThemeContext,
   ZH1,
   ZIconFontAwesome,
-  ZImageSource,
+  ZImage,
   ZNotFound,
   ZRoute,
   ZRouteMap,
   ZRouter,
 } from "@zthun/fashion-boutique";
-import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { createDarkTheme, createLightTheme } from "@zthun/fashion-theme";
 import { useMemo, useState } from "react";
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
@@ -76,9 +76,7 @@ const darkTheme = createDarkTheme();
  *        The jsx to render the fashion web application.
  */
 export function ZFashionApp() {
-  const avatar = (
-    <ZImageSource src={ZFashionRouteHome.avatar} height={ZSizeVaried.Full} />
-  );
+  const avatar = <ZImage src={ZFashionRouteHome.avatar} />;
   const [theme, setTheme] = useState(darkTheme);
   const { dark, light } = theme;
 

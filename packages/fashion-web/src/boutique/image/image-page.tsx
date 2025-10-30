@@ -3,7 +3,7 @@ import {
   ZCard,
   ZH3,
   ZIconFontAwesome,
-  ZImageSource,
+  ZImage,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
@@ -49,7 +49,7 @@ export function ZImagePage() {
           this way, then it is directly added to the browser.
         </ZParagraph>
 
-        <ZImageSource src={Png} width={width} height={height} />
+        <ZImage src={Png} width={width} height={height} />
       </ZBox>
 
       <ZH3>Options</ZH3>
