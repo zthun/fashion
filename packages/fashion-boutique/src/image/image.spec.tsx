@@ -7,9 +7,9 @@ import {
   ZUrlBuilder,
 } from "@zthun/webigail-url";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZImageSourceComponentModel } from "./image-source.cm.mjs";
-import type { IZImageSource } from "./image-source.js";
-import { ZImageSource } from "./image-source.js";
+import { ZImageSourceComponentModel } from "./image.cm.mjs";
+import type { IZImageSource } from "./image.js";
+import { ZImage } from "./image.js";
 
 describe("ZImageSource", () => {
   let _renderer: IZCircusSetup | undefined;
@@ -19,7 +19,7 @@ describe("ZImageSource", () => {
     '<svg focusable="false" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>';
 
   async function createTestTarget(props?: Partial<IZImageSource>) {
-    const element = <ZImageSource {...props} />;
+    const element = <ZImage {...props} />;
 
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();

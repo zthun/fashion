@@ -40,7 +40,7 @@ const ImageSizeChart = {
  *
  * @returns The jsx for this component.
  */
-export function ZImageSource(props: IZImageSource) {
+export function ZImage(props: IZImageSource) {
   const device = useFashionDevice();
   const { className, src, height, width, name } = props;
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
@@ -116,3 +116,8 @@ export function ZImageSource(props: IZImageSource) {
     </div>
   );
 }
+
+/**
+ * @deprecated Use ZImage instead.
+ */
+export const ZImageSource = ZImage;
