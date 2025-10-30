@@ -106,8 +106,3 @@ export function ZImage(props: IZImageSource) {
 
   return <img className={imageClass} data-name={name} src={src} alt={name} />;
 }
-
-/**
- * @deprecated Use ZImage instead.
- */
-export const ZImageSource = ZImage;
