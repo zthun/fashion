@@ -3,8 +3,8 @@ import { ZCircusComponentModel } from "@zthun/cirque";
 /**
  * Represents the component model for an image source.
  */
-export class ZImageSourceComponentModel extends ZCircusComponentModel {
-  public static readonly Selector = ".ZImageSource-root";
+export class ZImageComponentModel extends ZCircusComponentModel {
+  public static readonly Selector = ".ZImage-root";
 
   /**
    * Gets the image name.
@@ -50,3 +50,8 @@ export class ZImageSourceComponentModel extends ZCircusComponentModel {
     return !svg && !img;
   }
 }
+
+/**
+ * @deprecated Use ZImageComponentModel instead.
+ */
+export const ZImageSourceComponentModel = ZImageComponentModel;

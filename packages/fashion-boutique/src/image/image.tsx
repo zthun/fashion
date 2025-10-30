@@ -91,7 +91,7 @@ export function ZImage(props: IZImageSource) {
     }
   `);
 
-  const imageClass = cssJoinDefined("ZImageSource-root", className, _className);
+  const imageClass = cssJoinDefined("ZImage-root", className, _className);
 
   if (!src) {
     return <div className={imageClass} data-name={name} />;

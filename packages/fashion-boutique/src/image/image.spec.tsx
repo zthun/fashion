@@ -7,11 +7,11 @@ import {
   ZUrlBuilder,
 } from "@zthun/webigail-url";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZImageSourceComponentModel } from "./image.cm.mjs";
+import { ZImageComponentModel } from "./image.cm.mjs";
 import type { IZImageSource } from "./image.js";
 import { ZImage } from "./image.js";
 
-describe("ZImageSource", () => {
+describe("ZImage", () => {
   let _renderer: IZCircusSetup | undefined;
   let _driver: IZCircusDriver | undefined;
 
@@ -24,7 +24,7 @@ describe("ZImageSource", () => {
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
 
-    return ZCircusBy.first(_driver, ZImageSourceComponentModel);
+    return ZCircusBy.first(_driver, ZImageComponentModel);
   }
 
   afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
@@ -43,8 +43,10 @@ describe("ZImageSource", () => {
     it("renders an empty div.", async () => {
       // Arrange
       const target = await createTestTarget();
+
       // Act
       const actual = await target.empty();
+
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -63,8 +65,10 @@ describe("ZImageSource", () => {
         .mimeType(ZMimeTypeImage.SVG)
         .build();
       const target = await createTestTarget({ src });
+
       // Act
       const actual = await target.svg();
+
       // Assert
       expect(actual).toBeTruthy();
     });
@@ -79,8 +83,10 @@ describe("ZImageSource", () => {
       // Arrange
       const src = new ZUrlBuilder().gravatar().build();
       const target = await createTestTarget({ src });
+
       // Act
       const actual = await target.img();
+
       // Assert
       expect(actual).toBeTruthy();
     });
