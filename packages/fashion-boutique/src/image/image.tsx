@@ -9,6 +9,7 @@ import {
 } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { ZDataUrlBuilder } from "@zthun/webigail-url";
+import type { Property } from "csstype";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentSource } from "../component/component-source.mjs";
@@ -22,7 +23,9 @@ export interface IZImageSource
     IZComponentStyle,
     IZComponentWidth,
     IZComponentHeight,
-    IZComponentName {}
+    IZComponentName {
+  fit?: Property.ObjectFit;
+}
 
 const ImageSizeChart = {
   ...createSizeChartFixedCss(createSizeChartFixedGeometric(2, 1), "rem"),
@@ -42,49 +45,40 @@ const ImageSizeChart = {
  */
 export function ZImage(props: IZImageSource) {
   const device = useFashionDevice();
-  const { className, src, height, width, name } = props;
+  const { className, fit = "fill", src, height, width, name } = props;
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
 
   const _className = useCss(css`
-    &,
-    svg,
-    img {
+    & {
+      object-fit: ${fit};
       width: ${ImageSizeChart[_width.xl]};
       height: ${ImageSizeChart[_height.xl]};
     }
 
     ${device.break(ZSizeFixed.Large)} {
-      &,
-      svg,
-      img {
+      & {
         width: ${ImageSizeChart[_width.lg]};
         height: ${ImageSizeChart[_height.lg]};
       }
     }
 
     ${device.break(ZSizeFixed.Medium)} {
-      &,
-      svg,
-      img {
+      & {
         width: ${ImageSizeChart[_width.md]};
         height: ${ImageSizeChart[_height.md]};
       }
     }
 
     ${device.break(ZSizeFixed.Small)} {
-      &,
-      svg,
-      img {
+      & {
         width: ${ImageSizeChart[_width.sm]};
         height: ${ImageSizeChart[_height.sm]};
       }
     }
 
     ${device.break(ZSizeFixed.ExtraSmall)} {
-      &,
-      svg,
-      img {
+      & {
         width: ${ImageSizeChart[_width.xs]};
         height: ${ImageSizeChart[_height.xs]};
       }
@@ -98,9 +92,9 @@ export function ZImage(props: IZImageSource) {
   }
 
   if (src.startsWith("data:image/svg+xml")) {
-    // SVG images can go into html directly.
     const info = new ZDataUrlBuilder().parse(src).info();
     const __html = new TextDecoder().decode(info.buffer);
+
     return (
       <div
         className={imageClass}
@@ -110,11 +104,7 @@ export function ZImage(props: IZImageSource) {
     );
   }
 
-  return (
-    <div className={imageClass} data-name={name}>
-      <img src={src} alt={name} />
-    </div>
-  );
+  return <img className={imageClass} data-name={name} src={src} alt={name} />;
 }
 
 /**
