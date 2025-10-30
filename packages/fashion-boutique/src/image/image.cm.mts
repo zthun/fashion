@@ -46,8 +46,3 @@ export class ZImageComponentModel extends ZCircusComponentModel {
    */
   public empty = this.isTag.bind(this, "DIV");
 }
-
-/**
- * @deprecated Use ZImageComponentModel instead.
- */
-export const ZImageSourceComponentModel = ZImageComponentModel;
