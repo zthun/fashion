@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { ZImagePageComponentModel } from "./image-page.cm.mjs";
 import { ZImagePage } from "./image-page.js";
 
-describe("ZListPage", () => {
+describe("ZImagePage", () => {
   let _renderer: IZCircusSetup<IZCircusDriver>;
   let _driver: IZCircusDriver;
 
@@ -20,8 +20,10 @@ describe("ZListPage", () => {
 
   it("should render the page", async () => {
     // Arrange.
+
     // Act.
     const target = await createTestTarget();
+
     // Assert.
     expect(target).toBeTruthy();
   });
