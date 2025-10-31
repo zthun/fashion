@@ -95,6 +95,8 @@ export * from "./not-found/sad-face.js";
 export * from "./number/number-input.js";
 export * from "./number/number.cm.mjs";
 export * from "./number/number.js";
+export * from "./pagination/pagination.cm.mjs";
+export * from "./pagination/pagination.js";
 export * from "./router/router-dom.mjs";
 export * from "./stack/flex.js";
 export * from "./stack/stack.js";
