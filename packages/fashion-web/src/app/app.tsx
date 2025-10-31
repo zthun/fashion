@@ -31,6 +31,7 @@ import { ZImagePage } from "../boutique/image/image-page.js";
 import { ZListPage } from "../boutique/list/list-page.js";
 import { ZModalPage } from "../boutique/modal/modal-page.js";
 import { ZNumberPage } from "../boutique/number/number-page.js";
+import { ZPaginationPage } from "../boutique/pagination/pagination-page.js";
 import { ZPopupPage } from "../boutique/popup/popup-page.js";
 import { ZSuspensePage } from "../boutique/suspense/suspense-page.js";
 import { ZTextPage } from "../boutique/text/text-page.js";
@@ -56,6 +57,7 @@ import {
   ZFashionRouteList,
   ZFashionRouteModal,
   ZFashionRouteNumber,
+  ZFashionRoutePagination,
   ZFashionRoutePopup,
   ZFashionRouteSuspense,
   ZFashionRouteText,
@@ -159,6 +161,10 @@ export function ZFashionApp() {
               <ZRoute
                 path={ZFashionRouteNumber.path}
                 element={<ZNumberPage />}
+              />
+              <ZRoute
+                path={ZFashionRoutePagination.path}
+                element={<ZPaginationPage />}
               />
               <ZRoute path={ZFashionRoutePopup.path} element={<ZPopupPage />} />
               <ZRoute

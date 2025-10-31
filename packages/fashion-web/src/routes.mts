@@ -126,6 +126,13 @@ export const ZFashionRouteNumber = new ZRouteBuilder()
   .avatar("5")
   .build();
 
+export const ZFashionRoutePagination = new ZRouteBuilder()
+  .name("Pagination")
+  .path("pagination")
+  .description("Paged data")
+  .avatar("book")
+  .build();
+
 export const ZFashionRoutePopup = new ZRouteBuilder()
   .name("Popup")
   .path("popup")
@@ -185,6 +192,7 @@ export const ZFashionRouteAllComponents = [
   ZFashionRouteList,
   ZFashionRouteModal,
   ZFashionRouteNumber,
+  ZFashionRoutePagination,
   ZFashionRoutePopup,
   ZFashionRouteSuspense,
   ZFashionRouteText,
