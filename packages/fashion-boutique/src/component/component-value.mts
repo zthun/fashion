@@ -11,3 +11,9 @@ export interface IZComponentValue<T> {
    */
   onValueChange?: (val: T) => void;
 }
+
+/**
+ * The readonly variant for component value.
+ */
+export interface IZComponentValueReadonly<T>
+  extends Omit<IZComponentValue<T>, "onValueChange"> {}
