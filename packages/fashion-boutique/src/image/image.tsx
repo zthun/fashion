@@ -8,7 +8,6 @@ import {
   ZSizeVaried,
 } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
-import { ZDataUrlBuilder } from "@zthun/webigail-url";
 import type { Property } from "csstype";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
@@ -89,19 +88,6 @@ export function ZImage(props: IZImageSource) {
 
   if (!src) {
     return <div className={imageClass} data-name={name} />;
-  }
-
-  if (src.startsWith("data:image/svg+xml")) {
-    const info = new ZDataUrlBuilder().parse(src).info();
-    const __html = new TextDecoder().decode(info.buffer);
-
-    return (
-      <div
-        className={imageClass}
-        dangerouslySetInnerHTML={{ __html }}
-        data-name={name}
-      />
-    );
   }
 
   return <img className={imageClass} data-name={name} src={src} alt={name} />;
