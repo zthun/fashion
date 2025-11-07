@@ -7,7 +7,9 @@ import {
   ZH3,
   ZIconFontAwesome,
   ZPagination,
+  ZPaginationSizesMultiplesOfFive,
   ZParagraph,
+  ZRefresh,
   ZSearch,
   ZStack,
   useFashionTheme,
@@ -45,7 +47,7 @@ const ZErrorDataSource = new ZDataSourceStatic(
  */
 export function ZGridViewPage() {
   const [request, setRequest] = useState(
-    new ZDataRequestBuilder().size(10).page(1).build(),
+    new ZDataRequestBuilder().size(25).page(1).build(),
   );
   const [dataSource, setDataSource] = useState(ZBrandDataSource);
   const { component } = useFashionTheme();
@@ -115,12 +117,22 @@ export function ZGridViewPage() {
             xs: "1fr",
           },
         }}
-        heading={<ZSearch value={request} onValueChange={setRequest} />}
+        heading={
+          <ZGrid
+            columns="1fr auto"
+            align={{ items: "end" }}
+            gap={ZSizeFixed.Small}
+          >
+            <ZSearch value={request} onValueChange={setRequest} />
+            <ZRefresh value={request} onValueChange={setRequest} />
+          </ZGrid>
+        }
         footer={
           <ZPagination
             value={request}
             onValueChange={setRequest}
             dataSource={dataSource}
+            sizes={ZPaginationSizesMultiplesOfFive}
           />
         }
         renderItem={renderItem}
