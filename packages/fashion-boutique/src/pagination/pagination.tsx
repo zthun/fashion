@@ -119,13 +119,23 @@ export function ZPagination(props: IZPagination) {
     };
 
     return (
-      <ZGrid columns={{ xl: "auto 1fr auto" }} align={{ items: "center" }}>
+      <ZGrid
+        columns={{ xl: "1fr auto", sm: "1fr" }}
+        align={{ items: "center" }}
+        gap={ZSizeFixed.Medium}
+      >
         <ZStack
           orientation={ZOrientation.Horizontal}
+          align={{ items: "center" }}
+        >
+          <ZCaption compact>{count} items</ZCaption>
+        </ZStack>
+
+        <ZGrid
+          columns={{ xl: "7rem auto 7rem auto", sm: "1fr auto 1fr auto" }}
           gap={ZSizeFixed.ExtraSmall}
           align={{ items: "center" }}
         >
-          <ZCaption compact>Show</ZCaption>
           <ZChoiceSelect
             value={_size}
             options={sizes}
@@ -134,23 +144,7 @@ export function ZPagination(props: IZPagination) {
             name="size"
             display={renderSize}
           />
-          <ZCaption compact>items per page</ZCaption>
-        </ZStack>
-
-        <ZStack
-          orientation={ZOrientation.Horizontal}
-          justify={{ content: "center" }}
-          align={{ items: "center" }}
-        >
-          <ZCaption compact>({count} items)</ZCaption>
-        </ZStack>
-
-        <ZGrid
-          columns="auto 7rem auto"
-          align={{ items: "center" }}
-          gap={ZSizeFixed.ExtraSmall}
-        >
-          <ZCaption compact>Page</ZCaption>
+          <ZCaption compact>items on page</ZCaption>
           <ZNumberInput
             value={_page}
             onValueChange={handlePageChange}
@@ -158,7 +152,7 @@ export function ZPagination(props: IZPagination) {
             max={_totalPages}
             name="page"
           />
-          <ZCaption compact>of {_totalPages}</ZCaption>
+          <ZCaption compact>/ {_totalPages}</ZCaption>
         </ZGrid>
       </ZGrid>
     );
