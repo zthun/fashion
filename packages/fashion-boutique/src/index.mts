@@ -102,6 +102,8 @@ export * from "./number/number.js";
 export * from "./pagination/pagination.cm.mjs";
 export * from "./pagination/pagination.js";
 export * from "./router/router-dom.mjs";
+export * from "./search/search.cm.mjs";
+export * from "./search/search.js";
 export * from "./stack/flex.js";
 export * from "./stack/stack.js";
 export * from "./suspense/suspense-progress.js";
