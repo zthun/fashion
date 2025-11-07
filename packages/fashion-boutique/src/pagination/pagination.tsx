@@ -169,7 +169,7 @@ export function ZPagination(props: IZPagination) {
       className={cssJoinDefined("ZPagination-root", className)}
       fashion={component}
       padding={ZSizeFixed.ExtraSmall}
-      border={{ style: "solid", width: ZSizeFixed.ExtraSmall }}
+      border={{ radius: ZSizeFixed.ExtraSmall }}
     >
       <ZSuspenseProgress disabled={!isStateLoading(count)} />
       <ZAsyncDataError value={count}>{renderError}</ZAsyncDataError>
