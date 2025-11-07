@@ -61,7 +61,8 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
       gap: ${tailor.gap(ZSizeFixed.ExtraSmall)};
       min-height: 2.5rem;
       outline: none;
-      padding: 0 ${tailor.gap(ZSizeFixed.ExtraSmall)};
+      padding: calc(${tailor.gap(ZSizeFixed.Small)} / 8)
+        ${tailor.gap(ZSizeFixed.ExtraSmall)};
     }
 
     .ZChoice-toggler {
