@@ -1,10 +1,5 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import {
-  cssJoinDefined,
-  firstDefined,
-  firstTruthy,
-  ZOrientation,
-} from "@zthun/helpful-fn";
+import { cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
 import type { IZDataRequest } from "@zthun/helpful-query";
 import { ZDataRequestBuilder, ZDataSourceStatic } from "@zthun/helpful-query";
 import {
@@ -103,10 +98,8 @@ export function ZPagination(props: IZPagination) {
   };
 
   const renderPagination = (count: number) => {
-    const { size, page } = request;
-    const _size = firstTruthy(Infinity, size);
-    const _page = firstDefined(1, page);
-    const _totalPages = _size === Infinity ? 1 : Math.ceil(count / _size);
+    const { size = Infinity, page = 1 } = request;
+    const _totalPages = size === Infinity ? 1 : Math.ceil(count / size);
 
     const handlePageChange = (page: number) =>
       setRequest((r) => new ZDataRequestBuilder().copy(r).page(page).build());
@@ -137,7 +130,7 @@ export function ZPagination(props: IZPagination) {
           align={{ items: "center" }}
         >
           <ZChoiceSelect
-            value={_size}
+            value={size}
             options={sizes}
             indelible
             onValueChange={handleSizeChange}
@@ -146,7 +139,7 @@ export function ZPagination(props: IZPagination) {
           />
           <ZCaption compact>items on page</ZCaption>
           <ZNumberInput
-            value={_page}
+            value={page}
             onValueChange={handlePageChange}
             min={1}
             max={_totalPages}
