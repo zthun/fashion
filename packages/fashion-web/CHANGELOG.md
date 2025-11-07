@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0](https://github.com/zthun/fashion/compare/v12.1.2...v13.0.0) (2025-11-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* grid view no longer supports search and more
+
+### Features
+
+* grid view no longer supports search and more ([2c3aa82](https://github.com/zthun/fashion/commit/2c3aa8283d4423c2177580745a2d6be244b50c99))
+* image page now lets you select the object fit for images ([e295012](https://github.com/zthun/fashion/commit/e2950127c3aef0a54694d32853be397d278da95d))
+* pagination page allows you to select options and views for the pagination component ([1ea92b1](https://github.com/zthun/fashion/commit/1ea92b10f4888be1b0f878d4b163e17c0a8ebbee))
+* pagination page demos the pagination component ([aa7aad7](https://github.com/zthun/fashion/commit/aa7aad7312b8c8d64aab08fc58ed1ad11f486ab0))
+
+
+
 ## [12.1.2](https://github.com/zthun/fashion/compare/v12.1.1...v12.1.2) (2025-10-29)
 
 **Note:** Version bump only for package @zthun/fashion-web

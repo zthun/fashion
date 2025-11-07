@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0](https://github.com/zthun/fashion/compare/v12.1.2...v13.0.0) (2025-11-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* grid view no longer supports search and more
+* base 64 svg images no longer directly adds svg files to the dom
+* class, ZImageSourceComponentModel has been removed
+* component, ZImageSource, has been removed
+
+### Features
+
+* async data component allow for conditionally rendered content based on data state ([2c62f13](https://github.com/zthun/fashion/commit/2c62f137029f4cefe411fcfa1f9ada8963ffde76))
+* base 64 svg images no longer directly adds svg files to the dom ([b714d49](https://github.com/zthun/fashion/commit/b714d49a986b18fad63fd95af1f81d51b28c792d))
+* class, ZImageSourceComponentModel has been removed ([71aecdb](https://github.com/zthun/fashion/commit/71aecdb96e6a39a164bb6e3bc170357dbd50283b))
+* component, ZImageSource, has been removed ([a548215](https://github.com/zthun/fashion/commit/a5482158b64c96c3efe1c2aa37c88828462522ff))
+* component, ZImageSource, is now just ZImage ([2a29a35](https://github.com/zthun/fashion/commit/2a29a35f8173b56450d82502031457d8ea6e3daa))
+* grid view no longer supports search and more ([2c3aa82](https://github.com/zthun/fashion/commit/2c3aa8283d4423c2177580745a2d6be244b50c99))
+* pagination component allows the user to page through data ([7f22b27](https://github.com/zthun/fashion/commit/7f22b2707fd2bfa02f5efbcf09b6dba21e58dd60))
+* refresh allows you to reset a data request object ([8aa8da8](https://github.com/zthun/fashion/commit/8aa8da823d87c96ad8e9a9c13fc96f753b622811))
+* search allows you to manipulate a request ([55147af](https://github.com/zthun/fashion/commit/55147af7d556fc493f756fec23e6960615fb636b))
+* value readonly component lets you add a value prop without write support ([ca3028e](https://github.com/zthun/fashion/commit/ca3028e5d27d2f9d4d760cb095352ca6c74c1a34))
+* you can now set the object-fit style for an image ([6d49b92](https://github.com/zthun/fashion/commit/6d49b92ab30aa428e2c63ab848d2d19f57c859bb))
+
+
+### Bug Fixes
+
+* the vertical padding on the choice select has been removed ([e9ef802](https://github.com/zthun/fashion/commit/e9ef8024262722f3294d9bd677908c91338da21c))
+
+
+### Reverts
+
+* choice padding change ([087da2d](https://github.com/zthun/fashion/commit/087da2d32eaf1cd9f74f62d22ac2f96338917973))
+
+
+
 ## [12.1.2](https://github.com/zthun/fashion/compare/v12.1.1...v12.1.2) (2025-10-29)
 
 **Note:** Version bump only for package @zthun/fashion-boutique
