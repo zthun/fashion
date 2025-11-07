@@ -1,17 +1,44 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import {
+  useFashionTheme,
+  ZBooleanSwitch,
   ZBox,
+  ZCaption,
   ZCard,
+  ZChoiceSelect,
+  ZGrid,
   ZH3,
   ZIconFontAwesome,
   ZPagination,
+  ZPaginationSizesMultiplesOfFive,
+  ZPaginationSizesMultiplesOfTwelve,
   ZParagraph,
+  ZStack,
 } from "@zthun/fashion-boutique";
 import { ZBrandDataSourceFactory } from "@zthun/helpful-brands";
-import { ZDataRequestBuilder } from "@zthun/helpful-query";
+import {
+  ZDataRequestBuilder,
+  ZDataSourceStatic,
+  ZDataSourceStaticOptionsBuilder,
+} from "@zthun/helpful-query";
 import { useMemo, useState } from "react";
 import { ZFashionRoutePagination } from "../../routes.mjs";
+
+const SourceError = new ZDataSourceStatic(
+  new Error("Something went wrong"),
+  new ZDataSourceStaticOptionsBuilder().delay(500).build(),
+);
+const SourceBrands = ZBrandDataSourceFactory.create();
+const OptionMultiplesOf5 = {
+  name: "Multiples of 5",
+  value: ZPaginationSizesMultiplesOfFive,
+};
+const OptionMultiplesOf12 = {
+  name: "Multiples of 12",
+  value: ZPaginationSizesMultiplesOfTwelve,
+};
+const Options = [OptionMultiplesOf5, OptionMultiplesOf12];
 
 /**
  * Represents a demo for pagination.
@@ -20,8 +47,14 @@ import { ZFashionRoutePagination } from "../../routes.mjs";
  *        The JSX to render the pagination page.
  */
 export function ZPaginationPage() {
-  const source = useMemo(() => ZBrandDataSourceFactory.create(), []);
-  const [request, setRequest] = useState(new ZDataRequestBuilder().build());
+  const [error, setError] = useState(false);
+  const source = useMemo(() => (error ? SourceError : SourceBrands), [error]);
+  const { body } = useFashionTheme();
+
+  const [sizes, setSizes] = useState(OptionMultiplesOf5);
+  const [request, setRequest] = useState(
+    new ZDataRequestBuilder().size(12).build(),
+  );
 
   return (
     <ZCard
@@ -54,8 +87,39 @@ export function ZPaginationPage() {
             dataSource={source}
             value={request}
             onValueChange={setRequest}
+            sizes={sizes.value}
           />
         </ZBox>
+
+        <ZGrid columns={{ xl: "1fr 1fr", sm: "1fr" }} gap={ZSizeFixed.Medium}>
+          <ZBox fashion={body} padding={ZSizeFixed.Small}>
+            <ZStack gap={ZSizeFixed.Medium}>
+              <ZH3 compact>Request</ZH3>
+              <ZCaption compact>
+                {JSON.stringify(request, undefined, 4)}
+              </ZCaption>
+            </ZStack>
+          </ZBox>
+
+          <ZStack gap={ZSizeFixed.Medium}>
+            <ZH3 compact>Options</ZH3>
+            <ZBooleanSwitch
+              label="Error"
+              value={error}
+              onValueChange={setError}
+              name="error"
+            />
+            <ZChoiceSelect
+              label="Sizes"
+              options={Options}
+              value={sizes}
+              onValueChange={setSizes}
+              renderOption={(o) => o.name}
+              name="sizes"
+              indelible
+            />
+          </ZStack>
+        </ZGrid>
       </ZBox>
     </ZCard>
   );
