@@ -3,7 +3,7 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZDataRequestBuilder } from "@zthun/helpful-query";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { ZSearchComponentModel } from "./search.cm.mjs";
+import { ZTextComponentModel } from "../text/text.cm.mjs";
 import type { IZSearch } from "./search.js";
 import { ZSearch } from "./search.js";
 
@@ -17,7 +17,7 @@ describe("ZSearch", () => {
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
 
-    return ZCircusBy.first(_driver, ZSearchComponentModel);
+    return ZCircusBy.first(_driver, ZTextComponentModel);
   }
 
   afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
@@ -27,10 +27,9 @@ describe("ZSearch", () => {
       // Arrange.
       const expected = "Buscar";
       const target = await createTestTarget({ label: expected });
-      const input = await target.input();
 
       // Act.
-      const label = await input.label();
+      const label = await target.label();
       const actual = await label?.text();
 
       // Assert.
@@ -44,10 +43,9 @@ describe("ZSearch", () => {
       const expected = "velvet";
       const value = new ZDataRequestBuilder().search(expected).build();
       const target = await createTestTarget({ value });
-      const input = await target.input();
 
       // Act.
-      const actual = await input.value();
+      const actual = await target.value();
 
       // Assert.
       expect(actual).toEqual(expected);
@@ -62,7 +60,7 @@ describe("ZSearch", () => {
       const target = await createTestTarget({ onValueChange });
 
       // Act.
-      await target.search(search);
+      await target.keyboard(search);
 
       // Assert.
       expect(onValueChange).toHaveBeenCalledWith(
@@ -80,7 +78,7 @@ describe("ZSearch", () => {
       const target = await createTestTarget({ onValueChange, value });
 
       // Act.
-      await target.search(search);
+      await target.keyboard(search);
 
       // Assert.
       expect(onValueChange).toHaveBeenCalledWith(
