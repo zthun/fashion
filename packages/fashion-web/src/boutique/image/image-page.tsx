@@ -1,29 +1,36 @@
 import {
   ZBox,
   ZCard,
+  ZChoiceSelect,
+  ZGrid,
   ZH3,
   ZIconFontAwesome,
-  ZImageSource,
+  ZImage,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
+import type { ZSize } from "@zthun/fashion-tailor";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
+import { ZOrientation } from "@zthun/helpful-fn";
 import { ZUrlBuilder } from "@zthun/webigail-url";
-import { useState } from "react";
+import type { Property } from "csstype";
+import { useMemo, useState } from "react";
 import { ZFashionRouteImage } from "../../routes.mjs";
 import { ZChoiceDropDownSize } from "../common/choice-drop-down-size.js";
 
 const Png = new ZUrlBuilder().gravatar().build();
 
 export function ZImagePage() {
-  const [width, setWidth] = useState<ZSizeFixed | ZSizeVaried>();
-  const [height, setHeight] = useState<ZSizeFixed | ZSizeVaried>();
-
-  const sizes: (ZSizeFixed | ZSizeVaried)[] = (
-    [] as (ZSizeFixed | ZSizeVaried)[]
-  )
-    .concat(Object.values(ZSizeFixed))
-    .concat(Object.values(ZSizeVaried));
+  const [width, setWidth] = useState<ZSize>();
+  const [height, setHeight] = useState<ZSize>();
+  const [fit, setFit] = useState<Property.ObjectFit>();
+  const fixed: ZSize[] = useMemo(() => Object.values(ZSizeFixed), []);
+  const varied: ZSize[] = useMemo(() => Object.values(ZSizeVaried), []);
+  const sizes = useMemo(() => fixed.concat(varied), []);
+  const fits = useMemo(
+    () => ["fill", "contain", "cover", "none", "scale-down"],
+    [],
+  );
 
   return (
     <ZCard
@@ -49,12 +56,25 @@ export function ZImagePage() {
           this way, then it is directly added to the browser.
         </ZParagraph>
 
-        <ZImageSource src={Png} width={width} height={height} />
+        <ZStack
+          orientation={ZOrientation.Horizontal}
+          justify={{ content: "center" }}
+          width={ZSizeVaried.Full}
+        >
+          <ZImage src={Png} width={width} height={height} fit={fit} />
+        </ZStack>
       </ZBox>
 
       <ZH3>Options</ZH3>
 
-      <ZStack gap={ZSizeFixed.Small}>
+      <ZGrid columns={{ xl: "1fr 1fr 1fr", sm: "1fr" }} gap={ZSizeFixed.Small}>
+        <ZChoiceSelect
+          options={fits}
+          value={fit}
+          onValueChange={setFit}
+          label="Fit"
+          name="fit"
+        />
         <ZChoiceDropDownSize
           sizes={sizes}
           value={width}
@@ -69,7 +89,7 @@ export function ZImagePage() {
           label="Height"
           name="height"
         />
-      </ZStack>
+      </ZGrid>
     </ZCard>
   );
 }

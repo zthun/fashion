@@ -3,8 +3,8 @@ import { ZCircusComponentModel } from "@zthun/cirque";
 /**
  * Represents the component model for an image source.
  */
-export class ZImageSourceComponentModel extends ZCircusComponentModel {
-  public static readonly Selector = ".ZImageSource-root";
+export class ZImageComponentModel extends ZCircusComponentModel {
+  public static readonly Selector = ".ZImage-root";
 
   /**
    * Gets the image name.
@@ -16,16 +16,19 @@ export class ZImageSourceComponentModel extends ZCircusComponentModel {
     return this.driver.attribute("data-name");
   }
 
+  private async isTag(wanted: "DIV" | "SVG" | "IMG"): Promise<boolean> {
+    const tag = await this.driver.tag();
+
+    return tag.toUpperCase().localeCompare(wanted.toUpperCase()) === 0;
+  }
+
   /**
    * Gets a value that determines if this image is using an svg element.
    *
    * @returns
    *        True if the underlying image source is an svg.
    */
-  public async svg(): Promise<boolean> {
-    const [tag] = await this.driver.query("svg");
-    return !!tag;
-  }
+  public svg = this.isTag.bind(this, "SVG");
 
   /**
    * Gets a value that determines if this image is using an img element.
@@ -33,10 +36,7 @@ export class ZImageSourceComponentModel extends ZCircusComponentModel {
    * @returns
    *        True if the underlying image source is an img.
    */
-  public async img(): Promise<boolean> {
-    const [tag] = await this.driver.query("img");
-    return !!tag;
-  }
+  public img = this.isTag.bind(this, "IMG");
 
   /**
    * Gets a value that determines if the image is empty.
@@ -44,9 +44,5 @@ export class ZImageSourceComponentModel extends ZCircusComponentModel {
    * @returns
    *        True if the underlying image is empty.
    */
-  public async empty(): Promise<boolean> {
-    const svg = await this.svg();
-    const img = await this.img();
-    return !svg && !img;
-  }
+  public empty = this.isTag.bind(this, "DIV");
 }

@@ -6,13 +6,13 @@ import {
   ZFashionThemeContext,
   ZH1,
   ZIconFontAwesome,
-  ZImageSource,
+  ZImage,
   ZNotFound,
   ZRoute,
   ZRouteMap,
   ZRouter,
 } from "@zthun/fashion-boutique";
-import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { createDarkTheme, createLightTheme } from "@zthun/fashion-theme";
 import { useMemo, useState } from "react";
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
@@ -31,6 +31,7 @@ import { ZImagePage } from "../boutique/image/image-page.js";
 import { ZListPage } from "../boutique/list/list-page.js";
 import { ZModalPage } from "../boutique/modal/modal-page.js";
 import { ZNumberPage } from "../boutique/number/number-page.js";
+import { ZPaginationPage } from "../boutique/pagination/pagination-page.js";
 import { ZPopupPage } from "../boutique/popup/popup-page.js";
 import { ZSuspensePage } from "../boutique/suspense/suspense-page.js";
 import { ZTextPage } from "../boutique/text/text-page.js";
@@ -56,6 +57,7 @@ import {
   ZFashionRouteList,
   ZFashionRouteModal,
   ZFashionRouteNumber,
+  ZFashionRoutePagination,
   ZFashionRoutePopup,
   ZFashionRouteSuspense,
   ZFashionRouteText,
@@ -76,9 +78,7 @@ const darkTheme = createDarkTheme();
  *        The jsx to render the fashion web application.
  */
 export function ZFashionApp() {
-  const avatar = (
-    <ZImageSource src={ZFashionRouteHome.avatar} height={ZSizeVaried.Full} />
-  );
+  const avatar = <ZImage src={ZFashionRouteHome.avatar} />;
   const [theme, setTheme] = useState(darkTheme);
   const { dark, light } = theme;
 
@@ -161,6 +161,10 @@ export function ZFashionApp() {
               <ZRoute
                 path={ZFashionRouteNumber.path}
                 element={<ZNumberPage />}
+              />
+              <ZRoute
+                path={ZFashionRoutePagination.path}
+                element={<ZPaginationPage />}
               />
               <ZRoute path={ZFashionRoutePopup.path} element={<ZPopupPage />} />
               <ZRoute

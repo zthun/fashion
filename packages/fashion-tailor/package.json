@@ -25,13 +25,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/helpful-fn": "^9.10.1",
+    "@zthun/helpful-fn": "^9.11.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.4.2",
-    "vite": "^7.1.12",
-    "vitest": "^4.0.5"
+    "vite": "^7.2.1",
+    "vitest": "^4.0.7"
   },
   "files": [
     "dist"
