@@ -6,7 +6,9 @@ import {
   ZGridView,
   ZH3,
   ZIconFontAwesome,
+  ZPagination,
   ZParagraph,
+  ZSearch,
   ZStack,
   useFashionTheme,
 } from "@zthun/fashion-boutique";
@@ -15,6 +17,7 @@ import type { IZBrand } from "@zthun/helpful-brands";
 import { ZBrandKnown } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import {
+  ZDataRequestBuilder,
   ZDataSearchFields,
   ZDataSourceStatic,
   ZDataSourceStaticOptionsBuilder,
@@ -41,8 +44,10 @@ const ZErrorDataSource = new ZDataSourceStatic(
  * @returns The JSX to render the page.
  */
 export function ZGridViewPage() {
+  const [request, setRequest] = useState(
+    new ZDataRequestBuilder().size(10).page(1).build(),
+  );
   const [dataSource, setDataSource] = useState(ZBrandDataSource);
-  const [search, setSearch] = useState<false | undefined>();
   const { component } = useFashionTheme();
 
   const renderItem = (item: IZBrand) => (
@@ -71,10 +76,6 @@ export function ZGridViewPage() {
     setDataSource((d) =>
       d === ZBrandDataSource ? ZErrorDataSource : ZBrandDataSource,
     );
-  };
-
-  const toggleSearch = () => {
-    setSearch((s) => (s === false ? undefined : false));
   };
 
   return (
@@ -114,9 +115,17 @@ export function ZGridViewPage() {
             xs: "1fr",
           },
         }}
-        SearchProps={search}
+        heading={<ZSearch value={request} onValueChange={setRequest} />}
+        footer={
+          <ZPagination
+            value={request}
+            onValueChange={setRequest}
+            dataSource={dataSource}
+          />
+        }
         renderItem={renderItem}
         dataSource={dataSource}
+        value={request}
       />
 
       <ZBox margin={{ top: ZSizeFixed.Large }}>
@@ -127,12 +136,6 @@ export function ZGridViewPage() {
             label="Error"
             value={dataSource === ZErrorDataSource}
             onValueChange={toggleDataSource}
-          />
-
-          <ZBooleanSwitch
-            label="Hide Search"
-            value={search === false}
-            onValueChange={toggleSearch}
           />
         </ZGrid>
       </ZBox>

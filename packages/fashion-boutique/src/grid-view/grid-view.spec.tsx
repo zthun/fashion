@@ -1,15 +1,7 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
-import {
-  ZCircusBy,
-  ZCircusDestroy,
-  ZCircusKeyboardQwerty,
-} from "@zthun/cirque";
+import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import {
-  ZDataRequestBuilder,
-  ZDataSourceStatic,
-  ZDataSourceStaticOptionsBuilder,
-} from "@zthun/helpful-query";
+import { ZDataRequestBuilder, ZDataSourceStatic } from "@zthun/helpful-query";
 import { range } from "lodash-es";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ZGridViewComponentModel } from "./grid-view.cm.mjs";
@@ -19,7 +11,6 @@ import { ZGridView } from "./grid-view.js";
 describe("ZGridView", () => {
   let _renderer: IZCircusSetup;
   let _driver: IZCircusDriver;
-  let _target: ZGridViewComponentModel;
 
   const renderItem = (item: any) => (
     <div key={item} className="item">
@@ -28,16 +19,24 @@ describe("ZGridView", () => {
   );
 
   async function createTestTarget(props?: Partial<IZGridView>) {
-    _renderer = new ZCircusSetupRenderer(
-      <ZGridView renderItem={renderItem} {...props} />,
-    );
+    const element = <ZGridView renderItem={renderItem} {...props} />;
+
+    _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
-    _target = await ZCircusBy.first(_driver, ZGridViewComponentModel);
-    return _target;
+
+    return ZCircusBy.first(_driver, ZGridViewComponentModel);
+  }
+
+  async function loadTestTarget(props?: Partial<IZGridView>) {
+    const target = await createTestTarget(props);
+
+    const suspense = await target.suspense();
+    await suspense.load();
+
+    return target;
   }
 
   afterEach(async () => {
-    await _target?.load();
     await ZCircusDestroy.sequential(_driver, _renderer);
   });
 
@@ -49,10 +48,9 @@ describe("ZGridView", () => {
       // Arrange.
       const renderItem = vi.fn();
       const value = new ZDataRequestBuilder().build();
-      const target = await createTestTarget({ value, dataSource, renderItem });
 
       // Act.
-      await target.load();
+      await loadTestTarget({ value, dataSource, renderItem });
 
       // Assert.
       expect(renderItem).toHaveBeenCalledTimes(data.length);
@@ -60,10 +58,9 @@ describe("ZGridView", () => {
 
     it("should not render any errors", async () => {
       // Arrange.
-      const target = await createTestTarget({ dataSource });
+      const target = await loadTestTarget({ dataSource });
 
       // Act.
-      await target.load();
       const actual = await target.error();
 
       // Assert.
@@ -73,94 +70,13 @@ describe("ZGridView", () => {
     it("should render items up to the page size of the value", async () => {
       // Arrange.
       const value = new ZDataRequestBuilder().page(1).size(12).build();
-      const target = await createTestTarget({ value, dataSource });
+      const target = await loadTestTarget({ value, dataSource });
 
       // Act.
-      await target.load();
       const actual = await target.driver.query(".item");
 
       // Assert.
       expect(actual.length).toEqual(value.size);
-    });
-  });
-
-  describe("Pagination", () => {
-    it("should move to the next page", async () => {
-      // Arrange.
-      const expected = expect.objectContaining({ page: 2 });
-      const dataSource = new ZDataSourceStatic(range(0, 100));
-      vi.spyOn(dataSource, "retrieve");
-      const target = await createTestTarget({
-        dataSource,
-        MoreProps: { outline: true, label: "Show More..." },
-      });
-
-      // Act.
-      const more = await target.more();
-      await more?.click();
-
-      // Assert.
-      expect(dataSource.retrieve).toHaveBeenCalledWith(expected);
-    });
-
-    it("should hide the more button if there are no more items to load", async () => {
-      // Arrange
-      const value = new ZDataRequestBuilder().build();
-      const target = await createTestTarget({ value });
-      await target.load();
-
-      // Act.
-      const actual = await target.more();
-
-      // Assert.
-      expect(actual).toBeFalsy();
-    });
-  });
-
-  describe("Search", () => {
-    it("should search for a specific item", async () => {
-      // Arrange.
-      const onValueChange = vi.fn();
-      const search = "100";
-      const expected = expect.objectContaining({ search });
-      const target = await createTestTarget({ onValueChange });
-      await target.load();
-      const text = await target.search();
-
-      // Act.
-      await text?.keyboard(search, ZCircusKeyboardQwerty.enter);
-
-      // Assert.
-      expect(onValueChange).toHaveBeenCalledWith(expected);
-    });
-
-    it("should be hidden if the SearchProps are false", async () => {
-      // Arrange.
-      const target = await createTestTarget({ SearchProps: false });
-      await target.load();
-
-      // Act.
-      const actual = await target.search();
-
-      // Assert.
-      expect(actual).toBeFalsy();
-    });
-  });
-
-  describe("Refresh", () => {
-    it("should render a loader while data is being loaded", async () => {
-      // Arrange.
-      const options = new ZDataSourceStaticOptionsBuilder<number>()
-        .delay(500)
-        .build();
-      const dataSource = new ZDataSourceStatic(range(0, 10), options);
-      const target = await createTestTarget({ dataSource });
-
-      // Act.
-      const actual = await target.suspense();
-
-      // Assert.
-      expect(actual).toBeTruthy();
     });
   });
 
@@ -169,22 +85,10 @@ describe("ZGridView", () => {
 
     it("should render the error message", async () => {
       // Arrange.
-      const target = await createTestTarget({ dataSource });
+      const target = await loadTestTarget({ dataSource });
 
       // Act.
       const actual = await target.error();
-
-      // Assert.
-      expect(actual).toBeTruthy();
-    });
-
-    it("should disable the more button", async () => {
-      // Arrange.
-      const target = await createTestTarget({ dataSource });
-
-      // Act.
-      const more = await target.more();
-      const actual = await more?.disabled();
 
       // Assert.
       expect(actual).toBeTruthy();
