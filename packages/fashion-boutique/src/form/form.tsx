@@ -12,8 +12,7 @@ import type { IZFormState } from "./form-state.mjs";
 import { ZFormStateContext } from "./form-state.mjs";
 
 export interface IZForm
-  extends IZComponentValue<object>,
-    IZComponentHierarchy {}
+  extends IZComponentValue<object>, IZComponentHierarchy {}
 
 export function ZForm(props: IZForm) {
   const { children, value, onValueChange } = props;

@@ -17,7 +17,8 @@ import {
 import { useCss } from "../theme/styled.js";
 
 export interface IZTypographyNamed
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentCompact,
     IZComponentDomEvents<HTMLElement>,
     IZComponentStyle {

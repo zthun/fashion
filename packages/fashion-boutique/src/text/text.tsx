@@ -16,7 +16,8 @@ import type { IZComponentValue } from "../component/component-value.mjs";
  * Represents an input for free form text
  */
 export interface IZText
-  extends IZComponentDisabled,
+  extends
+    IZComponentDisabled,
     IZComponentName,
     IZComponentFashion,
     IZComponentValue<string>,

@@ -16,7 +16,8 @@ import { useFashionDevice, useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZGrid
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentHierarchy,
     IZComponentHeight<ZSizeVaried>,
     IZComponentWidth<ZSizeVaried> {

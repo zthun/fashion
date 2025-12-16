@@ -13,8 +13,7 @@ export const ZVariedSizes = Object.values(ZSizeVaried);
 export const ZVoidSizes = Object.values(ZSizeVoid);
 
 export interface IZChoiceDropDownSize<TSize>
-  extends IZComponentValue<TSize>,
-    IZComponentName {
+  extends IZComponentValue<TSize>, IZComponentName {
   label: ReactNode;
   sizes: TSize[];
 }

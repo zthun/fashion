@@ -24,8 +24,7 @@ const HeightChart = {
 };
 
 export interface IZChartProgress
-  extends IZChart<IZDataPoint>,
-    IZComponentHeight<ZSizeFixed> {}
+  extends IZChart<IZDataPoint>, IZComponentHeight<ZSizeFixed> {}
 
 export function ZChartProgress(props: IZChartProgress) {
   const { primary } = useFashionTheme();

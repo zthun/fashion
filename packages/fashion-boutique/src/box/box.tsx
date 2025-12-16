@@ -53,7 +53,8 @@ const WidthChart = {
 };
 
 export interface IZBox
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentStyle,
     IZComponentWidth,
     IZComponentFashion,

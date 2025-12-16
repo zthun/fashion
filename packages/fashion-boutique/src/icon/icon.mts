@@ -16,7 +16,8 @@ import { useFashionDevice, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZIcon
-  extends IZComponentName,
+  extends
+    IZComponentName,
     IZComponentStyle,
     IZComponentWidth<ZSizeFixed>,
     IZComponentFashion {

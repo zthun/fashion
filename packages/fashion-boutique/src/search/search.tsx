@@ -8,9 +8,7 @@ import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZTextInput } from "../text/text-input.js";
 
 export interface IZSearch
-  extends IZComponentValue<IZDataRequest>,
-    IZComponentLabel,
-    IZComponentName {}
+  extends IZComponentValue<IZDataRequest>, IZComponentLabel, IZComponentName {}
 
 export function ZSearch(props: IZSearch) {
   const { label = "Search", name, value, onValueChange } = props;

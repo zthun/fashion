@@ -14,7 +14,8 @@ import type { IZText } from "./text.js";
 import { useText } from "./text.js";
 
 export interface IZTextArea
-  extends IZText,
+  extends
+    IZText,
     Omit<
       TextareaHTMLAttributes<HTMLTextAreaElement>,
       "prefix" | "type" | "value"

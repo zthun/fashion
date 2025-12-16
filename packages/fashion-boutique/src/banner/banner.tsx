@@ -8,9 +8,7 @@ import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZBanner
-  extends IZComponentHierarchy,
-    IZComponentFashion,
-    IZComponentStyle {}
+  extends IZComponentHierarchy, IZComponentFashion, IZComponentStyle {}
 
 export function ZBanner(props: IZBanner) {
   const { primary } = useFashionTheme();

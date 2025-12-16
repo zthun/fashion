@@ -21,7 +21,8 @@ import type { IZDialog } from "./use-dialog.js";
 import { useDialog } from "./use-dialog.js";
 
 export interface IZModal
-  extends IZDialog,
+  extends
+    IZDialog,
     IZComponentWidth<ZSizeFixed | ZSizeVaried>,
     IZComponentHeight<ZSizeFixed | ZSizeVaried> {}
 

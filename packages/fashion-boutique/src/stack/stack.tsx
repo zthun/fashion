@@ -23,7 +23,8 @@ import { useFashionDevice, useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZStack
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentStyle,
     IZComponentName,
     IZComponentDomEvents<HTMLDivElement>,

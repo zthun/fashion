@@ -14,7 +14,8 @@ import { useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZCarousel
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentName,
     IZComponentValue<number>,
     IZComponentOrientation {

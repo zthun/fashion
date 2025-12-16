@@ -29,8 +29,7 @@ import type { IZDialog } from "./use-dialog.js";
 import { useDialog } from "./use-dialog.js";
 
 export interface IZPopup
-  extends IZDialog,
-    IZComponentHeight<ZSizeFixed | ZSizeVaried> {
+  extends IZDialog, IZComponentHeight<ZSizeFixed | ZSizeVaried> {
   attach?: Element | null;
   attachOrigin?: [ZVerticalAnchor, ZHorizontalAnchor];
   popupOrigin?: [ZVerticalAnchor, ZHorizontalAnchor];

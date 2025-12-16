@@ -11,7 +11,8 @@ import { ZStack } from "../stack/stack.js";
 import { ZH2, ZSubtitle } from "../typography/typography.js";
 
 export interface IZContentTitle
-  extends IZComponentHeading,
+  extends
+    IZComponentHeading,
     IZComponentStyle,
     IZComponentAvatar,
     IZComponentAdornment {}

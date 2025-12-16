@@ -11,7 +11,8 @@ import type { IZComponentValue } from "../component/component-value.mjs";
  * Represents a component that lets the user enter or select a number.
  */
 export interface IZNumber<T = number>
-  extends IZComponentValue<T>,
+  extends
+    IZComponentValue<T>,
     IZComponentDisabled,
     IZComponentFashion,
     IZComponentRange<number>,

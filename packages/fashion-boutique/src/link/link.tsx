@@ -10,7 +10,8 @@ import { useCss } from "../theme/styled.js";
 import { ZParagraph } from "../typography/typography.js";
 
 export interface IZLink
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentDomEvents<HTMLAnchorElement>,
     IZComponentName,
     IZComponentLabel {

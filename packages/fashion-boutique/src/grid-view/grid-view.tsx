@@ -26,7 +26,8 @@ import { useFashionTheme } from "../theme/fashion.mjs";
 import { ZH5 } from "../typography/typography.js";
 
 export interface IZGridView<T = any>
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentDataSource<T>,
     IZComponentValueReadonly<IZDataRequest>,
     IZComponentHeading,

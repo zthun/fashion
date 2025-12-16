@@ -16,7 +16,8 @@ import { useFashionTheme } from "../theme/fashion.mjs";
  * box. Tiles normally go on top of a card.
  */
 export interface IZTile
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentFashion,
     IZComponentStyle,
     IZComponentName {

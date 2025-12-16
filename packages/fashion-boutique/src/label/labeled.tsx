@@ -12,7 +12,8 @@ import type { IZLabel } from "./label.js";
 import { ZLabel } from "./label.js";
 
 export interface IZLabeled
-  extends IZComponentName,
+  extends
+    IZComponentName,
     IZComponentLabel,
     IZComponentStyle,
     IZComponentDomEvents<HTMLDivElement>,

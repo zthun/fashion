@@ -13,7 +13,8 @@ import { useCss } from "../theme/styled.js";
  * Represents properties for the ZList component.
  */
 export interface IZList
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentCompact,
     IZComponentStyle,
     IZComponentFashion,

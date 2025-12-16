@@ -30,7 +30,8 @@ export enum ZTextType {
  * Represents props for the text input.
  */
 export interface IZTextInput
-  extends IZText,
+  extends
+    IZText,
     Omit<InputHTMLAttributes<HTMLInputElement>, "prefix" | "type" | "value"> {
   /**
    * The optional type of text.

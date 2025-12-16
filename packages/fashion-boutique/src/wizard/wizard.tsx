@@ -25,9 +25,7 @@ export interface IZWizardPage {
 }
 
 export interface IZWizard
-  extends IZComponentStyle,
-    IZComponentName,
-    IZComponentValue<number> {
+  extends IZComponentStyle, IZComponentName, IZComponentValue<number> {
   children?: ReactElement<IZWizardPage> | ReactElement<IZWizardPage>[];
 
   CardProps?: Omit<IZCard, "name" | "children" | "footer">;

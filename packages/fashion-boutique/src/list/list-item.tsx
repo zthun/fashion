@@ -10,7 +10,8 @@ import { useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZListItem
-  extends IZComponentName,
+  extends
+    IZComponentName,
     IZComponentStyle,
     IZComponentHierarchy,
     IZComponentCompact,

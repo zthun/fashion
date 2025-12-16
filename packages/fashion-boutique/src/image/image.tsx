@@ -18,7 +18,8 @@ import { useFashionDevice } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZImageSource
-  extends IZComponentSource,
+  extends
+    IZComponentSource,
     IZComponentStyle,
     IZComponentWidth,
     IZComponentHeight,

@@ -34,7 +34,8 @@ import { useCss } from "../theme/styled.js";
 import { ZButtonText } from "../typography/typography.js";
 
 export interface IZButton
-  extends IZComponentAvatar,
+  extends
+    IZComponentAvatar,
     IZComponentLabel,
     IZComponentCompact,
     IZComponentDomEvents<HTMLButtonElement>,

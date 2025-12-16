@@ -13,8 +13,7 @@ import {
 import { identity, startCase } from "lodash-es";
 
 export interface IZChoiceDropDownFashion
-  extends IZComponentValue<ZFashionName>,
-    IZComponentName {}
+  extends IZComponentValue<ZFashionName>, IZComponentName {}
 
 /**
  * A drop down that allows the user to select a fashion from the theme.

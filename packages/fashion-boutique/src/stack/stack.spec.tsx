@@ -14,13 +14,11 @@ describe("ZStack", () => {
 
   async function createTestTarget(props?: Partial<IZStack>) {
     _renderer = new ZCircusSetupRenderer(
-      (
-        <ZStack {...props}>
-          <ZFlex grow={1} shrink={0} basis="auto">
-            {props?.children}
-          </ZFlex>
-        </ZStack>
-      ),
+      <ZStack {...props}>
+        <ZFlex grow={1} shrink={0} basis="auto">
+          {props?.children}
+        </ZFlex>
+      </ZStack>,
     );
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZStackComponentModel);

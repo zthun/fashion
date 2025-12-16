@@ -22,7 +22,8 @@ import {
 import { useCss } from "../theme/styled.js";
 
 export interface IZBubble
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentName,
     IZComponentWidth<ZSizeFixed, ZSizeFixed>,
     IZComponentHierarchy,

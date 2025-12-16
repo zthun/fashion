@@ -17,7 +17,8 @@ import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZChip
-  extends IZComponentFashion,
+  extends
+    IZComponentFashion,
     IZComponentHierarchy,
     IZComponentAdornment,
     IZComponentStyle {}

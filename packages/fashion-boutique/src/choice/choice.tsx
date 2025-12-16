@@ -18,7 +18,8 @@ export interface IZChoiceOption<O = any, V = O> {
 }
 
 export interface IZChoice<O = any, V = O>
-  extends IZComponentDisabled,
+  extends
+    IZComponentDisabled,
     IZComponentStyle,
     IZComponentValue<V[] | V | null>,
     IZComponentLabel,

@@ -33,7 +33,8 @@ import {
 import { useCss } from "../theme/styled.js";
 
 export interface IZCard
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentFashion,
     IZComponentFooter,
     IZComponentStyle,

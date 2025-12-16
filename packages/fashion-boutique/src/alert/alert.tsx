@@ -11,7 +11,8 @@ import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
 export interface IZAlert
-  extends Omit<IZComponentHeading, "subHeading">,
+  extends
+    Omit<IZComponentHeading, "subHeading">,
     IZComponentName,
     IZComponentStyle,
     IZComponentFashion,

@@ -7,7 +7,8 @@ import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValue } from "../component/component-value.mjs";
 
 export interface IZBoolean<T>
-  extends IZComponentDisabled,
+  extends
+    IZComponentDisabled,
     IZComponentValue<T>,
     IZComponentStyle,
     IZComponentLabel,

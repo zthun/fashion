@@ -7,7 +7,8 @@ import type { IZComponentStyle } from "../component/component-style.mjs";
  * Represents properties for a suspense component.
  */
 export interface IZSuspense
-  extends IZComponentStyle,
+  extends
+    IZComponentStyle,
     IZComponentDisabled,
     IZComponentFashion,
     IZComponentName {}

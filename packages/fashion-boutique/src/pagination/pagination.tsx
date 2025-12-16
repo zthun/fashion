@@ -23,7 +23,8 @@ import { useFashionTheme } from "../theme/fashion.mjs";
 import { ZCaption } from "../typography/typography.js";
 
 export interface IZPagination
-  extends IZComponentDataSource,
+  extends
+    IZComponentDataSource,
     IZComponentValue<IZDataRequest>,
     IZComponentStyle {
   /**

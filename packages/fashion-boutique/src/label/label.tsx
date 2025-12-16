@@ -9,7 +9,8 @@ import { useCss } from "../theme/styled.js";
 import { useTypographyCss } from "../typography/typography.js";
 
 export interface IZLabel
-  extends IZComponentHierarchy,
+  extends
+    IZComponentHierarchy,
     IZComponentDomEvents<HTMLLabelElement>,
     IZComponentStyle,
     IZComponentRequired {
