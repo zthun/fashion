@@ -4,7 +4,7 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ZTestRouter } from "../router/router-dom.mjs";
+import { ZTestRouter } from "../router/test-router.js";
 import type { IZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsComponentModel } from "./breadcrumbs.cm.mjs";
