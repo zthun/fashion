@@ -3,7 +3,6 @@ import {
   Navigate,
   Outlet,
   Route,
-  Router,
   Routes,
   useLocation as _useLocation,
   useNavigate as _useNavigate,
@@ -11,7 +10,6 @@ import {
 } from "react-router-dom";
 
 export const ZRouter = HashRouter;
-export const ZTestRouter = Router;
 export const ZRoute = Route;
 export const ZRouteMap = Routes;
 export const ZNavigate = Navigate;
