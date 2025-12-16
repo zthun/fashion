@@ -103,6 +103,7 @@ export * from "./pagination/pagination.cm.mjs";
 export * from "./pagination/pagination.js";
 export * from "./refresh/refresh.js";
 export * from "./router/router-dom.mjs";
+export * from "./router/test-router.js";
 export * from "./search/search.js";
 export * from "./stack/flex.js";
 export * from "./stack/stack.js";
