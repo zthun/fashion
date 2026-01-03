@@ -49,8 +49,10 @@
     "@zthun/cirque-du-react": "^7.2.4",
     "@zthun/helpful-brands": "^9.11.2",
     "@zthun/janitor-build-config": "^19.5.4",
+    "@zthun/janitor-ts-config": "^19.5.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vitest": "^4.0.16"
   },
