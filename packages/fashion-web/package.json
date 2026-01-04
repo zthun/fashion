@@ -1,6 +1,6 @@
 {
   "name": "@zthun/fashion-web",
-  "version": "13.0.2",
+  "version": "13.0.3",
   "description": "A react website that demos the fashion components.",
   "type": "module",
   "repository": {
@@ -25,7 +25,7 @@
     "@zthun/cirque": "^7.2.4",
     "@zthun/cirque-du-react": "^7.2.4",
     "@zthun/cirque-du-selenium": "^7.2.4",
-    "@zthun/fashion-boutique": "^13.0.2",
+    "@zthun/fashion-boutique": "^13.0.3",
     "@zthun/fashion-tailor": "^13.0.2",
     "@zthun/fashion-theme": "^13.0.2",
     "@zthun/helpful-brands": "^9.11.3",
