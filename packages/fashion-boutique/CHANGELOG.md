@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>13.0.4 (2026-01-31)</small>
+
+* build: update outdated packages ([4c91401](https://github.com/zthun/fashion/commit/4c91401))
+
+
+
+
+
 ## [13.0.3](https://github.com/zthun/fashion/compare/v13.0.2...v13.0.3) (2026-01-04)
 
 **Note:** Version bump only for package @zthun/fashion-boutique
