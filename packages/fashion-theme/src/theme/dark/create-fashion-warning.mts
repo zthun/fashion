@@ -6,6 +6,7 @@ export function createFashionWarning() {
     .name("Warning")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#B45309")
         .background(
           "linear-gradient(90deg, #3B2A10 0%, #B45309 50%, #2A1B0A 100%)",
         )

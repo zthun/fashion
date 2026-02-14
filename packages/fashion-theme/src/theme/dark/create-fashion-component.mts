@@ -6,6 +6,7 @@ export function createFashionComponent() {
     .name("Component")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#1A2330")
         .background("linear-gradient(180deg, #1A2330 0%, #151D28 100%)")
         .contrast("#E6EDF3")
         .border("#2B394D")

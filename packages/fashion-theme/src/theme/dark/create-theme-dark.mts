@@ -12,6 +12,12 @@ import { createFashionWarning } from "./create-fashion-warning.mjs";
 
 import { ZFashionThemeBuilder } from "../fashion-theme.mjs";
 
+/**
+ * Creates the default fashion dark theme.
+ *
+ * @returns
+ *        The default fashion dark theme.
+ */
 export function createThemeDark() {
   return new ZFashionThemeBuilder()
     .name("Dark")
@@ -29,8 +35,3 @@ export function createThemeDark() {
     .component(createFashionComponent())
     .build();
 }
-
-/**
- * @deprecated Use createThemeDark instead.
- */
-export const createDarkTheme = createThemeDark;

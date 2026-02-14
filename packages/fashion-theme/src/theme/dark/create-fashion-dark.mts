@@ -6,6 +6,7 @@ export function createFashionDark() {
     .name("Dark")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#0A1016")
         .background("linear-gradient(180deg, #0A1016 0%, #070C11 100%)")
         .contrast("#E6EDF3")
         .border("#0F1620")

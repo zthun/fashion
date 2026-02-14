@@ -6,6 +6,7 @@ export function createFashionSuccess() {
     .name("Success")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#166534")
         .background(
           "linear-gradient(90deg, #0F3D2E 0%, #166534 50%, #0A2F22 100%)",
         )

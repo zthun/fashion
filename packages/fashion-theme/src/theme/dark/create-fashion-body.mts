@@ -6,6 +6,7 @@ export function createFashionBody() {
     .name("Body")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#0E141B")
         .background("linear-gradient(180deg, #0F1620 0%, #0C1218 100%)")
         .contrast("#E6EDF3")
         .border("#0C1218")

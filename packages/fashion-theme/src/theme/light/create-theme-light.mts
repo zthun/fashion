@@ -8,8 +8,3 @@ import { ZFashionThemeBuilder } from "../fashion-theme.mjs";
 export function createThemeLight() {
   return new ZFashionThemeBuilder().build();
 }
-
-/**
- * @deprecated Use {@link createThemeLight} instead.
- */
-export const createLightTheme = createThemeLight;

@@ -6,6 +6,7 @@ export function createFashionLight() {
     .name("Light")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#2A3442")
         .background("linear-gradient(180deg, #2A3442 0%, #1F2937 100%)")
         .contrast("#FFFFFF")
         .border("#3A4A5F")
