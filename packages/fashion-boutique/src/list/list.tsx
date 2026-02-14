@@ -45,19 +45,19 @@ export function ZList(props: IZList) {
     }
 
     li[data-highlight="true"] {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       border-color: ${picker.idle.border};
       color: ${picker.idle.contrast};
     }
 
     li[data-interactive]:hover {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.main};
       border-color: ${picker.hover.border};
       color: ${picker.hover.contrast};
     }
 
     li[data-interactive]:focus {
-      background-color: ${picker.focus.main};
+      background: ${picker.focus.main};
       border-color: ${picker.focus.border};
       color: ${picker.focus.contrast};
       outline: none;

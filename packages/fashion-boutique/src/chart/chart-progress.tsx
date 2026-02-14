@@ -52,7 +52,7 @@ export function ZChartProgress(props: IZChartProgress) {
 
     .ZChart-point {
       height: ${HeightChart[_height.xl]};
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
     }
 
     ${device.break(ZSizeFixed.Large)} {

@@ -77,7 +77,7 @@ export function ZCard(props: IZCard) {
 
   const _className = useCss(css`
     & {
-      background-color: ${surface.idle.main};
+      background: ${surface.idle.main};
       box-shadow: 0 0.2rem 8pt #101010;
       color: ${surface.idle.contrast};
       max-width: ${WidthChart[_width.xl]};
@@ -85,7 +85,7 @@ export function ZCard(props: IZCard) {
     }
 
     > .ZCard-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       color: ${picker.idle.contrast};
       padding: ${tailor.gap(ZSizeFixed.Small)};
     }

@@ -74,7 +74,7 @@ export function ZModal(props: IZModal) {
 
   const _className = useCss(css`
     & {
-      background-color: ${surface.idle.main};
+      background: ${surface.idle.main};
       border: 0;
       color: ${surface.idle.contrast};
       height: ${_height.xl === ZSizeVaried.Full ? "100%" : undefined};
@@ -107,7 +107,7 @@ export function ZModal(props: IZModal) {
     }
 
     .ZDialog-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       color: ${picker.idle.contrast};
     }
 

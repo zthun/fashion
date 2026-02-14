@@ -51,7 +51,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
 
     .ZChoice-values {
       align-items: center;
-      background-color: ${component.idle.main};
+      background: ${component.idle.main};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};

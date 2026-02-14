@@ -41,7 +41,7 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     .ZChoice-option {
       color: ${component.idle.contrast};
       cursor: pointer;
-      background-color: ${component.idle.main};
+      background: ${component.idle.main};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.ExtraSmall)};
       padding: ${tailor.gap(ZSizeFixed.Small)};
@@ -58,13 +58,13 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     }
 
     .ZChoice-value {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       color: ${picker.idle.contrast};
     }
 
     .ZChoice-option:hover,
     .ZChoice-value:hover {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.main};
       color: ${picker.hover.contrast};
     }
 
@@ -74,7 +74,7 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     }
 
     .ZChoice-clear:hover {
-      background-color: ${error.idle.main};
+      background: ${error.idle.main};
       color: ${error.idle.contrast};
     }
 

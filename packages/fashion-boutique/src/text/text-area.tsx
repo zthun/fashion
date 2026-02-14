@@ -81,7 +81,7 @@ export function ZTextArea(props: IZTextArea) {
 
     .ZText-area {
       align-items: flex-start;
-      background-color: ${component.idle.main};
+      background: ${component.idle.main};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};

@@ -137,7 +137,7 @@ export function ZPopup(props: IZPopup) {
 
   const _className = useCss(css`
     & {
-      background-color: ${component.idle.main};
+      background: ${component.idle.main};
       border-color: ${component.idle.border};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
@@ -167,7 +167,7 @@ export function ZPopup(props: IZPopup) {
     }
 
     .ZDialog-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       color: ${picker.idle.contrast};
     }
 

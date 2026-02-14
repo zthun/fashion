@@ -47,7 +47,7 @@ export function ZSuspenseProgress(props: IZSuspenseProgress) {
 
   const _className = useCss(css`
     & {
-      background-color: currentcolor;
+      background: currentcolor;
       box-sizing: border-box;
       display: ${disabled ? "none" : "block"};
       height: ${HeightChart[_height.xl]};
@@ -59,7 +59,7 @@ export function ZSuspenseProgress(props: IZSuspenseProgress) {
     .ZSuspense-progress-scroll {
       animation: ${scroll} 1.5s ease-in-out infinite;
       position: absolute;
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       inset: 0;
       width: 25%;
     }

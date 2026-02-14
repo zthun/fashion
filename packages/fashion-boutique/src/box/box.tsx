@@ -106,7 +106,7 @@ export function ZBox(props: IZBox) {
 
   const _className = useCss(css`
     & {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.main};
       border-color: ${picker.idle.border};
 
       border-bottom-style: ${trim.bottom};
@@ -144,13 +144,13 @@ export function ZBox(props: IZBox) {
     }
 
     &:focus {
-      background-color: ${interactive ? picker.focus.main : picker.idle.main};
+      background: ${interactive ? picker.focus.main : picker.idle.main};
       border-color: ${interactive ? picker.focus.border : picker.idle.border};
       color: ${interactive ? picker.focus.contrast : picker.idle.contrast};
     }
 
     &:hover {
-      background-color: ${interactive ? picker.hover.main : picker.idle.main};
+      background: ${interactive ? picker.hover.main : picker.idle.main};
       border-color: ${interactive ? picker.hover.border : picker.idle.border};
       color: ${interactive ? picker.hover.contrast : picker.idle.contrast};
     }

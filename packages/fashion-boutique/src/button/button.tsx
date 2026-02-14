@@ -107,14 +107,14 @@ export function ZButton(props: IZButton) {
     }
 
     &:hover:not([disabled]) {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.main};
       border-color: ${picker.hover.border};
       color: ${picker.hover.contrast};
       cursor: pointer;
     }
 
     &:active:not([disabled]) {
-      background-color: ${picker.active.main};
+      background: ${picker.active.main};
       border-color: ${picker.active.border};
       color: ${picker.active.contrast};
     }
