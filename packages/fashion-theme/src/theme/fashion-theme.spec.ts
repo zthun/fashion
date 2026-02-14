@@ -4,7 +4,7 @@ import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
 import { createThemeDark } from "./dark/create-theme-dark.mjs";
 import { ZFashionThemeBuilder } from "./fashion-theme.mjs";
-import { createLightTheme } from "./light.mjs";
+import { createThemeLight } from "./light/create-theme-light.mjs";
 
 describe("ZFashionDesignBuilder", () => {
   function createTestTarget() {
@@ -13,7 +13,7 @@ describe("ZFashionDesignBuilder", () => {
 
   describe("Construction", () => {
     it("should create the light theme", () => {
-      expect(createLightTheme()).toBeTruthy();
+      expect(createThemeLight()).toBeTruthy();
     });
 
     it("should create the dark theme", () => {

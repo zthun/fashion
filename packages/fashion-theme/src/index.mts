@@ -7,4 +7,4 @@ export * from "./fashion/fashion-state.mjs";
 export * from "./fashion/fashion.mjs";
 export * from "./theme/dark/create-theme-dark.mjs";
 export * from "./theme/fashion-theme.mjs";
-export * from "./theme/light.mjs";
+export * from "./theme/light/create-theme-light.mjs";
