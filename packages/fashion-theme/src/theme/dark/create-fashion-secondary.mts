@@ -6,6 +6,7 @@ export function createFashionSecondary() {
     .name("Secondary")
     .idle(
       new ZFashionStateBuilder()
+        .foreground("#409CFF")
         .background(
           "linear-gradient(90deg, #1B5FAF 0%, #409CFF 50%, #2563EB 100%)",
         )
@@ -15,6 +16,7 @@ export function createFashionSecondary() {
     )
     .hover(
       new ZFashionStateBuilder()
+        .foreground("#55A8FF")
         .background(
           "linear-gradient(90deg, #2563EB 0%, #55A8FF 50%, #2B5FB5 100%)",
         )
@@ -23,10 +25,14 @@ export function createFashionSecondary() {
         .build(),
     )
     .focus(
-      new ZFashionStateBuilder().contrast("#FFFFFF").border("#9AD5FF").build(),
+      new ZFashionStateBuilder()
+        .foreground("#409CFF")
+        .border("#9AD5FF")
+        .build(),
     )
     .active(
       new ZFashionStateBuilder()
+        .foreground("#2B5FB5")
         .background(
           "linear-gradient(90deg, #16498F 0%, #2B5FB5 50%, #1B4ED8 100%)",
         )
