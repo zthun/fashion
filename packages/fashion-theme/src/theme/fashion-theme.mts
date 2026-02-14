@@ -1,3 +1,4 @@
+import type { ZMutable } from "@zthun/helpful-fn";
 import type { IZFashion } from "../fashion/fashion.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
 
@@ -134,35 +135,26 @@ export interface IZFashionTheme extends ZFashionRecord {
  * should have a generally good scheme for your fashion needs.
  */
 export class ZFashionThemeBuilder {
-  private _design: {
-    -readonly [P in keyof IZFashionTheme]: IZFashionTheme[P];
+  private _design: ZMutable<IZFashionTheme> = {
+    name: "Default",
+    primary: new ZFashionBuilder().name("Primary").build(),
+    secondary: new ZFashionBuilder().name("Secondary").build(),
+    success: new ZFashionBuilder().name("Success").build(),
+    warning: new ZFashionBuilder().name("Warning").build(),
+    error: new ZFashionBuilder().name("Error").build(),
+    info: new ZFashionBuilder().name("Info").build(),
+    body: new ZFashionBuilder().name("Body").build(),
+    surface: new ZFashionBuilder().name("Surface").build(),
+    component: new ZFashionBuilder().name("Component").build(),
+    light: new ZFashionBuilder().name("Light").build(),
+    dark: new ZFashionBuilder().name("Dark").build(),
+    opposite: new ZFashionBuilder().name("Opposite").build(),
+    transparent: new ZFashionBuilder()
+      .name("Transparent")
+      .transparent()
+      .build(),
+    inherit: new ZFashionBuilder().name("Inherit").inherit().build(),
   };
-
-  /**
-   * Initializes a new instance of this object.
-   */
-  public constructor() {
-    this._design = {
-      name: "Light",
-      primary: new ZFashionBuilder().name("Primary").build(),
-      secondary: new ZFashionBuilder().name("Secondary").build(),
-      success: new ZFashionBuilder().name("Success").build(),
-      warning: new ZFashionBuilder().name("Warning").build(),
-      error: new ZFashionBuilder().name("Error").build(),
-      info: new ZFashionBuilder().name("Info").build(),
-      body: new ZFashionBuilder().name("Body").build(),
-      surface: new ZFashionBuilder().name("Surface").build(),
-      component: new ZFashionBuilder().name("Component").build(),
-      light: new ZFashionBuilder().name("Light").build(),
-      dark: new ZFashionBuilder().name("Dark").build(),
-      opposite: new ZFashionBuilder().name("Opposite").build(),
-      transparent: new ZFashionBuilder()
-        .name("Transparent")
-        .transparent()
-        .build(),
-      inherit: new ZFashionBuilder().name("Inherit").inherit().build(),
-    };
-  }
 
   /**
    * Sets the name of the design.
