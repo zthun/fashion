@@ -1,6 +1,4 @@
-import type { ZRequiredPick } from "@zthun/helpful-fn";
-import { brighten, contrast } from "../color/color.mjs";
-import { hex } from "../color/hex.mjs";
+import type { ZMutable, ZRequiredPick } from "@zthun/helpful-fn";
 import { black, white } from "../color/rgb.mjs";
 import type { IZFashionState } from "./fashion-state.mjs";
 import { ZFashionStateBuilder } from "./fashion-state.mjs";
@@ -39,22 +37,12 @@ export interface IZFashion {
  * Represents a builder for a complementary fashion objects.
  */
 export class ZFashionBuilder {
-  private _fashion: { -readonly [P in keyof IZFashion]: IZFashion[P] };
-
-  /**
-   * Initializes a new instance of this object.
-   *
-   * The default complementary pair is white and black
-   * for the main and contrast values respectively.
-   */
-  public constructor() {
-    this._fashion = {
-      idle: {
-        foreground: white(),
-        contrast: black(),
-      },
-    };
-  }
+  private _fashion: ZMutable<IZFashion> = {
+    idle: {
+      foreground: white(),
+      contrast: black(),
+    },
+  };
 
   /**
    * Sets the name.
@@ -71,7 +59,7 @@ export class ZFashionBuilder {
   }
 
   /**
-   * Removes everything but idle main and contrast, and the fashion name.
+   * Removes everything but idle foreground and contrast, and the fashion name.
    *
    * @returns
    *        This object.
@@ -80,41 +68,9 @@ export class ZFashionBuilder {
     delete this._fashion.active;
     delete this._fashion.focus;
     delete this._fashion.hover;
+    delete this._fashion.idle.background;
     delete this._fashion.idle.border;
     return this;
-  }
-
-  /**
-   * Sets the idle, hover, and focus states.
-   *
-   * If you only have the main color, this will auto
-   * lighten and darken your main color by a given amount.
-   *
-   * This will also calculate a contrast value of white or black,
-   * whichever one gives the higher contrast value off of the main
-   * color.
-   *
-   * @param color -
-   *        The main color.
-   * @param amount -
-   *        The amount to lighten and darken.
-   */
-  public spectrum(color: number, amount = 77) {
-    const createState = (_color: number) => {
-      const whiteContrast = contrast(_color, 0xffffff);
-      const blackContrast = contrast(_color, 0x000000);
-
-      return new ZFashionStateBuilder()
-        .background(hex(_color))
-        .contrast(whiteContrast >= blackContrast ? white() : black())
-        .border(hex(brighten(_color, -amount)))
-        .build();
-    };
-
-    return this.idle(createState(color))
-      .focus(createState(brighten(color, -amount)))
-      .hover(createState(brighten(color, amount)))
-      .active(createState(brighten(color, amount * 1.15)));
   }
 
   /**
