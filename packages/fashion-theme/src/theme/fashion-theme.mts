@@ -144,27 +144,18 @@ export class ZFashionThemeBuilder {
   public constructor() {
     this._design = {
       name: "Light",
-      primary: new ZFashionBuilder().name("Primary").spectrum(0x1976d2).build(),
-      secondary: new ZFashionBuilder()
-        .name("Secondary")
-        .spectrum(0x9c27b0)
-        .build(),
-      success: new ZFashionBuilder().name("Success").spectrum(0x2e7d32).build(),
-      warning: new ZFashionBuilder().name("Warning").spectrum(0xff9e42).build(),
-      error: new ZFashionBuilder().name("Error").spectrum(0xd32f2f).build(),
-      info: new ZFashionBuilder().name("Info").spectrum(0xb5e5ff).build(),
-      body: new ZFashionBuilder().name("Body").spectrum(0xeeeeee).build(),
-      surface: new ZFashionBuilder().name("Surface").spectrum(0xfafafa).build(),
-      component: new ZFashionBuilder()
-        .name("Component")
-        .spectrum(0xdedede)
-        .build(),
-      light: new ZFashionBuilder().name("Light").spectrum(0xfafafa).build(),
-      dark: new ZFashionBuilder().name("Dark").spectrum(0x212121).build(),
-      opposite: new ZFashionBuilder()
-        .name("Opposite")
-        .spectrum(0x212121)
-        .build(),
+      primary: new ZFashionBuilder().name("Primary").build(),
+      secondary: new ZFashionBuilder().name("Secondary").build(),
+      success: new ZFashionBuilder().name("Success").build(),
+      warning: new ZFashionBuilder().name("Warning").build(),
+      error: new ZFashionBuilder().name("Error").build(),
+      info: new ZFashionBuilder().name("Info").build(),
+      body: new ZFashionBuilder().name("Body").build(),
+      surface: new ZFashionBuilder().name("Surface").build(),
+      component: new ZFashionBuilder().name("Component").build(),
+      light: new ZFashionBuilder().name("Light").build(),
+      dark: new ZFashionBuilder().name("Dark").build(),
+      opposite: new ZFashionBuilder().name("Opposite").build(),
       transparent: new ZFashionBuilder()
         .name("Transparent")
         .transparent()
