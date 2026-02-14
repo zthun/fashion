@@ -25,7 +25,8 @@ export function ZLink(props: IZLink) {
   const picker = new ZColorPicker(firstDefined(primary, fashion));
 
   const _className = useCss(css`
-    & {
+    &,
+    &:visited {
       color: ${picker.idle.main};
       text-decoration: none;
     }
