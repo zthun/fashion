@@ -25,7 +25,7 @@ import type { IZBoolean } from "./boolean.mjs";
  *        The JSX to render the checkbox
  */
 export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
-  const { primary } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const {
     className,
     disabled,
@@ -33,7 +33,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     value,
     onValueChange,
     name,
-    fashion = primary,
+    fashion = secondary,
     required,
   } = props;
   const { component } = useFashionTheme();
@@ -71,19 +71,19 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     }
 
     input:checked + .ZBoolean-value {
-      background: ${_fashion.idle.background};
+      background: ${_fashion.idle.foreground};
       color: ${_fashion.idle.contrast};
       text-align: center;
     }
 
     &:hover:not([data-disabled="true"]) .ZBoolean-value,
     &:hover:not([data-disabled="true"]) input:checked + .ZBoolean-value {
-      background: ${_fashion.hover.background};
+      background: ${_fashion.hover.foreground};
       color: ${_fashion.hover.contrast};
     }
 
     &:focus-within .ZBoolean-value {
-      background: ${_fashion.focus.background} !important;
+      background: ${_fashion.focus.foreground} !important;
       color: ${_fashion.focus.contrast} !important;
       outline: none;
       box-shadow: 0 0 0.25rem 0.25rem ${_fashion.focus.border};

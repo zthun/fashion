@@ -19,7 +19,7 @@ import type { IZBoolean } from "./boolean.mjs";
  *        The JSX to render the checkbox
  */
 export function ZBooleanSwitch(props: IZBoolean<boolean>) {
-  const { component, primary } = useFashionTheme();
+  const { component, secondary } = useFashionTheme();
   const {
     className,
     disabled,
@@ -27,7 +27,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
     value,
     onValueChange,
     name,
-    fashion = primary,
+    fashion = secondary,
     required,
   } = props;
   const tailor = useFashionTailor();
