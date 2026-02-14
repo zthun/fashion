@@ -27,7 +27,7 @@ export function ZLink(props: IZLink) {
   const _className = useCss(css`
     &,
     &:visited {
-      color: ${picker.idle.background};
+      color: ${picker.idle.foreground};
       text-decoration: none;
     }
 
