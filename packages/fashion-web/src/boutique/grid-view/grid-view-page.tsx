@@ -12,7 +12,6 @@ import {
   ZRefresh,
   ZSearch,
   ZStack,
-  useFashionTheme,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { IZBrand } from "@zthun/helpful-brands";
@@ -26,6 +25,7 @@ import {
 } from "@zthun/helpful-query";
 import { useState } from "react";
 import { ZFashionRouteGridView } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const ZBrandDataSourceOptions = new ZDataSourceStaticOptionsBuilder()
   .search(new ZDataSearchFields(["id", "name"]))
@@ -50,8 +50,6 @@ export function ZGridViewPage() {
     new ZDataRequestBuilder().size(25).page(1).build(),
   );
   const [dataSource, setDataSource] = useState(ZBrandDataSource);
-  const { component } = useFashionTheme();
-
   const renderItem = (item: IZBrand) => (
     <ZCard
       key={item.id}
@@ -59,7 +57,6 @@ export function ZGridViewPage() {
         heading: item.name,
         avatar: <ZIconFontAwesome name="hashtag" />,
       }}
-      fashion={component}
     >
       <ZStack
         justify={{ content: "center" }}
@@ -81,7 +78,7 @@ export function ZGridViewPage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZGridViewPage-root"
       TitleProps={{
         heading: ZFashionRouteGridView.name,
@@ -151,6 +148,6 @@ export function ZGridViewPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

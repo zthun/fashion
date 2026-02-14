@@ -2,7 +2,6 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZButton,
-  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -13,6 +12,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { useState } from "react";
 import { ZFashionRouteButton } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -38,7 +38,7 @@ export function ZButtonPage() {
   );
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZButtonPage-root"
       TitleProps={{
         heading: ZFashionRouteButton.name,
@@ -136,6 +136,6 @@ export function ZButtonPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

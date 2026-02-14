@@ -3,7 +3,6 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import {
   ZBox,
   ZCaption,
-  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -12,6 +11,7 @@ import {
 } from "@zthun/fashion-boutique";
 import { useState } from "react";
 import { ZFashionRouteNumber } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for number inputs.
@@ -23,7 +23,7 @@ export function ZNumberPage() {
   const [value, setValue] = useState<number | null>(1);
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZNumberPage-root"
       TitleProps={{
         heading: ZFashionRouteNumber.name,
@@ -70,6 +70,6 @@ export function ZNumberPage() {
 
         <ZCaption className="ZNumberPage-value">Value: {value}</ZCaption>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

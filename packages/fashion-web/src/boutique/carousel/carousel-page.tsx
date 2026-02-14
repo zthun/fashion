@@ -1,7 +1,6 @@
 import {
   ZBox,
   ZBubble,
-  ZCard,
   ZCarousel,
   ZChoiceSelect,
   ZChoiceToggle,
@@ -18,6 +17,7 @@ import { identity, startCase } from "lodash-es";
 import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { ZFashionRouteCarousel } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for carousels.
@@ -57,7 +57,7 @@ export function ZCarouselPage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZCarouselPage-root"
       TitleProps={{
         heading: ZFashionRouteCarousel.name,
@@ -118,6 +118,6 @@ export function ZCarouselPage() {
           />
         </ZStack>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

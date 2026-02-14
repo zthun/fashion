@@ -1,6 +1,5 @@
 import {
   ZButton,
-  ZCard,
   ZH3,
   ZIconFontAwesome,
   ZParagraph,
@@ -11,6 +10,7 @@ import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import type { MouseEvent } from "react";
 import { useState } from "react";
 import { ZFashionRoutePopup } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 export function ZPopupPage() {
   const { primary, success } = useFashionTheme();
@@ -23,7 +23,7 @@ export function ZPopupPage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZPopupPage-root"
       TitleProps={{
         heading: ZFashionRoutePopup.name,
@@ -74,6 +74,6 @@ export function ZPopupPage() {
           You can put anything you want in popup content.
         </ZParagraph>
       </ZPopup>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

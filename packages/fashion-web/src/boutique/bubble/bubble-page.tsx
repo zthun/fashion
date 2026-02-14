@@ -2,7 +2,6 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZBubble,
-  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -14,6 +13,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { useState } from "react";
 import { ZFashionRouteBubble } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { ZChoiceDropDownSize } from "../common/choice-drop-down-size.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
@@ -33,7 +33,7 @@ export function ZBubblePage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZBubblePage-root"
       TitleProps={{
         heading: ZFashionRouteBubble.name,
@@ -105,6 +105,6 @@ export function ZBubblePage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

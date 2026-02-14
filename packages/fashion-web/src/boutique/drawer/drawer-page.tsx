@@ -2,7 +2,6 @@ import {
   useFashionTheme,
   ZBox,
   ZButton,
-  ZCard,
   ZChoiceSelect,
   ZDrawer,
   ZGrid,
@@ -16,6 +15,7 @@ import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
 import { identity, startCase } from "lodash-es";
 import { useState } from "react";
 import { ZFashionRouteDrawer } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for drawers.
@@ -34,7 +34,7 @@ export function ZDrawerPage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZDrawerPage-root"
       TitleProps={{
         heading: ZFashionRouteDrawer.name,
@@ -108,6 +108,6 @@ export function ZDrawerPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }
