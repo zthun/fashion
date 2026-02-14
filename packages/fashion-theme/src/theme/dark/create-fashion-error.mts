@@ -7,9 +7,11 @@ export function createFashionError() {
     .idle(
       new ZFashionStateBuilder()
         .foreground("#B91C1C")
+        /*
         .background(
           "linear-gradient(90deg, #3A1216 0%, #B91C1C 50%, #250A0D 100%)",
         )
+          */
         .contrast("#FFECEC")
         .border("#EF4444")
         .build(),

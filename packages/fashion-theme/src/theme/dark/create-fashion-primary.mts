@@ -7,9 +7,11 @@ export function createFashionPrimary() {
     .idle(
       new ZFashionStateBuilder()
         .foreground("#1E3A66")
+        /*
         .background(
           "linear-gradient(90deg, #0B1B2E 0%, #1E3A66 45%, #060B14 100%)",
         )
+          */
         .contrast("#E6EDF3")
         .border("#243E66")
         .build(),

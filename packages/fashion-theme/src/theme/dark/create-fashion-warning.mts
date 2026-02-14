@@ -7,9 +7,10 @@ export function createFashionWarning() {
     .idle(
       new ZFashionStateBuilder()
         .foreground("#B45309")
-        .background(
+        /*.background(
           "linear-gradient(90deg, #3B2A10 0%, #B45309 50%, #2A1B0A 100%)",
         )
+          */
         .contrast("#FFF4E6")
         .border("#F59E0B")
         .build(),

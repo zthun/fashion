@@ -6,10 +6,10 @@ export function createFashionDark() {
     .name("Dark")
     .idle(
       new ZFashionStateBuilder()
-        .foreground("#0A1016")
-        .background("linear-gradient(180deg, #0A1016 0%, #070C11 100%)")
+        .foreground("#04070B")
+        .background("linear-gradient(180deg, #05080D 0%, #020406 100%)")
         .contrast("#E6EDF3")
-        .border("#0F1620")
+        .border("#0C131B")
         .build(),
     )
     .hover(

@@ -139,7 +139,9 @@ export class ZFashionBuilder {
    *        This object.
    */
   public transparent(): this {
-    return this.clear().idle(new ZFashionStateBuilder().transparent().build());
+    return this.clear()
+      .name("Transparent")
+      .idle(new ZFashionStateBuilder().transparent().build());
   }
 
   /**
@@ -149,7 +151,9 @@ export class ZFashionBuilder {
    *        This object.
    */
   public inherit(): this {
-    return this.clear().idle(new ZFashionStateBuilder().inherit().build());
+    return this.clear()
+      .name("Inherit")
+      .idle(new ZFashionStateBuilder().inherit().build());
   }
 
   /**

@@ -1,3 +1,4 @@
+import { ZFashionThemeBuilder } from "../fashion-theme.mjs";
 import { createFashionBody } from "./create-fashion-body.mjs";
 import { createFashionComponent } from "./create-fashion-component.mjs";
 import { createFashionDark } from "./create-fashion-dark.mjs";
@@ -8,9 +9,8 @@ import { createFashionPrimary } from "./create-fashion-primary.mjs";
 import { createFashionSecondary } from "./create-fashion-secondary.mjs";
 import { createFashionSuccess } from "./create-fashion-success.mjs";
 import { createFashionSurface } from "./create-fashion-surface.mjs";
+import { createFashionTertiary } from "./create-fashion-tertiary.mjs";
 import { createFashionWarning } from "./create-fashion-warning.mjs";
-
-import { ZFashionThemeBuilder } from "../fashion-theme.mjs";
 
 /**
  * Creates the default fashion dark theme.
@@ -23,6 +23,7 @@ export function createThemeDark() {
     .name("Dark")
     .primary(createFashionPrimary())
     .secondary(createFashionSecondary())
+    .tertiary(createFashionTertiary())
     .success(createFashionSuccess())
     .warning(createFashionWarning())
     .error(createFashionError())

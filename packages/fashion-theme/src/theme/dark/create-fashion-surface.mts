@@ -7,7 +7,7 @@ export function createFashionSurface() {
     .idle(
       new ZFashionStateBuilder()
         .foreground("#1C2634")
-        .background("linear-gradient(180deg, #1C2634 0%, #16202C 100%)")
+        // .background("linear-gradient(180deg, #1C2634 0%, #16202C 100%)")
         .contrast("#E6EDF3")
         .border("#2B394D")
         .build(),
