@@ -1,4 +1,4 @@
-import type { RequiredDeep } from "@zthun/helpful-fn";
+import type { ZRequiredDeep } from "@zthun/helpful-fn";
 import { firstDefined } from "@zthun/helpful-fn";
 import type { IZFashionState } from "./fashion-state.mjs";
 import type { IZFashion } from "./fashion.mjs";
@@ -9,7 +9,7 @@ import type { IZFashion } from "./fashion.mjs";
  * A color picker will return a color for every state and part, with idle
  * being the fallback for everything.
  */
-export class ZColorPicker implements RequiredDeep<Omit<IZFashion, "name">> {
+export class ZColorPicker implements ZRequiredDeep<Omit<IZFashion, "name">> {
   public constructor(public fashion: IZFashion) {}
 
   public get idle() {
@@ -37,10 +37,6 @@ export class ZColorPicker implements RequiredDeep<Omit<IZFashion, "name">> {
 
   public get active() {
     return this._getStateWithFallbackToIdle(this.fashion.active);
-  }
-
-  public get visited() {
-    return this._getStateWithFallbackToIdle(this.fashion.visited);
   }
 
   private _getStateWithFallbackToIdle(state?: IZFashionState) {

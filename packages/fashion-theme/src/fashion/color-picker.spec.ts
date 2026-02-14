@@ -155,40 +155,4 @@ describe("FashionColorPicker", () => {
       });
     });
   });
-
-  describe("Visited", () => {
-    describe("Main", () => {
-      it("should return main", () => {
-        shouldReturnColor(box.visited!.main!, box, (t) => t.visited.main);
-      });
-
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("main", "visited", "main");
-      });
-    });
-
-    describe("Contrast", () => {
-      it("should return contrast", () => {
-        shouldReturnColor(
-          box.visited!.contrast!,
-          box,
-          (t) => t.visited.contrast,
-        );
-      });
-
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("contrast", "visited", "contrast");
-      });
-    });
-
-    describe("Border", () => {
-      it("should return border", () => {
-        shouldReturnColor(box.visited!.border!, box, (t) => t.visited.border);
-      });
-
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("border", "visited", "border");
-      });
-    });
-  });
 });

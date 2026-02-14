@@ -33,11 +33,6 @@ export interface IZFashion {
    * Color overrides for when a component is active.
    */
   readonly active?: IZFashionState;
-
-  /**
-   * Color overrides for when a component is visited.
-   */
-  readonly visited?: IZFashionState;
 }
 
 /**
@@ -85,7 +80,6 @@ export class ZFashionBuilder {
     delete this._fashion.active;
     delete this._fashion.focus;
     delete this._fashion.hover;
-    delete this._fashion.visited;
     delete this._fashion.idle.border;
     return this;
   }
@@ -120,8 +114,7 @@ export class ZFashionBuilder {
     return this.idle(createState(color))
       .focus(createState(brighten(color, -amount)))
       .hover(createState(brighten(color, amount)))
-      .active(createState(brighten(color, amount * 1.15)))
-      .visited(createState(brighten(color, -amount * 1.15)));
+      .active(createState(brighten(color, amount * 1.15)));
   }
 
   /**
@@ -180,20 +173,6 @@ export class ZFashionBuilder {
    */
   public active(state: IZFashionState): this {
     this._fashion.active = { ...state };
-    return this;
-  }
-
-  /**
-   * Sets the visited state.
-   *
-   * @param state -
-   *        The fashion overrides.
-   *
-   * @returns
-   *        This object.
-   */
-  public visited(state: IZFashionState): this {
-    this._fashion.visited = { ...state };
     return this;
   }
 

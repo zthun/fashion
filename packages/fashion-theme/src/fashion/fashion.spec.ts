@@ -49,12 +49,6 @@ describe("ZFashion", () => {
         createTestTarget().spectrum(0xffffff).build().active?.main,
       ).toBeTruthy();
     });
-
-    it("should set the visited state", () => {
-      expect(
-        createTestTarget().spectrum(0xffffff).build().visited?.main,
-      ).toBeTruthy();
-    });
   });
 
   describe("Copy", () => {
