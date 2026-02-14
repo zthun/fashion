@@ -42,6 +42,13 @@ describe("ZFashionDesignBuilder", () => {
         expected,
       );
     });
+
+    it("should set tertiary", () => {
+      const expected = new ZFashionBuilder().build();
+      expect(createTestTarget().tertiary(expected).build().tertiary).toEqual(
+        expected,
+      );
+    });
   });
 
   describe("Severity", () => {

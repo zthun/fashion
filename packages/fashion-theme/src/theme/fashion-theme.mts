@@ -10,10 +10,16 @@ export enum ZFashionPriority {
    * Primary fashion.  Main color of your site.
    */
   Primary = "primary",
+
   /**
    * Secondary fashion.
    */
   Secondary = "secondary",
+
+  /**
+   * Tertiary fashion.
+   */
+  Tertiary = "tertiary",
 }
 
 /**
@@ -137,23 +143,26 @@ export interface IZFashionTheme extends ZFashionRecord {
 export class ZFashionThemeBuilder {
   private _design: ZMutable<IZFashionTheme> = {
     name: "Default",
+    // Priority
     primary: new ZFashionBuilder().name("Primary").build(),
     secondary: new ZFashionBuilder().name("Secondary").build(),
+    tertiary: new ZFashionBuilder().name("Tertiary").build(),
+    // Severity
     success: new ZFashionBuilder().name("Success").build(),
     warning: new ZFashionBuilder().name("Warning").build(),
     error: new ZFashionBuilder().name("Error").build(),
     info: new ZFashionBuilder().name("Info").build(),
+    // Area
     body: new ZFashionBuilder().name("Body").build(),
     surface: new ZFashionBuilder().name("Surface").build(),
     component: new ZFashionBuilder().name("Component").build(),
+    // Contrast
     light: new ZFashionBuilder().name("Light").build(),
     dark: new ZFashionBuilder().name("Dark").build(),
     opposite: new ZFashionBuilder().name("Opposite").build(),
-    transparent: new ZFashionBuilder()
-      .name("Transparent")
-      .transparent()
-      .build(),
-    inherit: new ZFashionBuilder().name("Inherit").inherit().build(),
+    // Special
+    transparent: new ZFashionBuilder().transparent().build(),
+    inherit: new ZFashionBuilder().inherit().build(),
   };
 
   /**
@@ -195,6 +204,20 @@ export class ZFashionThemeBuilder {
    */
   public secondary(fashion: IZFashion): this {
     this._design.secondary = fashion;
+    return this;
+  }
+
+  /**
+   * Sets the tertiary fashion.
+   *
+   * @param fashion -
+   *        The value to set.
+   *
+   * @returns
+   *        This object.
+   */
+  public tertiary(fashion: IZFashion): this {
+    this._design.tertiary = fashion;
     return this;
   }
 
