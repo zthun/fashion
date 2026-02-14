@@ -159,6 +159,14 @@ export function ZBox(props: IZBox) {
       color: ${interactive ? picker.hover.contrast : picker.idle.contrast};
     }
 
+    &:active {
+      background: ${interactive
+        ? picker.active.background
+        : picker.idle.background};
+      border-color: ${interactive ? picker.active.border : picker.idle.border};
+      color: ${interactive ? picker.active.contrast : picker.idle.contrast};
+    }
+
     ${device.break(ZSizeFixed.Large)} {
       & {
         max-width: ${WidthChart[_width.lg]};
