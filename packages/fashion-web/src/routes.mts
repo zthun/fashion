@@ -49,13 +49,6 @@ export const ZFashionRouteButton = new ZRouteBuilder()
   .avatar("circle-dot")
   .build();
 
-export const ZFashionRouteCard = new ZRouteBuilder()
-  .name("Card")
-  .path("card")
-  .description("Sectioned Content")
-  .avatar("credit-card")
-  .build();
-
 export const ZFashionRouteCarousel = new ZRouteBuilder()
   .name("Carousel")
   .path("carousel")
@@ -181,7 +174,6 @@ export const ZFashionRouteAllComponents = [
   ZFashionRouteBoolean,
   ZFashionRouteBubble,
   ZFashionRouteButton,
-  ZFashionRouteCard,
   ZFashionRouteCarousel,
   ZFashionRouteChart,
   ZFashionRouteChoice,

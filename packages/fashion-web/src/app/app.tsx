@@ -20,7 +20,6 @@ import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
 import { ZBoutiquePage } from "../boutique/boutique-page.js";
 import { ZBubblePage } from "../boutique/bubble/bubble-page.js";
 import { ZButtonPage } from "../boutique/button/button-page.js";
-import { ZCardPage } from "../boutique/card/card-page.js";
 import { ZCarouselPage } from "../boutique/carousel/carousel-page.js";
 import { ZChartPage } from "../boutique/chart/chart-page.js";
 import { ZChoicePage } from "../boutique/choice/choice-page.js";
@@ -45,7 +44,6 @@ import {
   ZFashionRouteBoutique,
   ZFashionRouteBubble,
   ZFashionRouteButton,
-  ZFashionRouteCard,
   ZFashionRouteCarousel,
   ZFashionRouteChart,
   ZFashionRouteChoice,
@@ -123,7 +121,6 @@ export function ZFashionApp() {
             />
             <ZRoute path={ZFashionRouteBubble.path} element={<ZBubblePage />} />
             <ZRoute path={ZFashionRouteButton.path} element={<ZButtonPage />} />
-            <ZRoute path={ZFashionRouteCard.path} element={<ZCardPage />} />
             <ZRoute
               path={ZFashionRouteCarousel.path}
               element={<ZCarouselPage />}
