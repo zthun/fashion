@@ -72,7 +72,7 @@ export function useTypographyCss(props: IZTypography) {
 
   return useCss(css`
     & {
-      color: ${picker.idle.background};
+      color: ${picker.idle.foreground};
       font-family: Roboto, Arial, sans-serif;
       font-weight: ${WeightChart[_weight]};
       font-size: calc(${PointChart[_size]} * 1.2);
