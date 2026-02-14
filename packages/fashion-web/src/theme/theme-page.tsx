@@ -21,6 +21,7 @@ export function ZThemePage() {
   const {
     primary,
     secondary,
+    tertiary,
     success,
     warning,
     error,
@@ -60,6 +61,7 @@ export function ZThemePage() {
         >
           <ZFashionColors fashion={primary} />
           <ZFashionColors fashion={secondary} />
+          <ZFashionColors fashion={tertiary} />
         </ZGrid>
 
         <ZH4 compact>Severity</ZH4>

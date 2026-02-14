@@ -1,7 +1,6 @@
-import type { IZBreadcrumbsLocation } from "@zthun/fashion-boutique";
 import {
+  useNavigate,
   ZBannerMain,
-  ZBreadcrumbsOutlet,
   ZButton,
   ZFashionThemeContext,
   ZH1,
@@ -10,11 +9,12 @@ import {
   ZNotFound,
   ZRoute,
   ZRouteMap,
-  ZRouter,
+  ZStack,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { createThemeDark, createThemeLight } from "@zthun/fashion-theme";
-import { useMemo, useState } from "react";
+import { ZOrientation } from "@zthun/helpful-fn";
+import { useState } from "react";
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
 import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
 import { ZBoutiquePage } from "../boutique/boutique-page.js";
@@ -78,118 +78,92 @@ const darkTheme = createThemeDark();
  *        The jsx to render the fashion web application.
  */
 export function ZFashionApp() {
+  const navigate = useNavigate();
   const avatar = <ZImage src={ZFashionRouteHome.avatar} />;
   const [theme, setTheme] = useState(darkTheme);
-  const { dark, light } = theme;
 
   const heading = <ZH1 compact>{ZFashionRouteHome.name}</ZH1>;
   const subHeading = ZFashionRouteHome.description;
-
-  const breadcrumbs: IZBreadcrumbsLocation = useMemo(
-    () => ({ home: { name: "home" } }),
-    [],
-  );
 
   const toggleTheme = () => {
     setTheme((t) => (t === lightTheme ? darkTheme : lightTheme));
   };
 
   const suffix = (
-    <ZButton
-      label={
-        <ZIconFontAwesome name="lightbulb" width={ZSizeFixed.ExtraSmall} />
-      }
-      onClick={toggleTheme}
-      fashion={theme === lightTheme ? dark : light}
-      tooltip={
-        theme === lightTheme ? "Switch to dark theme" : "Switch to light theme"
-      }
-    />
+    <ZStack orientation={ZOrientation.Horizontal} gap={ZSizeFixed.ExtraSmall}>
+      <ZButton
+        label={<ZIconFontAwesome name="home" width={ZSizeFixed.ExtraSmall} />}
+        onClick={navigate.bind(null, "/")}
+      />
+      <ZButton
+        label={
+          <ZIconFontAwesome name="lightbulb" width={ZSizeFixed.ExtraSmall} />
+        }
+        onClick={toggleTheme}
+        tooltip={
+          theme === lightTheme
+            ? "Switch to dark theme"
+            : "Switch to light theme"
+        }
+      />
+    </ZStack>
   );
 
   return (
-    <ZRouter>
-      <ZFashionThemeContext.Provider value={theme}>
-        <ZBannerMain TitleProps={{ avatar, heading, subHeading, suffix }}>
-          <ZRouteMap>
-            <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />
+    <ZFashionThemeContext.Provider value={theme}>
+      <ZBannerMain TitleProps={{ avatar, heading, subHeading, suffix }}>
+        <ZRouteMap>
+          <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />
+          <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
+          <ZRoute path={ZFashionRouteBoutique.path}>
+            <ZRoute path={ZFashionRouteAlert.path} element={<ZAlertPage />} />
             <ZRoute
-              path={ZFashionRouteTheme.path}
-              element={<ZBreadcrumbsOutlet breadcrumbsProps={breadcrumbs} />}
-            >
-              <ZRoute path="" element={<ZThemePage />} />
-            </ZRoute>
+              path={ZFashionRouteBoolean.path}
+              element={<ZBooleanPage />}
+            />
+            <ZRoute path={ZFashionRouteBubble.path} element={<ZBubblePage />} />
+            <ZRoute path={ZFashionRouteButton.path} element={<ZButtonPage />} />
+            <ZRoute path={ZFashionRouteCard.path} element={<ZCardPage />} />
             <ZRoute
-              path={ZFashionRouteBoutique.path}
-              element={<ZBreadcrumbsOutlet breadcrumbsProps={breadcrumbs} />}
-            >
-              <ZRoute path={ZFashionRouteAlert.path} element={<ZAlertPage />} />
-              <ZRoute
-                path={ZFashionRouteBoolean.path}
-                element={<ZBooleanPage />}
-              />
-              <ZRoute
-                path={ZFashionRouteBubble.path}
-                element={<ZBubblePage />}
-              />
-              <ZRoute
-                path={ZFashionRouteButton.path}
-                element={<ZButtonPage />}
-              />
-              <ZRoute path={ZFashionRouteCard.path} element={<ZCardPage />} />
-              <ZRoute
-                path={ZFashionRouteCarousel.path}
-                element={<ZCarouselPage />}
-              />
-              <ZRoute path={ZFashionRouteChart.path} element={<ZChartPage />} />
-              <ZRoute
-                path={ZFashionRouteChoice.path}
-                element={<ZChoicePage />}
-              />
-              <ZRoute
-                path={ZFashionRouteDrawer.path}
-                element={<ZDrawerPage />}
-              />
-              <ZRoute path={ZFashionRouteForm.path} element={<ZFormPage />} />
-              <ZRoute
-                path={ZFashionRouteGridView.path}
-                element={<ZGridViewPage />}
-              />
-              <ZRoute path={ZFashionRouteImage.path} element={<ZImagePage />} />
-              <ZRoute path={ZFashionRouteList.path} element={<ZListPage />} />
-              <ZRoute path={ZFashionRouteModal.path} element={<ZModalPage />} />
-              <ZRoute
-                path={ZFashionRouteNumber.path}
-                element={<ZNumberPage />}
-              />
-              <ZRoute
-                path={ZFashionRoutePagination.path}
-                element={<ZPaginationPage />}
-              />
-              <ZRoute path={ZFashionRoutePopup.path} element={<ZPopupPage />} />
-              <ZRoute
-                path={ZFashionRouteSuspense.path}
-                element={<ZSuspensePage />}
-              />
-              <ZRoute path={ZFashionRouteText.path} element={<ZTextPage />} />
-              <ZRoute
-                path={ZFashionRouteTypography.path}
-                element={<ZTypographyPage />}
-              />
-              <ZRoute
-                path={ZFashionRouteWizard.path}
-                element={<ZWizardPage />}
-              />
-              <ZRoute
-                path={ZFashionRouteYouTube.path}
-                element={<ZYouTubePage />}
-              />
-              <ZRoute path="" element={<ZBoutiquePage />} />
-            </ZRoute>
-            <ZRoute path="*" element={<ZNotFound />} />
-          </ZRouteMap>
-        </ZBannerMain>
-      </ZFashionThemeContext.Provider>
-    </ZRouter>
+              path={ZFashionRouteCarousel.path}
+              element={<ZCarouselPage />}
+            />
+            <ZRoute path={ZFashionRouteChart.path} element={<ZChartPage />} />
+            <ZRoute path={ZFashionRouteChoice.path} element={<ZChoicePage />} />
+            <ZRoute path={ZFashionRouteDrawer.path} element={<ZDrawerPage />} />
+            <ZRoute path={ZFashionRouteForm.path} element={<ZFormPage />} />
+            <ZRoute
+              path={ZFashionRouteGridView.path}
+              element={<ZGridViewPage />}
+            />
+            <ZRoute path={ZFashionRouteImage.path} element={<ZImagePage />} />
+            <ZRoute path={ZFashionRouteList.path} element={<ZListPage />} />
+            <ZRoute path={ZFashionRouteModal.path} element={<ZModalPage />} />
+            <ZRoute path={ZFashionRouteNumber.path} element={<ZNumberPage />} />
+            <ZRoute
+              path={ZFashionRoutePagination.path}
+              element={<ZPaginationPage />}
+            />
+            <ZRoute path={ZFashionRoutePopup.path} element={<ZPopupPage />} />
+            <ZRoute
+              path={ZFashionRouteSuspense.path}
+              element={<ZSuspensePage />}
+            />
+            <ZRoute path={ZFashionRouteText.path} element={<ZTextPage />} />
+            <ZRoute
+              path={ZFashionRouteTypography.path}
+              element={<ZTypographyPage />}
+            />
+            <ZRoute path={ZFashionRouteWizard.path} element={<ZWizardPage />} />
+            <ZRoute
+              path={ZFashionRouteYouTube.path}
+              element={<ZYouTubePage />}
+            />
+            <ZRoute path="" element={<ZBoutiquePage />} />
+          </ZRoute>
+          <ZRoute path="*" element={<ZNotFound />} />
+        </ZRouteMap>
+      </ZBannerMain>
+    </ZFashionThemeContext.Provider>
   );
 }
