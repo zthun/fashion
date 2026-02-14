@@ -3,14 +3,14 @@ import { ZRouteBuilder } from "./route/route.mjs";
 export const ZFashionRouteHome = new ZRouteBuilder()
   .name("Fashion")
   .path("")
-  .description("Build something pretty")
+  .description("Build Something Pretty")
   .avatar("/images/svg/fashion.svg")
   .build();
 
 export const ZFashionRouteTheme = new ZRouteBuilder()
   .name("Theme")
   .path("theme")
-  .description("Make it look good")
+  .description("Define Colors")
   .avatar("palette")
   .build();
 
