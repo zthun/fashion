@@ -1,9 +1,11 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority } from "@zthun/fashion-theme";
+import { createMemoryHistory } from "history";
 import { startCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZBubblePageComponentModel } from "./bubble-page.cm.mjs";
@@ -14,7 +16,12 @@ describe("ZBubblePage", () => {
   let _driver: IZCircusDriver;
 
   const createTestTarget = async () => {
-    const element = <ZBubblePage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZBubblePage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZBubblePageComponentModel);

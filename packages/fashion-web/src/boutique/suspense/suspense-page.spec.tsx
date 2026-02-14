@@ -1,7 +1,9 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZSuspensePageComponentModel } from "./suspense-page.cm.mjs";
 import { ZSuspensePage } from "./suspense-page.js";
@@ -12,7 +14,12 @@ describe("ZSuspensePage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZSuspensePage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZSuspensePage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZSuspensePageComponentModel);

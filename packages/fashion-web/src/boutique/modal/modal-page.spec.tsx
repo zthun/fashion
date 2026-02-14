@@ -2,9 +2,11 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZButtonComponentModel } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority } from "@zthun/fashion-theme";
 import { required } from "@zthun/helpful-fn";
+import { createMemoryHistory } from "history";
 import { lowerCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZModalPageComponentModel } from "./modal-page.cm.mjs";
@@ -15,7 +17,12 @@ describe("ZModalPage", () => {
   let _driver: IZCircusDriver;
 
   const createTestTarget = async () => {
-    const element = <ZModalPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZModalPage />
+      </ZTestRouter>
+    );
 
     _setup = new ZCircusSetupRenderer(element);
     _driver = await _setup.setup();

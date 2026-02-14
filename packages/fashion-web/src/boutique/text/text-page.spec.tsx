@@ -9,6 +9,8 @@ import type {
   ZBooleanComponentModel,
   ZTextComponentModel,
 } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZTextPageComponentModel } from "./text-page.cm.mjs";
 import { ZTextPage } from "./text-page.js";
@@ -29,7 +31,12 @@ describe("ZTextPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZTextPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZTextPage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZTextPageComponentModel);

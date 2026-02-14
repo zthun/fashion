@@ -1,6 +1,8 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZFormPageComponentModel } from "./form-page.cm.mjs";
 import { ZFormPage } from "./form-page.js";
@@ -10,7 +12,12 @@ describe("ZFormAutoPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZFormPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZFormPage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZFormPageComponentModel);

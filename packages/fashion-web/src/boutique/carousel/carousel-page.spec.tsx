@@ -1,7 +1,9 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import { ZOrientation } from "@zthun/helpful-fn";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZCarouselPageComponentModel } from "./carousel-page.cm.mjs";
 import { ZCarouselPage } from "./carousel-page.js";
@@ -11,7 +13,12 @@ describe("ZCarouselPage", () => {
   let _driver: IZCircusDriver;
 
   const createTestTarget = async () => {
-    const element = <ZCarouselPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZCarouselPage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZCarouselPageComponentModel);

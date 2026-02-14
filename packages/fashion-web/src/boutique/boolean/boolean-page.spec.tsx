@@ -5,8 +5,10 @@ import type {
   ZBooleanComponentModel,
   ZButtonComponentModel,
 } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZBooleanPageComponentModel } from "./boolean-page.cm.mjs";
 import { ZBooleanPage } from "./boolean-page.js";
@@ -17,7 +19,12 @@ describe("ZBooleanPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZBooleanPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZBooleanPage />
+      </ZTestRouter>
+    );
 
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();

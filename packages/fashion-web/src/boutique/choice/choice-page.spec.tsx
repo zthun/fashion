@@ -2,6 +2,8 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZChoiceComponentModel } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
 import { ZChoicePageComponentModel } from "./choice-page.cm.mjs";
 import { ZChoicePage } from "./choice-page.js";
@@ -12,7 +14,12 @@ describe("ZChoicePage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZChoicePage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZChoicePage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     _target = await ZCircusBy.first(_driver, ZChoicePageComponentModel);
