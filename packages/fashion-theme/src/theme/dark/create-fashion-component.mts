@@ -6,14 +6,14 @@ export function createFashionComponent() {
     .name("Component")
     .idle(
       new ZFashionStateBuilder()
-        .main("linear-gradient(180deg, #1A2330 0%, #151D28 100%)")
+        .background("linear-gradient(180deg, #1A2330 0%, #151D28 100%)")
         .contrast("#E6EDF3")
         .border("#2B394D")
         .build(),
     )
     .hover(
       new ZFashionStateBuilder()
-        .main("linear-gradient(180deg, #1F2A3A 0%, #182233 100%)")
+        .background("linear-gradient(180deg, #1F2A3A 0%, #182233 100%)")
         .contrast("#FFFFFF")
         .border("#3A4D69")
         .build(),
@@ -21,7 +21,7 @@ export function createFashionComponent() {
     .focus(new ZFashionStateBuilder().border("#409CFF").build())
     .active(
       new ZFashionStateBuilder()
-        .main("linear-gradient(180deg, #161E2A 0%, #111824 100%)")
+        .background("linear-gradient(180deg, #161E2A 0%, #111824 100%)")
         .border("#2B5FB5")
         .build(),
     )

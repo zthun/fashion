@@ -119,7 +119,7 @@ describe("ZFashionDesignBuilder", () => {
       const primary = new ZFashionBuilder()
         .idle(
           new ZFashionStateBuilder()
-            .main(black())
+            .background(black())
             .contrast(white())
             .border(white())
             .build(),
