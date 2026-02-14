@@ -62,7 +62,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     }
 
     .ZBoolean-value {
-      background: ${component.idle.main};
+      background: ${component.idle.background};
       color: ${component.idle.contrast};
       display: inline-flex;
       justify-content: center;
@@ -71,19 +71,19 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     }
 
     input:checked + .ZBoolean-value {
-      background: ${_fashion.idle.main};
+      background: ${_fashion.idle.background};
       color: ${_fashion.idle.contrast};
       text-align: center;
     }
 
     &:hover:not([data-disabled="true"]) .ZBoolean-value,
     &:hover:not([data-disabled="true"]) input:checked + .ZBoolean-value {
-      background: ${_fashion.hover.main};
+      background: ${_fashion.hover.background};
       color: ${_fashion.hover.contrast};
     }
 
     &:focus-within .ZBoolean-value {
-      background: ${_fashion.focus.main} !important;
+      background: ${_fashion.focus.background} !important;
       color: ${_fashion.focus.contrast} !important;
       outline: none;
       box-shadow: 0 0 0.25rem 0.25rem ${_fashion.focus.border};

@@ -27,20 +27,20 @@ export function ZLink(props: IZLink) {
   const _className = useCss(css`
     &,
     &:visited {
-      color: ${picker.idle.main};
+      color: ${picker.idle.background};
       text-decoration: none;
     }
 
     &:active {
-      color: ${picker.active.main};
+      color: ${picker.active.foreground};
     }
 
     &:hover {
-      color: ${picker.hover.main};
+      color: ${picker.hover.foreground};
     }
 
     &:focus {
-      color: ${picker.focus.main};
+      color: ${picker.focus.foreground};
     }
   `);
 

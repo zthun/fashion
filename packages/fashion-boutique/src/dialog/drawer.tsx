@@ -78,7 +78,7 @@ export function ZDrawer(props: IZDrawer) {
 
   const _className = useCss(css`
     & {
-      background: ${surface.idle.main};
+      background: ${surface.idle.background};
       border: 0;
       color: ${surface.idle.contrast};
       height: ${height};
@@ -117,7 +117,7 @@ export function ZDrawer(props: IZDrawer) {
     }
 
     .ZDialog-header {
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
     }
 

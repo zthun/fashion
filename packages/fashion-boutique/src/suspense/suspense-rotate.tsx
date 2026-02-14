@@ -26,7 +26,7 @@ export function ZSuspenseRotate(props: IZSuspenseRotate) {
 
   const _className = useCss(css`
     & {
-      color: ${picker.idle.main};
+      color: ${picker.idle.background};
       display: ${disabled ? "none" : "block"};
     }
   `);

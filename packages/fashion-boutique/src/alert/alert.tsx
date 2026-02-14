@@ -42,7 +42,7 @@ export function ZAlert(props: IZAlert) {
   const _className = useCss(css`
     &.ZAlert-root {
       align-items: center;
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-color: ${picker.idle.border};
       border-radius: 0.25rem;
       border-style: double;

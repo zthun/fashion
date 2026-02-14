@@ -62,7 +62,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
       position: absolute;
       cursor: pointer;
       inset: 0;
-      background: ${component.idle.main};
+      background: ${component.idle.background};
       transition: 0.4s;
       border-radius: ${tailor.rounding(ZSizeFixed.Medium)};
     }
@@ -79,7 +79,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
     }
 
     input:checked + .ZBoolean-value {
-      background: ${_fashion.idle.main};
+      background: ${_fashion.idle.background};
     }
 
     input:checked + .ZBoolean-value:before {
@@ -91,7 +91,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
     }
 
     &:focus-within .ZBoolean-value::before {
-      background: ${_fashion.focus.main};
+      background: ${_fashion.focus.background};
       box-shadow: 0 0 0.25rem 0.25rem ${_fashion.focus.border};
     }
   `);

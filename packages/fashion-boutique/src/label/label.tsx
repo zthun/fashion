@@ -35,7 +35,7 @@ export function ZLabel(props: IZLabel) {
 
     &[data-required="true"]::after {
       content: "*";
-      color: ${error.idle.main};
+      color: ${error.idle.background};
       margin-left: ${tailor.thickness(ZSizeFixed.Medium)};
     }
   `);

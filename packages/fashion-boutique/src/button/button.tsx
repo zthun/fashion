@@ -91,10 +91,10 @@ export function ZButton(props: IZButton) {
       justify-content: center;
       overflow: hidden;
       position: relative;
-      background: ${outline ? "transparent" : picker.idle.main};
-      border-color: ${picker.idle.main};
+      background: ${outline ? "transparent" : picker.idle.background};
+      border-color: ${picker.idle.background};
       border-style: ${borderless ? "none" : "solid"};
-      color: ${outline ? picker.idle.main : picker.idle.contrast};
+      color: ${outline ? picker.idle.foreground : picker.idle.contrast};
       padding: ${compact ? 0 : tailor.gap(ZSizeFixed.ExtraSmall)};
       width: ${WidthChart[_width.xl]};
     }
@@ -102,19 +102,19 @@ export function ZButton(props: IZButton) {
     &:focus {
       outline-style: solid;
       outline-width: ${tailor.thickness(ZSizeFixed.Medium)};
-      border-color: ${picker.focus.main};
+      border-color: ${picker.focus.border};
       outline-color: ${picker.focus.border};
     }
 
     &:hover:not([disabled]) {
-      background: ${picker.hover.main};
+      background: ${picker.hover.background};
       border-color: ${picker.hover.border};
       color: ${picker.hover.contrast};
       cursor: pointer;
     }
 
     &:active:not([disabled]) {
-      background: ${picker.active.main};
+      background: ${picker.active.background};
       border-color: ${picker.active.border};
       color: ${picker.active.contrast};
     }

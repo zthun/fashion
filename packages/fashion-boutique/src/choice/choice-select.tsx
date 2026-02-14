@@ -51,7 +51,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
 
     .ZChoice-values {
       align-items: center;
-      background: ${component.idle.main};
+      background: ${component.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};
@@ -71,7 +71,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
 
     .ZChoice-clear:hover,
     .ZChoice-remove:hover {
-      color: ${error.idle.main};
+      color: ${error.idle.background};
     }
 
     .ZChoice-value {

@@ -39,13 +39,13 @@ export function useIconStyles(props: IZIcon) {
 
   return useCss(css`
     & {
-      color: ${picker.idle.main};
+      color: ${picker.idle.background};
       cursor: ${onClick ? "pointer" : "inherit"};
       font-size: ${IconSizeChart[_width.xl]};
     }
 
     &:hover {
-      color: ${onClick ? picker.hover.main : undefined};
+      color: ${onClick ? picker.hover.foreground : undefined};
     }
 
     ${device.break(ZSizeFixed.Large)} {

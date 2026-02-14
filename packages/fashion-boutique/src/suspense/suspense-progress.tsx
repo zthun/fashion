@@ -59,7 +59,7 @@ export function ZSuspenseProgress(props: IZSuspenseProgress) {
     .ZSuspense-progress-scroll {
       animation: ${scroll} 1.5s ease-in-out infinite;
       position: absolute;
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       inset: 0;
       width: 25%;
     }

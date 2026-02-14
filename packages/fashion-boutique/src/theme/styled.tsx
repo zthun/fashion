@@ -93,7 +93,7 @@ export function ZStyled(props: IZStyled) {
 
   useGlobalCss(css`
     body {
-      background: ${body.idle.main};
+      background: ${body.idle.background};
       color: ${body.idle.contrast};
       margin: 0;
       position: relative;

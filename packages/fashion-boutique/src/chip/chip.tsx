@@ -31,7 +31,7 @@ export function ZChip(props: IZChip) {
 
   const _className = useCss(css`
     & {
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.Small)};
       color: ${picker.idle.contrast};
       padding: ${tailor.gap(ZSizeFixed.ExtraSmall)};

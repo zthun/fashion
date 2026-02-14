@@ -62,7 +62,7 @@ export function ZBubble(props: IZBubble) {
     &.ZBubble-root {
       align-content: center;
       align-items: center;
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
       cursor: ${active ? "pointer" : "default"};
       border-width: ${tailor.thickness(border)};
@@ -79,14 +79,14 @@ export function ZBubble(props: IZBubble) {
     }
 
     &.ZBubble-root:focus {
-      background: ${active ? picker.focus.main : picker.idle.main};
+      background: ${active ? picker.focus.background : picker.idle.background};
       border-color: ${active ? picker.focus.border : picker.idle.border};
       color: ${active ? picker.focus.contrast : picker.idle.contrast};
       outline: "none";
     }
 
     &.ZBubble-root:hover {
-      background: ${active ? picker.hover.main : picker.idle.main};
+      background: ${active ? picker.hover.background : picker.idle.background};
       border-color: ${active ? picker.hover.border : picker.idle.border};
       color: ${active ? picker.hover.contrast : picker.idle.contrast};
     }

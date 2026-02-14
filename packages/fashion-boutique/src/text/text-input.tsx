@@ -94,7 +94,7 @@ export const ZTextInput = forwardRef(function _ZTextInput(
 
     .ZText-input {
       align-items: center;
-      background: ${component.idle.main};
+      background: ${component.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};

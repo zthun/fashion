@@ -18,7 +18,7 @@ export function ZBanner(props: IZBanner) {
   const picker = new ZColorPicker(firstDefined(primary, fashion));
   const _className = useCss(css`
     &.ZBanner-root {
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       box-sizing: border-box;
       color: ${picker.idle.contrast};
       left: 0;
