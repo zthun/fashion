@@ -1,157 +1,399 @@
+import type { ZMutable } from "@zthun/helpful-fn";
 import { describe, expect, it } from "vitest";
-import type { ZColor } from "../color/color.mjs";
 import { ZColorPicker } from "./color-picker.mjs";
-import type { IZFashionState } from "./fashion-state.mjs";
+import { ZFashionStateBuilder } from "./fashion-state.mjs";
 import type { IZFashion } from "./fashion.mjs";
 import { ZFashionBuilder } from "./fashion.mjs";
 
 describe("FashionColorPicker", () => {
-  const box = new ZFashionBuilder().spectrum(0x888888).build();
+  const createTestFashion = (): ZMutable<IZFashion> => {
+    return new ZFashionBuilder()
+      .name("TestFashion")
+      .idle(
+        new ZFashionStateBuilder()
+          .foreground("#336699")
+          .contrast("#FFFFFF")
+          .background("linear-gradient(90deg, #336699 0%, #6699CC 100%)")
+          .border("#224466")
+          .build(),
+      )
+      .hover(
+        new ZFashionStateBuilder()
+          .foreground("#4477AA")
+          .contrast("#FFFFFF")
+          .background("linear-gradient(90deg, #4477AA 0%, #77AADD 100%)")
+          .border("#335588")
+          .build(),
+      )
+      .focus(
+        new ZFashionStateBuilder()
+          .foreground("#336699")
+          .background("linear-gradient(90deg, #333433 0%, #77AADD 100%)")
+          .contrast("#FFFFFF")
+          .border("#FFAA00")
+          .build(),
+      )
+      .active(
+        new ZFashionStateBuilder()
+          .foreground("#224466")
+          .contrast("#EEEEEE")
+          .background("linear-gradient(90deg, #224466 0%, #446688 100%)")
+          .border("#112233")
+          .build(),
+      )
+      .build();
+  };
 
   const createTestTarget = (fashion: IZFashion) => new ZColorPicker(fashion);
 
-  const shouldReturnColor = (
-    expected: ZColor | undefined,
-    fashion: IZFashion,
-    actualFn: (t: ZColorPicker) => ZColor,
-  ) => {
-    // Arrange.
-    const target = createTestTarget(fashion);
-
-    // Act.
-    const actual = actualFn(target);
-
-    // Assert.
-    expect(actual).toEqual(expected);
-  };
-
-  const shouldFallbackToIdle = (
-    expected: keyof IZFashionState,
-    state: keyof Omit<IZFashion, "name">,
-    part: keyof IZFashionState,
-  ) => {
-    const _box = new ZFashionBuilder().copy(box).build();
-    const _state = _box[state];
-    delete _state![part];
-    shouldReturnColor(_box.idle[expected], _box, (t) => t[state][part]);
-  };
-
   describe("Idle", () => {
-    describe("Main", () => {
-      it("should return main", () => {
-        shouldReturnColor(box.idle.main, box, (t) => t.idle.main);
+    describe("Foreground", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).idle.foreground).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
 
     describe("Contrast", () => {
-      it("should return contrast", () => {
-        shouldReturnColor(box.idle.contrast, box, (t) => t.idle.contrast);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).idle.contrast).toEqual(
+          fashion.idle.contrast,
+        );
+      });
+    });
+
+    describe("Background", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).idle.background).toEqual(
+          fashion.idle.background,
+        );
+      });
+
+      it("should fallback to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.idle.background;
+
+        expect(createTestTarget(fashion).idle.background).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
 
     describe("Border", () => {
-      it("should return border", () => {
-        shouldReturnColor(box.idle.border!, box, (t) => t.idle.border);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).idle.border).toEqual(
+          fashion.idle.border,
+        );
       });
 
-      it("should return main if no border exists", () => {
-        shouldFallbackToIdle("main", "idle", "border");
+      it("should fall back to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.idle.border;
+
+        expect(createTestTarget(fashion).idle.border).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
   });
 
   describe("Hover", () => {
-    describe("Main", () => {
-      it("should return main", () => {
-        shouldReturnColor(box.hover!.main!, box, (t) => t.hover.main);
+    describe("Foreground", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).hover.foreground).toEqual(
+          fashion.hover!.foreground,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("main", "hover", "main");
+      it("should fallback to idle foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.hover;
+
+        expect(createTestTarget(fashion).hover.foreground).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
 
     describe("Contrast", () => {
-      it("should return contrast", () => {
-        shouldReturnColor(box.hover!.contrast!, box, (t) => t.hover.contrast);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).hover.contrast).toEqual(
+          fashion.hover!.contrast,
+        );
+      });
+    });
+
+    describe("Background", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).hover.background).toEqual(
+          fashion.hover!.background,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("contrast", "hover", "contrast");
+      it("should fallback to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.hover!.background;
+
+        expect(createTestTarget(fashion).hover.background).toEqual(
+          fashion.hover!.foreground,
+        );
+      });
+
+      it("should fallback to idle background if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.hover;
+
+        expect(createTestTarget(fashion).hover.background).toEqual(
+          fashion.idle.background,
+        );
       });
     });
 
     describe("Border", () => {
-      it("should return border", () => {
-        shouldReturnColor(box.hover!.border!, box, (t) => t.hover.border);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).hover.border).toEqual(
+          fashion.hover!.border,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("border", "hover", "border");
+      it("should fall back to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.hover!.border;
+
+        expect(createTestTarget(fashion).hover.border).toEqual(
+          fashion.hover!.foreground,
+        );
+      });
+
+      it("should fallback to idle border if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.hover;
+
+        expect(createTestTarget(fashion).hover.border).toEqual(
+          fashion.idle.border,
+        );
       });
     });
   });
 
   describe("Focus", () => {
-    describe("Main", () => {
-      it("should return main", () => {
-        shouldReturnColor(box.focus!.main!, box, (t) => t.focus.main);
+    describe("Foreground", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.foreground).toEqual(
+          fashion.focus!.foreground,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("main", "focus", "main");
+      it("should fallback to idle foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus;
+
+        expect(createTestTarget(fashion).focus.foreground).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
 
     describe("Contrast", () => {
-      it("should return contrast", () => {
-        shouldReturnColor(box.focus!.contrast!, box, (t) => t.focus.contrast);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.contrast).toEqual(
+          fashion.focus!.contrast,
+        );
+      });
+    });
+
+    describe("Background", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.focus!.background,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("contrast", "focus", "contrast");
+      it("should fallback to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus!.background;
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.focus!.foreground,
+        );
+      });
+
+      it("should fallback to idle background if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus;
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.idle.background,
+        );
       });
     });
 
     describe("Border", () => {
-      it("should return border", () => {
-        shouldReturnColor(box.focus!.border!, box, (t) => t.focus.border);
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.border).toEqual(
+          fashion.focus!.border,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("border", "focus", "border");
+      it("should fall back to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus!.border;
+
+        expect(createTestTarget(fashion).focus.border).toEqual(
+          fashion.focus!.foreground,
+        );
+      });
+
+      it("should fallback to idle border if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus;
+
+        expect(createTestTarget(fashion).focus.border).toEqual(
+          fashion.idle.border,
+        );
+      });
+    });
+  });
+
+  describe("Focus", () => {
+    describe("Foreground", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.foreground).toEqual(
+          fashion.focus!.foreground,
+        );
+      });
+
+      it("should fallback to idle foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus;
+
+        expect(createTestTarget(fashion).focus.foreground).toEqual(
+          fashion.idle.foreground,
+        );
+      });
+    });
+
+    describe("Contrast", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.contrast).toEqual(
+          fashion.focus!.contrast,
+        );
+      });
+    });
+
+    describe("Background", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.focus!.background,
+        );
+      });
+
+      it("should fallback to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus!.background;
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.focus!.foreground,
+        );
+      });
+
+      it("should fallback to idle background if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.focus;
+
+        expect(createTestTarget(fashion).focus.background).toEqual(
+          fashion.idle.background,
+        );
       });
     });
   });
 
   describe("Active", () => {
-    describe("Main", () => {
-      it("should return main", () => {
-        shouldReturnColor(box.active!.main!, box, (t) => t.active.main);
+    describe("Foreground", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).active.foreground).toEqual(
+          fashion.active!.foreground,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("main", "active", "main");
+      it("should fallback to idle foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.active;
+
+        expect(createTestTarget(fashion).active.foreground).toEqual(
+          fashion.idle.foreground,
+        );
       });
     });
 
     describe("Contrast", () => {
-      it("should return contrast", () => {
-        shouldReturnColor(box.active!.contrast!, box, (t) => t.active.contrast);
-      });
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("contrast", "active", "contrast");
+        expect(createTestTarget(fashion).active.contrast).toEqual(
+          fashion.active!.contrast,
+        );
       });
     });
 
-    describe("Border", () => {
-      it("should return border", () => {
-        shouldReturnColor(box.active!.border!, box, (t) => t.active.border);
+    describe("Background", () => {
+      it("should return the value if set", () => {
+        const fashion = createTestFashion();
+
+        expect(createTestTarget(fashion).active.background).toEqual(
+          fashion.active!.background,
+        );
       });
 
-      it("should fallback to idle", () => {
-        shouldFallbackToIdle("border", "active", "border");
+      it("should fallback to foreground if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.active!.background;
+
+        expect(createTestTarget(fashion).active.background).toEqual(
+          fashion.active!.foreground,
+        );
+      });
+
+      it("should fallback to idle background if not set", () => {
+        const fashion = createTestFashion();
+        delete fashion.active;
+
+        expect(createTestTarget(fashion).active.background).toEqual(
+          fashion.idle.background,
+        );
       });
     });
   });

@@ -17,7 +17,7 @@ export interface IZFashion {
   /**
    * Idle state.
    */
-  readonly idle: ZRequiredPick<IZFashionState, "main" | "contrast">;
+  readonly idle: ZRequiredPick<IZFashionState, "foreground" | "contrast">;
 
   /**
    * Color overrides for when a component is hovered.
@@ -50,7 +50,7 @@ export class ZFashionBuilder {
   public constructor() {
     this._fashion = {
       idle: {
-        main: white(),
+        foreground: white(),
         contrast: black(),
       },
     };
@@ -105,7 +105,7 @@ export class ZFashionBuilder {
       const blackContrast = contrast(_color, 0x000000);
 
       return new ZFashionStateBuilder()
-        .main(hex(_color))
+        .background(hex(_color))
         .contrast(whiteContrast >= blackContrast ? white() : black())
         .border(hex(brighten(_color, -amount)))
         .build();
@@ -217,6 +217,6 @@ export class ZFashionBuilder {
    *        The built complementary object.
    */
   public build(): IZFashion {
-    return Object.freeze(JSON.parse(JSON.stringify(this._fashion)));
+    return structuredClone(this._fashion);
   }
 }

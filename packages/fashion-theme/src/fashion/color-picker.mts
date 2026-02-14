@@ -15,14 +15,17 @@ export class ZColorPicker implements ZRequiredDeep<Omit<IZFashion, "name">> {
   public get idle() {
     const { fashion } = this;
     return {
-      get main() {
-        return fashion.idle.main;
+      get foreground() {
+        return fashion.idle.foreground;
       },
       get contrast() {
         return fashion.idle.contrast;
       },
+      get background() {
+        return firstDefined(this.foreground, fashion.idle.background);
+      },
       get border() {
-        return firstDefined(this.main, fashion.idle.border);
+        return firstDefined(this.foreground, fashion.idle.border);
       },
     };
   }
@@ -43,14 +46,21 @@ export class ZColorPicker implements ZRequiredDeep<Omit<IZFashion, "name">> {
     const { idle } = this;
 
     return {
-      get main() {
-        return firstDefined(idle.main, state?.main);
+      get foreground() {
+        return firstDefined(idle.foreground, state?.foreground);
+      },
+      get background() {
+        return firstDefined(
+          idle.background,
+          state?.background,
+          state?.foreground,
+        );
       },
       get contrast() {
         return firstDefined(idle.contrast, state?.contrast);
       },
       get border() {
-        return firstDefined(idle.border, state?.border);
+        return firstDefined(idle.border, state?.border, state?.foreground);
       },
     };
   }
