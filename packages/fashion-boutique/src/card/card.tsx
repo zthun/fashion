@@ -9,13 +9,7 @@ import {
   ZSizeVaried,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
-import {
-  css,
-  cssJoinDefined,
-  firstDefined,
-  pickDataAttributes,
-} from "@zthun/helpful-fn";
-import type { IZComponentFashion } from "../component/component-fashion.mjs";
+import { css, cssJoinDefined, pickDataAttributes } from "@zthun/helpful-fn";
 import type { IZComponentFooter } from "../component/component-footer.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -35,7 +29,6 @@ import { useCss } from "../theme/styled.js";
 export interface IZCard
   extends
     IZComponentHierarchy,
-    IZComponentFashion,
     IZComponentFooter,
     IZComponentStyle,
     IZComponentName,
@@ -60,18 +53,8 @@ export function ZCard(props: IZCard) {
   const { surface } = useFashionTheme();
   const tailor = useFashionTailor();
   const device = useFashionDevice();
-  const {
-    className,
-    children,
-    footer,
-    fashion,
-    name,
-    width,
-    height,
-    TitleProps,
-  } = props;
-  const _fashion = firstDefined(surface, fashion);
-  const picker = new ZColorPicker(_fashion);
+  const { className, children, footer, name, width, height, TitleProps } =
+    props;
   const _surface = new ZColorPicker(surface);
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
@@ -85,11 +68,6 @@ export function ZCard(props: IZCard) {
       max-width: ${WidthChart[_width.xl]};
       min-height: ${HeightChart[_height.xl]};
       padding: ${tailor.gap(ZSizeFixed.Medium)};
-    }
-
-    > .ZCard-header {
-      background: ${picker.idle.background};
-      color: ${picker.idle.contrast};
     }
 
     > .ZCard-footer {
@@ -132,7 +110,6 @@ export function ZCard(props: IZCard) {
       name={name}
       gap={ZSizeFixed.Medium}
       {...pickDataAttributes(props)}
-      data-fashion={_fashion.name}
     >
       <ZContentTitle {...TitleProps} className="ZCard-header" />
 
