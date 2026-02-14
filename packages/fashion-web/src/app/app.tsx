@@ -13,7 +13,7 @@ import {
   ZRouter,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { createDarkTheme, createLightTheme } from "@zthun/fashion-theme";
+import { createThemeDark, createThemeLight } from "@zthun/fashion-theme";
 import { useMemo, useState } from "react";
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
 import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
@@ -68,8 +68,8 @@ import {
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
 
-const lightTheme = createLightTheme();
-const darkTheme = createDarkTheme();
+const lightTheme = createThemeLight();
+const darkTheme = createThemeDark();
 
 /**
  * Represents the root entry point into the application.

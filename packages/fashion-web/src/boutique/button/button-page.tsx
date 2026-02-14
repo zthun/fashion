@@ -104,7 +104,7 @@ export function ZButtonPage() {
 
       <ZBox padding={{ bottom: ZSizeFixed.Large }}>
         <ZH3>Options</ZH3>
-        <ZGrid gap={ZSizeFixed.ExtraSmall}>
+        <ZGrid gap={ZSizeFixed.Small}>
           <ZBooleanSwitch
             value={disabled}
             onValueChange={setDisabled}
