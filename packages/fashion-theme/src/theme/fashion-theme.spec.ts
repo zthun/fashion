@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { black, white } from "../color/rgb.mjs";
 import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
-import { createDarkTheme } from "./dark.mjs";
+import { createThemeDark } from "./dark/create-theme-dark.mjs";
 import { ZFashionThemeBuilder } from "./fashion-theme.mjs";
 import { createLightTheme } from "./light.mjs";
 
@@ -17,7 +17,7 @@ describe("ZFashionDesignBuilder", () => {
     });
 
     it("should create the dark theme", () => {
-      expect(createDarkTheme()).toBeTruthy();
+      expect(createThemeDark()).toBeTruthy();
     });
   });
 
