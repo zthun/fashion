@@ -72,30 +72,27 @@ export function ZCard(props: IZCard) {
   } = props;
   const _fashion = firstDefined(surface, fashion);
   const picker = new ZColorPicker(_fashion);
+  const _surface = new ZColorPicker(surface);
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
 
   const _className = useCss(css`
     & {
-      background: ${surface.idle.background};
+      background: ${_surface.idle.background};
+      border-radius: ${tailor.rounding(ZSizeFixed.Medium)};
       box-shadow: 0 0.2rem 8pt #101010;
-      color: ${surface.idle.contrast};
+      color: ${_surface.idle.contrast};
       max-width: ${WidthChart[_width.xl]};
       min-height: ${HeightChart[_height.xl]};
+      padding: ${tailor.gap(ZSizeFixed.Medium)};
     }
 
     > .ZCard-header {
       background: ${picker.idle.background};
       color: ${picker.idle.contrast};
-      padding: ${tailor.gap(ZSizeFixed.Small)};
-    }
-
-    > .ZCard-content {
-      padding: ${tailor.gap(ZSizeFixed.Small)};
     }
 
     > .ZCard-footer {
-      padding: ${tailor.gap(ZSizeFixed.Small)};
       padding-top: 0;
     }
 
