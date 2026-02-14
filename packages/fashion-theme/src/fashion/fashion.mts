@@ -1,4 +1,4 @@
-import type { RequiredPick } from "@zthun/helpful-fn";
+import type { ZRequiredPick } from "@zthun/helpful-fn";
 import { brighten, contrast } from "../color/color.mjs";
 import { hex } from "../color/hex.mjs";
 import { black, white } from "../color/rgb.mjs";
@@ -17,7 +17,7 @@ export interface IZFashion {
   /**
    * Idle state.
    */
-  readonly idle: RequiredPick<IZFashionState, "main" | "contrast">;
+  readonly idle: ZRequiredPick<IZFashionState, "main" | "contrast">;
 
   /**
    * Color overrides for when a component is hovered.
