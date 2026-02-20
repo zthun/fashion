@@ -21,18 +21,10 @@ export interface IZAlert
 }
 
 export function ZAlert(props: IZAlert) {
-  const theme = useFashionTheme();
+  const { error } = useFashionTheme();
   const tailor = useFashionTailor();
 
-  const { primary } = theme;
-  const {
-    heading,
-    name,
-    className,
-    avatar,
-    message,
-    fashion = primary,
-  } = props;
+  const { heading, name, className, avatar, message, fashion = error } = props;
 
   const picker = new ZColorPicker(fashion);
   const boxWidth = tailor.thickness(ZSizeFixed.ExtraSmall);
