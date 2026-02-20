@@ -20,7 +20,7 @@ import type { IZChoice } from "./choice.js";
 import { useChoice } from "./choice.js";
 
 export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
-  const { component, primary, transparent, error } = useFashionTheme();
+  const { component, secondary, transparent, error } = useFashionTheme();
   const tailor = useFashionTailor();
   const { className, label, multiple, required, disabled, indelible, name } =
     props;
@@ -107,7 +107,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
       <ZChip
         key={key}
         className="ZChoice-value"
-        fashion={multiple ? primary : transparent}
+        fashion={multiple ? secondary : transparent}
         data-value={_value}
         suffix={multiple ? remove : null}
       >

@@ -27,9 +27,9 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     isValueSelected,
     toggleValue,
   } = useChoice(props);
-  const { component, primary, error } = useFashionTheme();
+  const { component, secondary, error } = useFashionTheme();
   const tailor = useFashionTailor();
-  const picker = new ZColorPicker(primary);
+  const picker = new ZColorPicker(secondary);
 
   const _className = useCss(css`
     .ZChoice-options {
