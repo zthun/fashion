@@ -35,12 +35,15 @@ export interface IZFashion {
 
 /**
  * Represents a builder for a complementary fashion objects.
+ *
+ * The default fashion is pure black and white.
  */
 export class ZFashionBuilder {
   private _fashion: ZMutable<IZFashion> = {
     idle: {
       foreground: white(),
       contrast: black(),
+      border: black(),
     },
   };
 
