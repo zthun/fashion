@@ -27,13 +27,13 @@ export interface IZChartProgress
   extends IZChart<IZDataPoint>, IZComponentHeight<ZSizeFixed> {}
 
 export function ZChartProgress(props: IZChartProgress) {
-  const { primary } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const device = useFashionDevice();
   const tailor = useFashionTailor();
   const { className, points, name, height } = props;
   const { x, y, name: label, fashion } = points;
   const _height = new ZDeviceValues(height, ZSizeFixed.Medium);
-  const _fashion = firstDefined(primary, fashion);
+  const _fashion = firstDefined(secondary, fashion);
   const picker = new ZColorPicker(_fashion);
 
   const _y = useMemo(() => Math.max(y, 0), [y]);
