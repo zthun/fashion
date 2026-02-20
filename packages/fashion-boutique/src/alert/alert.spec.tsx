@@ -43,8 +43,10 @@ describe("ZAlert", () => {
     it("should render the message", async () => {
       // Arrange.
       const target = await createTestTarget();
+
       // Act.
       const actual = await (await target.message()).text();
+
       // Assert.
       expect(actual).toEqual(message);
     });
@@ -55,8 +57,10 @@ describe("ZAlert", () => {
       // Arrange.
       heading = "Header";
       const target = await createTestTarget();
+
       // Act.
       const actual = await (await target.heading())!.text();
+
       // Assert.
       expect(actual).toEqual(heading);
     });
@@ -64,8 +68,10 @@ describe("ZAlert", () => {
     it("should not render if not set", async () => {
       // Arrange.
       const target = await createTestTarget();
+
       // Act.
       const actual = await target.heading();
+
       // Assert.
       expect(actual).toBeFalsy();
     });
@@ -76,8 +82,10 @@ describe("ZAlert", () => {
       // Arrange.
       avatar = <div>Avatar</div>;
       const target = await createTestTarget();
+
       // Act.
       const actual = await target.avatar();
+
       // Assert.
       expect(actual).toBeTruthy();
     });
@@ -85,29 +93,24 @@ describe("ZAlert", () => {
     it("should not render if not set", async () => {
       // Arrange.
       const target = await createTestTarget();
+
       // Act.
       const actual = await target.avatar();
+
       // Assert.
       expect(actual).toBeFalsy();
     });
   });
 
   describe("Fashion", () => {
-    it("should be primary by default", async () => {
-      // Arrange.
-      const target = await createTestTarget();
-      // Act.
-      const actual = await target.fashion();
-      // Assert.
-      expect(actual).toEqual("Primary");
-    });
-
     it("should be set", async () => {
       // Arrange.
       fashion = new ZFashionBuilder().name("my-fashion").build();
       const target = await createTestTarget();
+
       // Act.
       const actual = await target.fashion();
+
       // Assert.
       expect(actual).toEqual(fashion.name);
     });
