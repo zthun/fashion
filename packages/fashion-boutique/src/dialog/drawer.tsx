@@ -32,6 +32,7 @@ export function ZDrawer(props: IZDrawer) {
   const tailor = useFashionTailor();
   const drawer = useRef<HTMLDialogElement>(document.createElement("dialog"));
   const picker = new ZColorPicker(firstDefined(surface, fashion));
+  const _surface = new ZColorPicker(surface);
 
   const { closeOnBackdropClick, closeOnEscapeKey } = useDialog(
     drawer.current,
@@ -78,9 +79,9 @@ export function ZDrawer(props: IZDrawer) {
 
   const _className = useCss(css`
     & {
-      background: ${surface.idle.background};
+      background: ${_surface.idle.background};
       border: 0;
-      color: ${surface.idle.contrast};
+      color: ${_surface.idle.contrast};
       height: ${height};
       margin-bottom: ${marginBottom};
       margin-left: ${marginLeft};
@@ -124,6 +125,7 @@ export function ZDrawer(props: IZDrawer) {
     .ZDialog-content {
       flex-grow: 1;
       overflow: auto;
+      background: ${_surface.idle.background};
     }
   `);
 

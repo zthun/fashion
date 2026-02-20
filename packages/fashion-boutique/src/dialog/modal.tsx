@@ -54,6 +54,7 @@ export function ZModal(props: IZModal) {
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
+  const _surface = new ZColorPicker(surface);
 
   const marginFor = (x: ZSizeFixed | ZSizeVaried) =>
     x === ZSizeVaried.Full ? 0 : "auto";
@@ -74,9 +75,9 @@ export function ZModal(props: IZModal) {
 
   const _className = useCss(css`
     & {
-      background: ${surface.idle.background};
+      background: ${_surface.idle.background};
       border: 0;
-      color: ${surface.idle.contrast};
+      color: ${_surface.idle.contrast};
       height: ${_height.xl === ZSizeVaried.Full ? "100%" : undefined};
       margin-bottom: ${marginFor(_height.xl)};
       margin-left: ${marginFor(_width.xl)};

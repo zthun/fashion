@@ -56,13 +56,14 @@ export function ZPopup(props: IZPopup) {
     renderHeader,
     renderFooter,
   } = props;
-  const { component } = useFashionTheme();
+  const { surface } = useFashionTheme();
   const device = useFashionDevice();
   const tailor = useFashionTailor();
   const popup = useRef<HTMLDialogElement>(document.createElement("dialog"));
-  const picker = new ZColorPicker(firstDefined(component, fashion));
+  const picker = new ZColorPicker(firstDefined(surface, fashion));
   const _window = useWindowService();
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
+  const _surface = new ZColorPicker(surface);
 
   const _getAttach = useCallback(
     () => firstDefined(document.body, attach, popup.current.parentElement),
@@ -137,12 +138,12 @@ export function ZPopup(props: IZPopup) {
 
   const _className = useCss(css`
     & {
-      background: ${component.idle.background};
-      border-color: ${component.idle.border};
+      background: ${_surface.idle.background};
+      border-color: ${_surface.idle.border};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.ExtraSmall)};
-      color: ${component.idle.contrast};
+      color: ${_surface.idle.contrast};
       padding: 0;
       margin: 0;
       z-index: 1000;
