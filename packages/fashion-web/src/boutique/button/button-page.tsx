@@ -68,7 +68,7 @@ export function ZButtonPage() {
 
         <ZStack
           orientation={ZOrientation.Horizontal}
-          gap={ZSizeFixed.ExtraSmall}
+          gap={ZSizeFixed.Large}
           align={{ items: "center" }}
         >
           <ZButton
