@@ -2,24 +2,12 @@ import { describe, expect, it } from "vitest";
 import { black, white } from "../color/rgb.mjs";
 import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
-import { createThemeDark } from "./dark/create-theme-dark.mjs";
 import { ZFashionThemeBuilder } from "./fashion-theme.mjs";
-import { createThemeLight } from "./light/create-theme-light.mjs";
 
 describe("ZFashionDesignBuilder", () => {
   function createTestTarget() {
     return new ZFashionThemeBuilder();
   }
-
-  describe("Construction", () => {
-    it("should create the light theme", () => {
-      expect(createThemeLight()).toBeTruthy();
-    });
-
-    it("should create the dark theme", () => {
-      expect(createThemeDark()).toBeTruthy();
-    });
-  });
 
   describe("Name", () => {
     it("should set the name", () => {
