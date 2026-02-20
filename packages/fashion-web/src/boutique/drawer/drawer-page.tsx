@@ -16,6 +16,8 @@ import { identity, startCase } from "lodash-es";
 import { useState } from "react";
 import { ZFashionRouteDrawer } from "../../routes.mjs";
 import { ZCardDemoComponent } from "../common/card-demo-component.js";
+import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
+import { useFashionState } from "../common/use-fashion-state.mjs";
 
 /**
  * Represents a demo for drawers.
@@ -23,8 +25,9 @@ import { ZCardDemoComponent } from "../common/card-demo-component.js";
  * @returns The JSX to render the page.
  */
 export function ZDrawerPage() {
+  const [fashion, fashionName, setFashion] = useFashionState();
   const [anchor, setAnchor] = useState<ZSideAnchor>(ZHorizontalAnchor.Left);
-  const { primary, success } = useFashionTheme();
+  const { success } = useFashionTheme();
   const anchors: ZSideAnchor[] = [
     ZHorizontalAnchor.Left,
     ZHorizontalAnchor.Right,
@@ -67,7 +70,6 @@ export function ZDrawerPage() {
         <ZButton
           label="Open Drawer"
           onClick={setOpen.bind(null, true)}
-          fashion={primary}
           outline={true}
           name="open-drawer"
         />
@@ -75,6 +77,7 @@ export function ZDrawerPage() {
         <ZDrawer
           open={open}
           anchor={anchor}
+          fashion={fashion}
           onClose={setOpen.bind(null, false)}
           renderHeader={() => <ZH3 compact>Drawer</ZH3>}
           renderFooter={() => (
@@ -105,6 +108,11 @@ export function ZDrawerPage() {
             renderOption={startCase}
             indelible
             name="anchor"
+          />
+
+          <ZChoiceDropDownFashion
+            value={fashionName}
+            onValueChange={setFashion}
           />
         </ZGrid>
       </ZBox>
