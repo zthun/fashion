@@ -14,19 +14,22 @@ export function ZCardDemoComponent(props: Omit<IZCard, "footer">) {
   return (
     <ZCard
       {...props}
-      footer={
-        <ZButton
-          width={ZSizeVaried.Full}
-          avatar={
-            <ZIconFontAwesome
-              name={ZFashionRouteBoutique.avatar}
-              width={ZSizeFixed.Small}
-            />
-          }
-          onClick={navigate.bind(null, "/boutique")}
-          label="Go back to the boutique"
-        />
-      }
+      TitleProps={{
+        ...props.TitleProps,
+        suffix: (
+          <ZButton
+            width={ZSizeVaried.Full}
+            avatar={
+              <ZIconFontAwesome
+                name={ZFashionRouteBoutique.avatar}
+                width={ZSizeFixed.Small}
+              />
+            }
+            onClick={navigate.bind(null, "/boutique")}
+            label="Back to the Boutique"
+          />
+        ),
+      }}
     />
   );
 }
