@@ -12,9 +12,7 @@ import {
   ZStack,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { createThemeDark, createThemeLight } from "@zthun/fashion-theme";
 import { ZOrientation } from "@zthun/helpful-fn";
-import { useState } from "react";
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
 import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
 import { ZBoutiquePage } from "../boutique/boutique-page.js";
@@ -66,8 +64,7 @@ import {
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
 
-const lightTheme = createThemeLight();
-const darkTheme = createThemeDark();
+import ZThemeDark from "@zthun/fashion-theme-dark";
 
 /**
  * Represents the root entry point into the application.
@@ -78,14 +75,9 @@ const darkTheme = createThemeDark();
 export function ZFashionApp() {
   const navigate = useNavigate();
   const avatar = <ZImage src={ZFashionRouteHome.avatar} />;
-  const [theme, setTheme] = useState(darkTheme);
 
   const heading = <ZH1 compact>{ZFashionRouteHome.name}</ZH1>;
   const subHeading = ZFashionRouteHome.description;
-
-  const toggleTheme = () => {
-    setTheme((t) => (t === lightTheme ? darkTheme : lightTheme));
-  };
 
   const suffix = (
     <ZStack orientation={ZOrientation.Horizontal} gap={ZSizeFixed.ExtraSmall}>
@@ -93,22 +85,11 @@ export function ZFashionApp() {
         label={<ZIconFontAwesome name="home" width={ZSizeFixed.ExtraSmall} />}
         onClick={navigate.bind(null, "/")}
       />
-      <ZButton
-        label={
-          <ZIconFontAwesome name="lightbulb" width={ZSizeFixed.ExtraSmall} />
-        }
-        onClick={toggleTheme}
-        tooltip={
-          theme === lightTheme
-            ? "Switch to dark theme"
-            : "Switch to light theme"
-        }
-      />
     </ZStack>
   );
 
   return (
-    <ZFashionThemeContext.Provider value={theme}>
+    <ZFashionThemeContext.Provider value={ZThemeDark}>
       <ZBannerMain TitleProps={{ avatar, heading, subHeading, suffix }}>
         <ZRouteMap>
           <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />

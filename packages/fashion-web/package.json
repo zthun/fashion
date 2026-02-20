@@ -28,6 +28,7 @@
     "@zthun/fashion-boutique": "^13.0.4",
     "@zthun/fashion-tailor": "^13.0.4",
     "@zthun/fashion-theme": "^13.0.4",
+    "@zthun/fashion-theme-dark": "^13.0.4",
     "@zthun/helpful-brands": "^9.11.10",
     "@zthun/helpful-fn": "^9.11.10",
     "@zthun/helpful-query": "^9.11.10",
