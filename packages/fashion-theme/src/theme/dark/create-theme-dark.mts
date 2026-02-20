@@ -5,6 +5,7 @@ import { createFashionDark } from "./create-fashion-dark.mjs";
 import { createFashionError } from "./create-fashion-error.mjs";
 import { createFashionInfo } from "./create-fashion-info.mjs";
 import { createFashionLight } from "./create-fashion-light.mjs";
+import { createFashionOpposite } from "./create-fashion-opposite.mjs";
 import { createFashionPrimary } from "./create-fashion-primary.mjs";
 import { createFashionSecondary } from "./create-fashion-secondary.mjs";
 import { createFashionSuccess } from "./create-fashion-success.mjs";
@@ -30,7 +31,7 @@ export function createThemeDark() {
     .info(createFashionInfo())
     .dark(createFashionDark())
     .light(createFashionLight())
-    .opposite(createFashionLight())
+    .opposite(createFashionOpposite())
     .body(createFashionBody())
     .surface(createFashionSurface())
     .component(createFashionComponent())
