@@ -30,9 +30,9 @@ const HeightChart = createSizeChartFixedCss(
  */
 export function ZSuspenseProgress(props: IZSuspenseProgress) {
   const { className, disabled, height, name, fashion } = props;
-  const { primary } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const device = useFashionDevice();
-  const _fashion = firstDefined(primary, fashion);
+  const _fashion = firstDefined(secondary, fashion);
   const _height = new ZDeviceValues(height, ZSizeFixed.Medium);
   const picker = new ZColorPicker(_fashion);
 
