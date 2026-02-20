@@ -11,7 +11,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useMemo } from "react";
 
 export function ZChartPageProgress() {
-  const { success, error, secondary, warning, component } = useFashionTheme();
+  const { success, error, tertiary, warning, component } = useFashionTheme();
 
   const hp = useMemo(
     () => new ZDataPointBuilder(300, 1000).name("HP").fashion(success).build(),
@@ -29,7 +29,7 @@ export function ZChartPageProgress() {
     () =>
       new ZDataPointBuilder(22, 255)
         .name("Intelligence")
-        .fashion(secondary)
+        .fashion(tertiary)
         .build(),
     [],
   );
