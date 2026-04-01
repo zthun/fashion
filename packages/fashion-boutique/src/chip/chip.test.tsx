@@ -3,6 +3,7 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZChipComponentModel } from "./chip.cm.mjs";
 import type { IZChip } from "./chip.js";
 import { ZChip } from "./chip.js";

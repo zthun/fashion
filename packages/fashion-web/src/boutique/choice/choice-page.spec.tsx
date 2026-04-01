@@ -5,6 +5,7 @@ import type { ZChoiceComponentModel } from "@zthun/fashion-boutique";
 import { ZTestRouter } from "@zthun/fashion-boutique";
 import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZChoicePageComponentModel } from "./choice-page.cm.mjs";
 import { ZChoicePage } from "./choice-page.js";
 

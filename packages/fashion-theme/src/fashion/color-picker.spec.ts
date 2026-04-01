@@ -1,9 +1,10 @@
 import type { ZMutable } from "@zthun/helpful-fn";
 import { describe, expect, it } from "vitest";
+
 import { ZColorPicker } from "./color-picker.mjs";
-import { ZFashionStateBuilder } from "./fashion-state.mjs";
 import type { IZFashion } from "./fashion.mjs";
 import { ZFashionBuilder } from "./fashion.mjs";
+import { ZFashionStateBuilder } from "./fashion-state.mjs";
 
 describe("FashionColorPicker", () => {
   const createTestFashion = (): ZMutable<IZFashion> => {

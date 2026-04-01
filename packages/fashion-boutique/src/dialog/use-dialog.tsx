@@ -2,6 +2,7 @@ import { ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { sleep } from "@zthun/helpful-fn";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import { useEffect } from "react";
+
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";

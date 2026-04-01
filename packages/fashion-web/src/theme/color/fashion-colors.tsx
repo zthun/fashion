@@ -2,7 +2,7 @@ import type { IZComponentFashion } from "@zthun/fashion-boutique";
 import { ZBox, ZH4, ZStack } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
-import { ZOrientation, cssJoinDefined } from "@zthun/helpful-fn";
+import { cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
 import { useMemo } from "react";
 
 export interface IZFashionColors extends Required<IZComponentFashion> {}

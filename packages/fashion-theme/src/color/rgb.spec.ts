@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { rgb } from "./rgb.mjs";
 
 describe("RGB", () => {

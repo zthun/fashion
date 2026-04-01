@@ -12,7 +12,9 @@ import {
   ZStack,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
+import ZThemeDark from "@zthun/fashion-theme-dark";
 import { ZOrientation } from "@zthun/helpful-fn";
+
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
 import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
 import { ZBoutiquePage } from "../boutique/boutique-page.js";
@@ -63,8 +65,6 @@ import {
   ZFashionRouteYouTube,
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
-
-import ZThemeDark from "@zthun/fashion-theme-dark";
 
 /**
  * Represents the root entry point into the application.

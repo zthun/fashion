@@ -1,11 +1,12 @@
 import type { ZDeviceValue } from "@zthun/fashion-tailor";
 import { ZDeviceValues, ZSizeVaried } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
+
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
-import { ZGridSpan } from "./grid-span.js";
 import type { IZGrid } from "./grid.js";
 import { ZGrid } from "./grid.js";
+import { ZGridSpan } from "./grid-span.js";
 
 export type ZNewspaperColumn = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 export type ZNewspaperRange = [ZNewspaperColumn, ZNewspaperColumn];

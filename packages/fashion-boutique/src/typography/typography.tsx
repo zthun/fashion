@@ -5,6 +5,7 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
 import type { ElementType } from "react";
+
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";

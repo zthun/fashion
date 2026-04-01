@@ -1,11 +1,12 @@
 import {
+  createSizeChartFixedArithmetic,
   ZDeviceValues,
   ZSizeFixed,
-  createSizeChartFixedArithmetic,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { TextareaHTMLAttributes } from "react";
+
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";

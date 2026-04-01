@@ -1,5 +1,6 @@
 import { cssJoinDefined } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
+
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 

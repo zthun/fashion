@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
+
 import { black, white } from "../color/rgb.mjs";
-import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
+import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionThemeBuilder } from "./fashion-theme.mjs";
 
 describe("ZFashionDesignBuilder", () => {

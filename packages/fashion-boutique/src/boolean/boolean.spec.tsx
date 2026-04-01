@@ -6,9 +6,10 @@ import { ZFashionBuilder } from "@zthun/fashion-theme";
 import type { ReactElement } from "react";
 import type { Mock } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+import { ZBooleanComponentModel } from "./boolean.cm.mjs";
 import { ZBooleanCheckbox } from "./boolean-checkbox.js";
 import { ZBooleanSwitch } from "./boolean-switch.js";
-import { ZBooleanComponentModel } from "./boolean.cm.mjs";
 
 describe("ZBoolean", () => {
   let disabled: boolean | undefined;

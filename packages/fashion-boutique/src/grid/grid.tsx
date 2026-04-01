@@ -8,6 +8,7 @@ import {
 } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
+
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";

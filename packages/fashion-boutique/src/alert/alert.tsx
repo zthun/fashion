@@ -2,6 +2,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { ReactNode } from "react";
+
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHeading } from "../component/component-heading.mjs";

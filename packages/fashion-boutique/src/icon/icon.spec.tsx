@@ -3,6 +3,9 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+import { ZIconComponentModel } from "./icon.cm.mjs";
+import type { IZIcon } from "./icon.mjs";
 import type { IZIconFontAwesome } from "./icon-font-awesome.js";
 import {
   ZIconFontAwesome,
@@ -14,8 +17,6 @@ import {
   ZIconMaterialProvider,
   ZIconMaterialVendor,
 } from "./icon-material.js";
-import { ZIconComponentModel } from "./icon.cm.mjs";
-import type { IZIcon } from "./icon.mjs";
 
 describe("ZIcon", () => {
   let _renderers: IZCircusSetup[];

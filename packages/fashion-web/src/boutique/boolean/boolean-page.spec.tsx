@@ -10,6 +10,7 @@ import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZBooleanPageComponentModel } from "./boolean-page.cm.mjs";
 import { ZBooleanPage } from "./boolean-page.js";
 

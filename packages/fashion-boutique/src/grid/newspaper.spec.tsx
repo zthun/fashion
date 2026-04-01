@@ -1,10 +1,11 @@
 import {
-  ZCircusDestroy,
   type IZCircusDriver,
   type IZCircusSetup,
+  ZCircusDestroy,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
+
 import type { ZNewspaperRange } from "./newspaper.js";
 import { ZNewspaper } from "./newspaper.js";
 

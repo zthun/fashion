@@ -1,5 +1,3 @@
-import { ZSizeFixed } from "@zthun/fashion-tailor";
-
 import {
   useFashionTheme,
   ZBooleanSwitch,
@@ -15,6 +13,7 @@ import {
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZBrandDataSourceFactory } from "@zthun/helpful-brands";
 import {
   ZDataRequestBuilder,
@@ -22,6 +21,7 @@ import {
   ZDataSourceStaticOptionsBuilder,
 } from "@zthun/helpful-query";
 import { useMemo, useState } from "react";
+
 import { ZFashionRoutePagination } from "../../routes.mjs";
 import { ZCardDemoComponent } from "../common/card-demo-component.js";
 

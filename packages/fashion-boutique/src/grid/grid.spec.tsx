@@ -1,15 +1,16 @@
 import {
-  ZCircusDestroy,
   type IZCircusDriver,
   type IZCircusSetup,
+  ZCircusDestroy,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZSizeVoid } from "@zthun/fashion-tailor";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import type { Property } from "csstype";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { ZGridSpan } from "./grid-span.js";
+
 import { ZGrid } from "./grid.js";
+import { ZGridSpan } from "./grid-span.js";
 
 describe("ZGrid", () => {
   let _renderer: IZCircusSetup | undefined;

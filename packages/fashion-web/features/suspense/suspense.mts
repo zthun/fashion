@@ -1,5 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import assert from "assert";
+
 import { ZSuspensePageComponentModel } from "../../src/boutique/suspense/suspense-page.cm.mjs";
 import {
   ZFashionRouteBoutique,

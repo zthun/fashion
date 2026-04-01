@@ -28,6 +28,7 @@ import {
   ZQuadrilateralCornersBuilder,
 } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
+
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";

@@ -2,6 +2,7 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZH3 } from "../typography/typography.js";
 import { ZContentTitleComponentModel } from "./content-title.cm.mjs";
 import type { IZContentTitle } from "./content-title.js";

@@ -10,9 +10,10 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZBrandKnown, type IZBrand } from "@zthun/helpful-brands";
+import { type IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
 import { castArray } from "lodash-es";
 import { useMemo, useState } from "react";
+
 import { ZFashionRouteChoice } from "../../routes.mjs";
 import { ZCardDemoComponent } from "../common/card-demo-component.js";
 

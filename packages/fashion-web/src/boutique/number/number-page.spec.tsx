@@ -5,6 +5,7 @@ import type { ZNumberComponentModel } from "@zthun/fashion-boutique";
 import { ZTestRouter } from "@zthun/fashion-boutique";
 import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZNumberPageComponentModel } from "./number-page.cm.mjs";
 import { ZNumberPage } from "./number-page.js";
 

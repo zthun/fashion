@@ -4,10 +4,11 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { identity, noop, range } from "lodash-es";
 import type { ReactElement } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { ZChoiceSelect } from "./choice-select.js";
-import { ZChoiceToggle } from "./choice-toggle.js";
+
 import { ZChoiceComponentModel } from "./choice.cm.mjs";
 import type { IZChoice, IZChoiceOption } from "./choice.js";
+import { ZChoiceSelect } from "./choice-select.js";
+import { ZChoiceToggle } from "./choice-toggle.js";
 
 describe("ZChoice", () => {
   let _renderer: IZCircusSetup<IZCircusDriver>;

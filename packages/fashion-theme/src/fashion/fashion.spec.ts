@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
+
 import { hsl } from "../color/hsl.mjs";
 import { white } from "../color/rgb.mjs";
-import { ZFashionStateBuilder } from "./fashion-state.mjs";
 import { ZFashionBuilder } from "./fashion.mjs";
+import { ZFashionStateBuilder } from "./fashion-state.mjs";
 
 describe("ZFashion", () => {
   function createTestTarget() {

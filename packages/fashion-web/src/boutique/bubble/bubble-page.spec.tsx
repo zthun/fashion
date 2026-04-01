@@ -8,6 +8,7 @@ import { ZFashionPriority } from "@zthun/fashion-theme";
 import { createMemoryHistory } from "history";
 import { startCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZBubblePageComponentModel } from "./bubble-page.cm.mjs";
 import { ZBubblePage } from "./bubble-page.js";
 

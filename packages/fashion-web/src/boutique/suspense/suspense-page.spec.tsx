@@ -5,6 +5,7 @@ import { ZTestRouter } from "@zthun/fashion-boutique";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
 import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZSuspensePageComponentModel } from "./suspense-page.cm.mjs";
 import { ZSuspensePage } from "./suspense-page.js";
 

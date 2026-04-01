@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { createSizeChartFixedArithmetic } from "./size-chart-fixed-arithmetic.mjs";
 import { createSizeChartFixedCss } from "./size-chart-fixed-css.mjs";
 import { createSizeChartFixedFibonacci } from "./size-chart-fixed-fibonacci.mjs";

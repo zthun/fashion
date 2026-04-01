@@ -2,6 +2,7 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZBannerMainComponentModel } from "./banner-main.cm.mjs";
 import type { IZBannerMain } from "./banner-main.js";
 import { ZBannerMain } from "./banner-main.js";

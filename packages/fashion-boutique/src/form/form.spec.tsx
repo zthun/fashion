@@ -9,13 +9,14 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZBrandMetadata } from "@zthun/helpful-brands";
 import { type IZMetadata } from "@zthun/helpful-query";
 import { afterEach, describe, expect, it, vi } from "vitest";
+
 import { ZBooleanComponentModel } from "../boolean/boolean.cm.mjs";
 import { ZTextComponentModel } from "../text/text.cm.mjs";
-import { ZFormButton } from "./form-button.js";
-import { ZFormField } from "./form-field.js";
 import { ZFormComponentModel } from "./form.cm.mjs";
 import type { IZForm } from "./form.js";
 import { ZForm } from "./form.js";
+import { ZFormButton } from "./form-button.js";
+import { ZFormField } from "./form-field.js";
 
 describe("ZForm", () => {
   let _renderer: IZCircusSetup;
@@ -49,7 +50,7 @@ describe("ZForm", () => {
       const field = await target.field(id);
 
       // Act.
-      const actual = await ZCircusBy.first(field!.driver, ctor);
+      const actual = await ZCircusBy.first(field.driver, ctor);
 
       // Assert.
       expect(actual).toBeTruthy();

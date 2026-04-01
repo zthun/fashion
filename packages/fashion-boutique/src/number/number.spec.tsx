@@ -8,8 +8,9 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ZNumberInput } from "./number-input.js";
+
 import { ZNumberComponentModel } from "./number.cm.mjs";
+import { ZNumberInput } from "./number-input.js";
 
 describe("ZNumber", () => {
   let min: number | undefined;

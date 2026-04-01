@@ -10,6 +10,7 @@ import {
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, pickDataAttributes } from "@zthun/helpful-fn";
+
 import type { IZComponentFooter } from "../component/component-footer.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";

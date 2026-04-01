@@ -6,6 +6,7 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
+
 import { ZFashionRouteChart } from "../../routes.mjs";
 import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChartPageProgress } from "./chart-page-progress.js";

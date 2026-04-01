@@ -1,13 +1,14 @@
 import {
-  ZDeviceValues,
-  ZSizeFixed,
   createSizeChartFixedCss,
   createSizeChartFixedGeometric,
+  ZDeviceValues,
+  ZSizeFixed,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, firstDefined } from "@zthun/helpful-fn";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import { useEffect } from "react";
+
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";

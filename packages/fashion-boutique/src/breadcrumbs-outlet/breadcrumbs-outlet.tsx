@@ -1,5 +1,6 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
+
 import { ZBox } from "../box/box.js";
 import type { IZBreadcrumbsLocation } from "../breadcrumbs/breadcrumbs-location.js";
 import { ZBreadcrumbsLocation } from "../breadcrumbs/breadcrumbs-location.js";

@@ -1,4 +1,5 @@
 import type { ZMutable, ZRequiredPick } from "@zthun/helpful-fn";
+
 import { black, white } from "../color/rgb.mjs";
 import type { IZFashionState } from "./fashion-state.mjs";
 import { ZFashionStateBuilder } from "./fashion-state.mjs";

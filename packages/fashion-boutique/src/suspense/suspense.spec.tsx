@@ -1,13 +1,13 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
-import { ZSuspenseRotate } from "./suspense-rotate.js";
-import { ZSuspenseComponentModel } from "./suspense.cm.mjs";
-
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { FunctionComponent } from "react";
 import { afterEach, describe, expect, it } from "vitest";
-import { ZSuspenseProgress } from "./suspense-progress.js";
+
+import { ZSuspenseComponentModel } from "./suspense.cm.mjs";
 import type { IZSuspense } from "./suspense.mjs";
+import { ZSuspenseProgress } from "./suspense-progress.js";
+import { ZSuspenseRotate } from "./suspense-rotate.js";
 
 describe("ZSuspense", () => {
   let _setup: IZCircusSetup;

@@ -1,4 +1,5 @@
 import type { ZMutable } from "@zthun/helpful-fn";
+
 import type { IZFashion } from "../fashion/fashion.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
 

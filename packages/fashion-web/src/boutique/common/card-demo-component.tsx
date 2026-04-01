@@ -6,6 +6,7 @@ import {
   ZIconFontAwesome,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
+
 import { ZFashionRouteBoutique } from "../../routes.mjs";
 
 export function ZCardDemoComponent(props: Omit<IZCard, "footer">) {

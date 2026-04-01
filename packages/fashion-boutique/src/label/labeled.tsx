@@ -1,6 +1,7 @@
 import type { ZSizeVoid } from "@zthun/fashion-tailor";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZOrientation, cssJoinDefined } from "@zthun/helpful-fn";
+import { cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
+
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentLabel } from "../component/component-label.mjs";

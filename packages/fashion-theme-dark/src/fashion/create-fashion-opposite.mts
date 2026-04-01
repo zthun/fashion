@@ -1,4 +1,5 @@
 import { ZFashionBuilder } from "@zthun/fashion-theme";
+
 import { createFashionLight } from "./create-fashion-light.mjs";
 
 export function createFashionOpposite() {

@@ -1,5 +1,6 @@
 import { ZCircusComponentModel } from "@zthun/cirque";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
+
 import type { IZDataPoint } from "./data-point.mjs";
 import { ZDataPointBuilder } from "./data-point.mjs";
 

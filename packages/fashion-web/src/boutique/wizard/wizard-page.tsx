@@ -1,4 +1,6 @@
 import {
+  useFashionTheme,
+  useNavigate,
   ZBooleanSwitch,
   ZBox,
   ZBubble,
@@ -11,12 +13,11 @@ import {
   ZParagraph,
   ZStack,
   ZWizard,
-  useFashionTheme,
-  useNavigate,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { useState } from "react";
+
 import { ZFashionRouteBoutique, ZFashionRouteWizard } from "../../routes.mjs";
 
 export function ZWizardPage() {

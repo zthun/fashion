@@ -4,6 +4,7 @@ import {
   ZCircusBy,
   ZCircusComponentModel,
 } from "@zthun/cirque";
+
 import { ZLabelComponentModel } from "../label/label.cm.mjs";
 
 /**

@@ -1,6 +1,7 @@
 import type { IZCircusDriver } from "@zthun/cirque";
 import { ZCircusBy, ZCircusComponentModel } from "@zthun/cirque";
 import { ZOrientation } from "@zthun/helpful-fn";
+
 import { ZButtonComponentModel } from "../button/button.cm.mjs";
 
 export class ZCarouselComponentModel extends ZCircusComponentModel {
