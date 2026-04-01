@@ -36,7 +36,7 @@
     "@types/stylis": "^4.2.7",
     "@vitest/coverage-v8": "^4.1.2",
     "@zthun/janitor-build-config": "^20.0.2",
-    "@zthun/janitor-eslint-config": "^20.0.2",
+    "@zthun/janitor-eslint-config": "^20.0.3",
     "@zthun/janitor-ts-config": "^20.0.0",
     "eslint": "9.39.4",
     "happy-dom": "^20.8.9",

@@ -4077,7 +4077,7 @@ __metadata:
     "@types/stylis": "npm:^4.2.7"
     "@vitest/coverage-v8": "npm:^4.1.2"
     "@zthun/janitor-build-config": "npm:^20.0.2"
-    "@zthun/janitor-eslint-config": "npm:^20.0.2"
+    "@zthun/janitor-eslint-config": "npm:^20.0.3"
     "@zthun/janitor-ts-config": "npm:^20.0.0"
     eslint: "npm:9.39.4"
     happy-dom: "npm:^20.8.9"
@@ -4183,9 +4183,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/janitor-eslint-config@npm:^20.0.2":
-  version: 20.0.2
-  resolution: "@zthun/janitor-eslint-config@npm:20.0.2"
+"@zthun/janitor-eslint-config@npm:^20.0.3":
+  version: 20.0.3
+  resolution: "@zthun/janitor-eslint-config@npm:20.0.3"
   dependencies:
     "@cspell/eslint-plugin": "npm:^9.7.0"
     "@eslint/css": "npm:^1.1.0"
@@ -4212,7 +4212,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 10c0/eb93b998ba88db5fc0410ab1fa020e0547341a9ff12be0263f0d89fb7872e45692767fefac5b1dd179e7ddccdf9c349c9ecfffadcd8b3fdbbecc45bd73472559
+  checksum: 10c0/15c9c00241bf434c5e6d94839b695980a6a9f48900288fa2722ed28c6491dd944e49c042a811229bca78fdb3d6855b03a6f316c1450ee5d6a847f19ef255745a
   languageName: node
   linkType: hard
 
