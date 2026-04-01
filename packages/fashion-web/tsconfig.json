@@ -13,11 +13,5 @@
       "@zthun/fashion-boutique": ["../fashion-boutique/src/index.mts"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "features/**/*.ts",
-    "src/**/*.mts",
-    "features/**/*.mts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts"]
 }

@@ -10,5 +10,5 @@
       "@zthun/fashion-theme": ["../fashion-theme/src/index.mts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.mts"]
+  "include": ["**/*.ts", "**/*.mts"]
 }

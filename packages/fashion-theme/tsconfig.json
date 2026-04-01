@@ -7,5 +7,5 @@
     "baseUrl": ".",
     "declarationDir": "dist/types"
   },
-  "include": ["src/**/*.ts", "src/**/*.mts"]
+  "include": ["**/*.ts", "**/*.mts"]
 }
