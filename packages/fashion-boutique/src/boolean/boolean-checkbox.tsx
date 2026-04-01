@@ -120,7 +120,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
     handleChecked(e.currentTarget.checked);
 
-  const focusInput = async () => input.current.focus();
+  const focusInput = () => input.current.focus();
 
   return (
     <ZLabeled

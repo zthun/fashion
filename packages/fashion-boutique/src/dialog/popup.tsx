@@ -198,14 +198,14 @@ export function ZPopup(props: IZPopup) {
 
   useEffect(() => {
     return ((onRedraw) => {
-      _window.removeEventListener("resize", onRedraw);
-      _window.removeEventListener("scroll", onRedraw);
-      _window.addEventListener("resize", onRedraw);
-      _window.addEventListener("scroll", onRedraw);
+      const handleRedraw = () => void onRedraw();
+      const controller = new AbortController();
+      const { signal } = controller;
+      _window.addEventListener("resize", handleRedraw, { signal });
+      _window.addEventListener("scroll", handleRedraw, { signal });
 
       return () => {
-        _window.removeEventListener("resize", onRedraw);
-        _window.removeEventListener("scroll", onRedraw);
+        controller.abort();
       };
     })(onAfterOpen);
   }, [onAfterOpen, _window]);

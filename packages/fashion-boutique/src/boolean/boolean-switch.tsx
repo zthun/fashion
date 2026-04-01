@@ -108,7 +108,7 @@ export function ZBooleanSwitch(props: IZBoolean<boolean>) {
 
   const { tabIndex, onKey } = useKeyboardActivate(handleToggle);
 
-  const focusInput = async () => input.current.focus();
+  const focusInput = () => input.current.focus();
 
   return (
     <ZLabeled

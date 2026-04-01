@@ -41,11 +41,11 @@ export interface IZChoiceApi<O, V> {
   readonly lookup: Map<O | V | string, IZChoiceOption<O, V>>;
   readonly value: V[];
 
-  isValueSelected(value: V): boolean;
-  display(option: O): string;
-  render(option: O): ReactNode;
-  setValue(value: V[]): void;
-  toggleValue(value: V): void;
+  isValueSelected(this: void, value: V): boolean;
+  display(this: void, option: O): string;
+  render(this: void, option: O): ReactNode;
+  setValue(this: void, value: V[]): void;
+  toggleValue(this: void, value: V): void;
 }
 
 /**

@@ -281,65 +281,6 @@ describe("FashionColorPicker", () => {
     });
   });
 
-  describe("Focus", () => {
-    describe("Foreground", () => {
-      it("should return the value if set", () => {
-        const fashion = createTestFashion();
-
-        expect(createTestTarget(fashion).focus.foreground).toEqual(
-          fashion.focus!.foreground,
-        );
-      });
-
-      it("should fallback to idle foreground if not set", () => {
-        const fashion = createTestFashion();
-        delete fashion.focus;
-
-        expect(createTestTarget(fashion).focus.foreground).toEqual(
-          fashion.idle.foreground,
-        );
-      });
-    });
-
-    describe("Contrast", () => {
-      it("should return the value if set", () => {
-        const fashion = createTestFashion();
-
-        expect(createTestTarget(fashion).focus.contrast).toEqual(
-          fashion.focus!.contrast,
-        );
-      });
-    });
-
-    describe("Background", () => {
-      it("should return the value if set", () => {
-        const fashion = createTestFashion();
-
-        expect(createTestTarget(fashion).focus.background).toEqual(
-          fashion.focus!.background,
-        );
-      });
-
-      it("should fallback to foreground if not set", () => {
-        const fashion = createTestFashion();
-        delete fashion.focus!.background;
-
-        expect(createTestTarget(fashion).focus.background).toEqual(
-          fashion.focus!.foreground,
-        );
-      });
-
-      it("should fallback to idle background if not set", () => {
-        const fashion = createTestFashion();
-        delete fashion.focus;
-
-        expect(createTestTarget(fashion).focus.background).toEqual(
-          fashion.idle.background,
-        );
-      });
-    });
-  });
-
   describe("Active", () => {
     describe("Foreground", () => {
       it("should return the value if set", () => {

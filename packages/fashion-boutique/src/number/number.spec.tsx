@@ -317,7 +317,7 @@ describe("ZNumber", () => {
         expect(actual).toEqual(expected);
       });
 
-      it("should increment when hitting the up arrow key.", async () => {
+      it("should increment when hitting the down arrow key.", async () => {
         // Arrange.
         min = 0;
         max = 5;

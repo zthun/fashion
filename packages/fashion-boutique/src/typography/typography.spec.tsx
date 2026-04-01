@@ -80,7 +80,7 @@ describe("Typography", () => {
       await assertTypography("h5", ZH5);
     });
 
-    it("should render an h5 tag", async () => {
+    it("should render an h6 tag", async () => {
       await assertTypography("h6", ZH6);
     });
   });

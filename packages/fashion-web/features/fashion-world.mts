@@ -19,7 +19,7 @@ import type { IZRoute } from "../src/route/route.mjs";
 /**
  * Represents a modifiable set of parameters.
  */
-export interface IZFashionPage<T extends ZCircusComponentModel | never> {
+export interface IZFashionPage<T extends ZCircusComponentModel> {
   /**
    * The page component model.
    */
@@ -30,7 +30,7 @@ export interface IZFashionPage<T extends ZCircusComponentModel | never> {
  * The current world
  */
 export class ZFashionWorld<
-  T extends ZCircusComponentModel | never = never,
+  T extends ZCircusComponentModel = never,
 > extends World<IZFashionPage<T>> {
   private _browser: IZCircusSetup<IZCircusDriver> | null;
   private _driver: IZCircusDriver | null = null;

@@ -43,7 +43,8 @@ describe("ZChoice", () => {
     // Arrange.
     const options = ["One", "Two", "Three", "Four", "Five"];
     const expected = "EXPECTED: ";
-    const renderOption = (op: IZChoiceOption) => `${expected}${op}`;
+    const renderOption = (op: IZChoiceOption) =>
+      `${expected}${JSON.stringify(op)}`;
     const element = createElement({ renderOption, options });
     const target = await createTestTarget(element);
 

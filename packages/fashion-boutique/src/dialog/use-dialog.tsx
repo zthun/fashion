@@ -70,7 +70,7 @@ export function useDialog(
       e.clientX <= r.right;
 
     if (!inside && !persistent) {
-      hide();
+      void hide();
     }
   };
   /* v8 ignore end */
@@ -86,14 +86,14 @@ export function useDialog(
       return;
     }
 
-    hide();
+    void hide();
   };
 
   useEffect(() => {
     if (open) {
-      show();
+      void show();
     } else {
-      hide();
+      void hide();
     }
   }, [current, open]);
 
