@@ -3,550 +3,332 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.0.0](https://github.com/zthun/fashion/compare/v13.0.5...v14.0.0) (2026-04-05)
+
+### Code Refactoring
+
+- fashion state signatures ([5997808](https://github.com/zthun/fashion/commit/59978089d2b0a37f361e265cb2daf09667e7e6be))
+- move theme to new package ([62d7489](https://github.com/zthun/fashion/commit/62d7489485ef0bd4cd3d6d264008ba3cb89df963))
+- remove spectrum ([9ae3c55](https://github.com/zthun/fashion/commit/9ae3c55b874fbb6ea2e3b88842b05e25659481de))
+
+### Features
+
+- dark theme now uses gradients ([fd99a50](https://github.com/zthun/fashion/commit/fd99a500d957d2c99935899f70619bdfe35521ee))
+- fashion no longer supports the visited state ([538f778](https://github.com/zthun/fashion/commit/538f778c396485ceaec796fe9a5fb586fde5006d))
+- tertiary is now supported ([f899541](https://github.com/zthun/fashion/commit/f89954128dba1e72031ca20f09f6d79c8bd26eda))
+
+### BREAKING CHANGES
+
+- The light theme has been removed
+- The dark theme has been extracted to a new package
+- Method, spectrum, in ZFashionBuilder is no longer supported
+- Fashion state main has been split into foreground and
+  background to support text and background gradients and images
+- The visited state is no longer supported
+
 ## [13.0.5](https://github.com/zthun/fashion/compare/v13.0.4...v13.0.5) (2026-02-14)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## <small>13.0.4 (2026-01-31)</small>
 
-* build: update outdated packages ([4c91401](https://github.com/zthun/fashion/commit/4c91401))
-
-
-
-
+- build: update outdated packages ([4c91401](https://github.com/zthun/fashion/commit/4c91401))
 
 ## [13.0.2](https://github.com/zthun/fashion/compare/v13.0.1...v13.0.2) (2026-01-03)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [13.0.1](https://github.com/zthun/fashion/compare/v13.0.0...v13.0.1) (2025-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [13.0.0](https://github.com/zthun/fashion/compare/v12.1.2...v13.0.0) (2025-11-07)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [12.1.2](https://github.com/zthun/fashion/compare/v12.1.1...v12.1.2) (2025-10-29)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [12.1.1](https://github.com/zthun/fashion/compare/v12.1.0...v12.1.1) (2025-10-27)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [12.1.0](https://github.com/zthun/fashion/compare/v12.0.1...v12.1.0) (2025-10-27)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [12.0.1](https://github.com/zthun/fashion/compare/v12.0.0...v12.0.1) (2025-10-26)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [12.0.0](https://github.com/zthun/fashion/compare/v11.0.1...v12.0.0) (2025-10-23)
-
 
 ### ⚠ BREAKING CHANGES
 
-* output format is now es2020
+- output format is now es2020
 
 ### Build System
 
-* output format is now es2020 ([4b5d1ef](https://github.com/zthun/fashion/commit/4b5d1efb86e76143573e2d9f97f6004a2a83c013))
-
-
+- output format is now es2020 ([4b5d1ef](https://github.com/zthun/fashion/commit/4b5d1efb86e76143573e2d9f97f6004a2a83c013))
 
 ## [11.0.1](https://github.com/zthun/fashion/compare/v11.0.0...v11.0.1) (2025-10-19)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [11.0.0](https://github.com/zthun/fashion/compare/v10.2.7...v11.0.0) (2025-10-14)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [10.2.7](https://github.com/zthun/fashion/compare/v10.2.6...v10.2.7) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.2.6](https://github.com/zthun/fashion/compare/v10.2.5...v10.2.6) (2025-09-09)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [10.2.5](https://github.com/zthun/fashion/compare/v10.2.4...v10.2.5) (2025-09-06)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.2.4](https://github.com/zthun/fashion/compare/v10.2.3...v10.2.4) (2025-07-18)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [10.2.3](https://github.com/zthun/fashion/compare/v10.2.2...v10.2.3) (2025-07-02)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.2.1](https://github.com/zthun/fashion/compare/v10.2.0...v10.2.1) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [10.2.0](https://github.com/zthun/fashion/compare/v10.1.6...v10.2.0) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.1.6](https://github.com/zthun/fashion/compare/v10.1.5...v10.1.6) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [10.1.4](https://github.com/zthun/fashion/compare/v10.1.3...v10.1.4) (2025-06-20)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.1.0](https://github.com/zthun/fashion/compare/v10.0.0...v10.1.0) (2025-06-18)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [10.0.0](https://github.com/zthun/fashion/compare/v9.1.2...v10.0.0) (2025-06-12)
-
 
 ### ⚠ BREAKING CHANGES
 
-* module resolution is now node next
+- module resolution is now node next
 
 ### Code Refactoring
 
-* module resolution is now node next ([1700da7](https://github.com/zthun/fashion/commit/1700da7fec397672e807eeb8ac1fd09a355cdd57))
-
-
+- module resolution is now node next ([1700da7](https://github.com/zthun/fashion/commit/1700da7fec397672e807eeb8ac1fd09a355cdd57))
 
 ## [9.1.2](https://github.com/zthun/fashion/compare/v9.1.1...v9.1.2) (2025-05-27)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [9.1.1](https://github.com/zthun/fashion/compare/v9.1.0...v9.1.1) (2025-01-03)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [9.0.2](https://github.com/zthun/fashion/compare/v9.0.1...v9.0.2) (2024-12-29)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [9.0.1](https://github.com/zthun/fashion/compare/v9.0.0...v9.0.1) (2024-11-17)
-
 
 ### Bug Fixes
 
-* export fashion state ([fb913ed](https://github.com/zthun/fashion/commit/fb913ed83bc165cfedfe5f66a6373cc293736def))
-
-
+- export fashion state ([fb913ed](https://github.com/zthun/fashion/commit/fb913ed83bc165cfedfe5f66a6373cc293736def))
 
 ## [9.0.0](https://github.com/zthun/fashion/compare/v8.0.4...v9.0.0) (2024-11-06)
 
-
 ### ⚠ BREAKING CHANGES
 
-* useFashionTheme no longer takes a type argument
+- useFashionTheme no longer takes a type argument
 
 ### Code Refactoring
 
-* useFashionTheme no longer takes a type argument ([9af3efc](https://github.com/zthun/fashion/commit/9af3efc81b4cfd313752f4b315eef29b78be3678))
-
-
+- useFashionTheme no longer takes a type argument ([9af3efc](https://github.com/zthun/fashion/commit/9af3efc81b4cfd313752f4b315eef29b78be3678))
 
 ## [8.0.4](https://github.com/zthun/fashion/compare/v8.0.3...v8.0.4) (2024-11-06)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [8.0.0](https://github.com/zthun/fashion/compare/v7.2.0...v8.0.0) (2024-11-02)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [7.2.0](https://github.com/zthun/fashion/compare/v7.1.0...v7.2.0) (2024-10-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [7.0.0](https://github.com/zthun/fashion/compare/v6.0.2...v7.0.0) (2024-09-27)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [6.0.1](https://github.com/zthun/fashion/compare/v6.0.0...v6.0.1) (2024-09-15)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [6.0.0](https://github.com/zthun/fashion/compare/v5.0.0...v6.0.0) (2024-09-15)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [5.0.0](https://github.com/zthun/fashion/compare/v4.0.0...v5.0.0) (2024-09-14)
-
 
 ### Features
 
-* fashion intrinsic names have been added ([8282092](https://github.com/zthun/fashion/commit/8282092b3c7943067136923ec07f0b52db4c56ab))
-
-
+- fashion intrinsic names have been added ([8282092](https://github.com/zthun/fashion/commit/8282092b3c7943067136923ec07f0b52db4c56ab))
 
 ## [4.0.0](https://github.com/zthun/fashion/compare/v3.2.3...v4.0.0) (2024-09-12)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [3.1.0](https://github.com/zthun/fashion/compare/v3.0.0...v3.1.0) (2024-09-09)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [3.0.0](https://github.com/zthun/fashion/compare/v2.7.1...v3.0.0) (2024-09-08)
-
 
 ### ⚠ BREAKING CHANGES
 
-* the main, contrast and border for the fashion is now housed in the idle state
+- the main, contrast and border for the fashion is now housed in the idle state
 
 ### Features
 
-* color picker picks color states with fallback support ([2ae67e1](https://github.com/zthun/fashion/commit/2ae67e139123d22871bc902d9d08d1b70ca79d44))
-* the main, contrast and border for the fashion is now housed in the idle state ([e669af6](https://github.com/zthun/fashion/commit/e669af6432752a7fedee39d4966bd14309aa9ee8))
-
-
+- color picker picks color states with fallback support ([2ae67e1](https://github.com/zthun/fashion/commit/2ae67e139123d22871bc902d9d08d1b70ca79d44))
+- the main, contrast and border for the fashion is now housed in the idle state ([e669af6](https://github.com/zthun/fashion/commit/e669af6432752a7fedee39d4966bd14309aa9ee8))
 
 ## [2.7.1](https://github.com/zthun/fashion/compare/v2.7.0...v2.7.1) (2024-09-03)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [2.7.0](https://github.com/zthun/fashion/compare/v2.6.0...v2.7.0) (2024-02-06)
-
 
 ### Features
 
-* fashion theme now defaults to a esm module ([4425e5e](https://github.com/zthun/fashion/commit/4425e5e5f66cfa30f4b55cbbbfc4620f2bd4e596))
-
-
+- fashion theme now defaults to a esm module ([4425e5e](https://github.com/zthun/fashion/commit/4425e5e5f66cfa30f4b55cbbbfc4620f2bd4e596))
 
 ## [2.4.2](https://github.com/zthun/fashion/compare/v2.4.1...v2.4.2) (2023-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [2.4.1](https://github.com/zthun/fashion/compare/v2.4.0...v2.4.1) (2023-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [2.4.0](https://github.com/zthun/fashion/compare/v2.3.0...v2.4.0) (2023-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [2.0.0](https://github.com/zthun/fashion/compare/v0.12.0...v2.0.0) (2023-11-21)
-
 
 ### ⚠ BREAKING CHANGES
 
-* update to release
+- update to release
 
 ### Features
 
-* update to release ([248cf83](https://github.com/zthun/fashion/commit/248cf834b17fe6b3c727bb9eac320fd89bf269a2))
-
-
+- update to release ([248cf83](https://github.com/zthun/fashion/commit/248cf834b17fe6b3c727bb9eac320fd89bf269a2))
 
 ## [0.12.0](https://github.com/zthun/fashion/compare/v0.11.1...v0.12.0) (2023-11-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.11.0](https://github.com/zthun/fashion/compare/v0.10.2...v0.11.0) (2023-08-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [0.10.1](https://github.com/zthun/fashion/compare/v0.10.0...v0.10.1) (2023-08-12)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.10.0](https://github.com/zthun/fashion/compare/v0.9.1...v0.10.0) (2023-08-12)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [0.9.1](https://github.com/zthun/fashion/compare/v0.9.0...v0.9.1) (2023-08-07)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.9.0](https://github.com/zthun/fashion/compare/v0.8.0...v0.9.0) (2023-07-26)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.8.0](https://github.com/zthun/fashion/compare/v0.7.0...v0.8.0) (2023-07-22)
-
 
 ### Features
 
-* fashion can now have hover and focus overrides ([f0bd9a0](https://github.com/zthun/fashion/commit/f0bd9a02680f1eb2843d1df0997d2a432c9f2ae5))
-* fashion theme now has an inherit utility ([e239642](https://github.com/zthun/fashion/commit/e23964216fc84a0abbee43934c119d7d2fc50df6))
-
-
+- fashion can now have hover and focus overrides ([f0bd9a0](https://github.com/zthun/fashion/commit/f0bd9a02680f1eb2843d1df0997d2a432c9f2ae5))
+- fashion theme now has an inherit utility ([e239642](https://github.com/zthun/fashion/commit/e23964216fc84a0abbee43934c119d7d2fc50df6))
 
 ## [0.7.0](https://github.com/zthun/fashion/compare/v0.6.2...v0.7.0) (2023-07-22)
 
-
 ### Features
 
-* add support for border colors and auto colors based on main color ([5884457](https://github.com/zthun/fashion/commit/58844571297fa57efd971b3e41c31fc7d6caf31e))
-* fromRgb, toRgb, brighten, luminance, and contrast ([723002a](https://github.com/zthun/fashion/commit/723002af33225db53886d4016ace4ba9d80cfc0f))
-
-
+- add support for border colors and auto colors based on main color ([5884457](https://github.com/zthun/fashion/commit/58844571297fa57efd971b3e41c31fc7d6caf31e))
+- fromRgb, toRgb, brighten, luminance, and contrast ([723002a](https://github.com/zthun/fashion/commit/723002af33225db53886d4016ace4ba9d80cfc0f))
 
 ## [0.6.0](https://github.com/zthun/fashion/compare/v0.5.0...v0.6.0) (2023-07-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.5.0](https://github.com/zthun/fashion/compare/v0.4.3...v0.5.0) (2023-07-16)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [0.4.3](https://github.com/zthun/fashion/compare/v0.4.2...v0.4.3) (2023-07-09)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.4.2](https://github.com/zthun/fashion/compare/v0.4.1...v0.4.2) (2023-07-09)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [0.4.1](https://github.com/zthun/fashion/compare/v0.4.0...v0.4.1) (2023-07-08)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.4.0](https://github.com/zthun/fashion/compare/v0.3.1...v0.4.0) (2023-07-08)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.3.1](https://github.com/zthun/fashion/compare/v0.3.0...v0.3.1) (2023-07-08)
-
 
 ### Bug Fixes
 
-* loosen the constraints on the custom theme ([db54398](https://github.com/zthun/fashion/commit/db54398b4c2b6689f2ea4f6ea0936ac3208e8d0e))
-
-
+- loosen the constraints on the custom theme ([db54398](https://github.com/zthun/fashion/commit/db54398b4c2b6689f2ea4f6ea0936ac3208e8d0e))
 
 ## [0.3.0](https://github.com/zthun/fashion/compare/v0.2.0...v0.3.0) (2023-07-08)
 
-
 ### Features
 
-* custom can now be set ([9981142](https://github.com/zthun/fashion/commit/998114220955c556df378279769cf4d3464434d1))
-
-
+- custom can now be set ([9981142](https://github.com/zthun/fashion/commit/998114220955c556df378279769cf4d3464434d1))
 
 ## [0.2.0](https://github.com/zthun/fashion/compare/v0.1.2...v0.2.0) (2023-06-23)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## [0.1.2](https://github.com/zthun/fashion/compare/v0.1.1...v0.1.2) (2023-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
-
-
-
-
 
 ## [0.1.1](https://github.com/zthun/fashion/compare/v0.1.0...v0.1.1) (2023-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-theme
 
-
-
-
-
 ## 0.1.0 (2023-06-20)
-
 
 ### Features
 
-* component fashion ([4a92ae7](https://github.com/zthun/fashion/commit/4a92ae7214a80685e6cc21e86d52e93e3c9604e7))
-* opposite colors contrast the core theme ([c50717b](https://github.com/zthun/fashion/commit/c50717b9d31cb274123e0ea906614278dffc237d))
-* swap main and contrast in a fashion configuration ([b0960cc](https://github.com/zthun/fashion/commit/b0960cc9699dd1e04b0e4010b429cec719fb444b))
+- component fashion ([4a92ae7](https://github.com/zthun/fashion/commit/4a92ae7214a80685e6cc21e86d52e93e3c9604e7))
+- opposite colors contrast the core theme ([c50717b](https://github.com/zthun/fashion/commit/c50717b9d31cb274123e0ea906614278dffc237d))
+- swap main and contrast in a fashion configuration ([b0960cc](https://github.com/zthun/fashion/commit/b0960cc9699dd1e04b0e4010b429cec719fb444b))

@@ -3,884 +3,568 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.0.0](https://github.com/zthun/fashion/compare/v13.0.5...v14.0.0) (2026-04-05)
+
+### Bug Fixes
+
+- button page now has more padding between the demos ([f03e705](https://github.com/zthun/fashion/commit/f03e7053dbebe235d909d2a178903ac09e526f87))
+- popup page button is now sized better to its content ([ed7a4cd](https://github.com/zthun/fashion/commit/ed7a4cd1dc5641145e9da68d2e2703da7bfaa61a))
+
+### Code Refactoring
+
+- card page has been removed ([5d2a1b7](https://github.com/zthun/fashion/commit/5d2a1b72770c3595667bbe5d4dc2b3eaad8d74fa))
+
+### Features
+
+- you can now set the fashion on the drawer page ([c02ee84](https://github.com/zthun/fashion/commit/c02ee84c8c97de130d79adccb9d002b5e3605df2))
+
+### BREAKING CHANGES
+
+- Card page has been removed. Every page displays cards so there is
+  no point to a demo
+
 ## [13.0.5](https://github.com/zthun/fashion/compare/v13.0.4...v13.0.5) (2026-02-14)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## <small>13.0.4 (2026-01-31)</small>
 
-* build: update outdated packages ([4c91401](https://github.com/zthun/fashion/commit/4c91401))
-
-
-
-
+- build: update outdated packages ([4c91401](https://github.com/zthun/fashion/commit/4c91401))
 
 ## [13.0.3](https://github.com/zthun/fashion/compare/v13.0.2...v13.0.3) (2026-01-04)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [13.0.2](https://github.com/zthun/fashion/compare/v13.0.1...v13.0.2) (2026-01-03)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [13.0.1](https://github.com/zthun/fashion/compare/v13.0.0...v13.0.1) (2025-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [13.0.0](https://github.com/zthun/fashion/compare/v12.1.2...v13.0.0) (2025-11-07)
-
 
 ### ⚠ BREAKING CHANGES
 
-* grid view no longer supports search and more
+- grid view no longer supports search and more
 
 ### Features
 
-* grid view no longer supports search and more ([2c3aa82](https://github.com/zthun/fashion/commit/2c3aa8283d4423c2177580745a2d6be244b50c99))
-* image page now lets you select the object fit for images ([e295012](https://github.com/zthun/fashion/commit/e2950127c3aef0a54694d32853be397d278da95d))
-* pagination page allows you to select options and views for the pagination component ([1ea92b1](https://github.com/zthun/fashion/commit/1ea92b10f4888be1b0f878d4b163e17c0a8ebbee))
-* pagination page demos the pagination component ([aa7aad7](https://github.com/zthun/fashion/commit/aa7aad7312b8c8d64aab08fc58ed1ad11f486ab0))
-
-
+- grid view no longer supports search and more ([2c3aa82](https://github.com/zthun/fashion/commit/2c3aa8283d4423c2177580745a2d6be244b50c99))
+- image page now lets you select the object fit for images ([e295012](https://github.com/zthun/fashion/commit/e2950127c3aef0a54694d32853be397d278da95d))
+- pagination page allows you to select options and views for the pagination component ([1ea92b1](https://github.com/zthun/fashion/commit/1ea92b10f4888be1b0f878d4b163e17c0a8ebbee))
+- pagination page demos the pagination component ([aa7aad7](https://github.com/zthun/fashion/commit/aa7aad7312b8c8d64aab08fc58ed1ad11f486ab0))
 
 ## [12.1.2](https://github.com/zthun/fashion/compare/v12.1.1...v12.1.2) (2025-10-29)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [12.1.1](https://github.com/zthun/fashion/compare/v12.1.0...v12.1.1) (2025-10-27)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [12.1.0](https://github.com/zthun/fashion/compare/v12.0.1...v12.1.0) (2025-10-27)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [12.0.1](https://github.com/zthun/fashion/compare/v12.0.0...v12.0.1) (2025-10-26)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [12.0.0](https://github.com/zthun/fashion/compare/v11.0.1...v12.0.0) (2025-10-23)
-
 
 ### ⚠ BREAKING CHANGES
 
-* output format is now es2020
+- output format is now es2020
 
 ### Build System
 
-* output format is now es2020 ([4b5d1ef](https://github.com/zthun/fashion/commit/4b5d1efb86e76143573e2d9f97f6004a2a83c013))
-
-
+- output format is now es2020 ([4b5d1ef](https://github.com/zthun/fashion/commit/4b5d1efb86e76143573e2d9f97f6004a2a83c013))
 
 ## [11.0.1](https://github.com/zthun/fashion/compare/v11.0.0...v11.0.1) (2025-10-19)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [11.0.0](https://github.com/zthun/fashion/compare/v10.2.7...v11.0.0) (2025-10-14)
-
 
 ### Bug Fixes
 
-* added gaps between options for alert, boolean, grid-view, and modal pages ([772e66c](https://github.com/zthun/fashion/commit/772e66cb22ac3c3fb519478575dd8e6d047687f5))
-
-
+- added gaps between options for alert, boolean, grid-view, and modal pages ([772e66c](https://github.com/zthun/fashion/commit/772e66cb22ac3c3fb519478575dd8e6d047687f5))
 
 ## [10.2.7](https://github.com/zthun/fashion/compare/v10.2.6...v10.2.7) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.2.6](https://github.com/zthun/fashion/compare/v10.2.5...v10.2.6) (2025-09-09)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [10.2.5](https://github.com/zthun/fashion/compare/v10.2.4...v10.2.5) (2025-09-06)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.2.4](https://github.com/zthun/fashion/compare/v10.2.3...v10.2.4) (2025-07-18)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [10.2.3](https://github.com/zthun/fashion/compare/v10.2.2...v10.2.3) (2025-07-02)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.2.2](https://github.com/zthun/fashion/compare/v10.2.1...v10.2.2) (2025-06-22)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [10.2.1](https://github.com/zthun/fashion/compare/v10.2.0...v10.2.1) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.2.0](https://github.com/zthun/fashion/compare/v10.1.6...v10.2.0) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [10.1.6](https://github.com/zthun/fashion/compare/v10.1.5...v10.1.6) (2025-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.1.5](https://github.com/zthun/fashion/compare/v10.1.4...v10.1.5) (2025-06-21)
-
 
 ### Bug Fixes
 
-* rename meta to metadata in form field ([8db5bcb](https://github.com/zthun/fashion/commit/8db5bcbcf05ce1f2d5f7e312a15372cb739af845))
-
-
+- rename meta to metadata in form field ([8db5bcb](https://github.com/zthun/fashion/commit/8db5bcbcf05ce1f2d5f7e312a15372cb739af845))
 
 ## [10.1.4](https://github.com/zthun/fashion/compare/v10.1.3...v10.1.4) (2025-06-20)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.1.3](https://github.com/zthun/fashion/compare/v10.1.2...v10.1.3) (2025-06-19)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [10.1.2](https://github.com/zthun/fashion/compare/v10.1.1...v10.1.2) (2025-06-19)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [10.1.1](https://github.com/zthun/fashion/compare/v10.1.0...v10.1.1) (2025-06-19)
-
 
 ### Bug Fixes
 
-* search props are now respected in grid view ([a1ff4f2](https://github.com/zthun/fashion/commit/a1ff4f2148a044d857a3a807441836a237f9a48c))
-
-
+- search props are now respected in grid view ([a1ff4f2](https://github.com/zthun/fashion/commit/a1ff4f2148a044d857a3a807441836a237f9a48c))
 
 ## [10.1.0](https://github.com/zthun/fashion/compare/v10.0.0...v10.1.0) (2025-06-18)
 
-
 ### Features
 
-* form auto page demos the form auto component ([571acdc](https://github.com/zthun/fashion/commit/571acdc0f27f6bfff1fd1dd682539e5cab973c8a))
-* reset form ([e882d3b](https://github.com/zthun/fashion/commit/e882d3b52d17c6219df72a7dc24d29e63b85650d))
-* submit form ([3795306](https://github.com/zthun/fashion/commit/3795306b4ee495bf0cb751ef0f5ef21543ca1e15))
-
+- form auto page demos the form auto component ([571acdc](https://github.com/zthun/fashion/commit/571acdc0f27f6bfff1fd1dd682539e5cab973c8a))
+- reset form ([e882d3b](https://github.com/zthun/fashion/commit/e882d3b52d17c6219df72a7dc24d29e63b85650d))
+- submit form ([3795306](https://github.com/zthun/fashion/commit/3795306b4ee495bf0cb751ef0f5ef21543ca1e15))
 
 ### Bug Fixes
 
-* add component to the theme page (missing previously) ([922465b](https://github.com/zthun/fashion/commit/922465be573ccf99158593f570797c77e483373f))
-
-
+- add component to the theme page (missing previously) ([922465b](https://github.com/zthun/fashion/commit/922465be573ccf99158593f570797c77e483373f))
 
 ## [10.0.0](https://github.com/zthun/fashion/compare/v9.1.2...v10.0.0) (2025-06-12)
 
-
 ### ⚠ BREAKING CHANGES
 
-* module resolution is now node next
-* module resolution is now node next
+- module resolution is now node next
+- module resolution is now node next
 
 ### Code Refactoring
 
-* module resolution is now node next ([7e951df](https://github.com/zthun/fashion/commit/7e951df128742acd28d75b53bbbb31b5b25cb9ae))
-* module resolution is now node next ([1700da7](https://github.com/zthun/fashion/commit/1700da7fec397672e807eeb8ac1fd09a355cdd57))
-
-
+- module resolution is now node next ([7e951df](https://github.com/zthun/fashion/commit/7e951df128742acd28d75b53bbbb31b5b25cb9ae))
+- module resolution is now node next ([1700da7](https://github.com/zthun/fashion/commit/1700da7fec397672e807eeb8ac1fd09a355cdd57))
 
 ## [9.1.2](https://github.com/zthun/fashion/compare/v9.1.1...v9.1.2) (2025-05-27)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [9.1.1](https://github.com/zthun/fashion/compare/v9.1.0...v9.1.1) (2025-01-03)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [9.1.0](https://github.com/zthun/fashion/compare/v9.0.2...v9.1.0) (2024-12-29)
-
 
 ### Features
 
-* support react 19 ([6c09214](https://github.com/zthun/fashion/commit/6c09214521e787a0050ee04a27e33b68736a8f81))
-
-
+- support react 19 ([6c09214](https://github.com/zthun/fashion/commit/6c09214521e787a0050ee04a27e33b68736a8f81))
 
 ## [9.0.2](https://github.com/zthun/fashion/compare/v9.0.1...v9.0.2) (2024-12-29)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [9.0.1](https://github.com/zthun/fashion/compare/v9.0.0...v9.0.1) (2024-11-17)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [9.0.0](https://github.com/zthun/fashion/compare/v8.0.4...v9.0.0) (2024-11-06)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [8.0.4](https://github.com/zthun/fashion/compare/v8.0.3...v8.0.4) (2024-11-06)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [8.0.3](https://github.com/zthun/fashion/compare/v8.0.2...v8.0.3) (2024-11-03)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [8.0.2](https://github.com/zthun/fashion/compare/v8.0.1...v8.0.2) (2024-11-03)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [8.0.1](https://github.com/zthun/fashion/compare/v8.0.0...v8.0.1) (2024-11-02)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [8.0.0](https://github.com/zthun/fashion/compare/v7.2.0...v8.0.0) (2024-11-02)
-
 
 ### ⚠ BREAKING CHANGES
 
-* choice drop down and choice auto complete have been merged to choice select
+- choice drop down and choice auto complete have been merged to choice select
 
 ### Code Refactoring
 
-* choice drop down and choice auto complete have been merged to choice select ([7581ff2](https://github.com/zthun/fashion/commit/7581ff2ccb9bdf332db5224b25baa6c8e41074df))
-
-
+- choice drop down and choice auto complete have been merged to choice select ([7581ff2](https://github.com/zthun/fashion/commit/7581ff2ccb9bdf332db5224b25baa6c8e41074df))
 
 ## [7.2.0](https://github.com/zthun/fashion/compare/v7.1.0...v7.2.0) (2024-10-16)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [7.1.0](https://github.com/zthun/fashion/compare/v7.0.0...v7.1.0) (2024-10-15)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [7.0.0](https://github.com/zthun/fashion/compare/v6.0.2...v7.0.0) (2024-09-27)
-
 
 ### Bug Fixes
 
-* number layout ([08607bb](https://github.com/zthun/fashion/commit/08607bb5f4fdbe1d335b3f7e80f89cd4bd301ce8))
-
-
+- number layout ([08607bb](https://github.com/zthun/fashion/commit/08607bb5f4fdbe1d335b3f7e80f89cd4bd301ce8))
 
 ## [6.0.2](https://github.com/zthun/fashion/compare/v6.0.1...v6.0.2) (2024-09-16)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [6.0.1](https://github.com/zthun/fashion/compare/v6.0.0...v6.0.1) (2024-09-15)
-
 
 ### Bug Fixes
 
-* bubble page title is now correct ([2405df1](https://github.com/zthun/fashion/commit/2405df179e679ef4eb92911bab395e416ed25cde))
-* remove avatars on list cause they do not line up properly ([bebb0fc](https://github.com/zthun/fashion/commit/bebb0fcfdaf14a59b5ad852074dba6b7dbd20777))
-
-
+- bubble page title is now correct ([2405df1](https://github.com/zthun/fashion/commit/2405df179e679ef4eb92911bab395e416ed25cde))
+- remove avatars on list cause they do not line up properly ([bebb0fc](https://github.com/zthun/fashion/commit/bebb0fcfdaf14a59b5ad852074dba6b7dbd20777))
 
 ## [6.0.0](https://github.com/zthun/fashion/compare/v5.0.0...v6.0.0) (2024-09-15)
 
-
 ### ⚠ BREAKING CHANGES
 
-* list divider is now simply divider
+- list divider is now simply divider
 
 ### Code Refactoring
 
-* list divider is now simply divider ([8ba8fa7](https://github.com/zthun/fashion/commit/8ba8fa723e31098b91a1f90e2daeb265cc810cc3))
-
-
+- list divider is now simply divider ([8ba8fa7](https://github.com/zthun/fashion/commit/8ba8fa723e31098b91a1f90e2daeb265cc810cc3))
 
 ## [5.0.0](https://github.com/zthun/fashion/compare/v4.0.0...v5.0.0) (2024-09-14)
 
-
 ### ⚠ BREAKING CHANGES
 
-* overline is now button text
-* card demo no longer needs image
-* card page no longer has support for internal loading
-* button no longer supports an internal loading state
+- overline is now button text
+- card demo no longer needs image
+- card page no longer has support for internal loading
+- button no longer supports an internal loading state
 
 ### Features
 
-* card demo no longer needs image ([dd30a0d](https://github.com/zthun/fashion/commit/dd30a0ddcb5e6cdf79ea9485a212a9505eea5acb))
-
+- card demo no longer needs image ([dd30a0d](https://github.com/zthun/fashion/commit/dd30a0ddcb5e6cdf79ea9485a212a9505eea5acb))
 
 ### Bug Fixes
 
-* box sizing for boutique page is now correct ([48c0f29](https://github.com/zthun/fashion/commit/48c0f293df2564a2cd9ec279f00e79faaf2ad1a4))
-
+- box sizing for boutique page is now correct ([48c0f29](https://github.com/zthun/fashion/commit/48c0f293df2564a2cd9ec279f00e79faaf2ad1a4))
 
 ### Code Refactoring
 
-* button no longer supports an internal loading state ([05781d9](https://github.com/zthun/fashion/commit/05781d957fa408cd12b08d9c25cc3240f3b9317a))
-* card page no longer has support for internal loading ([e08e796](https://github.com/zthun/fashion/commit/e08e79640215ab7b0a5089072c253b693c097758))
-* overline is now button text ([a218611](https://github.com/zthun/fashion/commit/a218611fc0b0828b9630ea3e4d10a247fe019dfa))
-
-
+- button no longer supports an internal loading state ([05781d9](https://github.com/zthun/fashion/commit/05781d957fa408cd12b08d9c25cc3240f3b9317a))
+- card page no longer has support for internal loading ([e08e796](https://github.com/zthun/fashion/commit/e08e79640215ab7b0a5089072c253b693c097758))
+- overline is now button text ([a218611](https://github.com/zthun/fashion/commit/a218611fc0b0828b9630ea3e4d10a247fe019dfa))
 
 ## [4.0.0](https://github.com/zthun/fashion/compare/v3.2.3...v4.0.0) (2024-09-12)
 
-
 ### ⚠ BREAKING CHANGES
 
-* modal has been converted to use an html dialog instead of a mui modal
+- modal has been converted to use an html dialog instead of a mui modal
 
 ### Features
 
-* modal has been converted to use an html dialog instead of a mui modal ([2509355](https://github.com/zthun/fashion/commit/25093554f5dd1e40c0ef97b72442ab25eaf1f179))
-
-
+- modal has been converted to use an html dialog instead of a mui modal ([2509355](https://github.com/zthun/fashion/commit/25093554f5dd1e40c0ef97b72442ab25eaf1f179))
 
 ## [3.2.3](https://github.com/zthun/fashion/compare/v3.2.2...v3.2.3) (2024-09-10)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [3.2.2](https://github.com/zthun/fashion/compare/v3.2.1...v3.2.2) (2024-09-10)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [3.2.1](https://github.com/zthun/fashion/compare/v3.2.0...v3.2.1) (2024-09-10)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [3.2.0](https://github.com/zthun/fashion/compare/v3.1.3...v3.2.0) (2024-09-10)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [3.1.3](https://github.com/zthun/fashion/compare/v3.1.2...v3.1.3) (2024-09-09)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [3.1.2](https://github.com/zthun/fashion/compare/v3.1.1...v3.1.2) (2024-09-09)
-
 
 ### Bug Fixes
 
-* update boutique page boxes to be interactive ([91677de](https://github.com/zthun/fashion/commit/91677dea8b4d84102d85e89a4bae9cf1271ff922))
-
-
+- update boutique page boxes to be interactive ([91677de](https://github.com/zthun/fashion/commit/91677dea8b4d84102d85e89a4bae9cf1271ff922))
 
 ## [3.1.1](https://github.com/zthun/fashion/compare/v3.1.0...v3.1.1) (2024-09-09)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [3.1.0](https://github.com/zthun/fashion/compare/v3.0.0...v3.1.0) (2024-09-09)
-
 
 ### Features
 
-* theme color boxes now have a small border radius ([eb9fa6d](https://github.com/zthun/fashion/commit/eb9fa6d225af9cd8b72e8a306670b722a31f5d2c))
-
-
+- theme color boxes now have a small border radius ([eb9fa6d](https://github.com/zthun/fashion/commit/eb9fa6d225af9cd8b72e8a306670b722a31f5d2c))
 
 ## [3.0.0](https://github.com/zthun/fashion/compare/v2.7.1...v3.0.0) (2024-09-08)
 
-
 ### ⚠ BREAKING CHANGES
 
-* fashion labs is no longer supported
+- fashion labs is no longer supported
 
 ### Features
 
-* fashion labs is no longer supported ([2444ced](https://github.com/zthun/fashion/commit/2444ced77ca028d16c9e70a4aacc26893266dc95))
-
-
+- fashion labs is no longer supported ([2444ced](https://github.com/zthun/fashion/commit/2444ced77ca028d16c9e70a4aacc26893266dc95))
 
 ## [2.7.1](https://github.com/zthun/fashion/compare/v2.7.0...v2.7.1) (2024-09-03)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [2.7.0](https://github.com/zthun/fashion/compare/v2.6.0...v2.7.0) (2024-02-06)
-
 
 ### Features
 
-* upgrade react-router-dom ([6f6d2de](https://github.com/zthun/fashion/commit/6f6d2de2101c6a2e08c297996c50076a28e45564))
-* upgrade webigail ([16dc235](https://github.com/zthun/fashion/commit/16dc235d766ff86a39768492ab06c4c1cece6872))
-
-
+- upgrade react-router-dom ([6f6d2de](https://github.com/zthun/fashion/commit/6f6d2de2101c6a2e08c297996c50076a28e45564))
+- upgrade webigail ([16dc235](https://github.com/zthun/fashion/commit/16dc235d766ff86a39768492ab06c4c1cece6872))
 
 ## [2.6.0](https://github.com/zthun/fashion/compare/v2.5.0...v2.6.0) (2023-12-21)
 
-
 ### Features
 
-* the wizard demo page shows how the wizard navigates through content ([335ea9e](https://github.com/zthun/fashion/commit/335ea9ef5c018fd0dfda5a4ed72078b8cf1fac67))
-* the wizard page demos the wizard component ([bd95d33](https://github.com/zthun/fashion/commit/bd95d332f7bf18408401dff4d7e0b08ae45ec422))
-
+- the wizard demo page shows how the wizard navigates through content ([335ea9e](https://github.com/zthun/fashion/commit/335ea9ef5c018fd0dfda5a4ed72078b8cf1fac67))
+- the wizard page demos the wizard component ([bd95d33](https://github.com/zthun/fashion/commit/bd95d332f7bf18408401dff4d7e0b08ae45ec422))
 
 ### Bug Fixes
 
-* the YouTube demo now centers the video and is responsive to width ([38d6020](https://github.com/zthun/fashion/commit/38d6020046d5f8c489901ac0aa9e980f3d96af62))
-
-
+- the YouTube demo now centers the video and is responsive to width ([38d6020](https://github.com/zthun/fashion/commit/38d6020046d5f8c489901ac0aa9e980f3d96af62))
 
 ## [2.5.0](https://github.com/zthun/fashion/compare/v2.4.2...v2.5.0) (2023-12-19)
 
-
 ### Features
 
-* the YouTube page shows a demo of an embedded YT video ([9927457](https://github.com/zthun/fashion/commit/99274579bd88a58940afee714f667e7f40531c9b))
-
-
+- the YouTube page shows a demo of an embedded YT video ([9927457](https://github.com/zthun/fashion/commit/99274579bd88a58940afee714f667e7f40531c9b))
 
 ## [2.4.2](https://github.com/zthun/fashion/compare/v2.4.1...v2.4.2) (2023-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [2.4.1](https://github.com/zthun/fashion/compare/v2.4.0...v2.4.1) (2023-12-16)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [2.4.0](https://github.com/zthun/fashion/compare/v2.3.0...v2.4.0) (2023-12-16)
-
 
 ### Features
 
-* upgrade webigail to 1.2.0 ([b91a926](https://github.com/zthun/fashion/commit/b91a926451095088ec7dfada97e2f2dfa42cdf8b))
-
-
+- upgrade webigail to 1.2.0 ([b91a926](https://github.com/zthun/fashion/commit/b91a926451095088ec7dfada97e2f2dfa42cdf8b))
 
 ## [2.3.0](https://github.com/zthun/fashion/compare/v2.2.0...v2.3.0) (2023-11-24)
 
-
 ### Features
 
-* upgrade to react-router-dom 6.20.x ([c192041](https://github.com/zthun/fashion/commit/c192041558f1465921d96b5652281fe74fa2163e))
-
-
+- upgrade to react-router-dom 6.20.x ([c192041](https://github.com/zthun/fashion/commit/c192041558f1465921d96b5652281fe74fa2163e))
 
 ## [2.2.0](https://github.com/zthun/fashion/compare/v2.1.1...v2.2.0) (2023-11-21)
 
-
 ### Features
 
-* card page now shows more cards in a grid ([e301c9f](https://github.com/zthun/fashion/commit/e301c9f1e35fb349f146b3c93fd217326f7a363d))
-
-
+- card page now shows more cards in a grid ([e301c9f](https://github.com/zthun/fashion/commit/e301c9f1e35fb349f146b3c93fd217326f7a363d))
 
 ## [2.1.1](https://github.com/zthun/fashion/compare/v2.1.0...v2.1.1) (2023-11-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [2.1.0](https://github.com/zthun/fashion/compare/v2.0.0...v2.1.0) (2023-11-21)
-
 
 ### Features
 
-* adding favicon ([dab6d6a](https://github.com/zthun/fashion/commit/dab6d6a106f17267f7f66f6ae4496bbf51c8e7d0))
-* the default theme is now the dark theme ([042d548](https://github.com/zthun/fashion/commit/042d548597e253cce9d6b87d1dfbd114fac60490))
-
-
+- adding favicon ([dab6d6a](https://github.com/zthun/fashion/commit/dab6d6a106f17267f7f66f6ae4496bbf51c8e7d0))
+- the default theme is now the dark theme ([042d548](https://github.com/zthun/fashion/commit/042d548597e253cce9d6b87d1dfbd114fac60490))
 
 ## [2.0.0](https://github.com/zthun/fashion/compare/v0.12.0...v2.0.0) (2023-11-21)
 
-
 ### ⚠ BREAKING CHANGES
 
-* update to release
+- update to release
 
 ### Features
 
-* update to release ([248cf83](https://github.com/zthun/fashion/commit/248cf834b17fe6b3c727bb9eac320fd89bf269a2))
-
-
+- update to release ([248cf83](https://github.com/zthun/fashion/commit/248cf834b17fe6b3c727bb9eac320fd89bf269a2))
 
 ## [0.12.0](https://github.com/zthun/fashion/compare/v0.11.1...v0.12.0) (2023-11-21)
 
-
 ### Features
 
-* image page displays a demo of image functionality ([6e893a0](https://github.com/zthun/fashion/commit/6e893a0ff909bfc32d501e4e7b26d505ce8a7bb6))
-
-
+- image page displays a demo of image functionality ([6e893a0](https://github.com/zthun/fashion/commit/6e893a0ff909bfc32d501e4e7b26d505ce8a7bb6))
 
 ## [0.11.1](https://github.com/zthun/fashion/compare/v0.11.0...v0.11.1) (2023-08-17)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.11.0](https://github.com/zthun/fashion/compare/v0.10.2...v0.11.0) (2023-08-16)
-
 
 ### Features
 
-* update webigail ([18a37e9](https://github.com/zthun/fashion/commit/18a37e988cfacafe0453c6d73979fda1cfd23dc2))
-
-
+- update webigail ([18a37e9](https://github.com/zthun/fashion/commit/18a37e988cfacafe0453c6d73979fda1cfd23dc2))
 
 ## [0.10.2](https://github.com/zthun/fashion/compare/v0.10.1...v0.10.2) (2023-08-16)
 
-
 ### Bug Fixes
 
-* helpful no longer bundles uuid ([a498685](https://github.com/zthun/fashion/commit/a498685f08e0d5d723b38b4127aea219abd81c4d))
-
-
+- helpful no longer bundles uuid ([a498685](https://github.com/zthun/fashion/commit/a498685f08e0d5d723b38b4127aea219abd81c4d))
 
 ## [0.10.1](https://github.com/zthun/fashion/compare/v0.10.0...v0.10.1) (2023-08-12)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.10.0](https://github.com/zthun/fashion/compare/v0.9.1...v0.10.0) (2023-08-12)
-
 
 ### Features
 
-* popup page demos the popup button and popup component ([f70b8fd](https://github.com/zthun/fashion/commit/f70b8fda6ba1285b68b79eadbc81851956f55f01))
-
-
+- popup page demos the popup button and popup component ([f70b8fd](https://github.com/zthun/fashion/commit/f70b8fda6ba1285b68b79eadbc81851956f55f01))
 
 ## [0.9.1](https://github.com/zthun/fashion/compare/v0.9.0...v0.9.1) (2023-08-07)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.9.0](https://github.com/zthun/fashion/compare/v0.8.0...v0.9.0) (2023-07-26)
-
 
 ### Features
 
-* table is no longer supported by labs ([bf251c0](https://github.com/zthun/fashion/commit/bf251c0d5e07eb74fd749434af87f780c88cf4de))
-
-
+- table is no longer supported by labs ([bf251c0](https://github.com/zthun/fashion/commit/bf251c0d5e07eb74fd749434af87f780c88cf4de))
 
 ## [0.8.0](https://github.com/zthun/fashion/compare/v0.7.0...v0.8.0) (2023-07-22)
 
-
 ### Features
 
-* bubble page demos the bubble component ([3381002](https://github.com/zthun/fashion/commit/33810021c529b5416bf79f634824b80ce46ba720))
-
-
+- bubble page demos the bubble component ([3381002](https://github.com/zthun/fashion/commit/33810021c529b5416bf79f634824b80ce46ba720))
 
 ## [0.7.0](https://github.com/zthun/fashion/compare/v0.6.2...v0.7.0) (2023-07-22)
 
-
 ### Bug Fixes
 
-* boutique page now renders all components equally ([fdcbbd1](https://github.com/zthun/fashion/commit/fdcbbd11de6cd5d07d00813f309658d5c283cd48))
-
-
+- boutique page now renders all components equally ([fdcbbd1](https://github.com/zthun/fashion/commit/fdcbbd11de6cd5d07d00813f309658d5c283cd48))
 
 ## [0.6.2](https://github.com/zthun/fashion/compare/v0.6.1...v0.6.2) (2023-07-17)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.6.1](https://github.com/zthun/fashion/compare/v0.6.0...v0.6.1) (2023-07-17)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.6.0](https://github.com/zthun/fashion/compare/v0.5.0...v0.6.0) (2023-07-16)
-
 
 ### Bug Fixes
 
-* carousel count of 1 or less now renders properly ([068fb28](https://github.com/zthun/fashion/commit/068fb28bd806d31a948268caf0279938e75e635a))
-
-
+- carousel count of 1 or less now renders properly ([068fb28](https://github.com/zthun/fashion/commit/068fb28bd806d31a948268caf0279938e75e635a))
 
 ## [0.5.0](https://github.com/zthun/fashion/compare/v0.4.3...v0.5.0) (2023-07-16)
 
-
 ### Features
 
-* carousel buttons fade in and out ([6233254](https://github.com/zthun/fashion/commit/6233254c9c65d00775d723ea996f717d4f2c3520))
-* carousel page demos the carousel component ([5e66ab5](https://github.com/zthun/fashion/commit/5e66ab5374c0d29cce7a1773b817827ecfea1069))
-* compact demo ([6cf9840](https://github.com/zthun/fashion/commit/6cf984009789d6a615ef13d2d3feb18271f7c043))
-
-
+- carousel buttons fade in and out ([6233254](https://github.com/zthun/fashion/commit/6233254c9c65d00775d723ea996f717d4f2c3520))
+- carousel page demos the carousel component ([5e66ab5](https://github.com/zthun/fashion/commit/5e66ab5374c0d29cce7a1773b817827ecfea1069))
+- compact demo ([6cf9840](https://github.com/zthun/fashion/commit/6cf984009789d6a615ef13d2d3feb18271f7c043))
 
 ## [0.4.3](https://github.com/zthun/fashion/compare/v0.4.2...v0.4.3) (2023-07-09)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.4.2](https://github.com/zthun/fashion/compare/v0.4.1...v0.4.2) (2023-07-09)
 
 **Note:** Version bump only for package @zthun/fashion-web
-
-
-
-
 
 ## [0.4.1](https://github.com/zthun/fashion/compare/v0.4.0...v0.4.1) (2023-07-08)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.4.0](https://github.com/zthun/fashion/compare/v0.3.1...v0.4.0) (2023-07-08)
-
 
 ### Features
 
-* chart page demos the chart components ([84bb9ab](https://github.com/zthun/fashion/commit/84bb9abf3ee8891136d97d25837630bf8750d4cc))
-
-
+- chart page demos the chart components ([84bb9ab](https://github.com/zthun/fashion/commit/84bb9abf3ee8891136d97d25837630bf8750d4cc))
 
 ## [0.3.1](https://github.com/zthun/fashion/compare/v0.3.0...v0.3.1) (2023-07-08)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.3.0](https://github.com/zthun/fashion/compare/v0.2.0...v0.3.0) (2023-07-08)
-
 
 ### Bug Fixes
 
-* dark mode no longer blends cards into parent on grid view page ([b10c03d](https://github.com/zthun/fashion/commit/b10c03d98502989a573ec098d11d6cd5f62e11f9))
-
-
+- dark mode no longer blends cards into parent on grid view page ([b10c03d](https://github.com/zthun/fashion/commit/b10c03d98502989a573ec098d11d6cd5f62e11f9))
 
 ## [0.2.0](https://github.com/zthun/fashion/compare/v0.1.2...v0.2.0) (2023-06-23)
 
-
 ### Features
 
-* modal page demos the modal component ([703039f](https://github.com/zthun/fashion/commit/703039f72e675b8b698b7756c74f3bb4cd1f12e9))
-* you can change the fashion of modals ([75afc6f](https://github.com/zthun/fashion/commit/75afc6f96f9b2f80e928dcbeef2ab1d7226bcb27))
-
-
+- modal page demos the modal component ([703039f](https://github.com/zthun/fashion/commit/703039f72e675b8b698b7756c74f3bb4cd1f12e9))
+- you can change the fashion of modals ([75afc6f](https://github.com/zthun/fashion/commit/75afc6f96f9b2f80e928dcbeef2ab1d7226bcb27))
 
 ## [0.1.2](https://github.com/zthun/fashion/compare/v0.1.1...v0.1.2) (2023-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## [0.1.1](https://github.com/zthun/fashion/compare/v0.1.0...v0.1.1) (2023-06-21)
 
 **Note:** Version bump only for package @zthun/fashion-web
 
-
-
-
-
 ## 0.1.0 (2023-06-20)
-
 
 ### Features
 
-* added e2e tests ([4d13562](https://github.com/zthun/fashion/commit/4d13562548d4f657cad5d3f4a118a9f0f3ab6bb0))
-* alert page demos alerts ([e44c681](https://github.com/zthun/fashion/commit/e44c681b2d59aedb20378f9cdfe1bd7c4b398445))
-* boolean components can be fashionable ([e8152fe](https://github.com/zthun/fashion/commit/e8152fe4d9c5bad3d6a2d3030131c34692661440))
-* change theme ([5cdc987](https://github.com/zthun/fashion/commit/5cdc987a02d5c52eb115fd6992e379422b7b30b7))
-* choice toggle supports choices with toggle buttons ([a460f00](https://github.com/zthun/fashion/commit/a460f00c5e85cfce05810eac2fb1ef514a28d1cd))
-* fashion app routes to designer, venue, and runway ([77cbfa3](https://github.com/zthun/fashion/commit/77cbfa3329fe7d231d35b7e8a5f1f8f14fcb7ce2))
-* grid demo can show an error state ([4c179bc](https://github.com/zthun/fashion/commit/4c179bcaad5a52452e2eaeeb0763a14e2be30717))
-* grid view demo now shows in a card ([5e8d6e7](https://github.com/zthun/fashion/commit/5e8d6e7762f63aa6cf8f3210772211aeae61bead))
-* grid view page demos the grid view ([de86e92](https://github.com/zthun/fashion/commit/de86e92cbebcec9a65d1cd86a2cd7593f862c8d0))
-* select fashion on the typography page ([8dec3c7](https://github.com/zthun/fashion/commit/8dec3c7ab486a738b197316577ef89726a1c237c))
-* table allows for tabular data ([fe130ff](https://github.com/zthun/fashion/commit/fe130ff12911e18a4bcec61acf05f4d3aa9aa0ea))
-* table page allows for table options ([d933c04](https://github.com/zthun/fashion/commit/d933c047974b14289b5a0d99da248a0e987c1148))
-* table supports virtualized scroll ([9e9c963](https://github.com/zthun/fashion/commit/9e9c9636ac44f6639e91db0d258f20b4b2c3d715))
-* the boolean page demos checkboxes and switches ([b0252ab](https://github.com/zthun/fashion/commit/b0252abdd32d2f9cf07ad739f4d1ee583702d696))
-* the boolean page demos the required option ([3e26b4e](https://github.com/zthun/fashion/commit/3e26b4e4273f39efe50bb8e685637c9ee331c234))
-* the button page demos the button component ([bbbca52](https://github.com/zthun/fashion/commit/bbbca520e2b3d03539e426e20a8e16c86b45651e))
-* the choice page demos the choice component ([932c18c](https://github.com/zthun/fashion/commit/932c18c142170be47df141dfcaddd03cf5f3c86f))
-* the drawer page demos the drawer component ([5ff5224](https://github.com/zthun/fashion/commit/5ff5224b548d49c459efce14bbb7821ecf256698))
-* the list page demos the list component ([b01a96e](https://github.com/zthun/fashion/commit/b01a96e6a6f4a6a3e8b7d26fda524c6196ab35d8))
-* the number page demos the number components ([d1e80c9](https://github.com/zthun/fashion/commit/d1e80c9aacef42f8a81fa46790b353a74f941b57))
-* the suspense page demos the suspense component ([a372fe9](https://github.com/zthun/fashion/commit/a372fe97d8fba2267cb53c230416c301d2fdbb68))
-* the table has a built in toolbar for search ([c1a70d6](https://github.com/zthun/fashion/commit/c1a70d65906fbddaa08f31a29b48098c9be56f5e))
-* the text page demos the text components ([bb9d6ae](https://github.com/zthun/fashion/commit/bb9d6aec9ed88a6e03620fc89df71b48ee67da86))
-* the web application demos all components found in the fashion project ([cd4c639](https://github.com/zthun/fashion/commit/cd4c639f91ac9e06eb55795715e065ae91b1884d))
-* theme page allows for demoing different out-of-box themes ([c59bc0d](https://github.com/zthun/fashion/commit/c59bc0dd07242ac19e5c6f24b002f69b6b4e7397))
-* toggle the required flag on the label for choice components ([938fedb](https://github.com/zthun/fashion/commit/938fedb6a2260aa6b8f43b92dd83cdffee3be075))
-* typography demo page shows the semantic views of each element ([c2196d4](https://github.com/zthun/fashion/commit/c2196d42ebe756c8fada399e853bcfb27847a339))
-* venue page describes the components available ([c2e6209](https://github.com/zthun/fashion/commit/c2e6209ac3a6917742863c589ae32322218025ca))
+- added e2e tests ([4d13562](https://github.com/zthun/fashion/commit/4d13562548d4f657cad5d3f4a118a9f0f3ab6bb0))
+- alert page demos alerts ([e44c681](https://github.com/zthun/fashion/commit/e44c681b2d59aedb20378f9cdfe1bd7c4b398445))
+- boolean components can be fashionable ([e8152fe](https://github.com/zthun/fashion/commit/e8152fe4d9c5bad3d6a2d3030131c34692661440))
+- change theme ([5cdc987](https://github.com/zthun/fashion/commit/5cdc987a02d5c52eb115fd6992e379422b7b30b7))
+- choice toggle supports choices with toggle buttons ([a460f00](https://github.com/zthun/fashion/commit/a460f00c5e85cfce05810eac2fb1ef514a28d1cd))
+- fashion app routes to designer, venue, and runway ([77cbfa3](https://github.com/zthun/fashion/commit/77cbfa3329fe7d231d35b7e8a5f1f8f14fcb7ce2))
+- grid demo can show an error state ([4c179bc](https://github.com/zthun/fashion/commit/4c179bcaad5a52452e2eaeeb0763a14e2be30717))
+- grid view demo now shows in a card ([5e8d6e7](https://github.com/zthun/fashion/commit/5e8d6e7762f63aa6cf8f3210772211aeae61bead))
+- grid view page demos the grid view ([de86e92](https://github.com/zthun/fashion/commit/de86e92cbebcec9a65d1cd86a2cd7593f862c8d0))
+- select fashion on the typography page ([8dec3c7](https://github.com/zthun/fashion/commit/8dec3c7ab486a738b197316577ef89726a1c237c))
+- table allows for tabular data ([fe130ff](https://github.com/zthun/fashion/commit/fe130ff12911e18a4bcec61acf05f4d3aa9aa0ea))
+- table page allows for table options ([d933c04](https://github.com/zthun/fashion/commit/d933c047974b14289b5a0d99da248a0e987c1148))
+- table supports virtualized scroll ([9e9c963](https://github.com/zthun/fashion/commit/9e9c9636ac44f6639e91db0d258f20b4b2c3d715))
+- the boolean page demos checkboxes and switches ([b0252ab](https://github.com/zthun/fashion/commit/b0252abdd32d2f9cf07ad739f4d1ee583702d696))
+- the boolean page demos the required option ([3e26b4e](https://github.com/zthun/fashion/commit/3e26b4e4273f39efe50bb8e685637c9ee331c234))
+- the button page demos the button component ([bbbca52](https://github.com/zthun/fashion/commit/bbbca520e2b3d03539e426e20a8e16c86b45651e))
+- the choice page demos the choice component ([932c18c](https://github.com/zthun/fashion/commit/932c18c142170be47df141dfcaddd03cf5f3c86f))
+- the drawer page demos the drawer component ([5ff5224](https://github.com/zthun/fashion/commit/5ff5224b548d49c459efce14bbb7821ecf256698))
+- the list page demos the list component ([b01a96e](https://github.com/zthun/fashion/commit/b01a96e6a6f4a6a3e8b7d26fda524c6196ab35d8))
+- the number page demos the number components ([d1e80c9](https://github.com/zthun/fashion/commit/d1e80c9aacef42f8a81fa46790b353a74f941b57))
+- the suspense page demos the suspense component ([a372fe9](https://github.com/zthun/fashion/commit/a372fe97d8fba2267cb53c230416c301d2fdbb68))
+- the table has a built in toolbar for search ([c1a70d6](https://github.com/zthun/fashion/commit/c1a70d65906fbddaa08f31a29b48098c9be56f5e))
+- the text page demos the text components ([bb9d6ae](https://github.com/zthun/fashion/commit/bb9d6aec9ed88a6e03620fc89df71b48ee67da86))
+- the web application demos all components found in the fashion project ([cd4c639](https://github.com/zthun/fashion/commit/cd4c639f91ac9e06eb55795715e065ae91b1884d))
+- theme page allows for demoing different out-of-box themes ([c59bc0d](https://github.com/zthun/fashion/commit/c59bc0dd07242ac19e5c6f24b002f69b6b4e7397))
+- toggle the required flag on the label for choice components ([938fedb](https://github.com/zthun/fashion/commit/938fedb6a2260aa6b8f43b92dd83cdffee3be075))
+- typography demo page shows the semantic views of each element ([c2196d4](https://github.com/zthun/fashion/commit/c2196d42ebe756c8fada399e853bcfb27847a339))
+- venue page describes the components available ([c2e6209](https://github.com/zthun/fashion/commit/c2e6209ac3a6917742863c589ae32322218025ca))
