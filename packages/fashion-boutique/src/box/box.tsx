@@ -28,6 +28,7 @@ import {
   ZQuadrilateralCornersBuilder,
 } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
+
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -106,7 +107,7 @@ export function ZBox(props: IZBox) {
 
   const _className = useCss(css`
     & {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-color: ${picker.idle.border};
 
       border-bottom-style: ${trim.bottom};
@@ -144,15 +145,27 @@ export function ZBox(props: IZBox) {
     }
 
     &:focus {
-      background-color: ${interactive ? picker.focus.main : picker.idle.main};
+      background: ${interactive
+        ? picker.focus.background
+        : picker.idle.background};
       border-color: ${interactive ? picker.focus.border : picker.idle.border};
       color: ${interactive ? picker.focus.contrast : picker.idle.contrast};
     }
 
     &:hover {
-      background-color: ${interactive ? picker.hover.main : picker.idle.main};
+      background: ${interactive
+        ? picker.hover.background
+        : picker.idle.background};
       border-color: ${interactive ? picker.hover.border : picker.idle.border};
       color: ${interactive ? picker.hover.contrast : picker.idle.contrast};
+    }
+
+    &:active {
+      background: ${interactive
+        ? picker.active.background
+        : picker.idle.background};
+      border-color: ${interactive ? picker.active.border : picker.idle.border};
+      color: ${interactive ? picker.active.contrast : picker.idle.contrast};
     }
 
     ${device.break(ZSizeFixed.Large)} {

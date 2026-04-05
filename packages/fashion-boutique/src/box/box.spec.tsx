@@ -3,6 +3,7 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { afterEach, describe, expect, it, vi } from "vitest";
+
 import { ZBoxComponentModel } from "./box.cm.mjs";
 import type { IZBox } from "./box.js";
 import { ZBox } from "./box.js";

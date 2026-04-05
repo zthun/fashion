@@ -2,9 +2,12 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZButtonComponentModel } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZButtonPageComponentModel } from "./button-page.cm.mjs";
 import { ZButtonPage } from "./button-page.js";
 
@@ -13,7 +16,12 @@ describe("ZButtonPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZButtonPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZButtonPage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZButtonPageComponentModel);

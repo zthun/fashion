@@ -2,6 +2,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { ReactNode } from "react";
+
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHeading } from "../component/component-heading.mjs";
@@ -21,18 +22,10 @@ export interface IZAlert
 }
 
 export function ZAlert(props: IZAlert) {
-  const theme = useFashionTheme();
+  const { error } = useFashionTheme();
   const tailor = useFashionTailor();
 
-  const { primary } = theme;
-  const {
-    heading,
-    name,
-    className,
-    avatar,
-    message,
-    fashion = primary,
-  } = props;
+  const { heading, name, className, avatar, message, fashion = error } = props;
 
   const picker = new ZColorPicker(fashion);
   const boxWidth = tailor.thickness(ZSizeFixed.ExtraSmall);
@@ -42,7 +35,7 @@ export function ZAlert(props: IZAlert) {
   const _className = useCss(css`
     &.ZAlert-root {
       align-items: center;
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-color: ${picker.idle.border};
       border-radius: 0.25rem;
       border-style: double;

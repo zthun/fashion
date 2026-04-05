@@ -1,15 +1,18 @@
 import {
-  ZCircusBy,
-  ZCircusDestroy,
   type IZCircusDriver,
   type IZCircusSetup,
+  ZCircusBy,
+  ZCircusDestroy,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import {
   ZPaginationSizesMultiplesOfFive,
   ZPaginationSizesMultiplesOfTwelve,
+  ZTestRouter,
 } from "@zthun/fashion-boutique";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZPaginationPageComponentModel } from "./pagination-page.cm.mjs";
 import { ZPaginationPage } from "./pagination-page.js";
 
@@ -18,7 +21,12 @@ describe("ZPaginationPage", () => {
   let _driver: IZCircusDriver | undefined;
 
   const createTestTarget = async () => {
-    const element = <ZPaginationPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZPaginationPage />
+      </ZTestRouter>
+    );
 
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();

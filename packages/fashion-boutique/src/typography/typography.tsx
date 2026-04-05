@@ -5,6 +5,7 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
 import type { ElementType } from "react";
+
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -72,7 +73,7 @@ export function useTypographyCss(props: IZTypography) {
 
   return useCss(css`
     & {
-      color: ${picker.idle.main};
+      color: ${picker.idle.foreground};
       font-family: Roboto, Arial, sans-serif;
       font-weight: ${WeightChart[_weight]};
       font-size: calc(${PointChart[_size]} * 1.2);

@@ -6,12 +6,13 @@ import {
 } from "@zthun/helpful-react";
 import type { MouseEvent, ReactNode } from "react";
 import { useRef, useState } from "react";
+
 import { ZChip } from "../chip/chip.js";
 import { ZPopup } from "../dialog/popup.js";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZLabeled } from "../label/labeled.js";
-import { ZListItem } from "../list/list-item.js";
 import { ZList } from "../list/list.js";
+import { ZListItem } from "../list/list-item.js";
 import { ZFlex } from "../stack/flex.js";
 import { ZStack } from "../stack/stack.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
@@ -20,7 +21,7 @@ import type { IZChoice } from "./choice.js";
 import { useChoice } from "./choice.js";
 
 export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
-  const { component, primary, transparent, error } = useFashionTheme();
+  const { component, secondary, transparent, error } = useFashionTheme();
   const tailor = useFashionTailor();
   const { className, label, multiple, required, disabled, indelible, name } =
     props;
@@ -51,7 +52,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
 
     .ZChoice-values {
       align-items: center;
-      background-color: ${component.idle.main};
+      background: ${component.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};
@@ -71,7 +72,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
 
     .ZChoice-clear:hover,
     .ZChoice-remove:hover {
-      color: ${error.idle.main};
+      color: ${error.idle.background};
     }
 
     .ZChoice-value {
@@ -107,7 +108,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
       <ZChip
         key={key}
         className="ZChoice-value"
-        fashion={multiple ? primary : transparent}
+        fashion={multiple ? secondary : transparent}
         data-value={_value}
         suffix={multiple ? remove : null}
       >

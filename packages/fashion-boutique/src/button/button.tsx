@@ -1,20 +1,19 @@
-import type { ReactNode } from "react";
-
-import type { IZFashion } from "@zthun/fashion-theme";
-import { ZColorPicker } from "@zthun/fashion-theme";
-
 import {
   createSizeChartVariedCss,
   ZDeviceValues,
   ZSizeFixed,
   ZSizeVaried,
 } from "@zthun/fashion-tailor";
+import type { IZFashion } from "@zthun/fashion-theme";
+import { ZColorPicker } from "@zthun/fashion-theme";
 import {
   css,
   cssJoinDefined,
   firstDefined,
   ZOrientation,
 } from "@zthun/helpful-fn";
+import type { ReactNode } from "react";
+
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentDisabled } from "../component/component-disabled.mjs";
@@ -76,9 +75,9 @@ export function ZButton(props: IZButton) {
     ...dom
   } = props;
   const device = useFashionDevice();
-  const { component } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const tailor = useFashionTailor();
-  const picker = new ZColorPicker(firstDefined(component, fashion));
+  const picker = new ZColorPicker(firstDefined(secondary, fashion));
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
 
   const _className = useCss(css`
@@ -91,36 +90,37 @@ export function ZButton(props: IZButton) {
       justify-content: center;
       overflow: hidden;
       position: relative;
-      background: ${outline ? "transparent" : picker.idle.main};
-      border-color: ${picker.idle.main};
+
+      background: ${outline ? "transparent" : picker.idle.background};
+      border-color: ${picker.idle.border};
       border-style: ${borderless ? "none" : "solid"};
-      color: ${outline ? picker.idle.main : picker.idle.contrast};
+      color: ${outline ? picker.idle.foreground : picker.idle.contrast};
       padding: ${compact ? 0 : tailor.gap(ZSizeFixed.ExtraSmall)};
       width: ${WidthChart[_width.xl]};
+    }
+
+    &:disabled {
+      opacity: 0.25;
     }
 
     &:focus {
       outline-style: solid;
       outline-width: ${tailor.thickness(ZSizeFixed.Medium)};
-      border-color: ${picker.focus.main};
+      border-color: ${picker.focus.border};
       outline-color: ${picker.focus.border};
     }
 
     &:hover:not([disabled]) {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.background};
       border-color: ${picker.hover.border};
       color: ${picker.hover.contrast};
       cursor: pointer;
     }
 
     &:active:not([disabled]) {
-      background-color: ${picker.active.main};
+      background: ${picker.active.background};
       border-color: ${picker.active.border};
       color: ${picker.active.contrast};
-    }
-
-    &:disabled {
-      opacity: 0.25;
     }
 
     ${device.break(ZSizeFixed.Large)} {

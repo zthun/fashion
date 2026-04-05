@@ -2,7 +2,6 @@ import {
   useFashionTheme,
   ZBox,
   ZCaption,
-  ZCard,
   ZContentTitle,
   ZDivider,
   ZH3,
@@ -15,7 +14,9 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useState } from "react";
+
 import { ZFashionRouteList } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for lists.
@@ -36,7 +37,7 @@ export function ZListPage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZListPage-root"
       TitleProps={{
         heading: ZFashionRouteList.name,
@@ -141,6 +142,6 @@ export function ZListPage() {
           </ZCaption>
         </ZBox>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

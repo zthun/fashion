@@ -2,6 +2,7 @@ import { ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { sleep } from "@zthun/helpful-fn";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import { useEffect } from "react";
+
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -35,23 +36,27 @@ export function useDialog(
 ) {
   const { open, onClose, persistent } = props;
 
-  const show = async () => {
-    current.showModal();
-    await options.onAfterOpen?.call(null);
-    current.focus();
+  const show = () => {
+    void (async (dialog) => {
+      dialog.showModal();
+      await options.onAfterOpen?.call(null);
+      dialog.focus();
+    })(current);
   };
 
-  const hide = async () => {
-    if (!current.open) {
-      // Already closed
-      return;
-    }
+  const hide = () => {
+    void (async (dialog) => {
+      if (!dialog.open) {
+        // Already closed
+        return;
+      }
 
-    current.classList.add("closing");
-    await sleep(150);
-    current.close();
-    current.classList.remove("closing");
-    onClose?.call(null);
+      dialog.classList.add("closing");
+      await sleep(150);
+      dialog.close();
+      dialog.classList.remove("closing");
+      onClose?.call(null);
+    })(current);
   };
 
   // This next bit is nearly impossible to test without modification

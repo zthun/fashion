@@ -8,9 +8,10 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ReactNode } from "react";
 import type { Mock } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+import { ZTextComponentModel } from "./text.cm.mjs";
 import { ZTextArea } from "./text-area.js";
 import { ZTextInput, ZTextType } from "./text-input.js";
-import { ZTextComponentModel } from "./text.cm.mjs";
 
 // cspell: disable-next-line
 const LOREM = "Purus gravida quis blandit turpis cursus in hac habitasse.";

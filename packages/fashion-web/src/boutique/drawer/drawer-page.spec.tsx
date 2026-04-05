@@ -1,9 +1,12 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { ZSideAnchor } from "@zthun/helpful-fn";
 import { ZHorizontalAnchor, ZVerticalAnchor } from "@zthun/helpful-fn";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZDrawerPageComponentModel } from "./drawer-page.cm.mjs";
 import { ZDrawerPage } from "./drawer-page.js";
 
@@ -12,7 +15,13 @@ describe("ZDrawerPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    _setup = new ZCircusSetupRenderer(<ZDrawerPage />);
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZDrawerPage />
+      </ZTestRouter>
+    );
+    _setup = new ZCircusSetupRenderer(element);
     _driver = await _setup.setup();
     return ZCircusBy.first(_driver, ZDrawerPageComponentModel);
   }

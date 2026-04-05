@@ -1,25 +1,14 @@
 import { describe, expect, it } from "vitest";
+
 import { black, white } from "../color/rgb.mjs";
-import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionBuilder } from "../fashion/fashion.mjs";
-import { createDarkTheme } from "./dark.mjs";
+import { ZFashionStateBuilder } from "../fashion/fashion-state.mjs";
 import { ZFashionThemeBuilder } from "./fashion-theme.mjs";
-import { createLightTheme } from "./light.mjs";
 
 describe("ZFashionDesignBuilder", () => {
   function createTestTarget() {
     return new ZFashionThemeBuilder();
   }
-
-  describe("Construction", () => {
-    it("should create the light theme", () => {
-      expect(createLightTheme()).toBeTruthy();
-    });
-
-    it("should create the dark theme", () => {
-      expect(createDarkTheme()).toBeTruthy();
-    });
-  });
 
   describe("Name", () => {
     it("should set the name", () => {
@@ -39,6 +28,13 @@ describe("ZFashionDesignBuilder", () => {
     it("should set secondary", () => {
       const expected = new ZFashionBuilder().build();
       expect(createTestTarget().secondary(expected).build().secondary).toEqual(
+        expected,
+      );
+    });
+
+    it("should set tertiary", () => {
+      const expected = new ZFashionBuilder().build();
+      expect(createTestTarget().tertiary(expected).build().tertiary).toEqual(
         expected,
       );
     });
@@ -119,7 +115,7 @@ describe("ZFashionDesignBuilder", () => {
       const primary = new ZFashionBuilder()
         .idle(
           new ZFashionStateBuilder()
-            .main(black())
+            .background(black())
             .contrast(white())
             .border(white())
             .build(),

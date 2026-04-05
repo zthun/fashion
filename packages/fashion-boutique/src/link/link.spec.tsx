@@ -2,6 +2,7 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZLinkComponentModel } from "./link.cm.mjs";
 import type { IZLink } from "./link.js";
 import { ZLink } from "./link.js";

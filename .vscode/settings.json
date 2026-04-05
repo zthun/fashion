@@ -1,12 +1,8 @@
 {
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
     "source.fixAll.eslint": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.tabSize": 2,
   "cucumber.features": ["packages/**/features/**/*.feature"],
   "cucumber.glue": ["packages/**/features/**/*.mts"],
-  "typescript.preferences.importModuleSpecifier": "project-relative"
+  "js/ts.preferences.importModuleSpecifier": "project-relative"
 }

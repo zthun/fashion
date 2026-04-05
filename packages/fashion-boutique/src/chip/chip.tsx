@@ -7,6 +7,7 @@ import {
   pickDataAttributes,
   ZOrientation,
 } from "@zthun/helpful-fn";
+
 import type { IZComponentAdornment } from "../component/component-adornment.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -31,7 +32,7 @@ export function ZChip(props: IZChip) {
 
   const _className = useCss(css`
     & {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.Small)};
       color: ${picker.idle.contrast};
       padding: ${tailor.gap(ZSizeFixed.ExtraSmall)};

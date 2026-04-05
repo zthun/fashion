@@ -1,19 +1,20 @@
 import {
-  ZCircusBy,
-  ZCircusDestroy,
   type IZCircusDriver,
   type IZCircusSetup,
+  ZCircusBy,
+  ZCircusDestroy,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZBrandDataSourceFactory } from "@zthun/helpful-brands";
 import { ZDataRequestBuilder, ZDataSourceStatic } from "@zthun/helpful-query";
 import { last } from "lodash-es";
 import { afterEach, describe, expect, it, vi } from "vitest";
+
 import { ZPaginationComponentModel } from "./pagination.cm.mjs";
 import {
+  type IZPagination,
   ZPagination,
   ZPaginationSizesMultiplesOfFive,
-  type IZPagination,
 } from "./pagination.js";
 
 describe("ZPagination", () => {

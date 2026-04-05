@@ -2,7 +2,6 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZCaption,
-  ZCard,
   ZChoiceSelect,
   ZChoiceToggle,
   ZGrid,
@@ -11,10 +10,12 @@ import {
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
-import { ZBrandKnown, type IZBrand } from "@zthun/helpful-brands";
+import { type IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
 import { castArray } from "lodash-es";
 import { useMemo, useState } from "react";
+
 import { ZFashionRouteChoice } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents the tutorial for how to get started.
@@ -72,7 +73,7 @@ export function ZChoicePage() {
   );
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZChoicePage-root"
       TitleProps={{
         heading: ZFashionRouteChoice.name,
@@ -170,6 +171,6 @@ export function ZChoicePage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

@@ -1,14 +1,15 @@
 import type { ZSizeGap, ZSizeThickness } from "@zthun/fashion-tailor";
 import {
-  ZDeviceValues,
-  ZSizeFixed,
   createSizeChartFixedCss,
   createSizeChartFixedGeometric,
+  ZDeviceValues,
+  ZSizeFixed,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useKeyboardActivate } from "@zthun/helpful-react";
 import type { KeyboardEvent, MouseEvent } from "react";
+
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
@@ -62,7 +63,7 @@ export function ZBubble(props: IZBubble) {
     &.ZBubble-root {
       align-content: center;
       align-items: center;
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
       cursor: ${active ? "pointer" : "default"};
       border-width: ${tailor.thickness(border)};
@@ -79,14 +80,14 @@ export function ZBubble(props: IZBubble) {
     }
 
     &.ZBubble-root:focus {
-      background: ${active ? picker.focus.main : picker.idle.main};
+      background: ${active ? picker.focus.background : picker.idle.background};
       border-color: ${active ? picker.focus.border : picker.idle.border};
       color: ${active ? picker.focus.contrast : picker.idle.contrast};
       outline: "none";
     }
 
     &.ZBubble-root:hover {
-      background: ${active ? picker.hover.main : picker.idle.main};
+      background: ${active ? picker.hover.background : picker.idle.background};
       border-color: ${active ? picker.hover.border : picker.idle.border};
       color: ${active ? picker.hover.contrast : picker.idle.contrast};
     }

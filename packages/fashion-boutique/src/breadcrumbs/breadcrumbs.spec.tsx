@@ -4,10 +4,11 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { MemoryHistory } from "history";
 import { createMemoryHistory } from "history";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
 import { ZTestRouter } from "../router/test-router.js";
+import { ZBreadcrumbsComponentModel } from "./breadcrumbs.cm.mjs";
 import type { IZBreadcrumbsLocation } from "./breadcrumbs-location.js";
 import { ZBreadcrumbsLocation } from "./breadcrumbs-location.js";
-import { ZBreadcrumbsComponentModel } from "./breadcrumbs.cm.mjs";
 
 describe("ZBreadcrumbs", () => {
   let _renderer: IZCircusSetup | undefined;
@@ -108,7 +109,7 @@ describe("ZBreadcrumbs", () => {
         const actual = await link?.label();
 
         // Assert.
-        expect(actual).toEqual(home!.name);
+        expect(actual).toEqual(home.name);
       });
 
       it("should raise the onPathSelected event to the home path when clicked", async () => {

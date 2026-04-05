@@ -9,6 +9,7 @@ import {
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import { useRef } from "react";
+
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
 import {
@@ -54,6 +55,7 @@ export function ZModal(props: IZModal) {
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
+  const _surface = new ZColorPicker(surface);
 
   const marginFor = (x: ZSizeFixed | ZSizeVaried) =>
     x === ZSizeVaried.Full ? 0 : "auto";
@@ -74,9 +76,9 @@ export function ZModal(props: IZModal) {
 
   const _className = useCss(css`
     & {
-      background-color: ${surface.idle.main};
+      background: ${_surface.idle.background};
       border: 0;
-      color: ${surface.idle.contrast};
+      color: ${_surface.idle.contrast};
       height: ${_height.xl === ZSizeVaried.Full ? "100%" : undefined};
       margin-bottom: ${marginFor(_height.xl)};
       margin-left: ${marginFor(_width.xl)};
@@ -107,7 +109,7 @@ export function ZModal(props: IZModal) {
     }
 
     .ZDialog-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
     }
 

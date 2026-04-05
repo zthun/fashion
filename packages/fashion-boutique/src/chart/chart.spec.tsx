@@ -3,8 +3,9 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZFashionBuilder } from "@zthun/fashion-theme";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { ZChartProgress } from "./chart-progress.js";
+
 import { ZChartComponentModel } from "./chart.cm.mjs";
+import { ZChartProgress } from "./chart-progress.js";
 import type { IZDataPoint } from "./data-point.mjs";
 import { ZDataPointBuilder } from "./data-point.mjs";
 

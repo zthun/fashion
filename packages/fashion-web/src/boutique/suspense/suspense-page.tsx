@@ -1,7 +1,6 @@
 import {
   ZBooleanSwitch,
   ZBox,
-  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -11,7 +10,9 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useState } from "react";
+
 import { ZFashionRouteSuspense } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -26,7 +27,7 @@ export function ZSuspensePage() {
   const [disabled, setDisabled] = useState<boolean>(false);
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZSuspensePage-root"
       TitleProps={{
         heading: ZFashionRouteSuspense.name,
@@ -97,6 +98,6 @@ export function ZSuspensePage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

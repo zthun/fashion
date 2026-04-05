@@ -1,15 +1,15 @@
-import { ZBrandKnown } from "@zthun/helpful-brands";
-import type { IZCarousel } from "./carousel.js";
-import { ZCarousel } from "./carousel.js";
-
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZCarouselComponentModel } from "./carousel.cm.mjs";
+import type { IZCarousel } from "./carousel.js";
+import { ZCarousel } from "./carousel.js";
 
 describe("ZCarousel", () => {
   let _renderer: IZCircusSetup | undefined;

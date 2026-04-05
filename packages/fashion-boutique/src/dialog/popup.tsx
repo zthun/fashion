@@ -18,6 +18,7 @@ import {
 } from "@zthun/helpful-fn";
 import { useWindowService } from "@zthun/helpful-react";
 import { useCallback, useEffect, useRef } from "react";
+
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import {
   useFashionDevice,
@@ -56,13 +57,14 @@ export function ZPopup(props: IZPopup) {
     renderHeader,
     renderFooter,
   } = props;
-  const { component } = useFashionTheme();
+  const { surface } = useFashionTheme();
   const device = useFashionDevice();
   const tailor = useFashionTailor();
   const popup = useRef<HTMLDialogElement>(document.createElement("dialog"));
-  const picker = new ZColorPicker(firstDefined(component, fashion));
+  const picker = new ZColorPicker(firstDefined(surface, fashion));
   const _window = useWindowService();
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
+  const _surface = new ZColorPicker(surface);
 
   const _getAttach = useCallback(
     () => firstDefined(document.body, attach, popup.current.parentElement),
@@ -137,12 +139,12 @@ export function ZPopup(props: IZPopup) {
 
   const _className = useCss(css`
     & {
-      background-color: ${component.idle.main};
-      border-color: ${component.idle.border};
+      background: ${_surface.idle.background};
+      border-color: ${_surface.idle.border};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.ExtraSmall)};
-      color: ${component.idle.contrast};
+      color: ${_surface.idle.contrast};
       padding: 0;
       margin: 0;
       z-index: 1000;
@@ -167,7 +169,7 @@ export function ZPopup(props: IZPopup) {
     }
 
     .ZDialog-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
     }
 
@@ -196,14 +198,14 @@ export function ZPopup(props: IZPopup) {
 
   useEffect(() => {
     return ((onRedraw) => {
-      _window.removeEventListener("resize", onRedraw);
-      _window.removeEventListener("scroll", onRedraw);
-      _window.addEventListener("resize", onRedraw);
-      _window.addEventListener("scroll", onRedraw);
+      const handleRedraw = () => void onRedraw();
+      const controller = new AbortController();
+      const { signal } = controller;
+      _window.addEventListener("resize", handleRedraw, { signal });
+      _window.addEventListener("scroll", handleRedraw, { signal });
 
       return () => {
-        _window.removeEventListener("resize", onRedraw);
-        _window.removeEventListener("scroll", onRedraw);
+        controller.abort();
       };
     })(onAfterOpen);
   }, [onAfterOpen, _window]);

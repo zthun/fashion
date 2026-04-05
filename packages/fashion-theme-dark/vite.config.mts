@@ -1,0 +1,10 @@
+import {
+  ZViteConfigBuilder,
+  ZViteTestBuilder,
+} from "@zthun/janitor-build-config/vite";
+import { defineConfig } from "vite";
+
+const test = new ZViteTestBuilder().browser().build();
+const config = new ZViteConfigBuilder().library().test(test).build();
+
+export default defineConfig(config);

@@ -2,6 +2,7 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
 import type { ElementType, ReactNode } from "react";
 import { isValidElement, useMemo } from "react";
+
 import type { IZComponentAdornment } from "../component/component-adornment.mjs";
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentHeading } from "../component/component-heading.mjs";

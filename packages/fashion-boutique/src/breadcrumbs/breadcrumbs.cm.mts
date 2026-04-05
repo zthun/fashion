@@ -1,4 +1,5 @@
 import { ZCircusComponentModel } from "@zthun/cirque";
+
 import { ZLinkComponentModel } from "../link/link.cm.mjs";
 
 /**

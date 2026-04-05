@@ -1,11 +1,8 @@
-import { ZSizeFixed } from "@zthun/fashion-tailor";
-
 import {
   useFashionTheme,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
-  ZCard,
   ZChoiceSelect,
   ZGrid,
   ZH3,
@@ -16,6 +13,7 @@ import {
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
+import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZBrandDataSourceFactory } from "@zthun/helpful-brands";
 import {
   ZDataRequestBuilder,
@@ -23,7 +21,9 @@ import {
   ZDataSourceStaticOptionsBuilder,
 } from "@zthun/helpful-query";
 import { useMemo, useState } from "react";
+
 import { ZFashionRoutePagination } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const SourceError = new ZDataSourceStatic(
   new Error("Something went wrong"),
@@ -57,7 +57,7 @@ export function ZPaginationPage() {
   );
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZPaginationPage-root"
       TitleProps={{
         heading: ZFashionRoutePagination.name,
@@ -121,6 +121,6 @@ export function ZPaginationPage() {
           </ZStack>
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

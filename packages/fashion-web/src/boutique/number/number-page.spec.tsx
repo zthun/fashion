@@ -2,7 +2,10 @@ import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { ZNumberComponentModel } from "@zthun/fashion-boutique";
+import { ZTestRouter } from "@zthun/fashion-boutique";
+import { createMemoryHistory } from "history";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZNumberPageComponentModel } from "./number-page.cm.mjs";
 import { ZNumberPage } from "./number-page.js";
 
@@ -15,7 +18,12 @@ describe("ZNumberPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZNumberPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZNumberPage />
+      </ZTestRouter>
+    );
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();
     return ZCircusBy.first(_driver, ZNumberPageComponentModel);

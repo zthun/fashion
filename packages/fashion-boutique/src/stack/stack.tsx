@@ -12,6 +12,7 @@ import {
   ZOrientation,
 } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
+
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";

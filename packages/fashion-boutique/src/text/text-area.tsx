@@ -1,11 +1,12 @@
 import {
+  createSizeChartFixedArithmetic,
   ZDeviceValues,
   ZSizeFixed,
-  createSizeChartFixedArithmetic,
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { TextareaHTMLAttributes } from "react";
+
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
@@ -81,7 +82,7 @@ export function ZTextArea(props: IZTextArea) {
 
     .ZText-area {
       align-items: flex-start;
-      background-color: ${component.idle.main};
+      background: ${component.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};

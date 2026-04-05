@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { hsl } from "./hsl.mjs";
 
 describe("HSL", () => {

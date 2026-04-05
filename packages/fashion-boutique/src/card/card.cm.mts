@@ -1,5 +1,6 @@
 import type { IZCircusDriver } from "@zthun/cirque";
 import { ZCircusBy, ZCircusComponentModel } from "@zthun/cirque";
+
 import { ZContentTitleComponentModel } from "../content-title/content-title.cm.mjs";
 
 /**
@@ -16,16 +17,6 @@ export class ZCardComponentModel extends ZCircusComponentModel {
    */
   public title(): Promise<ZContentTitleComponentModel> {
     return ZCircusBy.first(this.driver, ZContentTitleComponentModel);
-  }
-
-  /**
-   * Gets the fashion name of the card.
-   *
-   * @returns
-   *        The fashion of the card.
-   */
-  public fashion(): Promise<string> {
-    return this.driver.attribute("data-fashion", "Surface");
   }
 
   /**

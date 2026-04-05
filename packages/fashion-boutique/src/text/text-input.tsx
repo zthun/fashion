@@ -3,6 +3,7 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { ForwardedRef, InputHTMLAttributes } from "react";
 import { forwardRef } from "react";
+
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
@@ -94,7 +95,7 @@ export const ZTextInput = forwardRef(function _ZTextInput(
 
     .ZText-input {
       align-items: center;
-      background-color: ${component.idle.main};
+      background: ${component.idle.background};
       border-radius: ${tailor.rounding(ZSizeFixed.ExtraSmall)};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.Medium)};

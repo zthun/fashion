@@ -3,6 +3,7 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZDataRequestBuilder } from "@zthun/helpful-query";
 import { afterEach, describe, expect, it, vi } from "vitest";
+
 import { ZTextComponentModel } from "../text/text.cm.mjs";
 import type { IZSearch } from "./search.js";
 import { ZSearch } from "./search.js";

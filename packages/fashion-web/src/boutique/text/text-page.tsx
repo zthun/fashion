@@ -2,7 +2,6 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZCaption,
-  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -13,7 +12,9 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useState } from "react";
+
 import { ZFashionRouteText } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for text.
@@ -34,7 +35,7 @@ export function ZTextPage() {
   );
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZTextPage-root"
       TitleProps={{
         heading: ZFashionRouteText.name,
@@ -140,6 +141,6 @@ export function ZTextPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

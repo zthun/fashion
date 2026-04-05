@@ -7,6 +7,7 @@ import {
 } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
+
 import { useFashionDevice, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss, useKeyframes } from "../theme/styled.js";
 import type { IZSuspense } from "./suspense.mjs";
@@ -30,9 +31,9 @@ const HeightChart = createSizeChartFixedCss(
  */
 export function ZSuspenseProgress(props: IZSuspenseProgress) {
   const { className, disabled, height, name, fashion } = props;
-  const { primary } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const device = useFashionDevice();
-  const _fashion = firstDefined(primary, fashion);
+  const _fashion = firstDefined(secondary, fashion);
   const _height = new ZDeviceValues(height, ZSizeFixed.Medium);
   const picker = new ZColorPicker(_fashion);
 
@@ -47,7 +48,7 @@ export function ZSuspenseProgress(props: IZSuspenseProgress) {
 
   const _className = useCss(css`
     & {
-      background-color: currentcolor;
+      background: currentcolor;
       box-sizing: border-box;
       display: ${disabled ? "none" : "block"};
       height: ${HeightChart[_height.xl]};
@@ -59,7 +60,7 @@ export function ZSuspenseProgress(props: IZSuspenseProgress) {
     .ZSuspense-progress-scroll {
       animation: ${scroll} 1.5s ease-in-out infinite;
       position: absolute;
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       inset: 0;
       width: 25%;
     }

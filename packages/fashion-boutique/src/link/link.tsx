@@ -1,6 +1,7 @@
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
+
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentLabel } from "../component/component-label.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
@@ -25,21 +26,22 @@ export function ZLink(props: IZLink) {
   const picker = new ZColorPicker(firstDefined(primary, fashion));
 
   const _className = useCss(css`
-    & {
-      color: ${picker.idle.main};
+    &,
+    &:visited {
+      color: ${picker.idle.foreground};
       text-decoration: none;
     }
 
     &:active {
-      color: ${picker.active.main};
+      color: ${picker.active.foreground};
     }
 
     &:hover {
-      color: ${picker.hover.main};
+      color: ${picker.hover.foreground};
     }
 
     &:focus {
-      color: ${picker.focus.main};
+      color: ${picker.focus.foreground};
     }
   `);
 

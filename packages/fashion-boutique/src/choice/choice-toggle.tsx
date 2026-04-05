@@ -1,6 +1,7 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
+
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
@@ -27,9 +28,9 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     isValueSelected,
     toggleValue,
   } = useChoice(props);
-  const { component, primary, error } = useFashionTheme();
+  const { component, secondary, error } = useFashionTheme();
   const tailor = useFashionTailor();
-  const picker = new ZColorPicker(primary);
+  const picker = new ZColorPicker(secondary);
 
   const _className = useCss(css`
     .ZChoice-options {
@@ -41,7 +42,7 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     .ZChoice-option {
       color: ${component.idle.contrast};
       cursor: pointer;
-      background-color: ${component.idle.main};
+      background: ${component.idle.background};
       border-style: solid;
       border-width: ${tailor.thickness(ZSizeFixed.ExtraSmall)};
       padding: ${tailor.gap(ZSizeFixed.Small)};
@@ -58,13 +59,13 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     }
 
     .ZChoice-value {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
     }
 
     .ZChoice-option:hover,
     .ZChoice-value:hover {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.background};
       color: ${picker.hover.contrast};
     }
 
@@ -74,7 +75,7 @@ export function ZChoiceToggle<O, V>(props: IZChoice<O, V>) {
     }
 
     .ZChoice-clear:hover {
-      background-color: ${error.idle.main};
+      background: ${error.idle.background};
       color: ${error.idle.contrast};
     }
 

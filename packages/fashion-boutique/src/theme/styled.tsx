@@ -6,6 +6,7 @@ import { useWindowService } from "@zthun/helpful-react";
 import { noop } from "lodash-es";
 import { useCallback, useEffect, useRef } from "react";
 import { compile, middleware, rulesheet, serialize, stringify } from "stylis";
+
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
 import { useFashionTheme } from "./fashion.mjs";
@@ -93,7 +94,7 @@ export function ZStyled(props: IZStyled) {
 
   useGlobalCss(css`
     body {
-      background-color: ${body.idle.main};
+      background: ${body.idle.background};
       color: ${body.idle.contrast};
       margin: 0;
       position: relative;

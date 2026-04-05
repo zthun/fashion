@@ -1,6 +1,7 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
+
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
@@ -18,7 +19,7 @@ export function ZBanner(props: IZBanner) {
   const picker = new ZColorPicker(firstDefined(primary, fashion));
   const _className = useCss(css`
     &.ZBanner-root {
-      background: ${picker.idle.main};
+      background: ${picker.idle.background};
       box-sizing: border-box;
       color: ${picker.idle.contrast};
       left: 0;

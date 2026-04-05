@@ -1,19 +1,19 @@
 import {
   ZButton,
-  ZCard,
+  ZGrid,
   ZH3,
   ZIconFontAwesome,
   ZParagraph,
   ZPopup,
-  useFashionTheme,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import type { MouseEvent } from "react";
 import { useState } from "react";
+
 import { ZFashionRoutePopup } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 export function ZPopupPage() {
-  const { primary, success } = useFashionTheme();
   const [open, setOpen] = useState(false);
   const [attach, setAttach] = useState<HTMLElement>();
 
@@ -23,7 +23,7 @@ export function ZPopupPage() {
   };
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZPopupPage-root"
       TitleProps={{
         heading: ZFashionRoutePopup.name,
@@ -47,14 +47,15 @@ export function ZPopupPage() {
         conditions are met.
       </ZParagraph>
 
-      <ZButton
-        fashion={success}
-        outline
-        label="Open Popup"
-        onClick={openPopup}
-        width={ZSizeVaried.Full}
-        name="open-popup"
-      />
+      <ZGrid columns={{ xl: "0.25fr", md: "0.5fr", sm: "1fr" }}>
+        <ZButton
+          outline
+          label="Open Popup"
+          onClick={openPopup}
+          width={ZSizeVaried.Full}
+          name="open-popup"
+        />
+      </ZGrid>
 
       <ZPopup
         attach={attach}
@@ -66,7 +67,6 @@ export function ZPopupPage() {
             name="close-popup"
             label="Close Popup"
             onClick={setOpen.bind(null, false)}
-            fashion={primary}
           />
         )}
       >
@@ -74,6 +74,6 @@ export function ZPopupPage() {
           You can put anything you want in popup content.
         </ZParagraph>
       </ZPopup>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

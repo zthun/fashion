@@ -1,10 +1,13 @@
 import type { IZCircusDriver, IZCircusSetup } from "@zthun/cirque";
 import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
+import { ZTestRouter } from "@zthun/fashion-boutique";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionPriority, ZFashionSeverity } from "@zthun/fashion-theme";
+import { createMemoryHistory } from "history";
 import { lowerCase } from "lodash-es";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZAlertPageComponentModel } from "./alert-page.cm.mjs";
 import { ZAlertPage } from "./alert-page.js";
 
@@ -13,7 +16,12 @@ describe("ZAlertPage", () => {
   let _driver: IZCircusDriver;
 
   async function createTestTarget() {
-    const element = <ZAlertPage />;
+    const history = createMemoryHistory();
+    const element = (
+      <ZTestRouter location={history.location} navigator={history}>
+        <ZAlertPage />
+      </ZTestRouter>
+    );
 
     _renderer = new ZCircusSetupRenderer(element);
     _driver = await _renderer.setup();

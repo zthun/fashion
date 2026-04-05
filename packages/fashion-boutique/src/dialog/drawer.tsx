@@ -9,6 +9,7 @@ import {
   ZVerticalAnchor,
 } from "@zthun/helpful-fn";
 import { useRef } from "react";
+
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss, useKeyframes } from "../theme/styled.js";
 import type { IZDialog } from "./use-dialog.js";
@@ -32,6 +33,7 @@ export function ZDrawer(props: IZDrawer) {
   const tailor = useFashionTailor();
   const drawer = useRef<HTMLDialogElement>(document.createElement("dialog"));
   const picker = new ZColorPicker(firstDefined(surface, fashion));
+  const _surface = new ZColorPicker(surface);
 
   const { closeOnBackdropClick, closeOnEscapeKey } = useDialog(
     drawer.current,
@@ -78,9 +80,9 @@ export function ZDrawer(props: IZDrawer) {
 
   const _className = useCss(css`
     & {
-      background-color: ${surface.idle.main};
+      background: ${_surface.idle.background};
       border: 0;
-      color: ${surface.idle.contrast};
+      color: ${_surface.idle.contrast};
       height: ${height};
       margin-bottom: ${marginBottom};
       margin-left: ${marginLeft};
@@ -95,7 +97,7 @@ export function ZDrawer(props: IZDrawer) {
     }
 
     &::backdrop {
-      background-color: ${black()};
+      background: ${black()};
       opacity: 0.75;
     }
 
@@ -117,13 +119,14 @@ export function ZDrawer(props: IZDrawer) {
     }
 
     .ZDialog-header {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       color: ${picker.idle.contrast};
     }
 
     .ZDialog-content {
       flex-grow: 1;
       overflow: auto;
+      background: ${_surface.idle.background};
     }
   `);
 

@@ -3,8 +3,9 @@ import { ZCircusBy, ZCircusDestroy } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import type { Mock } from "vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
+
 import { ZIconComponentModel } from "../icon/icon.cm.mjs";
+import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZBubbleComponentModel } from "./bubble.cm.mjs";
 import { ZBubble } from "./bubble.js";
 

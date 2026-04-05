@@ -4,6 +4,7 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZLabelComponentModel } from "./label.cm.mjs";
 import type { IZLabeled } from "./labeled.js";
 import { ZLabeled } from "./labeled.js";

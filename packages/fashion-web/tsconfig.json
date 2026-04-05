@@ -8,15 +8,10 @@
     "baseUrl": ".",
     "paths": {
       "@zthun/fashion-theme": ["../fashion-theme/src/index.mts"],
+      "@zthun/fashion-theme-dark": ["../fashion-theme-dark/src/index.mts"],
       "@zthun/fashion-tailor": ["../fashion-tailor/src/index.mts"],
       "@zthun/fashion-boutique": ["../fashion-boutique/src/index.mts"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "features/**/*.ts",
-    "src/**/*.mts",
-    "features/**/*.mts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts"]
 }

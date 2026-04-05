@@ -4,12 +4,13 @@ import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
 import { ZAsyncLoading } from "@zthun/helpful-react";
 import type { FunctionComponent } from "react";
 import { afterEach, describe, expect, it } from "vitest";
+
 import { ZBoxComponentModel } from "../box/box.cm.mjs";
 import { ZBox } from "../box/box.js";
+import type { IZAsyncData } from "./async-data.js";
 import { ZAsyncDataError } from "./async-data-error.js";
 import { ZAsyncDataLoaded } from "./async-data-loaded.js";
 import { ZAsyncDataLoading } from "./async-data-loading.js";
-import type { IZAsyncData } from "./async-data.js";
 
 describe("ZAsyncData", () => {
   const error = new Error("Something went wrong");

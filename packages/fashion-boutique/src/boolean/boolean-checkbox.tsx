@@ -9,6 +9,7 @@ import {
 import { useAmbassadorState, useKeyboardActivate } from "@zthun/helpful-react";
 import type { ChangeEvent } from "react";
 import { useId, useMemo, useRef } from "react";
+
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTheme } from "../theme/fashion.mjs";
@@ -25,7 +26,7 @@ import type { IZBoolean } from "./boolean.mjs";
  *        The JSX to render the checkbox
  */
 export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
-  const { primary } = useFashionTheme();
+  const { secondary } = useFashionTheme();
   const {
     className,
     disabled,
@@ -33,7 +34,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     value,
     onValueChange,
     name,
-    fashion = primary,
+    fashion = secondary,
     required,
   } = props;
   const { component } = useFashionTheme();
@@ -62,7 +63,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     }
 
     .ZBoolean-value {
-      background-color: ${component.idle.main};
+      background: ${component.idle.background};
       color: ${component.idle.contrast};
       display: inline-flex;
       justify-content: center;
@@ -71,19 +72,19 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
     }
 
     input:checked + .ZBoolean-value {
-      background-color: ${_fashion.idle.main};
+      background: ${_fashion.idle.foreground};
       color: ${_fashion.idle.contrast};
       text-align: center;
     }
 
     &:hover:not([data-disabled="true"]) .ZBoolean-value,
     &:hover:not([data-disabled="true"]) input:checked + .ZBoolean-value {
-      background-color: ${_fashion.hover.main};
+      background: ${_fashion.hover.foreground};
       color: ${_fashion.hover.contrast};
     }
 
     &:focus-within .ZBoolean-value {
-      background-color: ${_fashion.focus.main} !important;
+      background: ${_fashion.focus.foreground} !important;
       color: ${_fashion.focus.contrast} !important;
       outline: none;
       box-shadow: 0 0 0.25rem 0.25rem ${_fashion.focus.border};
@@ -119,7 +120,7 @@ export function ZBooleanCheckbox(props: IZBoolean<boolean | null>) {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
     handleChecked(e.currentTarget.checked);
 
-  const focusInput = async () => input.current.focus();
+  const focusInput = () => input.current.focus();
 
   return (
     <ZLabeled

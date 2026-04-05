@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { hex } from "./hex.mjs";
 
 describe("Hex", () => {

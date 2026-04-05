@@ -3,14 +3,14 @@ import { ZRouteBuilder } from "./route/route.mjs";
 export const ZFashionRouteHome = new ZRouteBuilder()
   .name("Fashion")
   .path("")
-  .description("Build something pretty")
+  .description("Build Something Pretty")
   .avatar("/images/svg/fashion.svg")
   .build();
 
 export const ZFashionRouteTheme = new ZRouteBuilder()
   .name("Theme")
   .path("theme")
-  .description("Make it look good")
+  .description("Define Colors")
   .avatar("palette")
   .build();
 
@@ -47,13 +47,6 @@ export const ZFashionRouteButton = new ZRouteBuilder()
   .path("button")
   .description("Click To Activate")
   .avatar("circle-dot")
-  .build();
-
-export const ZFashionRouteCard = new ZRouteBuilder()
-  .name("Card")
-  .path("card")
-  .description("Sectioned Content")
-  .avatar("credit-card")
   .build();
 
 export const ZFashionRouteCarousel = new ZRouteBuilder()
@@ -181,7 +174,6 @@ export const ZFashionRouteAllComponents = [
   ZFashionRouteBoolean,
   ZFashionRouteBubble,
   ZFashionRouteButton,
-  ZFashionRouteCard,
   ZFashionRouteCarousel,
   ZFashionRouteChart,
   ZFashionRouteChoice,

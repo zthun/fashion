@@ -1,6 +1,7 @@
 import { ZSizeFixed, ZSizeVoid } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
+
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -45,19 +46,19 @@ export function ZList(props: IZList) {
     }
 
     li[data-highlight="true"] {
-      background-color: ${picker.idle.main};
+      background: ${picker.idle.background};
       border-color: ${picker.idle.border};
       color: ${picker.idle.contrast};
     }
 
     li[data-interactive]:hover {
-      background-color: ${picker.hover.main};
+      background: ${picker.hover.background};
       border-color: ${picker.hover.border};
       color: ${picker.hover.contrast};
     }
 
     li[data-interactive]:focus {
-      background-color: ${picker.focus.main};
+      background: ${picker.focus.background};
       border-color: ${picker.focus.border};
       color: ${picker.focus.contrast};
       outline: none;

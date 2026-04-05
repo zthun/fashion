@@ -2,7 +2,6 @@ import {
   ZAlert,
   ZBooleanSwitch,
   ZBox,
-  ZCard,
   ZGrid,
   ZH3,
   ZH4,
@@ -11,7 +10,9 @@ import {
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useState } from "react";
+
 import { ZFashionRouteAlert } from "../../routes.mjs";
+import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -26,7 +27,7 @@ export function ZAlertPage() {
   const [fashion, fashionName, setFashion] = useFashionState();
 
   return (
-    <ZCard
+    <ZCardDemoComponent
       className="ZAlertPage-root"
       TitleProps={{
         heading: ZFashionRouteAlert.name,
@@ -96,6 +97,6 @@ export function ZAlertPage() {
           name="fashion"
         />
       </ZBox>
-    </ZCard>
+    </ZCardDemoComponent>
   );
 }

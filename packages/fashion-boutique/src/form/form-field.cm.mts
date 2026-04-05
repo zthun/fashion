@@ -1,4 +1,5 @@
 import { ZCircusBy, ZCircusComponentModel } from "@zthun/cirque";
+
 import { ZBooleanComponentModel } from "../index.mjs";
 import { ZTextComponentModel } from "../text/text.cm.mjs";
 
