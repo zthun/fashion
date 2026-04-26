@@ -4,8 +4,6 @@
     "@zthun/janitor-ts-config/browser"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "declarationDir": "dist/types",
     "paths": {
       "@zthun/fashion-theme": ["../fashion-theme/src/index.mts"]
     }

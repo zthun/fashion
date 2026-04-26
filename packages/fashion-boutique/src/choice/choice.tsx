@@ -64,7 +64,7 @@ export function useChoice<O = any, V = O>(
     value,
     onValueChange,
     options = [],
-    identifier = identity as (option: O) => V,
+    identifier = identity,
     display = _display,
     multiple,
     renderOption = display,
@@ -97,7 +97,7 @@ export function useChoice<O = any, V = O>(
   ] {
     const optionList = options.map<IZChoiceOption<O, V>>((op) => ({
       key: createGuid(),
-      value: identifier(op),
+      value: identifier(op) as V,
       option: op,
     }));
 

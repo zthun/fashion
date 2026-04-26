@@ -5,12 +5,13 @@
     "@zthun/janitor-ts-config/react"
   ],
   "compilerOptions": {
-    "baseUrl": "packages",
     "paths": {
-      "@zthun/fashion-theme": ["fashion-theme/src/index.mts"],
-      "@zthun/fashion-theme-dark": ["fashion-theme-dark/src/index.mts"],
-      "@zthun/fashion-tailor": ["fashion-tailor/src/index.mts"],
-      "@zthun/fashion-boutique": ["fashion-boutique/src/index.mts"]
+      "@zthun/fashion-theme": ["./packages/fashion-theme/src/index.mts"],
+      "@zthun/fashion-theme-dark": [
+        "./packages/fashion-theme-dark/src/index.mts"
+      ],
+      "@zthun/fashion-tailor": ["./packages/fashion-tailor/src/index.mts"],
+      "@zthun/fashion-boutique": ["./packages/fashion-boutique/src/index.mts"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.mts"]

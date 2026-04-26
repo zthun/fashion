@@ -3,9 +3,5 @@
     "@zthun/janitor-ts-config/base",
     "@zthun/janitor-ts-config/browser"
   ],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declarationDir": "dist/types"
-  },
   "include": ["**/*.ts", "**/*.mts"]
 }

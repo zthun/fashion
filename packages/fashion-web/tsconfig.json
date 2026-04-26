@@ -5,7 +5,6 @@
     "@zthun/janitor-ts-config/react"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@zthun/fashion-theme": ["../fashion-theme/src/index.mts"],
       "@zthun/fashion-theme-dark": ["../fashion-theme-dark/src/index.mts"],
