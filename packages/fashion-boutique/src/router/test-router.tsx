@@ -1,10 +1,7 @@
 import { Router, type RouterProps } from "react-router-dom";
 
-export interface IZRouterProps extends Omit<
-  RouterProps,
-  "unstable_useTransitions"
-> {}
+export interface IZRouterProps extends RouterProps {}
 
 export function ZTestRouter(props: IZRouterProps) {
-  return <Router {...props} unstable_useTransitions={false} />;
+  return <Router {...props} />;
 }
