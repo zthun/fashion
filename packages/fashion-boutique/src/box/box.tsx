@@ -145,25 +145,25 @@ export function ZBox(props: IZBox) {
     }
 
     &:focus {
-      background: ${interactive
-        ? picker.focus.background
-        : picker.idle.background};
+      background: ${
+        interactive ? picker.focus.background : picker.idle.background
+      };
       border-color: ${interactive ? picker.focus.border : picker.idle.border};
       color: ${interactive ? picker.focus.contrast : picker.idle.contrast};
     }
 
     &:hover {
-      background: ${interactive
-        ? picker.hover.background
-        : picker.idle.background};
+      background: ${
+        interactive ? picker.hover.background : picker.idle.background
+      };
       border-color: ${interactive ? picker.hover.border : picker.idle.border};
       color: ${interactive ? picker.hover.contrast : picker.idle.contrast};
     }
 
     &:active {
-      background: ${interactive
-        ? picker.active.background
-        : picker.idle.background};
+      background: ${
+        interactive ? picker.active.background : picker.idle.background
+      };
       border-color: ${interactive ? picker.active.border : picker.idle.border};
       color: ${interactive ? picker.active.contrast : picker.idle.contrast};
     }

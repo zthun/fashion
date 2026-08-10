@@ -10,13 +10,7 @@ export const ZIconFontAwesomeVendor = "font-awesome";
 
 export interface IZIconFontAwesome extends IZIcon {
   animation?:
-    | "beat"
-    | "fade"
-    | "beat-fade"
-    | "bounce"
-    | "flip"
-    | "shake"
-    | "spin";
+    "beat" | "fade" | "beat-fade" | "bounce" | "flip" | "shake" | "spin";
   family?: "classic" | "sharp" | "brands";
   style?: "solid" | "regular" | "duotone" | "light" | "thin";
 }
