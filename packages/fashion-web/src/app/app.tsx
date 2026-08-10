@@ -89,7 +89,7 @@ export function ZFashionApp() {
   );
 
   return (
-    <ZFashionThemeContext.Provider value={ZThemeDark}>
+    <ZFashionThemeContext value={ZThemeDark}>
       <ZBannerMain TitleProps={{ avatar, heading, subHeading, suffix }}>
         <ZRouteMap>
           <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />
@@ -142,6 +142,6 @@ export function ZFashionApp() {
           <ZRoute path="*" element={<ZNotFound />} />
         </ZRouteMap>
       </ZBannerMain>
-    </ZFashionThemeContext.Provider>
+    </ZFashionThemeContext>
   );
 }

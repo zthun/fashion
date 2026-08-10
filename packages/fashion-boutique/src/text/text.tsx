@@ -1,7 +1,9 @@
 import { ZCircusKeyboardQwerty } from "@zthun/cirque";
+import { firstDefined } from "@zthun/helpful-fn";
+import { useSyncState } from "@zthun/helpful-react";
 import { get, noop } from "lodash-es";
-import type { FormEvent, KeyboardEvent } from "react";
-import { useEffect, useId, useState } from "react";
+import type { InputEvent, KeyboardEvent } from "react";
+import { useId } from "react";
 
 import type { IZComponentAdornment } from "../component/component-adornment.mjs";
 import type { IZComponentDisabled } from "../component/component-disabled.mjs";
@@ -63,22 +65,18 @@ export function useText<T extends HTMLElement & { value: string }>(
     onValueChange = noop,
   } = props;
   const id = useId();
-  const [current, setCurrent] = useState(value || "");
-
-  useEffect(() => {
-    setCurrent(value || "");
-  }, [value]);
+  const [current, setCurrent] = useSyncState(value);
 
   return {
     disabled,
-    value: current,
+    value: firstDefined("", current),
     name,
     required,
     placeholder: placeholder,
     readOnly,
     id,
     onBlur: () => onChange(current || "", value || "", onValueChange),
-    onInput: (e: FormEvent<T>) => setCurrent(e.currentTarget.value),
+    onInput: (e: InputEvent<T>) => setCurrent(e.currentTarget.value),
   };
 }
 

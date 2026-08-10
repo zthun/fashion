@@ -31,12 +31,12 @@ export function ZDrawer(props: IZDrawer) {
   } = props;
   const { surface } = useFashionTheme();
   const tailor = useFashionTailor();
-  const drawer = useRef<HTMLDialogElement>(document.createElement("dialog"));
+  const drawerRef = useRef<HTMLDialogElement>(null);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
   const _surface = new ZColorPicker(surface);
 
   const { closeOnBackdropClick, closeOnEscapeKey } = useDialog(
-    drawer.current,
+    drawerRef.current,
     props,
   );
 
@@ -144,7 +144,7 @@ export function ZDrawer(props: IZDrawer) {
       data-name={name}
       data-fashion={fashion?.name}
       role="dialog"
-      ref={drawer}
+      ref={drawerRef}
     >
       {renderHeader && (
         <div className="ZDialog-header" aria-description="Drawer Header">

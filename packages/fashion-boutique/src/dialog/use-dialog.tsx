@@ -1,7 +1,7 @@
 import { ZCircusKeyboardQwerty } from "@zthun/cirque";
 import { sleep } from "@zthun/helpful-fn";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 import type { IZComponentCompact } from "../component/component-compact.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
@@ -30,23 +30,24 @@ export interface IUseDialogOptions {
 }
 
 export function useDialog(
-  current: HTMLDialogElement,
+  current: HTMLDialogElement | null,
   props: IZDialog,
   options: IUseDialogOptions = {},
 ) {
   const { open, onClose, persistent } = props;
+  const { onAfterOpen } = options;
 
-  const show = () => {
+  const show = useCallback(() => {
     void (async (dialog) => {
-      dialog.showModal();
-      await options.onAfterOpen?.call(null);
-      dialog.focus();
+      dialog?.showModal();
+      await onAfterOpen?.call(null);
+      dialog?.focus();
     })(current);
-  };
+  }, [current, onAfterOpen]);
 
-  const hide = () => {
+  const hide = useCallback(() => {
     void (async (dialog) => {
-      if (!dialog.open) {
+      if (!dialog?.open) {
         // Already closed
         return;
       }
@@ -57,7 +58,7 @@ export function useDialog(
       dialog.classList.remove("closing");
       onClose?.call(null);
     })(current);
-  };
+  }, [current, onClose]);
 
   // This next bit is nearly impossible to test without modification
   // to circus to click on an offset of the body.  Can be done, but not available
@@ -99,7 +100,7 @@ export function useDialog(
     } else {
       hide();
     }
-  }, [current, open]);
+  }, [open, show, hide]);
 
   return { closeOnBackdropClick, closeOnEscapeKey };
 }

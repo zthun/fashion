@@ -15,11 +15,11 @@ export function ZChartPageProgress() {
 
   const hp = useMemo(
     () => new ZDataPointBuilder(300, 1000).name("HP").fashion(success).build(),
-    [],
+    [success],
   );
   const atk = useMemo(
     () => new ZDataPointBuilder(74, 255).name("Attack").fashion(error).build(),
-    [],
+    [error],
   );
   const def = useMemo(
     () => new ZDataPointBuilder(90, 255).name("Defense").build(),
@@ -31,11 +31,11 @@ export function ZChartPageProgress() {
         .name("Intelligence")
         .fashion(tertiary)
         .build(),
-    [],
+    [tertiary],
   );
   const spd = useMemo(
     () => new ZDataPointBuilder(67, 128).name("Speed").fashion(warning).build(),
-    [],
+    [warning],
   );
 
   return (

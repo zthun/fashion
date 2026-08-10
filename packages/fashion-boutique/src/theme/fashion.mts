@@ -2,14 +2,14 @@ import type { IZFashionDevice, IZFashionTailor } from "@zthun/fashion-tailor";
 import { ZFashionDevice, ZFashionTailor } from "@zthun/fashion-tailor";
 import type { ZFashionName } from "@zthun/fashion-theme";
 import { ZFashionThemeBuilder } from "@zthun/fashion-theme";
-import { createContext, useContext } from "react";
+import { createContext, use } from "react";
 
 export const ZFashionThemeContext = createContext(
   new ZFashionThemeBuilder().build(),
 );
 
 export function useFashionTheme() {
-  return useContext(ZFashionThemeContext);
+  return use(ZFashionThemeContext);
 }
 
 export function useFashion(name: ZFashionName | undefined) {
@@ -22,7 +22,7 @@ export const ZFashionTailorContext = createContext<IZFashionTailor>(
 );
 
 export function useFashionTailor() {
-  return useContext(ZFashionTailorContext);
+  return use(ZFashionTailorContext);
 }
 
 export const ZFashionDeviceContext = createContext<IZFashionDevice>(
@@ -30,5 +30,5 @@ export const ZFashionDeviceContext = createContext<IZFashionDevice>(
 );
 
 export function useFashionDevice() {
-  return useContext(ZFashionDeviceContext);
+  return use(ZFashionDeviceContext);
 }

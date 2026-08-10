@@ -60,19 +60,22 @@ export function ZPopup(props: IZPopup) {
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
   const tailor = useFashionTailor();
-  const popup = useRef<HTMLDialogElement>(document.createElement("dialog"));
+  const popupRef = useRef<HTMLDialogElement>(null);
   const picker = new ZColorPicker(firstDefined(surface, fashion));
   const _window = useWindowService();
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const _surface = new ZColorPicker(surface);
 
   const _getAttach = useCallback(
-    () => firstDefined(document.body, attach, popup.current.parentElement),
+    () => firstDefined(document.body, attach, popupRef.current?.parentElement),
     [attach],
   );
 
   const _resize = useCallback(() => {
-    const _popup = popup.current;
+    const _popup = firstDefined(
+      document.createElement("dialog"),
+      popupRef.current,
+    );
     const _attach = _getAttach();
 
     const attachRectangle = new ZQuadrilateralBuilder(0)
@@ -85,7 +88,10 @@ export function ZPopup(props: IZPopup) {
   }, [_getAttach]);
 
   const _reposition = useCallback(() => {
-    const _popup = popup.current;
+    const _popup = firstDefined(
+      document.createElement("dialog"),
+      popupRef.current,
+    );
     const _attach = _getAttach();
 
     const attachRectangle = new ZQuadrilateralBuilder(0)
@@ -105,22 +111,26 @@ export function ZPopup(props: IZPopup) {
     _popup.style.top = `${top}px`;
 
     return Promise.resolve();
-  }, [_getAttach]);
+  }, [_getAttach, attachOrigin, popupOrigin]);
 
   const _adjust = useCallback(async () => {
+    const _popup = firstDefined(
+      document.createElement("dialog"),
+      popupRef.current,
+    );
     const container = new ZQuadrilateralBuilder(0)
       .bottom(scrollContainer.clientHeight)
       .right(scrollContainer.clientWidth)
       .build();
 
     const popupRectangle = new ZQuadrilateralBuilder(0)
-      .copy(popup.current.getBoundingClientRect())
+      .copy(_popup.getBoundingClientRect())
       .build();
 
     const adjusted = new ZRectangle(container).offsetToFit(popupRectangle);
 
-    popup.current.style.left = `${adjusted.left}px`;
-    popup.current.style.top = `${adjusted.top}px`;
+    _popup.style.left = `${adjusted.left}px`;
+    _popup.style.top = `${adjusted.top}px`;
 
     return Promise.resolve();
   }, [scrollContainer]);
@@ -129,10 +139,10 @@ export function ZPopup(props: IZPopup) {
     await _resize();
     await _reposition();
     await _adjust();
-  }, [attach, popup.current, scrollContainer]);
+  }, [_resize, _reposition, _adjust]);
 
   const { closeOnBackdropClick, closeOnEscapeKey } = useDialog(
-    popup.current,
+    popupRef.current,
     props,
     { onAfterOpen },
   );
@@ -201,12 +211,11 @@ export function ZPopup(props: IZPopup) {
       const handleRedraw = () => void onRedraw();
       const controller = new AbortController();
       const { signal } = controller;
+
       _window.addEventListener("resize", handleRedraw, { signal });
       _window.addEventListener("scroll", handleRedraw, { signal });
 
-      return () => {
-        controller.abort();
-      };
+      return () => controller.abort();
     })(onAfterOpen);
   }, [onAfterOpen, _window]);
 
@@ -222,7 +231,7 @@ export function ZPopup(props: IZPopup) {
       onKeyDown={closeOnEscapeKey}
       data-name={name}
       data-fashion={fashion?.name}
-      ref={popup}
+      ref={popupRef}
     >
       {renderHeader && (
         <div className="ZDialog-header" aria-description="Drawer Header">

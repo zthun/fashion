@@ -47,7 +47,7 @@ const ZErrorDataSource = new ZDataSourceStatic(
  * @returns The JSX to render the page.
  */
 export function ZGridViewPage() {
-  const [request, setRequest] = useState(
+  const [request, setRequest] = useState(() =>
     new ZDataRequestBuilder().size(25).page(1).build(),
   );
   const [dataSource, setDataSource] = useState(ZBrandDataSource);

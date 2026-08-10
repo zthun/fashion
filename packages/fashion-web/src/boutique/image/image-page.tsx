@@ -27,7 +27,7 @@ export function ZImagePage() {
   const [fit, setFit] = useState<Property.ObjectFit>();
   const fixed: ZSize[] = useMemo(() => Object.values(ZSizeFixed), []);
   const varied: ZSize[] = useMemo(() => Object.values(ZSizeVaried), []);
-  const sizes = useMemo(() => fixed.concat(varied), []);
+  const sizes = useMemo(() => fixed.concat(varied), [fixed, varied]);
   const fits = useMemo(
     () => ["fill", "contain", "cover", "none", "scale-down"],
     [],

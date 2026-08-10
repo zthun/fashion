@@ -1,12 +1,6 @@
-import { useAmbassadorState } from "@zthun/helpful-react";
+import { useAmbassadorState, useSyncState } from "@zthun/helpful-react";
 import { noop } from "lodash-es";
-import {
-  type FormEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { type FormEvent, useCallback, useMemo } from "react";
 
 import { type IZComponentHierarchy, type IZComponentValue } from "../index.mjs";
 import type { IZFormState } from "./form-state.mjs";
@@ -22,18 +16,14 @@ export function ZForm(props: IZForm) {
     onValueChange,
     {},
   );
-  const [current, setCurrent] = useState(original);
+  const [current, setCurrent] = useSyncState(original);
 
   const reset = useCallback(noop, []);
 
   const state = useMemo<IZFormState>(
     () => ({ original, current, setCurrent, reset }),
-    [original, current, reset],
+    [original, current, setCurrent, reset],
   );
-
-  useEffect(() => {
-    setCurrent(original);
-  }, [original]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

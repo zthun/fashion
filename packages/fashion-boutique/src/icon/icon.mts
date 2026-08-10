@@ -87,5 +87,5 @@ export function useIconProvider(provider: string) {
       link.href = provider;
       dom.head.appendChild(link);
     }
-  }, []);
+  }, [dom, provider]);
 }

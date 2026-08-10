@@ -52,7 +52,7 @@ export function ZPaginationPage() {
   const { body } = useFashionTheme();
 
   const [sizes, setSizes] = useState(OptionMultiplesOf5);
-  const [request, setRequest] = useState(
+  const [request, setRequest] = useState(() =>
     new ZDataRequestBuilder().size(12).build(),
   );
 
