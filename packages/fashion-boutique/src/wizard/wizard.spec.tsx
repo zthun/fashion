@@ -17,11 +17,17 @@ describe("ZWizard", () => {
   const createTestTarget = async ({ children, ...props }: IZWizard = {}) => {
     const _children = firstDefined(
       [
-        <div data-name="Page 1" data-next-disabled={page1Disabled}>
+        <div data-name="Page 1" data-next-disabled={page1Disabled} key="page-1">
           Page 1
         </div>,
-        <div data-name="Page 2">Page 2</div>,
-        <div data-name="Page 3" data-next-disabled={lastPageDisabled}>
+        <div data-name="Page 2" key="page-2">
+          Page 2
+        </div>,
+        <div
+          data-name="Page 3"
+          data-next-disabled={lastPageDisabled}
+          key="page-3"
+        >
           Page 3
         </div>,
       ],

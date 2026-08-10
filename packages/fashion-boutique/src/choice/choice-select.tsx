@@ -25,7 +25,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
   const tailor = useFashionTailor();
   const { className, label, multiple, required, disabled, indelible, name } =
     props;
-  const input = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
 
   const icon = open ? "chevron-up" : "chevron-down";
@@ -193,7 +193,7 @@ export function ZChoiceSelect<O = any, V = O>(props: IZChoice<O, V>) {
       </ZLabeled>
       <ZPopup
         className="ZChoice-options-popup"
-        attach={input.current}
+        attach={inputRef.current}
         compact
         open={open}
         onClose={setOpen.bind(null, false)}

@@ -26,14 +26,14 @@ import { ZCardDemoComponent } from "../common/card-demo-component.js";
  * @returns The JSX to render the alerts demo page.
  */
 export function ZCarouselPage() {
-  const allBrands = useMemo(() => ZBrandKnown.all(), []);
+  const _brands = useMemo(() => ZBrandKnown.all(), []);
   const [index, setIndex] = useState(0);
   const [orientation, setOrientation] = useState(ZOrientation.Horizontal);
   const orientations = useMemo(() => Object.values(ZOrientation), []);
-  const [count, setCount] = useStateAsArray(allBrands.length);
+  const [count, setCount] = useStateAsArray(_brands.length);
   const [_count] = count;
-  const counts = [0, 1, allBrands.length];
-  const brands = useMemo(() => allBrands.slice(0, _count), [_count]);
+  const counts = [0, 1, _brands.length];
+  const brands = useMemo(() => _brands.slice(0, _count), [_count, _brands]);
 
   const renderBubble = (children: ReactNode) => (
     <ZBubble width={ZSizeFixed.Large} padding={ZSizeFixed.Medium}>

@@ -29,12 +29,7 @@ export interface IZTypographyNamed
 }
 
 export type FontWeight =
-  | "thin"
-  | "light"
-  | "regular"
-  | "medium"
-  | "bold"
-  | "black";
+  "thin" | "light" | "regular" | "medium" | "bold" | "black";
 
 export interface IZTypography extends IZTypographyNamed {
   size?: ZSizeFixed;

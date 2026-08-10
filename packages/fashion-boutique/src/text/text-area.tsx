@@ -8,6 +8,7 @@ import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
 import type { TextareaHTMLAttributes } from "react";
 
 import type { IZComponentHeight } from "../component/component-height.mjs";
+import type { IZComponentRef } from "../component/component-ref.mjs";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
@@ -21,7 +22,8 @@ export interface IZTextArea
       TextareaHTMLAttributes<HTMLTextAreaElement>,
       "prefix" | "type" | "value"
     >,
-    IZComponentHeight<ZSizeFixed> {}
+    IZComponentHeight<ZSizeFixed>,
+    IZComponentRef<HTMLTextAreaElement> {}
 
 const TextAreaRows = createSizeChartFixedArithmetic(2, 2);
 
@@ -46,6 +48,7 @@ export function ZTextArea(props: IZTextArea) {
     orientation,
     prefix,
     suffix,
+    ref,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onValueChange,
     ...attributes
@@ -130,6 +133,7 @@ export function ZTextArea(props: IZTextArea) {
           {...InputProps}
           rows={rows}
           data-required={required}
+          ref={ref}
         />
         {suffix && <div className="ZText-suffix">{suffix}</div>}
       </div>

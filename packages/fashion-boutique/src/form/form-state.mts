@@ -1,5 +1,5 @@
 import { noop } from "lodash-es";
-import { createContext, useContext } from "react";
+import { createContext, use } from "react";
 
 export interface IZFormState {
   original: object;
@@ -19,4 +19,4 @@ function createState(): IZFormState {
 }
 
 export const ZFormStateContext = createContext<IZFormState>(createState());
-export const useFormState = () => useContext(ZFormStateContext);
+export const useFormState = () => use(ZFormStateContext);

@@ -4,7 +4,7 @@ import { StyleSheet } from "@emotion/sheet";
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import { useWindowService } from "@zthun/helpful-react";
 import { noop } from "lodash-es";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { compile, middleware, rulesheet, serialize, stringify } from "stylis";
 
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
@@ -21,7 +21,7 @@ import { useFashionTheme } from "./fashion.mjs";
  *        The class name for the css.
  */
 export function useKeyframes(css: string) {
-  return _keyframes(css);
+  return useMemo(() => _keyframes(css), [css]);
 }
 
 /**
@@ -34,7 +34,7 @@ export function useKeyframes(css: string) {
  *        The class name for the css.
  */
 export function useCss(css: string) {
-  return _css(css);
+  return useMemo(() => _css(css), [css]);
 }
 
 /**
@@ -44,8 +44,10 @@ export function useCss(css: string) {
  *        The global css to inject.
  */
 export function useGlobalCss(css: string) {
-  const flush = useRef<() => void>(noop);
+  const flushRef = useRef<() => void>(noop);
   const window = useWindowService();
+  const { document } = window;
+  const { head } = document;
 
   // See https://github.com/emotion-js/emotion/issues/2131 for more information about
   // this issue.
@@ -53,7 +55,7 @@ export function useGlobalCss(css: string) {
     const { name, styles } = serializeStyles(css as any);
     const sheet = new StyleSheet({
       key: `global-${name}`,
-      container: window.document.head,
+      container: head,
     });
     const stylis = (styles: any) =>
       serialize(
@@ -68,13 +70,13 @@ export function useGlobalCss(css: string) {
     stylis(styles);
 
     return () => sheet.flush();
-  }, [css]);
+  }, [css, head]);
 
   useEffect(() => {
-    flush.current.call(null);
-    flush.current = injectGlobal();
+    flushRef.current.call(null);
+    flushRef.current = injectGlobal();
 
-    return () => flush.current.call(null);
+    return () => flushRef.current.call(null);
   }, [injectGlobal]);
 }
 

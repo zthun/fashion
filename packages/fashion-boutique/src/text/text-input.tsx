@@ -1,9 +1,9 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
-import type { ForwardedRef, InputHTMLAttributes } from "react";
-import { forwardRef } from "react";
+import type { InputHTMLAttributes, Ref } from "react";
 
+import type { IZComponentRef } from "../component/component-ref.mjs";
 import { ZLabeled } from "../label/labeled.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
@@ -33,7 +33,9 @@ export enum ZTextType {
 export interface IZTextInput
   extends
     IZText,
+    IZComponentRef<HTMLInputElement>,
     Omit<InputHTMLAttributes<HTMLInputElement>, "prefix" | "type" | "value"> {
+  ref?: Ref<HTMLInputElement>;
   /**
    * The optional type of text.
    */
@@ -49,10 +51,7 @@ export interface IZTextInput
  * @returns
  *        The JSX to render the component.
  */
-export const ZTextInput = forwardRef(function _ZTextInput(
-  props: IZTextInput,
-  ref: ForwardedRef<HTMLInputElement>,
-) {
+export function ZTextInput(props: IZTextInput) {
   const {
     className,
     fashion,
@@ -63,6 +62,7 @@ export const ZTextInput = forwardRef(function _ZTextInput(
     orientation,
     prefix,
     suffix,
+    ref,
     onKeyDown,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onValueChange,
@@ -155,4 +155,4 @@ export const ZTextInput = forwardRef(function _ZTextInput(
       </div>
     </ZLabeled>
   );
-});
+}
