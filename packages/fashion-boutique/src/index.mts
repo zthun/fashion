@@ -50,6 +50,7 @@ export * from "./component/component-label.mjs";
 export * from "./component/component-loading.mjs";
 export * from "./component/component-name.mjs";
 export * from "./component/component-range.mjs";
+export * from "./component/component-ref.mjs";
 export * from "./component/component-required.mjs";
 export * from "./component/component-source.mjs";
 export * from "./component/component-style.mjs";
