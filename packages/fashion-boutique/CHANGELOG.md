@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.0.0](https://github.com/zthun/fashion/compare/v14.0.2...v15.0.0) (2026-08-10)
+
+### Build System
+
+- react 19 ([b698a75](https://github.com/zthun/fashion/commit/b698a750a14ee90b7cfaf530b507ea8e678479b1))
+
+### BREAKING CHANGES
+
+- support for react 18 has been dropped
+
 ## [14.0.2](https://github.com/zthun/fashion/compare/v14.0.1...v14.0.2) (2026-05-26)
 
 **Note:** Version bump only for package @zthun/fashion-boutique
