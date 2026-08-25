@@ -1,6 +1,6 @@
 {
   "name": "@zthun/fashion-theme-dark",
-  "version": "15.0.0",
+  "version": "15.0.1",
   "description": "The default dark theme for the fashion system.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/fashion-theme": "^15.0.0"
+    "@zthun/fashion-theme": "^15.0.1"
   },
   "devDependencies": {
     "@zthun/janitor-ts-config": "^21.1.3",
