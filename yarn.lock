@@ -3990,7 +3990,7 @@ __metadata:
     "@zthun/helpful-react": "npm:^10.0.2"
     "@zthun/janitor-ts-config": "npm:^21.1.3"
     "@zthun/janitor-vite": "npm:^21.2.4"
-    "@zthun/webigail-http": "npm:^5.0.12"
+    "@zthun/webigail-http": "npm:^5.0.13"
     "@zthun/webigail-url": "npm:^5.0.12"
     csstype: "npm:^3.2.3"
     history: "npm:^5.3.0"
@@ -4122,7 +4122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/helpful-fn@npm:^10.0.1, @zthun/helpful-fn@npm:^10.0.2":
+"@zthun/helpful-fn@npm:^10.0.2":
   version: 10.0.2
   resolution: "@zthun/helpful-fn@npm:10.0.2"
   dependencies:
@@ -4236,15 +4236,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/webigail-http@npm:^5.0.12":
-  version: 5.0.12
-  resolution: "@zthun/webigail-http@npm:5.0.12"
+"@zthun/webigail-http@npm:^5.0.13":
+  version: 5.0.13
+  resolution: "@zthun/webigail-http@npm:5.0.13"
   dependencies:
-    "@zthun/helpful-fn": "npm:^10.0.1"
+    "@zthun/helpful-fn": "npm:^10.0.2"
     "@zthun/webigail-url": "npm:^5.0.12"
     cross-fetch: "npm:^4.1.0"
     lodash-es: "npm:^4.18.1"
-  checksum: 10c0/27dc1b5b15af06b67dcab88d37d25e2cb3142c413f28471737f86488efadd75b6daac7608d4dc830f38d4430bcf0ced60af9c4d790da346e032d95e28f0db865
+  checksum: 10c0/90973282228de39b30192af30b086ff181ea3b878aeff0639148d86a310ceb366f6e3321f573389f1650fd6fbdb6a32d0f2ed4e23bb69d8be0c4f23b38ce48f5
   languageName: node
   linkType: hard
 
