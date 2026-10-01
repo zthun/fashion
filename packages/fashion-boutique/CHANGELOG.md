@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.3](https://github.com/zthun/fashion/compare/v15.0.2...v15.0.3) (2026-10-01)
+
+**Note:** Version bump only for package @zthun/fashion-boutique
+
 ## [15.0.2](https://github.com/zthun/fashion/compare/v15.0.1...v15.0.2) (2026-10-01)
 
 **Note:** Version bump only for package @zthun/fashion-boutique
