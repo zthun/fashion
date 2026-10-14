@@ -19,3 +19,14 @@ npm install @zthun/fashion-theme
 # Yarn
 yarn add @zthun/fashion-theme
 ```
+
+## Features
+
+Import the public exports shown in each feature guide from
+`@zthun/fashion-theme`. Type-only exports can be imported with `import type`.
+
+| Feature                            | Description                                                                                     |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [color](./src/color/README.md)     | Construct CSS colors and calculate brightness, luminance, and contrast from numeric RGB values. |
+| [fashion](./src/fashion/README.md) | Build coordinated color schemes for idle, hover, focus, and active component states.            |
+| [theme](./src/theme/README.md)     | Group component color schemes into a named application theme.                                   |
