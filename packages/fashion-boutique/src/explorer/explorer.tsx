@@ -43,7 +43,6 @@ export function ZExplorer({ children, sidebar = {} }: IZExplorer) {
       position: fixed;
       top: 0;
       bottom: 0;
-      padding: ${gap};
       width: ${width};
     }
 
