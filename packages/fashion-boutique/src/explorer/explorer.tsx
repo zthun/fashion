@@ -67,7 +67,6 @@ export function ZExplorer({ children, sidebar = {} }: IZExplorer) {
           className="ZExplorer-sidebar"
           fashion={surface}
           padding={ZSizeFixed.ExtraSmall}
-          border={{ radius: ZSizeFixed.Medium }}
         >
           <ZStack
             gap={ZSizeFixed.Small}
