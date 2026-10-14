@@ -63,6 +63,7 @@ export * from "./dialog/drawer.js";
 export * from "./dialog/modal.js";
 export * from "./dialog/popup.js";
 export * from "./divider/divider.js";
+export * from "./explorer/explorer.js";
 export * from "./form/form.cm.mjs";
 export * from "./form/form.js";
 export * from "./form/form-button.cm.mjs";
