@@ -30,11 +30,10 @@ export function ZHomePage() {
   return (
     <ZStack
       className="ZHomePage-root"
-      align={{ items: "center" }}
       gap={ZSizeFixed.Medium}
+      width={ZSizeVaried.Full}
     >
       <ZCard
-        width={ZSizeFixed.ExtraLarge}
         TitleProps={{
           heading: ZFashionRouteTheme.name,
           subHeading: ZFashionRouteTheme.description,
@@ -78,7 +77,6 @@ export function ZHomePage() {
       </ZCard>
 
       <ZCard
-        width={ZSizeFixed.ExtraLarge}
         TitleProps={{
           heading: ZFashionRouteBoutique.name,
           subHeading: ZFashionRouteBoutique.description,
