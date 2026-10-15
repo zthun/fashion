@@ -9,12 +9,14 @@ import type { IZRoute } from "../route/route.mjs";
 import { useLocation, useNavigate } from "../router/router-dom.mjs";
 import { ZStack } from "../stack/stack.js";
 import { ZSubtitle } from "../typography/typography.js";
+import { useExplorer } from "./use-explorer.mjs";
 
 export interface IZExplorerListNav extends IZComponentValueReadonly<
   IZRoute[]
 > {}
 
 export function ZExplorerListNav({ value }: IZExplorerListNav) {
+  const { expanded } = useExplorer();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -38,7 +40,7 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
             width={ZSizeFixed.ExtraSmall}
             height={ZSizeFixed.ExtraSmall}
           />
-          <ZSubtitle compact>{route.name}</ZSubtitle>
+          {expanded && <ZSubtitle compact>{route.name}</ZSubtitle>}
         </ZStack>
       </ZListItem>
     );

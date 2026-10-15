@@ -10,6 +10,7 @@ import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZStack } from "../stack/stack.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
+import { ZExplorerContext } from "./use-explorer.mjs";
 
 export interface IZExplorer extends IZComponentHierarchy {
   expanded?: boolean;
@@ -63,42 +64,44 @@ export function ZExplorer({
   `);
 
   return (
-    <div className={cssJoinDefined("ZExplorer-root", _className)}>
-      <nav className="ZExplorer-nav">
-        <ZBox
-          className="ZExplorer-sidebar"
-          fashion={surface}
-          padding={ZSizeFixed.ExtraSmall}
-        >
-          <ZStack
-            gap={ZSizeFixed.Small}
-            width={ZSizeVaried.Full}
-            height={ZSizeVaried.Full}
+    <ZExplorerContext value={{ expanded: _expanded }}>
+      <div className={cssJoinDefined("ZExplorer-root", _className)}>
+        <nav className="ZExplorer-nav">
+          <ZBox
+            className="ZExplorer-sidebar"
+            fashion={surface}
+            padding={ZSizeFixed.ExtraSmall}
           >
-            <header className="ZExplorer-sidebar-header">
-              <ZStack
-                orientation={ZOrientation.Horizontal}
-                justify={{ content: "flex-end" }}
-                width={ZSizeVaried.Full}
-              >
-                <ZIconFontAwesome
-                  name={_expanded ? "minus" : "expand"}
-                  width={ZSizeFixed.ExtraSmall}
-                  onClick={handleToggle}
-                />
-              </ZStack>
-            </header>
-            <article
-              style={{ flexGrow: 1 }}
-              className="ZExplorer-sidebar-content"
+            <ZStack
+              gap={ZSizeFixed.Small}
+              width={ZSizeVaried.Full}
+              height={ZSizeVaried.Full}
             >
-              {navigation}
-            </article>
-          </ZStack>
-        </ZBox>
-      </nav>
+              <header className="ZExplorer-sidebar-header">
+                <ZStack
+                  orientation={ZOrientation.Horizontal}
+                  justify={{ content: "flex-end" }}
+                  width={ZSizeVaried.Full}
+                >
+                  <ZIconFontAwesome
+                    name={_expanded ? "minus" : "expand"}
+                    width={ZSizeFixed.ExtraSmall}
+                    onClick={handleToggle}
+                  />
+                </ZStack>
+              </header>
+              <article
+                style={{ flexGrow: 1 }}
+                className="ZExplorer-sidebar-content"
+              >
+                {navigation}
+              </article>
+            </ZStack>
+          </ZBox>
+        </nav>
 
-      <main className="ZExplorer-main">{children}</main>
-    </div>
+        <main className="ZExplorer-main">{children}</main>
+      </div>
+    </ZExplorerContext>
   );
 }

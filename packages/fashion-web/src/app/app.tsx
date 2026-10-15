@@ -8,7 +8,6 @@ import {
   ZStyled,
 } from "@zthun/fashion-boutique";
 import ZThemeDark from "@zthun/fashion-theme-dark";
-import { useState } from "react";
 
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
 import { ZBooleanPage } from "../boutique/boolean/boolean-page.js";
@@ -74,18 +73,10 @@ const NavRoutes = [
  *        The jsx to render the fashion web application.
  */
 export function ZFashionApp() {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <ZFashionThemeContext value={ZThemeDark}>
       <ZStyled className="ZFashionApp-root">
-        <ZExplorer
-          expanded={expanded}
-          onExpandedChange={setExpanded}
-          navigation={
-            <ZExplorerListNav hideName={!expanded} value={NavRoutes} />
-          }
-        >
+        <ZExplorer navigation={<ZExplorerListNav value={NavRoutes} />}>
           <ZRouteMap>
             <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />
             <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
