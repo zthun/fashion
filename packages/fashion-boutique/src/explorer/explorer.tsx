@@ -1,6 +1,7 @@
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import { css, cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
+import type { ReactNode } from "react";
 import { useCallback } from "react";
 
 import { ZBox } from "../box/box.js";
@@ -10,31 +11,32 @@ import { ZStack } from "../stack/stack.js";
 import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 
-/**
- * Represents a sidebar navigation.
- */
-export interface IZSidebar {
-  open?: boolean;
-  onOpenChange?: (value: boolean) => void;
-}
-
 export interface IZExplorer extends IZComponentHierarchy {
-  sidebar?: IZSidebar;
+  expanded?: boolean;
+  navigation?: ReactNode;
+
+  onExpandedChange?: (value: boolean) => void;
 }
 
-export function ZExplorer({ children, sidebar = {} }: IZExplorer) {
-  const { open, onOpenChange } = sidebar;
-  const [_open, setOpen] = useAmbassadorState(open, onOpenChange, true);
+export function ZExplorer({
+  children,
+  expanded,
+  onExpandedChange,
+  navigation,
+}: IZExplorer) {
+  const [_expanded, setExpanded] = useAmbassadorState(
+    expanded,
+    onExpandedChange,
+    true,
+  );
 
-  const handleToggle = useCallback(() => {
-    setOpen(!_open);
-  }, [_open, setOpen]);
+  const handleToggle = useCallback(() => setExpanded((x) => !x), [setExpanded]);
 
   const { surface } = useFashionTheme();
 
-  const expanded = "15rem";
-  const collapsed = "2rem";
-  const width = _open ? expanded : collapsed;
+  const expand = "15rem";
+  const collapse = "2rem";
+  const width = _expanded ? expand : collapse;
   const tailor = useFashionTailor();
   const gap = tailor.gap(ZSizeFixed.Medium);
 
@@ -80,7 +82,7 @@ export function ZExplorer({ children, sidebar = {} }: IZExplorer) {
                 width={ZSizeVaried.Full}
               >
                 <ZIconFontAwesome
-                  name={_open ? "minus" : "expand"}
+                  name={_expanded ? "minus" : "expand"}
                   width={ZSizeFixed.ExtraSmall}
                   onClick={handleToggle}
                 />
@@ -89,7 +91,9 @@ export function ZExplorer({ children, sidebar = {} }: IZExplorer) {
             <article
               style={{ flexGrow: 1 }}
               className="ZExplorer-sidebar-content"
-            />
+            >
+              {navigation}
+            </article>
           </ZStack>
         </ZBox>
       </nav>
