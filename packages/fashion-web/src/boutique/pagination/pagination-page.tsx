@@ -4,6 +4,7 @@ import {
   ZBooleanSwitch,
   ZBox,
   ZCaption,
+  ZCard,
   ZChoiceSelect,
   ZGrid,
   ZH3,
@@ -23,7 +24,6 @@ import {
 import { useMemo, useState } from "react";
 
 import { ZFashionRoutePagination } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const SourceError = new ZDataSourceStatic(
   new Error("Something went wrong"),
@@ -57,7 +57,7 @@ export function ZPaginationPage() {
   );
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZPaginationPage-root"
       TitleProps={{
         heading: ZFashionRoutePagination.name,
@@ -121,6 +121,6 @@ export function ZPaginationPage() {
           </ZStack>
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

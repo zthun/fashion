@@ -1,6 +1,7 @@
 // cspell:disable
 import {
   ZAvatar,
+  ZCard,
   ZH3,
   ZNewspaper,
   ZParagraph,
@@ -9,7 +10,6 @@ import {
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import { ZFashionRouteYouTube } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for typography.
@@ -18,7 +18,7 @@ import { ZCardDemoComponent } from "../common/card-demo-component.js";
  */
 export function ZYouTubePage() {
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZYouTubePage-root"
       TitleProps={{
         heading: ZFashionRouteYouTube.name,
@@ -46,6 +46,6 @@ export function ZYouTubePage() {
       >
         <ZYouTubeVideo identity="ahCwqrYpIuM" />
       </ZNewspaper>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

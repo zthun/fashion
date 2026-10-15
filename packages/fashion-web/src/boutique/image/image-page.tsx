@@ -1,6 +1,7 @@
 import {
   ZAvatar,
   ZBox,
+  ZCard,
   ZChoiceSelect,
   ZGrid,
   ZH3,
@@ -16,7 +17,6 @@ import type { Property } from "csstype";
 import { useMemo, useState } from "react";
 
 import { ZFashionRouteImage } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownSize } from "../common/choice-drop-down-size.js";
 
 const Png = new ZUrlBuilder().gravatar().build();
@@ -34,7 +34,7 @@ export function ZImagePage() {
   );
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZImagePage-root"
       TitleProps={{
         heading: ZFashionRouteImage.name,
@@ -91,6 +91,6 @@ export function ZImagePage() {
           name="height"
         />
       </ZGrid>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

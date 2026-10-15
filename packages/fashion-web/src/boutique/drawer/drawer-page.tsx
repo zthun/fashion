@@ -3,6 +3,7 @@ import {
   ZAvatar,
   ZBox,
   ZButton,
+  ZCard,
   ZChoiceSelect,
   ZDrawer,
   ZGrid,
@@ -16,7 +17,6 @@ import { identity, startCase } from "lodash-es";
 import { useState } from "react";
 
 import { ZFashionRouteDrawer } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -38,7 +38,7 @@ export function ZDrawerPage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZDrawerPage-root"
       TitleProps={{
         heading: ZFashionRouteDrawer.name,
@@ -117,6 +117,6 @@ export function ZDrawerPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

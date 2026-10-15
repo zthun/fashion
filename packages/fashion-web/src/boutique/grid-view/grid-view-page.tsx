@@ -28,7 +28,6 @@ import {
 import { useState } from "react";
 
 import { ZFashionRouteGridView } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const ZBrandDataSourceOptions = new ZDataSourceStaticOptionsBuilder()
   .search(new ZDataSearchFields(["id", "name"]))
@@ -80,7 +79,7 @@ export function ZGridViewPage() {
   };
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZGridViewPage-root"
       TitleProps={{
         heading: ZFashionRouteGridView.name,
@@ -149,6 +148,6 @@ export function ZGridViewPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }
