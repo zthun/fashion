@@ -74,7 +74,12 @@ export function ZFashionApp() {
       <ZStyled className="ZFashionApp-root">
         <ZExplorer navigation={<ZExplorerListNav value={NavRoutes} />}>
           <ZRouteMap>
-            <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
+            <ZRoute
+              path={ZFashionRouteTheme.path}
+              element={<ZBreadcrumbsOutlet />}
+            >
+              <ZRoute path="" element={<ZThemePage />} />
+            </ZRoute>
             <ZRoute
               path={ZFashionRouteBoutique.path}
               element={<ZBreadcrumbsOutlet />}
