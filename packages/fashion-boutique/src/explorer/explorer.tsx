@@ -35,7 +35,7 @@ export function ZExplorer({
   const { surface } = useFashionTheme();
 
   const expand = "15rem";
-  const collapse = "2rem";
+  const collapse = "3rem";
   const width = _expanded ? expand : collapse;
   const tailor = useFashionTailor();
   const gap = tailor.gap(ZSizeFixed.Medium);
