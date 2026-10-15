@@ -1,5 +1,6 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { ZOrientation } from "@zthun/helpful-fn";
+import { useCallback, useMemo } from "react";
 
 import { ZAvatar } from "../avatar/avatar.js";
 import type { IZComponentValueReadonly } from "../component/component-value.mjs";
@@ -19,6 +20,27 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
   const { expanded } = useExplorer();
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const _pathname = useMemo(
+    () =>
+      pathname
+        .split("/")
+        .filter((x) => !!x)
+        .join("/"),
+    [pathname],
+  );
+
+  const isMatch = useCallback(
+    (route: IZRoute) => {
+      const { path } = route;
+      const _path = path
+        .split("/")
+        .filter((x) => !!x)
+        .join("/");
+
+      return _path === _pathname;
+    },
+    [_pathname],
+  );
 
   const renderRoute = (route: IZRoute) => {
     return (
@@ -27,7 +49,7 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
         interactive
         cursor="pointer"
         key={route.path}
-        highlight={pathname === route.path}
+        highlight={isMatch(route)}
         onClick={() => navigate(route.path)}
       >
         <ZStack
