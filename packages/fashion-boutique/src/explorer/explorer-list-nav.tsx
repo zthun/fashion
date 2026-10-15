@@ -43,6 +43,21 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
   );
 
   const renderRoute = (route: IZRoute) => {
+    const avatar = (
+      <ZAvatar
+        value={route.avatar}
+        width={ZSizeFixed.ExtraSmall}
+        height={ZSizeFixed.ExtraSmall}
+      />
+    );
+    const label = <ZSubtitle compact>{route.name}</ZSubtitle>;
+
+    const nodes = [avatar];
+
+    if (expanded) {
+      nodes.push(label);
+    }
+
     return (
       <ZListItem
         compact
@@ -56,13 +71,9 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
           align={{ items: "center" }}
           orientation={ZOrientation.Horizontal}
           gap={ZSizeFixed.Small}
+          justify={{ content: expanded ? "start" : "center" }}
         >
-          <ZAvatar
-            value={route.avatar}
-            width={ZSizeFixed.ExtraSmall}
-            height={ZSizeFixed.ExtraSmall}
-          />
-          {expanded && <ZSubtitle compact>{route.name}</ZSubtitle>}
+          {nodes}
         </ZStack>
       </ZListItem>
     );

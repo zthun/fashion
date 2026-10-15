@@ -35,8 +35,8 @@ export function ZExplorer({
 
   const { surface } = useFashionTheme();
 
-  const expand = "15rem";
-  const collapse = "3rem";
+  const expand = "16rem";
+  const collapse = "4rem";
   const width = _expanded ? expand : collapse;
   const tailor = useFashionTailor();
   const gap = tailor.gap(ZSizeFixed.Medium);
@@ -80,7 +80,7 @@ export function ZExplorer({
               <header className="ZExplorer-sidebar-header">
                 <ZStack
                   orientation={ZOrientation.Horizontal}
-                  justify={{ content: "flex-end" }}
+                  justify={{ content: _expanded ? "flex-end" : "center" }}
                   width={ZSizeVaried.Full}
                 >
                   <ZIconFontAwesome
