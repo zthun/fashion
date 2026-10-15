@@ -1,4 +1,5 @@
 import {
+  ZBreadcrumbsOutlet,
   ZExplorer,
   ZExplorerListNav,
   ZFashionThemeContext,
@@ -74,7 +75,10 @@ export function ZFashionApp() {
         <ZExplorer navigation={<ZExplorerListNav value={NavRoutes} />}>
           <ZRouteMap>
             <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
-            <ZRoute path={ZFashionRouteBoutique.path}>
+            <ZRoute
+              path={ZFashionRouteBoutique.path}
+              element={<ZBreadcrumbsOutlet />}
+            >
               <ZRoute path={ZFashionRouteAlert.path} element={<ZAlertPage />} />
               <ZRoute
                 path={ZFashionRouteBoolean.path}
