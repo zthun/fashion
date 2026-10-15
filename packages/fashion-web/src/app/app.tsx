@@ -2,6 +2,7 @@ import {
   ZExplorer,
   ZExplorerListNav,
   ZFashionThemeContext,
+  ZNavigate,
   ZNotFound,
   ZRoute,
   ZRouteMap,
@@ -31,7 +32,6 @@ import { ZTextPage } from "../boutique/text/text-page.js";
 import { ZTypographyPage } from "../boutique/typography/typography-page.js";
 import { ZWizardPage } from "../boutique/wizard/wizard-page.js";
 import { ZYouTubePage } from "../boutique/you-tube/you-tube-page.js";
-import { ZHomePage } from "../home/home-page.js";
 import {
   ZFashionRouteAlert,
   ZFashionRouteBoolean,
@@ -44,7 +44,6 @@ import {
   ZFashionRouteDrawer,
   ZFashionRouteForm,
   ZFashionRouteGridView,
-  ZFashionRouteHome,
   ZFashionRouteImage,
   ZFashionRouteList,
   ZFashionRouteModal,
@@ -60,11 +59,7 @@ import {
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
 
-const NavRoutes = [
-  ZFashionRouteHome,
-  ZFashionRouteTheme,
-  ZFashionRouteBoutique,
-];
+const NavRoutes = [ZFashionRouteBoutique, ZFashionRouteTheme];
 
 /**
  * Represents the root entry point into the application.
@@ -78,7 +73,6 @@ export function ZFashionApp() {
       <ZStyled className="ZFashionApp-root">
         <ZExplorer navigation={<ZExplorerListNav value={NavRoutes} />}>
           <ZRouteMap>
-            <ZRoute path={ZFashionRouteHome.path} element={<ZHomePage />} />
             <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
             <ZRoute path={ZFashionRouteBoutique.path}>
               <ZRoute path={ZFashionRouteAlert.path} element={<ZAlertPage />} />
@@ -143,6 +137,10 @@ export function ZFashionApp() {
               />
               <ZRoute path="" element={<ZBoutiquePage />} />
             </ZRoute>
+            <ZRoute
+              path=""
+              element={<ZNavigate to={ZFashionRouteBoutique.path} />}
+            />
             <ZRoute path="*" element={<ZNotFound />} />
           </ZRouteMap>
         </ZExplorer>
