@@ -1,18 +1,18 @@
+import type { IZRoute } from "@zthun/fashion-boutique";
 import {
   useFashionTheme,
   useNavigate,
+  ZAvatar,
   ZCaption,
   ZCard,
   ZContentTitle,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZTile,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
 
-import type { IZRoute } from "../route/route.mjs";
 import {
   ZFashionRouteAllComponents,
   ZFashionRouteBoutique,
@@ -36,13 +36,7 @@ export function ZBoutiquePage() {
       onActivate={() => navigate(route.path)}
     >
       <ZContentTitle
-        avatar={
-          <ZIconFontAwesome
-            name={route.avatar}
-            family={route.family}
-            width={ZSizeFixed.Small}
-          />
-        }
+        avatar={<ZAvatar value={route.avatar} width={ZSizeFixed.Small} />}
         heading={<ZH3 compact>{route.name}</ZH3>}
         subHeading={<ZCaption compact>{route.description}</ZCaption>}
       />
@@ -56,8 +50,8 @@ export function ZBoutiquePage() {
         heading: ZFashionRouteBoutique.name,
         subHeading: ZFashionRouteBoutique.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteBoutique.avatar}
+          <ZAvatar
+            value={ZFashionRouteBoutique.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

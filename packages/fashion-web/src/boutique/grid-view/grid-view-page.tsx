@@ -1,4 +1,5 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCard,
@@ -85,8 +86,8 @@ export function ZGridViewPage() {
         heading: ZFashionRouteGridView.name,
         subHeading: ZFashionRouteGridView.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteGridView.avatar}
+          <ZAvatar
+            value={ZFashionRouteGridView.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

@@ -1,5 +1,6 @@
 // cspell:disable
 import {
+  ZAvatar,
   ZButtonText,
   ZCaption,
   ZGrid,
@@ -9,7 +10,6 @@ import {
   ZH4,
   ZH5,
   ZH6,
-  ZIconFontAwesome,
   ZParagraph,
   ZSubtitle,
 } from "@zthun/fashion-boutique";
@@ -35,8 +35,8 @@ export function ZTypographyPage() {
         heading: ZFashionRouteTypography.name,
         subHeading: ZFashionRouteTypography.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteTypography.avatar}
+          <ZAvatar
+            value={ZFashionRouteTypography.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

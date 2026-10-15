@@ -1,5 +1,6 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZButton,
@@ -72,8 +73,8 @@ export function ZModalPage() {
         heading: ZFashionRouteModal.name,
         subHeading: ZFashionRouteModal.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteModal.avatar}
+          <ZAvatar
+            value={ZFashionRouteModal.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

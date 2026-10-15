@@ -1,12 +1,12 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBox,
   ZButton,
   ZChoiceSelect,
   ZDrawer,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
@@ -44,8 +44,8 @@ export function ZDrawerPage() {
         heading: ZFashionRouteDrawer.name,
         subHeading: ZFashionRouteDrawer.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteDrawer.avatar}
+          <ZAvatar
+            value={ZFashionRouteDrawer.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

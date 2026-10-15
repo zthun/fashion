@@ -1,5 +1,6 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBox,
   ZCaption,
   ZContentTitle,
@@ -43,10 +44,7 @@ export function ZListPage() {
         heading: ZFashionRouteList.name,
         subHeading: ZFashionRouteList.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteList.avatar}
-            width={ZSizeFixed.Medium}
-          />
+          <ZAvatar value={ZFashionRouteList.avatar} width={ZSizeFixed.Medium} />
         ),
       }}
     >

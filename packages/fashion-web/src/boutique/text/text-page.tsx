@@ -1,4 +1,5 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
@@ -41,10 +42,7 @@ export function ZTextPage() {
         heading: ZFashionRouteText.name,
         subHeading: ZFashionRouteText.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteText.avatar}
-            width={ZSizeFixed.Medium}
-          />
+          <ZAvatar value={ZFashionRouteText.avatar} width={ZSizeFixed.Medium} />
         ),
       }}
     >

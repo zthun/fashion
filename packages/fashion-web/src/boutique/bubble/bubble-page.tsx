@@ -1,5 +1,6 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZBubble,
@@ -40,8 +41,8 @@ export function ZBubblePage() {
         heading: ZFashionRouteBubble.name,
         subHeading: ZFashionRouteBubble.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteBubble.avatar}
+          <ZAvatar
+            value={ZFashionRouteBubble.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

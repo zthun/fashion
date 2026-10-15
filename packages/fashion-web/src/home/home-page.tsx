@@ -1,10 +1,10 @@
 import {
   useFashionTheme,
   useNavigate,
+  ZAvatar,
   ZBox,
   ZButton,
   ZCard,
-  ZIconFontAwesome,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
@@ -44,8 +44,8 @@ export function ZHomePage() {
           justification={ZHorizontalAnchor.Center}
           margin={{ bottom: ZSizeFixed.Medium }}
         >
-          <ZIconFontAwesome
-            name={ZFashionRouteTheme.avatar}
+          <ZAvatar
+            value={ZFashionRouteTheme.avatar}
             width={{ xl: ZSizeFixed.ExtraLarge, xs: ZSizeFixed.Large }}
             fashion={primary}
           />
@@ -87,8 +87,8 @@ export function ZHomePage() {
           justification={ZHorizontalAnchor.Center}
           margin={{ bottom: ZSizeFixed.Medium }}
         >
-          <ZIconFontAwesome
-            name={ZFashionRouteBoutique.avatar}
+          <ZAvatar
+            value={ZFashionRouteBoutique.avatar}
             width={{ xl: ZSizeFixed.ExtraLarge, xs: ZSizeFixed.Large }}
             fashion={primary}
           />

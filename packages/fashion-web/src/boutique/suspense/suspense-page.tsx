@@ -1,9 +1,9 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
   ZSuspenseProgress,
   ZSuspenseRotate,
@@ -33,8 +33,8 @@ export function ZSuspensePage() {
         heading: ZFashionRouteSuspense.name,
         subHeading: ZFashionRouteSuspense.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteSuspense.avatar}
+          <ZAvatar
+            value={ZFashionRouteSuspense.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

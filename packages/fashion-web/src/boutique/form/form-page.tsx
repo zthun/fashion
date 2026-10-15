@@ -1,5 +1,6 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBox,
   ZCaption,
   ZForm,
@@ -7,7 +8,6 @@ import {
   ZFormField,
   ZH3,
   ZH4,
-  ZIconFontAwesome,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
@@ -35,10 +35,7 @@ export function ZFormPage() {
         heading: ZFashionRouteForm.name,
         subHeading: ZFashionRouteForm.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteForm.avatar}
-            width={ZSizeFixed.Medium}
-          />
+          <ZAvatar value={ZFashionRouteForm.avatar} width={ZSizeFixed.Medium} />
         ),
       }}
     >

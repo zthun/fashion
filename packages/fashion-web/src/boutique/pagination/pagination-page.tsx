@@ -1,12 +1,12 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
   ZChoiceSelect,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZPagination,
   ZPaginationSizesMultiplesOfFive,
   ZPaginationSizesMultiplesOfTwelve,
@@ -63,8 +63,8 @@ export function ZPaginationPage() {
         heading: ZFashionRoutePagination.name,
         subHeading: ZFashionRoutePagination.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRoutePagination.avatar}
+          <ZAvatar
+            value={ZFashionRoutePagination.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

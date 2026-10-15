@@ -1,10 +1,4 @@
-import {
-  ZBox,
-  ZGrid,
-  ZH3,
-  ZIconFontAwesome,
-  ZParagraph,
-} from "@zthun/fashion-boutique";
+import { ZAvatar, ZBox, ZGrid, ZH3, ZParagraph } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import { ZFashionRouteChart } from "../../routes.mjs";
@@ -24,8 +18,8 @@ export function ZChartPage() {
         heading: ZFashionRouteChart.name,
         subHeading: ZFashionRouteChart.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteChart.avatar}
+          <ZAvatar
+            value={ZFashionRouteChart.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

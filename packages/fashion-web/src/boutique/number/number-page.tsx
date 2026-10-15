@@ -1,9 +1,9 @@
 import {
+  ZAvatar,
   ZBox,
   ZCaption,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZNumberInput,
   ZParagraph,
 } from "@zthun/fashion-boutique";
@@ -29,8 +29,8 @@ export function ZNumberPage() {
         heading: ZFashionRouteNumber.name,
         subHeading: ZFashionRouteNumber.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteNumber.avatar}
+          <ZAvatar
+            value={ZFashionRouteNumber.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

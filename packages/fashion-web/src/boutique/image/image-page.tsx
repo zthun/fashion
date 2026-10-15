@@ -1,9 +1,9 @@
 import {
+  ZAvatar,
   ZBox,
   ZChoiceSelect,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZImage,
   ZParagraph,
   ZStack,
@@ -40,8 +40,8 @@ export function ZImagePage() {
         heading: ZFashionRouteImage.name,
         subHeading: ZFashionRouteImage.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteImage.avatar}
+          <ZAvatar
+            value={ZFashionRouteImage.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

@@ -1,8 +1,8 @@
 import {
+  ZAvatar,
   ZButton,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
   ZPopup,
 } from "@zthun/fashion-boutique";
@@ -29,8 +29,8 @@ export function ZPopupPage() {
         heading: ZFashionRoutePopup.name,
         subHeading: ZFashionRoutePopup.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRoutePopup.avatar}
+          <ZAvatar
+            value={ZFashionRoutePopup.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

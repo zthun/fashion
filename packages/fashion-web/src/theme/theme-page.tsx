@@ -1,10 +1,10 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZCard,
   ZGrid,
   ZH3,
   ZH4,
-  ZIconFontAwesome,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
@@ -41,8 +41,8 @@ export function ZThemePage() {
         heading: ZFashionRouteTheme.name,
         subHeading: ZFashionRouteTheme.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteTheme.avatar}
+          <ZAvatar
+            value={ZFashionRouteTheme.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

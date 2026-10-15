@@ -1,4 +1,5 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
@@ -79,8 +80,8 @@ export function ZChoicePage() {
         heading: ZFashionRouteChoice.name,
         subHeading: ZFashionRouteChoice.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteChoice.avatar}
+          <ZAvatar
+            value={ZFashionRouteChoice.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

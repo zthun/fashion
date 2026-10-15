@@ -1,5 +1,6 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBooleanCheckbox,
   ZBooleanSwitch,
   ZBox,
@@ -7,7 +8,6 @@ import {
   ZCaption,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
@@ -37,8 +37,8 @@ export function ZBooleanPage() {
         heading: ZFashionRouteBoolean.name,
         subHeading: ZFashionRouteBoolean.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteBoolean.avatar}
+          <ZAvatar
+            value={ZFashionRouteBoolean.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

@@ -1,4 +1,5 @@
 import {
+  ZAvatar,
   ZBox,
   ZBubble,
   ZCarousel,
@@ -64,8 +65,8 @@ export function ZCarouselPage() {
         heading: ZFashionRouteCarousel.name,
         subHeading: ZFashionRouteCarousel.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteCarousel.avatar}
+          <ZAvatar
+            value={ZFashionRouteCarousel.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

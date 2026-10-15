@@ -1,7 +1,7 @@
 // cspell:disable
 import {
+  ZAvatar,
   ZH3,
-  ZIconFontAwesome,
   ZNewspaper,
   ZParagraph,
   ZYouTubeVideo,
@@ -24,9 +24,8 @@ export function ZYouTubePage() {
         heading: ZFashionRouteYouTube.name,
         subHeading: ZFashionRouteYouTube.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteYouTube.avatar}
-            family={ZFashionRouteYouTube.family}
+          <ZAvatar
+            value={ZFashionRouteYouTube.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

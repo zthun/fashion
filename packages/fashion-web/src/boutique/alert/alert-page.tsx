@@ -1,5 +1,6 @@
 import {
   ZAlert,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZGrid,
@@ -33,8 +34,8 @@ export function ZAlertPage() {
         heading: ZFashionRouteAlert.name,
         subHeading: ZFashionRouteAlert.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteAlert.avatar}
+          <ZAvatar
+            value={ZFashionRouteAlert.avatar}
             width={ZSizeFixed.Medium}
           />
         ),

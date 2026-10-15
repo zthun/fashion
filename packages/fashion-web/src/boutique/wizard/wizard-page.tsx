@@ -1,6 +1,7 @@
 import {
   useFashionTheme,
   useNavigate,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZBubble,
@@ -42,9 +43,8 @@ export function ZWizardPage() {
       CardProps={{
         TitleProps: {
           avatar: (
-            <ZIconFontAwesome
-              name={ZFashionRouteWizard.avatar}
-              family={ZFashionRouteWizard.family}
+            <ZAvatar
+              value={ZFashionRouteWizard.avatar}
               width={ZSizeFixed.Medium}
             />
           ),
