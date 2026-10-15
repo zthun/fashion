@@ -6,6 +6,7 @@ import {
   ZGrid,
   ZGridView,
   ZH3,
+  ZH6,
   ZIconFontAwesome,
   ZPagination,
   ZPaginationSizesMultiplesOfFive,
@@ -56,8 +57,7 @@ export function ZGridViewPage() {
     <ZCard
       key={item.id}
       TitleProps={{
-        heading: item.name,
-        avatar: <ZIconFontAwesome name="hashtag" />,
+        heading: <ZH6>{item.name}</ZH6>,
       }}
     >
       <ZStack
@@ -67,7 +67,7 @@ export function ZGridViewPage() {
         <ZIconFontAwesome
           family="brands"
           name={item.id}
-          width={{ xl: ZSizeFixed.Large, xs: ZSizeFixed.Medium }}
+          width={{ xl: ZSizeFixed.Medium, sm: ZSizeFixed.Small }}
         />
       </ZStack>
     </ZCard>
@@ -112,8 +112,7 @@ export function ZGridViewPage() {
             xl: "1fr 1fr 1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr",
             md: "1fr 1fr 1fr",
-            sm: "1fr 1fr",
-            xs: "1fr",
+            sm: "1fr",
           },
         }}
         heading={
