@@ -14,7 +14,7 @@ import { ZExplorerContext } from "./use-explorer.mjs";
 
 export interface IZExplorer extends IZComponentHierarchy {
   expanded?: boolean;
-  navigation?: ReactNode;
+  sidebar?: ReactNode;
 
   onExpandedChange?: (value: boolean) => void;
 }
@@ -23,7 +23,7 @@ export function ZExplorer({
   children,
   expanded,
   onExpandedChange,
-  navigation,
+  sidebar,
 }: IZExplorer) {
   const [_expanded, setExpanded] = useAmbassadorState(
     expanded,
@@ -94,7 +94,7 @@ export function ZExplorer({
                 style={{ flexGrow: 1 }}
                 className="ZExplorer-sidebar-content"
               >
-                {navigation}
+                {sidebar}
               </article>
             </ZStack>
           </ZBox>
