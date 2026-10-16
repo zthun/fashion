@@ -8,7 +8,11 @@ import { ZBox } from "../box/box.js";
 import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs";
 import { ZIconFontAwesome } from "../icon/icon-font-awesome.js";
 import { ZStack } from "../stack/stack.js";
-import { useFashionTailor, useFashionTheme } from "../theme/fashion.mjs";
+import {
+  useFashionDevice,
+  useFashionTailor,
+  useFashionTheme,
+} from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
 import { ZExplorerContext } from "./use-explorer.mjs";
 
@@ -28,12 +32,13 @@ export function ZExplorer({
   const [_expanded, setExpanded] = useAmbassadorState(
     expanded,
     onExpandedChange,
-    true,
+    false,
   );
 
   const handleToggle = useCallback(() => setExpanded((x) => !x), [setExpanded]);
 
   const { surface } = useFashionTheme();
+  const device = useFashionDevice();
 
   const expand = "16rem";
   const collapse = "4rem";
@@ -60,6 +65,16 @@ export function ZExplorer({
     .ZExplorer-main {
       padding: ${gap};
       padding-left: calc(${width} + ${gap} + ${gap});
+    }
+
+    ${device.break(ZSizeFixed.Medium)} {
+      .ZExplorer-sidebar {
+        box-shadow: 0.5rem 0 0.5rem rgba(0, 0, 0, 0.33);
+      }
+
+      .ZExplorer-main {
+        padding-left: calc(${collapse} + ${gap});
+      }
     }
   `);
 
