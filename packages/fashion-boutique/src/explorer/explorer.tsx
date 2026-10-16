@@ -57,6 +57,12 @@ export function ZExplorer({
       padding: 0;
       border: 0;
       background: rgba(0, 0, 0, 0.33);
+      opacity: ${_expanded ? 1 : 0};
+      visibility: ${_expanded ? "visible" : "hidden"};
+      pointer-events: ${_expanded ? "auto" : "none"};
+      transition:
+        opacity 200ms ease-in-out,
+        visibility 200ms;
       z-index: 5000;
     }
 
@@ -65,6 +71,7 @@ export function ZExplorer({
       top: 0;
       bottom: 0;
       width: ${width};
+      transition: width 200ms ease-in-out;
       z-index: 5001;
     }
 
@@ -79,6 +86,7 @@ export function ZExplorer({
     .ZExplorer-main {
       padding: ${gap};
       padding-left: calc(${width} + ${gap} + ${gap});
+      transition: padding-left 200ms ease-in-out;
     }
 
     ${device.break(ZSizeFixed.Medium)} {
@@ -94,19 +102,26 @@ export function ZExplorer({
         padding-left: calc(${collapse} + ${gap});
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ZExplorer-nav,
+      .ZExplorer-main,
+      .ZExplorer-backdrop {
+        transition: none;
+      }
+    }
   `);
 
   return (
     <ZExplorerContext value={{ expanded: _expanded }}>
       <div className={cssJoinDefined("ZExplorer-root", _className)}>
-        {_expanded && (
-          <button
-            type="button"
-            className="ZExplorer-backdrop"
-            aria-label="Close sidebar"
-            onClick={handleClose}
-          />
-        )}
+        <button
+          type="button"
+          className="ZExplorer-backdrop"
+          aria-label="Close sidebar"
+          disabled={!_expanded}
+          onClick={handleClose}
+        />
         <nav className="ZExplorer-nav">
           <ZBox
             className="ZExplorer-sidebar"
