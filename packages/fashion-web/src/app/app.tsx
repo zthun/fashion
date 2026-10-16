@@ -1,6 +1,7 @@
 import {
   ZBreadcrumbsOutlet,
   ZExplorer,
+  ZExplorerExternals,
   ZExplorerListNav,
   ZExplorerTitle,
   ZFashionThemeContext,
@@ -48,6 +49,7 @@ import {
   ZFashionRouteChoice,
   ZFashionRouteDrawer,
   ZFashionRouteForm,
+  ZFashionRouteGithub,
   ZFashionRouteGridView,
   ZFashionRouteHome,
   ZFashionRouteImage,
@@ -66,6 +68,8 @@ import {
 import { ZThemePage } from "../theme/theme-page.js";
 
 const NavRoutes = [ZFashionRouteBoutique, ZFashionRouteTheme];
+
+const NavExternals = [ZFashionRouteGithub];
 
 /**
  * Represents the root entry point into the application.
@@ -87,6 +91,7 @@ export function ZFashionApp() {
               <ZFlex grow={1}>
                 <ZExplorerListNav value={NavRoutes} />
               </ZFlex>
+              <ZExplorerExternals value={NavExternals} />
             </ZStack>
           }
         >
