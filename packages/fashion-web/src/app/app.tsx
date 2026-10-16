@@ -67,9 +67,8 @@ import {
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
 
-const NavRoutes = [ZFashionRouteBoutique, ZFashionRouteTheme];
-
-const NavExternals = [ZFashionRouteGithub];
+const Routes = [ZFashionRouteBoutique, ZFashionRouteTheme];
+const Externals = [ZFashionRouteGithub];
 
 /**
  * Represents the root entry point into the application.
@@ -83,15 +82,15 @@ export function ZFashionApp() {
       <ZStyled className="ZFashionApp-root">
         <ZExplorer
           sidebar={
-            <ZStack height={ZSizeVaried.Full} gap={ZSizeFixed.ExtraSmall}>
+            <ZStack height={ZSizeVaried.Full} gap={ZSizeFixed.Large}>
               <ZExplorerTitle
                 avatar={ZFashionRouteHome.avatar}
                 heading={ZFashionRouteHome.name}
               />
               <ZFlex grow={1}>
-                <ZExplorerListNav value={NavRoutes} />
+                <ZExplorerListNav value={Routes} />
               </ZFlex>
-              <ZExplorerExternals value={NavExternals} />
+              <ZExplorerExternals value={Externals} />
             </ZStack>
           }
         >
