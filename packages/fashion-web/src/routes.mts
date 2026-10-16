@@ -95,6 +95,10 @@ export const ZFashionRouteGridView = new ZRouteBuilder()
   .avatar(new ZAvatarFontAwesomeBuilder().name("grip").build())
   .build();
 
+export const ZFashionRouteGithub = new ZRouteBuilder()
+  .github("zthun", "fashion")
+  .build();
+
 export const ZFashionRouteImage = new ZRouteBuilder()
   .name("Image")
   .path("image")
