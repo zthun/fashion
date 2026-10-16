@@ -36,6 +36,7 @@ export function ZExplorer({
   );
 
   const handleToggle = useCallback(() => setExpanded((x) => !x), [setExpanded]);
+  const handleClose = useCallback(() => setExpanded(false), [setExpanded]);
 
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
@@ -47,11 +48,24 @@ export function ZExplorer({
   const gap = tailor.gap(ZSizeFixed.Medium);
 
   const _className = useCss(css`
+    .ZExplorer-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: rgba(0, 0, 0, 0.33);
+      z-index: 5000;
+    }
+
     .ZExplorer-nav {
       position: fixed;
       top: 0;
       bottom: 0;
       width: ${width};
+      z-index: 5001;
     }
 
     .ZExplorer-sidebar {
@@ -68,6 +82,10 @@ export function ZExplorer({
     }
 
     ${device.break(ZSizeFixed.Medium)} {
+      .ZExplorer-backdrop {
+        display: block;
+      }
+
       .ZExplorer-sidebar {
         box-shadow: 0.5rem 0 0.5rem rgba(0, 0, 0, 0.33);
       }
@@ -81,6 +99,14 @@ export function ZExplorer({
   return (
     <ZExplorerContext value={{ expanded: _expanded }}>
       <div className={cssJoinDefined("ZExplorer-root", _className)}>
+        {_expanded && (
+          <button
+            type="button"
+            className="ZExplorer-backdrop"
+            aria-label="Close sidebar"
+            onClick={handleClose}
+          />
+        )}
         <nav className="ZExplorer-nav">
           <ZBox
             className="ZExplorer-sidebar"
