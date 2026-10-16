@@ -68,6 +68,7 @@ export * from "./dialog/modal.js";
 export * from "./dialog/popup.js";
 export * from "./divider/divider.js";
 export * from "./explorer/explorer.js";
+export * from "./explorer/explorer-externals.js";
 export * from "./explorer/explorer-list-nav.js";
 export * from "./explorer/explorer-title.js";
 export * from "./explorer/use-explorer.mjs";
