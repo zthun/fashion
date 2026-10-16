@@ -3,11 +3,16 @@ import { cloneDeep, isUndefined, omitBy } from "lodash-es";
 import type { IZAvatarDescriptor } from "../avatar/avatar-descriptor.mjs";
 
 /**
- * Represents  a ui routed path.
+ * Represents some kind of endpoint.
  */
 export interface IZRoute {
   /**
    * The route path.
+   *
+   * This is the key of the route and should be unique to itself.
+   * The route path can be a UI hash route, pathname route, full
+   * url or file path.  The representation of this route path
+   * is up to you.
    */
   path: string;
 
@@ -28,7 +33,7 @@ export interface IZRoute {
 }
 
 /**
- * Represents a builder for an api option.
+ * Represents a builder for an {@link IZRoute} object.
  */
 export class ZRouteBuilder {
   private _route: IZRoute = { path: "" };
