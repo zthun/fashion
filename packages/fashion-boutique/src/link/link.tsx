@@ -1,6 +1,7 @@
 import type { IZFashion } from "@zthun/fashion-theme";
 import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, firstDefined } from "@zthun/helpful-fn";
+import type { HTMLAttributeAnchorTarget } from "react";
 
 import type { IZComponentDomEvents } from "../component/component-dom-events.mjs";
 import type { IZComponentLabel } from "../component/component-label.mjs";
@@ -18,11 +19,12 @@ export interface IZLink
     IZComponentLabel {
   fashion?: IZFashion;
   href?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export function ZLink(props: IZLink) {
   const { primary } = useFashionTheme();
-  const { className, name, href, fashion, label, ...rest } = props;
+  const { className, name, href, fashion, label, target, ...rest } = props;
   const picker = new ZColorPicker(firstDefined(primary, fashion));
 
   const _className = useCss(css`
@@ -51,6 +53,7 @@ export function ZLink(props: IZLink) {
       className={cssJoinDefined("ZLink-root", _className, className)}
       href={href}
       data-name={name}
+      target={target}
       role="link"
     >
       <ZParagraph Element="div" compact>
