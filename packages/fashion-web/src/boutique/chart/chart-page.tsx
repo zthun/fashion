@@ -1,14 +1,14 @@
 import {
+  ZAvatar,
   ZBox,
+  ZCard,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import { ZFashionRouteChart } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChartPageProgress } from "./chart-page-progress.js";
 
 /**
@@ -18,14 +18,14 @@ import { ZChartPageProgress } from "./chart-page-progress.js";
  */
 export function ZChartPage() {
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZChartPage-root"
       TitleProps={{
         heading: ZFashionRouteChart.name,
         subHeading: ZFashionRouteChart.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteChart.avatar}
+          <ZAvatar
+            value={ZFashionRouteChart.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -44,6 +44,6 @@ export function ZChartPage() {
           <ZChartPageProgress />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

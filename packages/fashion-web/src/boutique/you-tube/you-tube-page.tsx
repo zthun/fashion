@@ -1,7 +1,8 @@
 // cspell:disable
 import {
+  ZAvatar,
+  ZCard,
   ZH3,
-  ZIconFontAwesome,
   ZNewspaper,
   ZParagraph,
   ZYouTubeVideo,
@@ -9,7 +10,6 @@ import {
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import { ZFashionRouteYouTube } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for typography.
@@ -18,15 +18,14 @@ import { ZCardDemoComponent } from "../common/card-demo-component.js";
  */
 export function ZYouTubePage() {
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZYouTubePage-root"
       TitleProps={{
         heading: ZFashionRouteYouTube.name,
         subHeading: ZFashionRouteYouTube.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteYouTube.avatar}
-            family={ZFashionRouteYouTube.family}
+          <ZAvatar
+            value={ZFashionRouteYouTube.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -47,6 +46,6 @@ export function ZYouTubePage() {
       >
         <ZYouTubeVideo identity="ahCwqrYpIuM" />
       </ZNewspaper>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

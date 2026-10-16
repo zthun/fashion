@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { ZAvatarFontAwesomeBuilder } from "../avatar/avatar-font-awesome.mjs";
+import { ZAvatarImageBuilder } from "../avatar/avatar-image.mjs";
 import { ZRouteBuilder } from "./route.mjs";
 
 describe("ZRouteOptionBuilder", () => {
@@ -26,7 +28,9 @@ describe("ZRouteOptionBuilder", () => {
     });
 
     it("should set the avatar.", () => {
-      const expected = '<img src="avatar.png" />';
+      const expected = new ZAvatarImageBuilder()
+        .src("/path/to/image.svg")
+        .build();
       expect(createTestTarget().avatar(expected).build().avatar).toEqual(
         expected,
       );
@@ -35,9 +39,8 @@ describe("ZRouteOptionBuilder", () => {
 
   describe("Copy", () => {
     it("should copy another route option.", () => {
-      const avatar = Buffer.from("1234", "binary");
       const expected = new ZRouteBuilder()
-        .avatar(avatar)
+        .avatar(new ZAvatarFontAwesomeBuilder().build())
         .name("Content")
         .path("/path/to/content")
         .build();

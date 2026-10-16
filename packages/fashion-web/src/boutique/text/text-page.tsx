@@ -1,7 +1,9 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
+  ZCard,
   ZGrid,
   ZH3,
   ZIconFontAwesome,
@@ -14,7 +16,6 @@ import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { useState } from "react";
 
 import { ZFashionRouteText } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 /**
  * Represents a demo for text.
@@ -35,16 +36,13 @@ export function ZTextPage() {
   );
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZTextPage-root"
       TitleProps={{
         heading: ZFashionRouteText.name,
         subHeading: ZFashionRouteText.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteText.avatar}
-            width={ZSizeFixed.Medium}
-          />
+          <ZAvatar value={ZFashionRouteText.avatar} width={ZSizeFixed.Medium} />
         ),
       }}
     >
@@ -141,6 +139,6 @@ export function ZTextPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

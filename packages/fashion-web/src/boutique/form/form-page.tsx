@@ -1,13 +1,14 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBox,
   ZCaption,
+  ZCard,
   ZForm,
   ZFormButton,
   ZFormField,
   ZH3,
   ZH4,
-  ZIconFontAwesome,
   ZParagraph,
   ZStack,
 } from "@zthun/fashion-boutique";
@@ -18,7 +19,6 @@ import { ZOrientation } from "@zthun/helpful-fn";
 import { useMemo, useState } from "react";
 
 import { ZFashionRouteForm } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 export function ZFormPage() {
   const { primary } = useFashionTheme();
@@ -29,16 +29,13 @@ export function ZFormPage() {
   const metadataLaunched = useMemo(() => ZBrandMetadata.launched(), []);
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZFormPage-root"
       TitleProps={{
         heading: ZFashionRouteForm.name,
         subHeading: ZFashionRouteForm.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteForm.avatar}
-            width={ZSizeFixed.Medium}
-          />
+          <ZAvatar value={ZFashionRouteForm.avatar} width={ZSizeFixed.Medium} />
         ),
       }}
     >
@@ -89,6 +86,6 @@ export function ZFormPage() {
           </pre>
         </ZBox>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

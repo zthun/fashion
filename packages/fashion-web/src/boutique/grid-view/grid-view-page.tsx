@@ -1,10 +1,12 @@
 import {
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCard,
   ZGrid,
   ZGridView,
   ZH3,
+  ZH6,
   ZIconFontAwesome,
   ZPagination,
   ZPaginationSizesMultiplesOfFive,
@@ -26,7 +28,6 @@ import {
 import { useState } from "react";
 
 import { ZFashionRouteGridView } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const ZBrandDataSourceOptions = new ZDataSourceStaticOptionsBuilder()
   .search(new ZDataSearchFields(["id", "name"]))
@@ -55,8 +56,7 @@ export function ZGridViewPage() {
     <ZCard
       key={item.id}
       TitleProps={{
-        heading: item.name,
-        avatar: <ZIconFontAwesome name="hashtag" />,
+        heading: <ZH6>{item.name}</ZH6>,
       }}
     >
       <ZStack
@@ -66,7 +66,7 @@ export function ZGridViewPage() {
         <ZIconFontAwesome
           family="brands"
           name={item.id}
-          width={{ xl: ZSizeFixed.Large, xs: ZSizeFixed.Medium }}
+          width={{ xl: ZSizeFixed.Medium, sm: ZSizeFixed.Small }}
         />
       </ZStack>
     </ZCard>
@@ -79,14 +79,14 @@ export function ZGridViewPage() {
   };
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZGridViewPage-root"
       TitleProps={{
         heading: ZFashionRouteGridView.name,
         subHeading: ZFashionRouteGridView.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteGridView.avatar}
+          <ZAvatar
+            value={ZFashionRouteGridView.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -111,8 +111,7 @@ export function ZGridViewPage() {
             xl: "1fr 1fr 1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr",
             md: "1fr 1fr 1fr",
-            sm: "1fr 1fr",
-            xs: "1fr",
+            sm: "1fr",
           },
         }}
         heading={
@@ -149,6 +148,6 @@ export function ZGridViewPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }
