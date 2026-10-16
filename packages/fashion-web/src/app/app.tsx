@@ -2,13 +2,17 @@ import {
   ZBreadcrumbsOutlet,
   ZExplorer,
   ZExplorerListNav,
+  ZExplorerTitle,
   ZFashionThemeContext,
+  ZFlex,
   ZNavigate,
   ZNotFound,
   ZRoute,
   ZRouteMap,
+  ZStack,
   ZStyled,
 } from "@zthun/fashion-boutique";
+import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import ZThemeDark from "@zthun/fashion-theme-dark";
 
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
@@ -45,6 +49,7 @@ import {
   ZFashionRouteDrawer,
   ZFashionRouteForm,
   ZFashionRouteGridView,
+  ZFashionRouteHome,
   ZFashionRouteImage,
   ZFashionRouteList,
   ZFashionRouteModal,
@@ -72,7 +77,19 @@ export function ZFashionApp() {
   return (
     <ZFashionThemeContext value={ZThemeDark}>
       <ZStyled className="ZFashionApp-root">
-        <ZExplorer navigation={<ZExplorerListNav value={NavRoutes} />}>
+        <ZExplorer
+          sidebar={
+            <ZStack height={ZSizeVaried.Full} gap={ZSizeFixed.ExtraSmall}>
+              <ZExplorerTitle
+                avatar={ZFashionRouteHome.avatar}
+                heading={ZFashionRouteHome.name}
+              />
+              <ZFlex grow={1}>
+                <ZExplorerListNav value={NavRoutes} />
+              </ZFlex>
+            </ZStack>
+          }
+        >
           <ZRouteMap>
             <ZRoute
               path={ZFashionRouteTheme.path}
