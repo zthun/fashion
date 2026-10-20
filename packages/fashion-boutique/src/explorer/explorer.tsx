@@ -114,7 +114,10 @@ export function ZExplorer({
 
   return (
     <ZExplorerContext value={{ expanded: _expanded }}>
-      <div className={cssJoinDefined("ZExplorer-root", _className)}>
+      <div
+        className={cssJoinDefined("ZExplorer-root", _className)}
+        data-expanded={_expanded}
+      >
         <button
           type="button"
           className="ZExplorer-backdrop"
@@ -140,6 +143,7 @@ export function ZExplorer({
                   width={ZSizeVaried.Full}
                 >
                   <ZIconFontAwesome
+                    className="ZExplorer-sidebar-toggler"
                     name={_expanded ? "minus" : "expand"}
                     width={ZSizeFixed.ExtraSmall}
                     onClick={handleToggle}
