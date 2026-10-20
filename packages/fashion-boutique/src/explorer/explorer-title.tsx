@@ -20,6 +20,7 @@ export function ZExplorerTitle({ avatar, heading }: IZExplorerTitle) {
   const renderAvatar = () =>
     avatar ? (
       <ZAvatar
+        className="ZExplorerTitle-avatar"
         value={avatar}
         height={ZSizeFixed.Small}
         width={ZSizeFixed.Small}
@@ -29,7 +30,7 @@ export function ZExplorerTitle({ avatar, heading }: IZExplorerTitle) {
   const renderHeading = () =>
     heading && expanded ? (
       <ZFlex grow={1}>
-        <ZH3 compact Element="div">
+        <ZH3 className="ZExplorerTitle-heading" compact Element="div">
           {heading}
         </ZH3>
       </ZFlex>
