@@ -1,18 +1,20 @@
+import type { IZRoute } from "@zthun/fashion-boutique";
 import {
   useFashionTheme,
   useNavigate,
+  ZAvatar,
   ZCaption,
   ZCard,
   ZContentTitle,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
+  ZParagraph,
+  ZStack,
   ZTile,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
 
-import type { IZRoute } from "../route/route.mjs";
 import {
   ZFashionRouteAllComponents,
   ZFashionRouteBoutique,
@@ -36,13 +38,7 @@ export function ZBoutiquePage() {
       onActivate={() => navigate(route.path)}
     >
       <ZContentTitle
-        avatar={
-          <ZIconFontAwesome
-            name={route.avatar}
-            family={route.family}
-            width={ZSizeFixed.Small}
-          />
-        }
+        avatar={<ZAvatar value={route.avatar} width={ZSizeFixed.Small} />}
         heading={<ZH3 compact>{route.name}</ZH3>}
         subHeading={<ZCaption compact>{route.description}</ZCaption>}
       />
@@ -56,24 +52,35 @@ export function ZBoutiquePage() {
         heading: ZFashionRouteBoutique.name,
         subHeading: ZFashionRouteBoutique.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteBoutique.avatar}
+          <ZAvatar
+            value={ZFashionRouteBoutique.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
       }}
     >
-      <ZGrid
-        columns={{
-          xl: "1fr 1fr 1fr 1fr",
-          lg: "1fr 1fr 1fr",
-          md: "1fr 1fr",
-          sm: "1fr",
-        }}
-        gap={ZSizeFixed.Medium}
-      >
-        {ZFashionRouteAllComponents.map(renderComponent)}
-      </ZGrid>
+      <ZStack gap={ZSizeFixed.ExtraLarge}>
+        <ZStack gap={ZSizeFixed.Medium}>
+          <ZParagraph compact>
+            You need materials, tools, and designs to put on a show. The fashion
+            boutique contains react components needed to build a web page. The
+            primary focus of the boutique is to help form a common look and feel
+            across several single page applications, given a single theme.
+          </ZParagraph>
+        </ZStack>
+
+        <ZGrid
+          columns={{
+            xl: "1fr 1fr 1fr 1fr",
+            lg: "1fr 1fr 1fr",
+            md: "1fr 1fr",
+            sm: "1fr",
+          }}
+          gap={ZSizeFixed.Medium}
+        >
+          {ZFashionRouteAllComponents.map(renderComponent)}
+        </ZGrid>
+      </ZStack>
     </ZCard>
   );
 }

@@ -1,12 +1,13 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBox,
   ZButton,
+  ZCard,
   ZChoiceSelect,
   ZDrawer,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
@@ -16,7 +17,6 @@ import { identity, startCase } from "lodash-es";
 import { useState } from "react";
 
 import { ZFashionRouteDrawer } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -38,14 +38,14 @@ export function ZDrawerPage() {
   const [open, setOpen] = useState(false);
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZDrawerPage-root"
       TitleProps={{
         heading: ZFashionRouteDrawer.name,
         subHeading: ZFashionRouteDrawer.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteDrawer.avatar}
+          <ZAvatar
+            value={ZFashionRouteDrawer.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -117,6 +117,6 @@ export function ZDrawerPage() {
           />
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

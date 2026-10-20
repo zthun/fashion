@@ -1,7 +1,9 @@
 // cspell:disable
 import {
+  ZAvatar,
   ZButtonText,
   ZCaption,
+  ZCard,
   ZGrid,
   ZH1,
   ZH2,
@@ -9,14 +11,12 @@ import {
   ZH4,
   ZH5,
   ZH6,
-  ZIconFontAwesome,
   ZParagraph,
   ZSubtitle,
 } from "@zthun/fashion-boutique";
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 
 import { ZFashionRouteTypography } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 import { ZChoiceDropDownFashion } from "../common/choice-drop-down-fashion.js";
 import { useFashionState } from "../common/use-fashion-state.mjs";
 
@@ -29,14 +29,14 @@ export function ZTypographyPage() {
   const [fashion, fashionName, setFashion] = useFashionState();
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZTypographyPage-root"
       TitleProps={{
         heading: ZFashionRouteTypography.name,
         subHeading: ZFashionRouteTypography.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRouteTypography.avatar}
+          <ZAvatar
+            value={ZFashionRouteTypography.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -98,6 +98,6 @@ export function ZTypographyPage() {
           name="fashion"
         />
       </ZGrid>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

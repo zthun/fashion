@@ -1,8 +1,9 @@
 import {
+  ZAvatar,
   ZButton,
+  ZCard,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZParagraph,
   ZPopup,
 } from "@zthun/fashion-boutique";
@@ -11,7 +12,6 @@ import type { MouseEvent } from "react";
 import { useState } from "react";
 
 import { ZFashionRoutePopup } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 export function ZPopupPage() {
   const [open, setOpen] = useState(false);
@@ -23,14 +23,14 @@ export function ZPopupPage() {
   };
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZPopupPage-root"
       TitleProps={{
         heading: ZFashionRoutePopup.name,
         subHeading: ZFashionRoutePopup.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRoutePopup.avatar}
+          <ZAvatar
+            value={ZFashionRoutePopup.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -74,6 +74,6 @@ export function ZPopupPage() {
           You can put anything you want in popup content.
         </ZParagraph>
       </ZPopup>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }
