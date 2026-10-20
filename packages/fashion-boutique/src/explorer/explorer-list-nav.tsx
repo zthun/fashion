@@ -64,6 +64,7 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
         interactive
         cursor="pointer"
         key={route.path}
+        name={route.name}
         highlight={isMatch(route)}
         onClick={() => navigate(route.path)}
       >
@@ -79,5 +80,9 @@ export function ZExplorerListNav({ value }: IZExplorerListNav) {
     );
   };
 
-  return <ZList compact>{value?.map((v) => renderRoute(v))}</ZList>;
+  return (
+    <ZList className="ZExplorerListNav-root" compact>
+      {value?.map((v) => renderRoute(v))}
+    </ZList>
+  );
 }
