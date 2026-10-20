@@ -2,9 +2,10 @@ import {
   type IZCircusDriver,
   type IZCircusSetup,
   ZCircusBy,
+  ZCircusDestroy,
 } from "@zthun/cirque";
 import { ZCircusSetupRenderer } from "@zthun/cirque-du-react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 
 import { ZRouteBuilder } from "../route/route.mjs";
 import { ZExplorerExternalsComponentModel } from "./explorer-externals.cm.js";
@@ -15,6 +16,8 @@ import { type IZExplorerState, ZExplorerContext } from "./use-explorer.mjs";
 describe("ZExplorerExternals", () => {
   let _renderer: IZCircusSetup;
   let _driver: IZCircusDriver;
+
+  afterEach(() => ZCircusDestroy.sequential(_driver, _renderer));
 
   const createTestTarget = async (
     props?: Partial<IZExplorerExternals>,
