@@ -19,6 +19,7 @@ import type { IZComponentHierarchy } from "../component/component-hierarchy.mjs"
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentOrientation } from "../component/component-orientation.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
+import type { IZComponentTabIndex } from "../component/component-tab-index.mjs";
 import type { IZComponentWidth } from "../component/component-width.mjs";
 import { useFashionDevice, useFashionTailor } from "../theme/fashion.mjs";
 import { useCss } from "../theme/styled.js";
@@ -31,7 +32,8 @@ export interface IZStack
     IZComponentDomEvents<HTMLDivElement>,
     IZComponentOrientation,
     IZComponentWidth<ZSizeVaried>,
-    IZComponentHeight<ZSizeVaried> {
+    IZComponentHeight<ZSizeVaried>,
+    IZComponentTabIndex {
   align?: {
     items?: Property.AlignItems;
     content?: Property.AlignContent;
@@ -57,6 +59,7 @@ export function ZStack(props: IZStack) {
     wrap,
     height,
     width,
+    tabIndex,
     ...dom
   } = props;
   const device = useFashionDevice();
@@ -112,6 +115,7 @@ export function ZStack(props: IZStack) {
       data-orientation={orientation}
       data-name={name}
       data-inline={inline}
+      tabIndex={tabIndex}
     >
       {children}
     </div>
