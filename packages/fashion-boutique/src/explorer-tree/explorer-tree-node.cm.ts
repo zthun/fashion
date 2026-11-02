@@ -20,6 +20,11 @@ export class ZExplorerTreeNodeComponentModel extends ZCircusComponentModel {
     return expanded !== "false";
   }
 
+  public async highlighted(): Promise<boolean> {
+    const highlighted = await this.driver.attribute("data-highlighted");
+    return highlighted !== "false";
+  }
+
   public async toggle(expanded?: boolean): Promise<void> {
     const current = await this.expanded();
 

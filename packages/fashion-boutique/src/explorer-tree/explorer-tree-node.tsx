@@ -171,6 +171,7 @@ export function ZExplorerTreeNode({
       )}
       name={name}
       data-expanded={isExplorerExpanded && _expanded}
+      data-highlighted={highlight}
     >
       <ZStack
         className="ZExplorerTreeNode-content"
