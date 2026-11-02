@@ -6,14 +6,17 @@ import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValueReadonly } from "../component/component-value.mjs";
 import type { IZRoute } from "../route/route.mjs";
 import { useNavigate } from "../router/router-dom.mjs";
-import { useRouteMatch } from "../router/use-route-match.mjs";
+import type { ZRouteMatchStrategy } from "../router/use-route-match.mjs";
+import { useRouteMatcher } from "../router/use-route-match.mjs";
 import { ZExplorerTreeNode } from "./explorer-tree-node.js";
 
 /**
  * Properties for the {@link ZExplorerTreeNodeRoute} component.
  */
 export interface IZExplorerTreeNodeRoute
-  extends Required<IZComponentValueReadonly<IZRoute>>, IZComponentStyle {}
+  extends Required<IZComponentValueReadonly<IZRoute>>, IZComponentStyle {
+  matchStrategy?: ZRouteMatchStrategy;
+}
 
 /**
  * A basic explorer tree node that renders the
@@ -25,17 +28,18 @@ export interface IZExplorerTreeNodeRoute
 export function ZExplorerTreeNodeRoute({
   className,
   value,
+  matchStrategy,
 }: IZExplorerTreeNodeRoute) {
   const { avatar, name, path } = value;
-  const isMatch = useRouteMatch();
+  const isMatch = useRouteMatcher();
   const navigate = useNavigate();
 
   return (
     <ZExplorerTreeNode
       className={cssJoinDefined("ZExplorerTreeNodeRoute-root", className)}
       avatar={<ZAvatar value={avatar} width={ZSizeFixed.ExtraSmall} />}
-      prefix={name}
-      highlight={isMatch(path)}
+      heading={name}
+      highlight={isMatch([path], { strategy: matchStrategy })}
       onActivate={() => navigate(path)}
     />
   );
