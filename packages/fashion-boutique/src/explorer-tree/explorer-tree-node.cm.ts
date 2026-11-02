@@ -6,11 +6,6 @@ import { first } from "lodash-es";
 export class ZExplorerTreeNodeComponentModel extends ZCircusComponentModel {
   public static readonly Selector = ".ZExplorerTreeNode-root";
 
-  public async expander(): Promise<IZCircusDriver | null> {
-    const expander = await this.driver.query(".ZExplorerTreeNode-expander");
-    return firstDefined(null, first(expander));
-  }
-
   public async content(): Promise<IZCircusDriver> {
     return this.driver.select(".ZExplorerTreeNode-content");
   }
