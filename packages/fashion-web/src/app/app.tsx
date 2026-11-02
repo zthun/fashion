@@ -83,7 +83,7 @@ export function ZFashionApp() {
           width={ZSizeFixed.Small}
         />
       }
-      prefix={ZFashionRouteHome.name}
+      heading={ZFashionRouteHome.name}
     />
   );
 
@@ -100,7 +100,7 @@ export function ZFashionApp() {
             width={ZSizeFixed.ExtraSmall}
           />
         }
-        prefix="Boutique"
+        heading={ZFashionRouteBoutique.name}
       >
         {ZFashionRouteAllComponents.map((c) => (
           <ZExplorerTreeNodeRoute value={c} key={c.path} />
