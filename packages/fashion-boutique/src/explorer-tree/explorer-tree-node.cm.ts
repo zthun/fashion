@@ -43,6 +43,10 @@ export class ZExplorerTreeNodeComponentModel extends ZCircusComponentModel {
     }
   }
 
+  public name(): Promise<string | null> {
+    return this.driver.attribute("data-name");
+  }
+
   public click = this.toggle.bind(this, undefined);
 
   public async avatar(): Promise<IZCircusDriver | null> {
@@ -55,5 +59,14 @@ export class ZExplorerTreeNodeComponentModel extends ZCircusComponentModel {
     const content = await this.content();
     const heading = await content.query(":scope > .ZExplorerTreeNode-heading");
     return firstDefined(null, first(heading));
+  }
+
+  public async nodes(): Promise<ZExplorerTreeNodeComponentModel[]> {
+    // Can't use ZCircusBy since that is recursive.  We want the
+    // direct nodes.
+    const selector = `:scope > .ZExplorerTreeNode-children > ${ZExplorerTreeNodeComponentModel.Selector}`;
+    const children = await this.driver.query(selector);
+
+    return children.map((ch) => new ZExplorerTreeNodeComponentModel(ch));
   }
 }

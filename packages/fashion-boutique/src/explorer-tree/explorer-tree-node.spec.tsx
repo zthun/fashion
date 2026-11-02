@@ -87,6 +87,7 @@ describe("ZExplorerTreeNode", () => {
                     width={ZSizeFixed.ExtraSmall}
                   />
                 }
+                name={l}
                 heading={l}
                 highlight={l === "november"}
               />
@@ -105,6 +106,47 @@ describe("ZExplorerTreeNode", () => {
       "phonetic-alphabet",
     );
   };
+
+  describe("Children", () => {
+    it("should render all children when expanded", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget();
+      await target.toggle(true);
+
+      // Act.
+      const children = await target.nodes();
+      const actual = await Promise.all(children.map((c) => c.name()));
+
+      // Assert.
+      expect(actual).toEqual(alphabet);
+    });
+
+    it("should not render any children when collapsed", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget();
+      await target.toggle(false);
+
+      // Act.
+      const actual = await target.nodes();
+
+      // Assert.
+      expect(actual.length).toEqual(0);
+    });
+
+    it("should not render any children when the explorer is collapsed", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget(
+        { expanded: true },
+        { expanded: false },
+      );
+
+      // Act.
+      const actual = await target.nodes();
+
+      // Assert.
+      expect(actual.length).toEqual(0);
+    });
+  });
 
   describe("Avatar", () => {
     it("should render the avatar if set", async () => {
