@@ -35,15 +35,16 @@ export function ZExplorer({
     false,
   );
 
-  const handleToggle = useCallback(() => setExpanded((x) => !x), [setExpanded]);
-  const handleClose = useCallback(() => setExpanded(false), [setExpanded]);
+  const expand = useCallback(() => setExpanded(true), [setExpanded]);
+  const collapse = useCallback(() => setExpanded(false), [setExpanded]);
+  const toggle = useCallback(() => setExpanded((e) => !e), [setExpanded]);
 
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
 
-  const expand = "16rem";
-  const collapse = "4rem";
-  const width = _expanded ? expand : collapse;
+  const widthExpanded = "16rem";
+  const widthCollapsed = "4rem";
+  const width = _expanded ? widthExpanded : widthCollapsed;
   const tailor = useFashionTailor();
   const gap = tailor.gap(ZSizeFixed.Medium);
 
@@ -99,7 +100,7 @@ export function ZExplorer({
       }
 
       .ZExplorer-main {
-        padding-left: calc(${collapse} + ${gap});
+        padding-left: calc(${widthCollapsed} + ${gap});
       }
     }
 
@@ -113,7 +114,7 @@ export function ZExplorer({
   `);
 
   return (
-    <ZExplorerContext value={{ expanded: _expanded }}>
+    <ZExplorerContext value={{ expanded: _expanded, expand, collapse, toggle }}>
       <div
         className={cssJoinDefined("ZExplorer-root", _className)}
         data-expanded={_expanded}
@@ -123,7 +124,7 @@ export function ZExplorer({
           className="ZExplorer-backdrop"
           aria-label="Close sidebar"
           disabled={!_expanded}
-          onClick={handleClose}
+          onClick={collapse}
         />
         <nav className="ZExplorer-nav">
           <ZBox
@@ -146,7 +147,7 @@ export function ZExplorer({
                     className="ZExplorer-sidebar-toggler"
                     name={_expanded ? "minus" : "expand"}
                     width={ZSizeFixed.ExtraSmall}
-                    onClick={handleToggle}
+                    onClick={toggle}
                   />
                 </ZStack>
               </header>
