@@ -1,19 +1,12 @@
 import {
-  ZAvatar,
-  ZDivider,
   ZExplorer,
-  ZExplorerTreeNode,
-  ZExplorerTreeNodeRoute,
   ZFashionThemeContext,
-  ZFlex,
   ZNavigate,
   ZNotFound,
   ZRoute,
   ZRouteMap,
-  ZStack,
   ZStyled,
 } from "@zthun/fashion-boutique";
-import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
 import ZThemeDark from "@zthun/fashion-theme-dark";
 
 import { ZAlertPage } from "../boutique/alert/alert-page.js";
@@ -39,9 +32,7 @@ import { ZWizardPage } from "../boutique/wizard/wizard-page.js";
 import { ZYouTubePage } from "../boutique/you-tube/you-tube-page.js";
 import {
   ZFashionRouteAlert,
-  ZFashionRouteAllComponents,
   ZFashionRouteBoolean,
-  ZFashionRouteBoutique,
   ZFashionRouteBubble,
   ZFashionRouteButton,
   ZFashionRouteCarousel,
@@ -50,7 +41,6 @@ import {
   ZFashionRouteDrawer,
   ZFashionRouteForm,
   ZFashionRouteGridView,
-  ZFashionRouteHome,
   ZFashionRouteImage,
   ZFashionRouteList,
   ZFashionRouteModal,
@@ -65,6 +55,7 @@ import {
   ZFashionRouteYouTube,
 } from "../routes.mjs";
 import { ZThemePage } from "../theme/theme-page.js";
+import { ZFashionSidebar } from "./sidebar.js";
 
 /**
  * Represents the root entry point into the application.
@@ -73,57 +64,10 @@ import { ZThemePage } from "../theme/theme-page.js";
  *        The jsx to render the fashion web application.
  */
 export function ZFashionApp() {
-  const renderHeading = () => (
-    <ZExplorerTreeNode
-      nonInteractive
-      avatar={
-        <ZAvatar
-          value={ZFashionRouteHome.avatar}
-          height={ZSizeFixed.Small}
-          width={ZSizeFixed.Small}
-        />
-      }
-      heading={ZFashionRouteHome.name}
-    />
-  );
-
-  const renderTheme = () => {
-    return <ZExplorerTreeNodeRoute value={ZFashionRouteTheme} />;
-  };
-
-  const renderBoutique = () => {
-    return (
-      <ZExplorerTreeNode
-        avatar={
-          <ZAvatar
-            value={ZFashionRouteBoutique.avatar}
-            width={ZSizeFixed.ExtraSmall}
-          />
-        }
-        heading={ZFashionRouteBoutique.name}
-      >
-        {ZFashionRouteAllComponents.map((c) => (
-          <ZExplorerTreeNodeRoute value={c} key={c.path} />
-        ))}
-      </ZExplorerTreeNode>
-    );
-  };
-
   return (
     <ZFashionThemeContext value={ZThemeDark}>
       <ZStyled className="ZFashionApp-root">
-        <ZExplorer
-          sidebar={
-            <ZStack height={ZSizeVaried.Full}>
-              {renderHeading()}
-              <ZDivider />
-              <ZFlex grow={1}>
-                {renderTheme()}
-                {renderBoutique()}
-              </ZFlex>
-            </ZStack>
-          }
-        >
+        <ZExplorer sidebar={<ZFashionSidebar />}>
           <ZRouteMap>
             <ZRoute path={ZFashionRouteTheme.path} element={<ZThemePage />} />
             <ZRoute path={ZFashionRouteAlert.path} element={<ZAlertPage />} />
