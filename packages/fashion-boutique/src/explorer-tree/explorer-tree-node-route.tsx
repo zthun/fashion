@@ -6,8 +6,8 @@ import type { IZComponentStyle } from "../component/component-style.mjs";
 import type { IZComponentValueReadonly } from "../component/component-value.mjs";
 import type { IZRoute } from "../route/route.mjs";
 import { useNavigate } from "../router/router-dom.mjs";
-import type { ZRouteMatchStrategy } from "../router/use-route-match.mjs";
-import { useRouteMatcher } from "../router/use-route-match.mjs";
+import type { ZRouteMatchStrategy } from "../router/use-route-matcher.mjs";
+import { useRouteMatcher } from "../router/use-route-matcher.mjs";
 import { ZExplorerTreeNode } from "./explorer-tree-node.js";
 
 /**

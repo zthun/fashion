@@ -8,7 +8,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ZExplorerContext } from "../explorer/use-explorer.mjs";
 import { ZRouteBuilder } from "../route/route.mjs";
 import { ZTestRouter } from "../router/test-router.js";
-import { ZRouteMatchStrategy } from "../router/use-route-match.mjs";
+import { ZRouteMatchStrategy } from "../router/use-route-matcher.mjs";
 import { ZExplorerTreeNodeComponentModel } from "./explorer-tree-node.cm.js";
 import {
   type IZExplorerTreeNodeRoute,

@@ -117,7 +117,7 @@ export * from "./route/route.mjs";
 export * from "./route/route.mjs";
 export * from "./router/router-dom.mjs";
 export * from "./router/test-router.js";
-export * from "./router/use-route-match.mjs";
+export * from "./router/use-route-matcher.mjs";
 export * from "./search/search.js";
 export * from "./stack/flex.js";
 export * from "./stack/stack.js";
