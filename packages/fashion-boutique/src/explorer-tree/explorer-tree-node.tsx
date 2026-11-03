@@ -90,7 +90,7 @@ export function ZExplorerTreeNode({
       background: ${picker.active.background};
     }
 
-    .ZExplorerTreeNode-prefix {
+    .ZExplorerTreeNode-heading {
       flex-grow: 1;
       min-width: 0;
       overflow: hidden;
@@ -107,17 +107,24 @@ export function ZExplorerTreeNode({
     (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
       e.preventDefault();
 
+      if (isLeaf) {
+        // A leaf node just gets activated.  There's no need to open
+        // the parent explorer.
+        onActivate?.(e);
+        return;
+      }
+
+      // We have a branch - branches have two flows -
+      // if the parent explorer is collapsed, we will expand it
+      // and expand the branch if it isn't already.  If the explorer
+      // is open, we toggle the expansion state.
       if (!isExplorerExpanded) {
         expand?.();
         setExpanded(true);
         return;
       }
 
-      if (isLeaf) {
-        onActivate?.(e);
-      } else {
-        setExpanded((e) => !e);
-      }
+      setExpanded((e) => !e);
     },
     [onActivate, isLeaf, setExpanded, expand, isExplorerExpanded],
   );
@@ -145,7 +152,7 @@ export function ZExplorerTreeNode({
       return null;
     }
 
-    const name = _expanded ? "caret-down" : "caret-up";
+    const name = _expanded ? "caret-down" : "caret-right";
 
     return (
       <ZIconFontAwesome
