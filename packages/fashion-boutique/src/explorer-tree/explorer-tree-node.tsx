@@ -18,6 +18,56 @@ import { useCss } from "../theme/styled.js";
 import { ZSubtitle } from "../typography/typography.js";
 
 /**
+ * Leaf node properties.
+ *
+ * This is only for semantics to make it obvious what applies to
+ * a leaf node and what applies to branches.
+ */
+export interface IZExplorerLeafNode {
+  /**
+   * Whether the node is highlighted or transparent.
+   *
+   * This only applies to leaves.  This has no effect
+   * on a branch and a branch will highlight if any of it's
+   * children (recursively) are highlighted and either the
+   * parent explorer is collapsed, or the branch is collapsed.
+   */
+  highlight?: boolean;
+
+  /**
+   * Occurs when the node is activated, either it is clicked
+   * or the space bar or enter key is pressed while focused.
+   *
+   * Only leaf nodes can be activated.  
+   */
+  onActivate?: (
+    e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>,
+  ) => void;
+}
+
+/**
+ * Branch node properties.
+ *
+ * This is only for semantics to make it obvious what applies
+ * to a leaf node and what applies to branches.
+ */
+export interface IZExplorerBranchNode {
+  /**
+   * A flag that determines if the node is expanded or collapsed.
+   *
+   * This has no effect on leaf nodes.
+   */
+  expanded?: boolean;
+
+  /**
+   * Occurs when expansion changes.
+   *
+   * This has no effect on leaf nodes.
+   */
+  onExpandedChange?: (expanded: boolean) => void;
+}
+
+/**
  * Properties for the {@link ZExplorerTreeNode} component.
  */
 export interface IZExplorerTreeNode
@@ -26,16 +76,17 @@ export interface IZExplorerTreeNode
     Pick<IZComponentHeading, "heading">,
     IZComponentHierarchy,
     IZComponentStyle,
-    IZComponentName {
-  highlight?: boolean;
+    IZComponentName,
+    IZExplorerLeafNode,
+    IZExplorerBranchNode {
+  /**
+   * Sets the node to be non-interactive.
+   *
+   * Non-interactive nodes do not have any pointer-events
+   * and do not activate.  They also do not get the tab
+   * focus.
+   */
   nonInteractive?: boolean;
-
-  expanded?: boolean;
-  onExpandedChange?: (expanded: boolean) => void;
-
-  onActivate?: (
-    e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>,
-  ) => void;
 }
 
 /**
