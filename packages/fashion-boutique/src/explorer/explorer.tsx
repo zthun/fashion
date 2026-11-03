@@ -42,7 +42,7 @@ export function ZExplorer({
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
 
-  const widthExpanded = "16rem";
+  const widthExpanded = "20rem";
   const widthCollapsed = "4rem";
   const width = _expanded ? widthExpanded : widthCollapsed;
   const tailor = useFashionTailor();
