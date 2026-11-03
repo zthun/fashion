@@ -1,12 +1,13 @@
 import {
   useFashionTheme,
+  ZAvatar,
   ZBooleanSwitch,
   ZBox,
   ZCaption,
+  ZCard,
   ZChoiceSelect,
   ZGrid,
   ZH3,
-  ZIconFontAwesome,
   ZPagination,
   ZPaginationSizesMultiplesOfFive,
   ZPaginationSizesMultiplesOfTwelve,
@@ -23,7 +24,6 @@ import {
 import { useMemo, useState } from "react";
 
 import { ZFashionRoutePagination } from "../../routes.mjs";
-import { ZCardDemoComponent } from "../common/card-demo-component.js";
 
 const SourceError = new ZDataSourceStatic(
   new Error("Something went wrong"),
@@ -57,14 +57,14 @@ export function ZPaginationPage() {
   );
 
   return (
-    <ZCardDemoComponent
+    <ZCard
       className="ZPaginationPage-root"
       TitleProps={{
         heading: ZFashionRoutePagination.name,
         subHeading: ZFashionRoutePagination.description,
         avatar: (
-          <ZIconFontAwesome
-            name={ZFashionRoutePagination.avatar}
+          <ZAvatar
+            value={ZFashionRoutePagination.avatar}
             width={ZSizeFixed.Medium}
           />
         ),
@@ -121,6 +121,6 @@ export function ZPaginationPage() {
           </ZStack>
         </ZGrid>
       </ZBox>
-    </ZCardDemoComponent>
+    </ZCard>
   );
 }

@@ -11,10 +11,9 @@ import type {
 } from "@zthun/cirque";
 import { ZCircusBy } from "@zthun/cirque";
 import { ZCircusSetupChrome } from "@zthun/cirque-du-selenium";
+import type { IZRoute } from "@zthun/fashion-boutique";
 import { sleep } from "@zthun/helpful-fn";
 import { ZUrlBuilder } from "@zthun/webigail-url";
-
-import type { IZRoute } from "../src/route/route.mjs";
 
 /**
  * Represents a modifiable set of parameters.

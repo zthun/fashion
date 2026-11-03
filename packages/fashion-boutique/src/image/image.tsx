@@ -10,6 +10,7 @@ import {
 import { css, cssJoinDefined } from "@zthun/helpful-fn";
 import type { Property } from "csstype";
 
+import type { IZComponentDisplay } from "../component/component-display.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentSource } from "../component/component-source.mjs";
@@ -24,6 +25,7 @@ export interface IZImageSource
     IZComponentStyle,
     IZComponentWidth,
     IZComponentHeight,
+    IZComponentDisplay,
     IZComponentName {
   fit?: Property.ObjectFit;
 }
@@ -46,12 +48,21 @@ const ImageSizeChart = {
  */
 export function ZImage(props: IZImageSource) {
   const device = useFashionDevice();
-  const { className, fit = "fill", src, height, width, name } = props;
+  const {
+    className,
+    display = "inline",
+    fit = "fill",
+    src,
+    height,
+    width,
+    name,
+  } = props;
   const _height = new ZDeviceValues(height, ZSizeVaried.Default);
   const _width = new ZDeviceValues(width, ZSizeVaried.Default);
 
   const _className = useCss(css`
     & {
+      display: ${display};
       object-fit: ${fit};
       width: ${ImageSizeChart[_width.xl]};
       height: ${ImageSizeChart[_height.xl]};

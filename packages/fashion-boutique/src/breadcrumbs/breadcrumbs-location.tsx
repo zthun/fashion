@@ -40,7 +40,7 @@ export interface IZBreadcrumbsLocation extends IZBreadcrumbs {
  *        The JSX that renders this component.
  */
 export function ZBreadcrumbsLocation(props: IZBreadcrumbsLocation) {
-  const { body } = useFashionTheme();
+  const { body, inherit } = useFashionTheme();
   const tailor = useFashionTailor();
   const { className, name, home, onPathSelected } = props;
   const location = useLocation();
@@ -81,6 +81,7 @@ export function ZBreadcrumbsLocation(props: IZBreadcrumbsLocation) {
           label={s.name}
           name={s.path}
           onClick={() => onPathSelected?.call(null, href)}
+          fashion={inherit}
         />
         {index < sections.length - 1 && <ZParagraph compact>/</ZParagraph>}
       </Fragment>

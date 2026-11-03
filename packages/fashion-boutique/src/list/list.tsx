@@ -45,6 +45,14 @@ export function ZList(props: IZList) {
       padding: ${tailor.gap(compact ? ZSizeVoid.None : ZSizeFixed.ExtraSmall)};
     }
 
+    li {
+      margin-bottom: ${tailor.gap(ZSizeFixed.ExtraSmall)};
+    }
+
+    li:last-of-type {
+      margin-bottom: ${tailor.gap(ZSizeVoid.None)};
+    }
+
     li[data-highlight="true"] {
       background: ${picker.idle.background};
       border-color: ${picker.idle.border};

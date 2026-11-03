@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 
 import { ZFashionApp } from "./app/app.js";
 
-const container = createRoot(document.getElementById("zthunworks-fashion")!);
+const container = createRoot(document.body);
 
 container.render(
   <StrictMode>

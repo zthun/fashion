@@ -9,6 +9,7 @@ import { css, firstDefined } from "@zthun/helpful-fn";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import { useEffect } from "react";
 
+import type { IZComponentDisplay } from "../component/component-display.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentName } from "../component/component-name.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
@@ -20,6 +21,7 @@ export interface IZIcon
   extends
     IZComponentName,
     IZComponentStyle,
+    IZComponentDisplay,
     IZComponentWidth<ZSizeFixed>,
     IZComponentFashion {
   onClick?: (event: MouseEvent | KeyboardEvent) => void;
@@ -34,12 +36,22 @@ const IconSizeChart = createSizeChartFixedCss(
 export function useIconStyles(props: IZIcon) {
   const { inherit } = useFashionTheme();
   const device = useFashionDevice();
-  const { width = ZSizeFixed.Small, fashion, onClick } = props;
+  const {
+    width = ZSizeFixed.Small,
+    fashion,
+    onClick,
+    display = "inline-block",
+  } = props;
   const _width = new ZDeviceValues(width, ZSizeFixed.Small);
   const picker = new ZColorPicker(firstDefined(inherit, fashion));
 
+  // Note that if you're using font-awesome, you have to set --fa-display
+  // to change it.
   return useCss(css`
     & {
+      --fa-display: ${display};
+      display: ${display};
+
       color: ${picker.idle.background};
       cursor: ${onClick ? "pointer" : "inherit"};
       font-size: ${IconSizeChart[_width.xl]};
