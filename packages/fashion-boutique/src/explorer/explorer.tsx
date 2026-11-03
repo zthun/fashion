@@ -86,7 +86,7 @@ export function ZExplorer({
     /* Two gaps are for the nav left gap and the right gap offset by the width */
     .ZExplorer-main {
       padding: ${gap};
-      padding-left: calc(${width} + ${gap} + ${gap});
+      padding-left: calc(${width} + ${gap});
       transition: padding-left 200ms ease-in-out;
     }
 
