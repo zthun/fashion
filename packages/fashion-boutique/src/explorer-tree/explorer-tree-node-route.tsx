@@ -37,7 +37,14 @@ export function ZExplorerTreeNodeRoute({
   return (
     <ZExplorerTreeNode
       className={cssJoinDefined("ZExplorerTreeNodeRoute-root", className)}
-      avatar={<ZAvatar value={avatar} width={ZSizeFixed.ExtraSmall} />}
+      avatar={
+        <ZAvatar
+          value={avatar}
+          width={ZSizeFixed.ExtraSmall}
+          height={ZSizeFixed.ExtraSmall}
+          display="block"
+        />
+      }
       heading={name}
       highlight={isMatch([path], { strategy: matchStrategy })}
       onActivate={() => navigate(path)}
