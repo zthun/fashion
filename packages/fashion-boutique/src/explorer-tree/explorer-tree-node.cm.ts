@@ -59,6 +59,10 @@ export class ZExplorerTreeNodeComponentModel extends ZCircusComponentModel {
   public async nodes(): Promise<ZExplorerTreeNodeComponentModel[]> {
     // Can't use ZCircusBy since that is recursive.  We want the
     // direct nodes.
+    if (!(await this.expanded())) {
+      return [];
+    }
+
     const selector = `:scope > .ZExplorerTreeNode-children > ${ZExplorerTreeNodeComponentModel.Selector}`;
     const children = await this.driver.query(selector);
 

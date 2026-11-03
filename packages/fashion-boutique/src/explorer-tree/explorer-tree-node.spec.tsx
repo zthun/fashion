@@ -342,4 +342,67 @@ describe("ZExplorerTreeNode", () => {
       expect(onActivate).not.toHaveBeenCalled();
     });
   });
+
+  describe("Highlight", () => {
+    it("should highlight leaf nodes that have the highlight flag as true", async () => {
+      // Arrange.
+      const target = await createLeafTestTarget({ highlight: true });
+
+      // Act.
+      const actual = await target.highlighted();
+
+      // Assert.
+      expect(actual).toBeTruthy();
+    });
+
+    it("should not highlight a leaf node that has the highlight flag to false", async () => {
+      // Arrange.
+      const target = await createLeafTestTarget({ highlight: false });
+
+      // Act.
+      const actual = await target.highlighted();
+
+      // Assert.
+      expect(actual).toBeFalsy();
+    });
+
+    it("should not highlight a branch if the branch is expanded and the explorer is expanded", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget(
+        { expanded: true },
+        { expanded: true },
+      );
+
+      // Act.
+      const actual = await target.highlighted();
+
+      // Assert.
+      expect(actual).toBeFalsy();
+    });
+
+    it("should highlight a branch if the branch is collapsed and has a highlighted child", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget({ expanded: false });
+
+      // Act.
+      const actual = await target.highlighted();
+
+      // Assert.
+      expect(actual).toBeTruthy();
+    });
+
+    it("should highlight a branch if the parent explorer is collapsed and has a highlighted child", async () => {
+      // Arrange.
+      const target = await createBranchTestTarget(
+        { expanded: true },
+        { expanded: false },
+      );
+
+      // Act.
+      const actual = await target.highlighted();
+
+      // Assert.
+      expect(actual).toBeTruthy();
+    });
+  });
 });

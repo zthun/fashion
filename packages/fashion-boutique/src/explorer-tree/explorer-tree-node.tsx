@@ -3,7 +3,7 @@ import { ZColorPicker } from "@zthun/fashion-theme";
 import { css, cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
 import { useAmbassadorState, useKeyboardActivate } from "@zthun/helpful-react";
 import type { KeyboardEvent, MouseEvent } from "react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { IZComponentAvatar } from "../component/component-avatar.mjs";
 import type { IZComponentHeading } from "../component/component-heading.mjs";
@@ -89,6 +89,8 @@ export interface IZExplorerTreeNode
   nonInteractive?: boolean;
 }
 
+const createDummyElement = () => document.createElement("div");
+
 /**
  * A tree node in an explorer.
  *
@@ -109,6 +111,7 @@ export function ZExplorerTreeNode({
   const { primary } = useFashionTheme();
   const tailor = useFashionTailor();
   const picker = new ZColorPicker(primary);
+  const childrenRef = useRef<HTMLDivElement>(createDummyElement());
 
   const { expanded: isExplorerExpanded, expand } = useExplorer();
   const [_expanded, setExpanded] = useAmbassadorState(
@@ -119,10 +122,47 @@ export function ZExplorerTreeNode({
 
   const isLeaf = !children;
 
+  const hasHighlightedChildren = useCallback(() => {
+    const query = '.ZExplorerTreeNode-root[data-highlighted="true"]';
+    const highlighted = childrenRef.current.querySelector(query);
+    return highlighted != null;
+  }, []);
+
+  const hasHighlightedChildrenRef = useRef(hasHighlightedChildren);
+  hasHighlightedChildrenRef.current = hasHighlightedChildren;
+
+  const [isAnyChildHighlighted, setIsAnyChildHighlighted] = useState(
+    hasHighlightedChildren,
+  );
+
+  useEffect(() => {
+    const update = () => {
+      const { current: _hasHighlightedChildren } = hasHighlightedChildrenRef;
+      const isAnyChildHighlighted = _hasHighlightedChildren();
+      setIsAnyChildHighlighted(isAnyChildHighlighted);
+    };
+
+    const observer = new MutationObserver(update);
+    observer.observe(childrenRef.current, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["data-highlighted"],
+    });
+
+    update();
+
+    return () => observer.disconnect();
+  }, []);
+
+  const _highlighted =
+    (isLeaf && highlight) ||
+    (!isLeaf && isAnyChildHighlighted && (!isExplorerExpanded || !_expanded));
+
   const _className = useCss(css`
     .ZExplorerTreeNode-content {
       pointer-events: ${nonInteractive ? "none" : "auto"};
-      background: ${highlight ? picker.idle.background : "transparent"};
+      background: ${_highlighted ? picker.idle.background : "transparent"};
       border-radius: ${tailor.rounding(ZSizeFixed.Small)};
       cursor: pointer;
       padding: ${tailor.gap(ZSizeFixed.ExtraSmall)};
@@ -217,8 +257,17 @@ export function ZExplorerTreeNode({
   };
 
   const renderChildren = () => {
-    return !_expanded || isLeaf || !isExplorerExpanded ? null : (
-      <div className="ZExplorerTreeNode-children">{children}</div>
+    const isHidden = !_expanded || isLeaf || !isExplorerExpanded;
+    const display = isHidden ? "none" : "block";
+
+    return (
+      <div
+        className="ZExplorerTreeNode-children"
+        style={{ display }}
+        ref={childrenRef}
+      >
+        {children}
+      </div>
     );
   };
 
@@ -231,7 +280,7 @@ export function ZExplorerTreeNode({
       )}
       name={name}
       data-expanded={isExplorerExpanded && _expanded}
-      data-highlighted={highlight}
+      data-highlighted={_highlighted}
     >
       <ZStack
         className="ZExplorerTreeNode-content"
