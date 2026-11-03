@@ -1,6 +1,7 @@
 import { ZSizeFixed } from "@zthun/fashion-tailor";
 import { cssJoinDefined } from "@zthun/helpful-fn";
 
+import type { IZComponentDisplay } from "../component/component-display.mjs";
 import type { IZComponentFashion } from "../component/component-fashion.mjs";
 import type { IZComponentHeight } from "../component/component-height.mjs";
 import type { IZComponentStyle } from "../component/component-style.mjs";
@@ -18,10 +19,12 @@ export interface IZAvatar
     IZComponentWidth<ZSizeFixed>,
     IZComponentHeight<ZSizeFixed>,
     IZComponentFashion,
+    IZComponentDisplay,
     IZComponentStyle {}
 
 export function ZAvatar({
   className,
+  display,
   fashion,
   value,
   width = ZSizeFixed.Medium,
@@ -35,6 +38,7 @@ export function ZAvatar({
         src={value.src}
         height={height}
         width={width}
+        display={display}
         fit="scale-down"
       />
     );
@@ -49,6 +53,7 @@ export function ZAvatar({
         animation={value?.animation}
         width={width}
         fashion={fashion}
+        display={display}
       />
     );
   }
