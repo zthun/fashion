@@ -1,5 +1,10 @@
 import { ZSizeFixed, ZSizeVaried } from "@zthun/fashion-tailor";
-import { css, cssJoinDefined, ZOrientation } from "@zthun/helpful-fn";
+import {
+  css,
+  cssJoinDefined,
+  firstDefined,
+  ZOrientation,
+} from "@zthun/helpful-fn";
 import { useAmbassadorState } from "@zthun/helpful-react";
 import type { ReactNode } from "react";
 import { useCallback } from "react";
@@ -35,9 +40,10 @@ export function ZExplorer({
     false,
   );
 
-  const expand = useCallback(() => setExpanded(true), [setExpanded]);
-  const collapse = useCallback(() => setExpanded(false), [setExpanded]);
-  const toggle = useCallback(() => setExpanded((e) => !e), [setExpanded]);
+  const toggle = useCallback(
+    (expanded?: boolean) => setExpanded((e) => firstDefined(!e, expanded)),
+    [setExpanded],
+  );
 
   const { surface } = useFashionTheme();
   const device = useFashionDevice();
@@ -114,7 +120,7 @@ export function ZExplorer({
   `);
 
   return (
-    <ZExplorerContext value={{ expanded: _expanded, expand, collapse, toggle }}>
+    <ZExplorerContext value={{ expanded: _expanded, toggle }}>
       <div
         className={cssJoinDefined("ZExplorer-root", _className)}
         data-expanded={_expanded}
@@ -124,7 +130,7 @@ export function ZExplorer({
           className="ZExplorer-backdrop"
           aria-label="Close sidebar"
           disabled={!_expanded}
-          onClick={collapse}
+          onClick={() => toggle(false)}
         />
         <nav className="ZExplorer-nav">
           <ZBox
@@ -147,7 +153,7 @@ export function ZExplorer({
                     className="ZExplorer-sidebar-toggler"
                     name={_expanded ? "minus" : "expand"}
                     width={ZSizeFixed.ExtraSmall}
-                    onClick={toggle}
+                    onClick={() => toggle()}
                   />
                 </ZStack>
               </header>

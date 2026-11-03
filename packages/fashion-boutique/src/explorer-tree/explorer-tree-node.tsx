@@ -113,7 +113,7 @@ export function ZExplorerTreeNode({
   const picker = new ZColorPicker(primary);
   const childrenRef = useRef<HTMLDivElement>(createDummyElement());
 
-  const { expanded: isExplorerExpanded, expand } = useExplorer();
+  const { expanded: isExplorerExpanded, toggle } = useExplorer();
   const [_expanded, setExpanded] = useAmbassadorState(
     expanded,
     onExpandedChange,
@@ -212,14 +212,14 @@ export function ZExplorerTreeNode({
       // and expand the branch if it isn't already.  If the explorer
       // is open, we toggle the expansion state.
       if (!isExplorerExpanded) {
-        expand?.();
+        toggle?.(true);
         setExpanded(true);
         return;
       }
 
       setExpanded((e) => !e);
     },
-    [onActivate, isLeaf, setExpanded, expand, isExplorerExpanded],
+    [onActivate, isLeaf, setExpanded, toggle, isExplorerExpanded],
   );
 
   const { onKey, tabIndex } = useKeyboardActivate(

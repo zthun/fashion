@@ -286,17 +286,17 @@ describe("ZExplorerTreeNode", () => {
 
     it("should open the explorer if it is collapsed", async () => {
       // Arrange.
-      const expand = vi.fn();
+      const toggle = vi.fn();
       const target = await createBranchTestTarget(
         {},
-        { expanded: false, expand },
+        { expanded: false, toggle },
       );
 
       // Act.
       await target.toggle();
 
       // Assert.
-      expect(expand).toHaveBeenCalled();
+      expect(toggle).toHaveBeenCalledWith(true);
     });
   });
 

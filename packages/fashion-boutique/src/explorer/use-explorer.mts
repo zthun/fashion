@@ -3,9 +3,7 @@ import { createContext, use } from "react";
 export interface IZExplorerApi {
   expanded?: boolean;
 
-  expand?: () => void;
-  collapse?: () => void;
-  toggle?: () => void;
+  toggle?: (expanded?: boolean) => void;
 }
 
 export const ZExplorerContext = createContext<IZExplorerApi>({});
