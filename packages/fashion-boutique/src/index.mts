@@ -44,6 +44,7 @@ export * from "./component/component-avatar.mjs";
 export * from "./component/component-compact.mjs";
 export * from "./component/component-data-source.mjs";
 export * from "./component/component-disabled.mjs";
+export * from "./component/component-display.mjs";
 export * from "./component/component-dom-events.mjs";
 export * from "./component/component-fashion.mjs";
 export * from "./component/component-footer.mjs";
