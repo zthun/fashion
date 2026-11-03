@@ -116,12 +116,14 @@ export function ZExplorerTreeNode({
     onExpandedChange,
     true,
   );
+
   const isLeaf = !children;
 
   const _className = useCss(css`
     .ZExplorerTreeNode-content {
       pointer-events: ${nonInteractive ? "none" : "auto"};
       background: ${highlight ? picker.idle.background : "transparent"};
+      border-radius: ${tailor.rounding(ZSizeFixed.Small)};
       cursor: pointer;
       padding: ${tailor.gap(ZSizeFixed.ExtraSmall)};
       margin-bottom: ${tailor.gap(ZSizeFixed.ExtraSmall)};
